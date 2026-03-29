@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-03-30. Covers sessions [1](08dd503a-6a2a-4b6d-a2d7-a266f1a90b26) and [2](08dd503a-6a2a-4b6d-a2d7-a266f1a90b26)._
+_Last updated: 2026-03-30 (evening). Covers sessions [1](08dd503a-6a2a-4b6d-a2d7-a266f1a90b26) and [2](08dd503a-6a2a-4b6d-a2d7-a266f1a90b26)._
 
 ---
 
@@ -18,7 +18,7 @@ A local pipeline that:
 
 ---
 
-## Current state (end of session 2)
+## Current state (end of session 2, evening)
 
 | Status | Count | Notes |
 |---|---|---|
@@ -26,74 +26,58 @@ A local pipeline that:
 | `extracted` | 1 | 24-second test clip (scaffold bullets in DB) |
 | **Total** | **23** | — |
 
-**All 22 full episodes are downloaded and waiting for transcription.** Nothing is currently running.
+**All 22 full episodes are downloaded and waiting for transcription. Nothing is currently running. All processes have been killed and PID files cleared.**
 
 ---
 
-## The unsolved bug — Whisper output not flowing through pipe
+## Whisper status — confirmed working
 
-### What was diagnosed
+### What was confirmed this session
 
-Transcription has been attempted multiple times but episodes always end in error:  
-`"Whisper did not produce expected transcript at …"`
+**Whisper IS working.** After starting the queue, Task Manager showed:
+- 3 Python processes each using ~5 GB RAM
+- GPU at **90–92% load** (CUDA transcription active)
+- Processes were using the GPU for an extended period
 
-Through systematic debugging, the following was established:
+This confirms all the fixes from the previous session solved the core problem. The pipeline was genuinely transcribing but was killed manually before any episode finished.
 
-| Test | Result |
-|---|---|
-| `whisper.exe` binary with `stdout=PIPE` | Crashes silently, exits 0, no file |
-| `python -m whisper` with `stdout=PIPE`, relative path | ffmpeg: "No such file or directory", skipped |
-| `python -m whisper` with `stdout=PIPE`, **absolute path** | Works on 30s clip ✓ — output lines captured, .txt produced |
-| `python -u -m whisper` + `PYTHONUNBUFFERED=1` with `stdout=PIPE`, long file (64 min) | Still no output lines after 3+ minutes |
-
-**The current suspicion:** with a long audio file, Whisper or ffmpeg takes several minutes to load/decode the audio into RAM before producing any transcript lines. At 3 minutes the test was cut off — it may simply need more time. Alternatively, something in Whisper's internal buffering for large files is different from small files.
-
-### What has been fixed
+### History of fixes (for reference)
 
 1. **`whisper.exe` binary → `python.exe -m whisper`**: The `.exe` wrapper crashes when stdout is piped. Now auto-detected via `bilradio/config.py:_find_whisper_python()`.
 2. **Relative → absolute audio path**: `_build_cmd()` now calls `audio_path.resolve()`.
 3. **`-u` + `PYTHONUNBUFFERED=1`**: Added to the Whisper subprocess to prevent block-buffering.
 4. **Skipping detection**: Reader thread now detects `"Skipping … due to"` in stdout and raises `RuntimeError` rather than silently returning.
-5. **Silent exit 0 detection**: If `_run_whisper_once` completes but `.txt` is missing, `FileNotFoundError` is raised (was already there, now more explicit).
-6. **ASCII-only filenames**: `safe_filename_part()` now uses `c.isascii()` instead of `c.isalnum()` — Danish chars (`ø`, `å`, `æ`) are replaced with `_` to avoid ffmpeg path failures on Windows.
+5. **Silent exit 0 detection**: If `_run_whisper_once` completes but `.txt` is missing, `FileNotFoundError` is raised.
+6. **ASCII-only filenames**: `safe_filename_part()` uses `c.isascii()` — Danish chars (`ø`, `å`, `æ`) become `_` to avoid ffmpeg path failures on Windows.
 
-### What to try next session
+### What to do next session
 
-**Step 1 — Confirm the 64-minute file actually works (wait longer)**
-
-Start transcription of episode 317 via the web UI or terminal, but let it run for at least 15-20 minutes before checking output. The model load + full-file decode for a 64-minute episode could easily take 5-10 minutes before the first output line appears.
+**Just let it run.** Start the queue and leave it overnight — each ~1-hour episode takes roughly 1 hour to transcribe with the medium CUDA model. All 22 episodes will take ~22 hours.
 
 ```powershell
-# Start web server (if not running)
+# Start web server
 .\.venv\Scripts\python.exe -m bilradio.cli serve
 
-# OR start directly from the queue page at http://127.0.0.1:8765/queue
-# → Click "▶ Start full queue" (all 22 episodes already downloaded)
+# Then open http://127.0.0.1:8765/queue → click "▶ Start full queue"
 ```
 
-Watch the terminal or web UI heartbeat for transcript lines starting to appear (format: `[00:00.000 --> 00:30.000] text`).
+The first transcript lines appear only after Whisper has loaded the model and decoded the full audio (~5–10 minutes for a 64-min episode). The web UI heartbeat and `/queue` page will show progress. **Do not kill the process — it is working even when silent.**
 
-**Step 2 — If it still hangs, try `--device cpu` first**
+### If something goes wrong
 
-CUDA can cause unexpected hangs with long files if VRAM is tight. Test with CPU to isolate:
+If an episode errors (not just slow), try:
 
 ```powershell
+# Test with CPU to rule out GPU-specific issues
 $env:BILRADIO_WHISPER_DEVICE = "cpu"
-.\.venv\Scripts\python.exe -m bilradio.cli transcribe --guid 48788b21-243c-4c9c-b0f7-b38e00c52f22
+.\.venv\Scripts\python.exe -m bilradio.cli transcribe --guid <guid>
 ```
 
-CPU will be slow (~4× real-time) but will confirm whether the issue is GPU-specific.
-
-**Step 3 — If CPU also hangs, try chunked/streaming approach**
-
-Whisper loads the ENTIRE audio file into RAM before processing. For a 64-minute file that's ~245 MB of float32 PCM + mel spectrogram on GPU. Consider:
-- Splitting the audio with ffmpeg into 10-minute chunks before transcribing
-- Using `--model small` instead of `medium` as a test
-- Using the Python Whisper API directly (call `whisper.transcribe()`) instead of CLI subprocess
-
-**Step 4 — Worst case: use `faster-whisper` instead**
-
-`faster-whisper` is a drop-in replacement that is more memory-efficient and handles long files better. Install with `pip install faster-whisper` in the **global Python** (`C:\Python311`), then update `whisper_run.py` to use it.
+Or switch to `faster-whisper` (more memory-efficient, handles long files better):
+```powershell
+C:\Python311\pip.exe install faster-whisper
+# Then update whisper_run.py to use faster-whisper API instead of CLI subprocess
+```
 
 ---
 
@@ -199,3 +183,13 @@ Branch: `main`
 Latest commit: `c88dd42` — unbuffered Whisper subprocess fix
 
 All code is committed and pushed. The `data/` directory is gitignored — audio files, transcripts, and SQLite DB are local only.
+
+---
+
+## Session log
+
+| Session | Key outcome |
+|---|---|
+| Session 1 | Built full pipeline: RSS sync, download, Whisper, Cursor inbox, web UI with queue controls |
+| Session 2 (morning) | Fixed Whisper subprocess bugs (exe crash, Unicode paths, buffering, skip detection). Confirmed working on 30s clip. |
+| Session 2 (evening) | Confirmed Whisper IS working on full episodes (GPU at 90%, 5 GB RAM). Processes killed manually before completion. DB reset: 22 downloaded, ready to go. |
