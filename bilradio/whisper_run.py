@@ -71,6 +71,7 @@ def _run_whisper_once(audio_path: Path, out_txt: Path) -> None:
         except (OSError, ValueError):
             pass
 
+    env = {**__import__("os").environ, "PYTHONUNBUFFERED": "1"}
     proc = subprocess.Popen(
         cmd,
         stdout=subprocess.PIPE,
@@ -79,6 +80,7 @@ def _run_whisper_once(audio_path: Path, out_txt: Path) -> None:
         encoding="utf-8",
         errors="replace",
         bufsize=1,
+        env=env,
     )
 
     try:

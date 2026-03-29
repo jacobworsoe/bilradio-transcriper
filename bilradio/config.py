@@ -57,12 +57,12 @@ def _find_whisper_python() -> list[str]:
         # Scripts/ lives inside the Python home; python.exe is one level up.
         python_exe = scripts_dir.parent / "python.exe"
         if python_exe.is_file():
-            return [str(python_exe), "-m", "whisper"]
+            return [str(python_exe), "-u", "-m", "whisper"]
         # On Linux/Mac the binary may be in bin/ next to python3
         for name in ("python3", "python"):
             py = scripts_dir / name
             if py.is_file():
-                return [str(py), "-m", "whisper"]
+                return [str(py), "-u", "-m", "whisper"]
     # Fallback: use the whisper script directly
     return [WHISPER_BIN]
 
