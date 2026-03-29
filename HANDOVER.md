@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-03-30. Covers all work done in the [first session](08dd503a-6a2a-4b6d-a2d7-a266f1a90b26)._
+_Last updated: 2026-03-30. Covers sessions [1](08dd503a-6a2a-4b6d-a2d7-a266f1a90b26) and [2](08dd503a-6a2a-4b6d-a2d7-a266f1a90b26)._
 
 ---
 
@@ -11,10 +11,89 @@ A local pipeline that:
 2. Downloads MP3 audio files.
 3. Transcribes them locally with **OpenAI Whisper** (CUDA, medium model).
 4. Writes transcript + structured prompt to `data/cursor_inbox/` for analysis inside Cursor.
-5. Imports the structured JSON bullets into SQLite.
+5. Imports structured JSON bullets into SQLite.
 6. Serves a **FastAPI web UI** with two pages:
    - `/` — Topic bullets browser with car/theme exclusion filters.
    - `/queue` — Transcription queue manager with start/stop controls.
+
+---
+
+## Current state (end of session 2)
+
+| Status | Count | Notes |
+|---|---|---|
+| `downloaded` | 22 | Episodes 317-338, all MP3s on disk, ready to transcribe |
+| `extracted` | 1 | 24-second test clip (scaffold bullets in DB) |
+| **Total** | **23** | — |
+
+**All 22 full episodes are downloaded and waiting for transcription.** Nothing is currently running.
+
+---
+
+## The unsolved bug — Whisper output not flowing through pipe
+
+### What was diagnosed
+
+Transcription has been attempted multiple times but episodes always end in error:  
+`"Whisper did not produce expected transcript at …"`
+
+Through systematic debugging, the following was established:
+
+| Test | Result |
+|---|---|
+| `whisper.exe` binary with `stdout=PIPE` | Crashes silently, exits 0, no file |
+| `python -m whisper` with `stdout=PIPE`, relative path | ffmpeg: "No such file or directory", skipped |
+| `python -m whisper` with `stdout=PIPE`, **absolute path** | Works on 30s clip ✓ — output lines captured, .txt produced |
+| `python -u -m whisper` + `PYTHONUNBUFFERED=1` with `stdout=PIPE`, long file (64 min) | Still no output lines after 3+ minutes |
+
+**The current suspicion:** with a long audio file, Whisper or ffmpeg takes several minutes to load/decode the audio into RAM before producing any transcript lines. At 3 minutes the test was cut off — it may simply need more time. Alternatively, something in Whisper's internal buffering for large files is different from small files.
+
+### What has been fixed
+
+1. **`whisper.exe` binary → `python.exe -m whisper`**: The `.exe` wrapper crashes when stdout is piped. Now auto-detected via `bilradio/config.py:_find_whisper_python()`.
+2. **Relative → absolute audio path**: `_build_cmd()` now calls `audio_path.resolve()`.
+3. **`-u` + `PYTHONUNBUFFERED=1`**: Added to the Whisper subprocess to prevent block-buffering.
+4. **Skipping detection**: Reader thread now detects `"Skipping … due to"` in stdout and raises `RuntimeError` rather than silently returning.
+5. **Silent exit 0 detection**: If `_run_whisper_once` completes but `.txt` is missing, `FileNotFoundError` is raised (was already there, now more explicit).
+6. **ASCII-only filenames**: `safe_filename_part()` now uses `c.isascii()` instead of `c.isalnum()` — Danish chars (`ø`, `å`, `æ`) are replaced with `_` to avoid ffmpeg path failures on Windows.
+
+### What to try next session
+
+**Step 1 — Confirm the 64-minute file actually works (wait longer)**
+
+Start transcription of episode 317 via the web UI or terminal, but let it run for at least 15-20 minutes before checking output. The model load + full-file decode for a 64-minute episode could easily take 5-10 minutes before the first output line appears.
+
+```powershell
+# Start web server (if not running)
+.\.venv\Scripts\python.exe -m bilradio.cli serve
+
+# OR start directly from the queue page at http://127.0.0.1:8765/queue
+# → Click "▶ Start full queue" (all 22 episodes already downloaded)
+```
+
+Watch the terminal or web UI heartbeat for transcript lines starting to appear (format: `[00:00.000 --> 00:30.000] text`).
+
+**Step 2 — If it still hangs, try `--device cpu` first**
+
+CUDA can cause unexpected hangs with long files if VRAM is tight. Test with CPU to isolate:
+
+```powershell
+$env:BILRADIO_WHISPER_DEVICE = "cpu"
+.\.venv\Scripts\python.exe -m bilradio.cli transcribe --guid 48788b21-243c-4c9c-b0f7-b38e00c52f22
+```
+
+CPU will be slow (~4× real-time) but will confirm whether the issue is GPU-specific.
+
+**Step 3 — If CPU also hangs, try chunked/streaming approach**
+
+Whisper loads the ENTIRE audio file into RAM before processing. For a 64-minute file that's ~245 MB of float32 PCM + mel spectrogram on GPU. Consider:
+- Splitting the audio with ffmpeg into 10-minute chunks before transcribing
+- Using `--model small` instead of `medium` as a test
+- Using the Python Whisper API directly (call `whisper.transcribe()`) instead of CLI subprocess
+
+**Step 4 — Worst case: use `faster-whisper` instead**
+
+`faster-whisper` is a drop-in replacement that is more memory-efficient and handles long files better. Install with `pip install faster-whisper` in the **global Python** (`C:\Python311`), then update `whisper_run.py` to use it.
 
 ---
 
@@ -22,201 +101,101 @@ A local pipeline that:
 
 ```
 bilradio/
-  config.py          # All constants and env-var overrides
+  config.py          # Constants, env-var overrides, WHISPER_CMD auto-detect
   db.py              # SQLite schema + helpers
   rss_feed.py        # RSS fetch + filtering
-  download.py        # MP3 download
+  download.py        # MP3 download (ASCII-only filenames)
   audio_meta.py      # Duration extraction (mutagen)
-  whisper_run.py     # Whisper subprocess wrapper with stall detection
+  whisper_run.py     # Whisper subprocess with stall detection + skip detection
   pipeline.py        # Orchestration (sync, download, transcribe, queue runner)
   extract.py         # Cursor-inbox writer + bullet JSON parser
   cli.py             # Typer CLI entry point
   web/
-    app.py           # FastAPI routes (topics + queue API)
+    app.py           # FastAPI routes (topics + queue API with start/stop)
     templates/
       index.html     # Topics page (English UI)
-      queue.html     # Queue page (English UI)
+      queue.html     # Queue page (English UI, start/stop buttons)
     static/
       style.css
 .cursor/rules/
   agent-run-commands.mdc   # Agent runs all commands itself
   ui-language.mdc          # UI = English, podcast content = Danish
-data/                      # gitignored — all runtime data lives here
-  bilradio.sqlite
-  audio/
-  transcripts/
-  cursor_inbox/
-  whisper_pid.txt          # PID of active Whisper subprocess
-  whisper_heartbeat.txt    # Latest Whisper stdout line + timestamp
-  whisper_current_guid.txt # GUID of episode currently being transcribed
-  queue_runner_pid.txt     # PID of bilradio run-queue / pipeline subprocess
+data/                      # gitignored
+  bilradio.sqlite          # All episode state
+  audio/                   # 22 MP3 files (episodes 317-338, all ~50MB)
+  transcripts/             # Only the test clip transcript so far
+  cursor_inbox/            # Cursor analysis files (empty until transcription works)
+  whisper_pid.txt          # (cleared) PID of active Whisper subprocess
+  queue_runner_pid.txt     # (cleared) PID of queue runner
 ```
 
 ---
 
-## Setup (first time on a new machine)
+## Key Whisper configuration
 
-```powershell
-# 1. Create and activate venv
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-
-# 2. Install the package (editable)
-pip install -e .
-
-# 3. Initialise database
-bilradio init
+```
+WHISPER_CMD   = ['C:\Python311\python.exe', '-u', '-m', 'whisper']
+WHISPER_MODEL = medium
+WHISPER_DEVICE = cuda
+BILRADIO_WHISPER_STALL_SEC = 120  (kill if no stdout for 2 min, after boot grace)
+BILRADIO_WHISPER_BOOT_SILENCE_SEC = 300  (5 min grace before stall detection)
 ```
 
-**Python interpreter:** `.venv\Scripts\python.exe` — always use this when invoking via
-`python.exe -m bilradio.cli ...` (the agent rule already ensures this).
+Auto-detected at startup via `_find_whisper_python()` in `config.py`. Override with env var `BILRADIO_WHISPER_PYTHON=C:\Python311\python.exe`.
 
 ---
 
-## Key environment variables
-
-All optional; set in `.env` (gitignored) or in the shell.
-
-| Variable | Default | Purpose |
-|---|---|---|
-| `BILRADIO_MIN_DURATION_SEC` | `0` | Episodes shorter than this are skipped (0 = include all) |
-| `BILRADIO_WHISPER_MODEL` | `medium` | Whisper model size |
-| `BILRADIO_WHISPER_DEVICE` | `cuda` | `cuda` or `cpu` |
-| `BILRADIO_WHISPER_CMD` | `whisper` | Path to Whisper binary if not on PATH |
-| `BILRADIO_WHISPER_STALL_SEC` | `120` | Kill Whisper if silent for this many seconds |
-| `BILRADIO_WHISPER_BOOT_SILENCE_SEC` | `300` | Grace period before stall detection starts |
-| `BILRADIO_WHISPER_HEARTBEAT_SEC` | `120` | How often to write heartbeat file |
-| `BILRADIO_WHISPER_MAX_RESTARTS` | `10` | Max automatic restarts on stall |
-| `BILRADIO_DATA_DIR` | `data` | Root for all runtime data |
-| `BILRADIO_RSS_URL` | Omny URL | Override RSS feed URL |
-
----
-
-## CLI commands
+## Setup (start of next session)
 
 ```powershell
-# Activate venv first (or prefix with .\.venv\Scripts\python.exe -m bilradio.cli)
+cd C:\Git\bilradio-transcriper
 
-bilradio init              # Create dirs + DB schema
-bilradio sync              # Fetch RSS and upsert episodes
-bilradio download          # Download all pending episodes (or --guid X)
-bilradio transcribe        # Whisper all downloaded episodes (or --guid X)
-bilradio prepare-extract   # Write cursor_inbox files (or --guid X)
-bilradio import-bullets --guid X [--file path.json]  # Load Cursor output into DB
-bilradio scaffold-bullets --guid X                   # Auto-bullets for UI preview
-bilradio process-first     # Sync + download + transcribe oldest pending episode
-bilradio pipeline [--guid X]   # sync + download + transcribe + prepare-extract
-bilradio run-queue         # Full unattended queue: sync, download all, transcribe all
-bilradio serve [--port 8765]   # Start web UI
-```
-
----
-
-## Web UI
-
-Start with:
-```powershell
+# Start the web server
 .\.venv\Scripts\python.exe -m bilradio.cli serve
+
+# Open in browser
+# http://127.0.0.1:8765/queue  → click "▶ Start full queue"
 ```
 
-Opens at **http://127.0.0.1:8765**
-
-### `/queue` page
-- **"▶ Start full queue"** — launches `run-queue` as a background process; syncs RSS, downloads all pending, transcribes all in order.
-- **"■ Stop"** — kills the queue runner and any active Whisper child.
-- **"⟳ Sync RSS"** — fetches the RSS feed immediately without touching the terminal.
-- **"▶ Run"** (per row) — available when queue is idle; launches `pipeline --guid X` for that single episode (download + transcribe + prepare-extract).
-- **Whisper heartbeat bar** — shows last Whisper stdout line and timestamp when active.
-- Status badges: Pending / Downloaded / Transcribing / Transcribed / Extracted / Error.
-- Auto-refreshes every 30 seconds.
-
-### `/` (Topics) page
-- Shows bullet-point summaries across all `extracted` episodes.
-- Chips to exclude specific cars or themes from the summary.
-- Exclusions saved in `localStorage`.
+All 22 episodes are already downloaded. The queue will transcribe them one by one (~1h each, ~22h total).
 
 ---
 
-## Episode processing pipeline (full detail)
-
-```
-RSS feed
-  └─ sync_episodes_from_rss()  →  episodes table (status=pending)
-       └─ step_download()       →  data/audio/<guid>.mp3, status=downloaded
-            └─ step_transcribe() →  data/transcripts/<guid>.txt, status=transcribed
-                 └─ step_prepare_cursor_inbox()  →  data/cursor_inbox/<guid>_transcript.txt
-                                                     data/cursor_inbox/<guid>_CURSOR_PROMPT.md
-                      └─ [manual Cursor step]  →  data/cursor_inbox/<guid>.bullets.json
-                           └─ step_import_bullets()  →  topic_bullets table, status=extracted
-```
-
----
-
-## Whisper monitoring
-
-`whisper_run.py` wraps the Whisper CLI with:
-- **Heartbeat file** (`data/whisper_heartbeat.txt`) — updated every 2 minutes with last stdout line.
-- **PID file** (`data/whisper_pid.txt`) — lets the web UI kill Whisper independently.
-- **Stall detection** — if no new stdout after `WHISPER_STALL_SEC` (120s default), kills and retries up to `WHISPER_MAX_RESTARTS` times.
-- **Boot grace period** — `WHISPER_BOOT_SILENCE_SEC` (300s) before stall detection activates (allows GPU model load time).
-
----
-
-## Current database state (as of handover)
-
-| Status | Count |
-|---|---|
-| `extracted` | 1 (24s test clip — `cfedf6fc-bf33-4cf8-b0dd-b41a00c840d9`) |
-| `downloaded` | 1 (episode 317 — ready to transcribe) |
-| `pending` | 21 (episodes 318–338) |
-
-**Episode 317** audio is already downloaded at `data/audio/317-*.mp3`.  
-The test clip has scaffold bullets in the DB so the Topics page shows some content.
-
----
-
-## What to do next session
-
-### Priority 1 — Transcribe all episodes
-Use the web UI Queue page (`/queue`) or the terminal:
+## CLI quick reference
 
 ```powershell
-# Option A: from the web UI
-# → Open http://127.0.0.1:8765/queue  →  click "▶ Start full queue"
+# All commands use the venv Python:
+.\.venv\Scripts\python.exe -m bilradio.cli <command>
 
-# Option B: from the terminal
-.\.venv\Scripts\python.exe -m bilradio.cli run-queue
+init              # Create dirs + DB schema
+sync              # Fetch RSS and upsert episodes
+download          # Download all pending episodes (or --guid X)
+transcribe        # Whisper all downloaded episodes (or --guid X)
+prepare-extract   # Write cursor_inbox files for Cursor analysis
+import-bullets    # Load Cursor JSON output into DB
+scaffold-bullets  # Auto-bullets for quick UI preview
+run-queue         # Full queue: sync → download all → transcribe all
+serve             # Start web UI (default port 8765)
 ```
 
-This will take roughly **22 hours** total (one ~1h episode at a time, sequentially).  
-You can stop and resume at any time — completed episodes keep their status.
+---
 
-### Priority 2 — Extract bullets via Cursor (after transcription)
-For each transcribed episode:
-1. Run `bilradio prepare-extract --guid <guid>` (or use "▶ Run" in the web UI which does this automatically).
-2. Open `data/cursor_inbox/<guid>_CURSOR_PROMPT.md` in Cursor.
-3. Follow the instructions in the file — Cursor will analyse the transcript and produce JSON.
-4. Save the JSON to `data/cursor_inbox/<guid>.bullets.json`.
-5. Run `bilradio import-bullets --guid <guid>` to load it into the DB.
+## After transcription: extracting bullets
 
-### Priority 3 — Improve the Topics page
-Once bullets are imported, the `/` page will show real content. Possible improvements:
-- Full-text search across bullets.
-- Episode detail page showing all bullets for one episode.
-- Cross-episode "most discussed cars" or "most discussed themes" chart.
-- Export to CSV / Markdown summary.
+Once an episode is `transcribed`, use the Cursor workflow:
 
-### Known rough edges
-- **Danish characters** in episode titles render as `?` in the terminal on Windows (cp1252 issue) — cosmetic only, DB stores them correctly.
-- **`scaffold-bullets`** produces rough auto-split bullets (not NLP-tagged) — replace with real `import-bullets` output once Cursor analysis is done.
-- The `run-queue` process launched from the web UI does **not** send stdout to the browser; monitor via the heartbeat bar and status badges.
-- If the machine sleeps/restarts mid-transcription, the PID files may be stale. The web UI handles this gracefully (PID alive-check), but you may need to manually delete `data/whisper_pid.txt` and `data/queue_runner_pid.txt` if the badges show "Running" incorrectly after a reboot.
+1. `bilradio prepare-extract --guid <guid>` — writes `data/cursor_inbox/<guid>_CURSOR_PROMPT.md`
+2. Open that `.md` file in Cursor, follow the instructions — Cursor produces JSON
+3. Save the JSON as `data/cursor_inbox/<guid>.bullets.json`
+4. `bilradio import-bullets --guid <guid>` — loads bullets into DB, sets status `extracted`
+5. Refresh the Topics page (`/`) to see bullets with car/theme tags
 
 ---
 
 ## Git
 
 Repo: `https://github.com/jacobworsoe/bilradio-transcriper`  
-Branch: `main` (all work committed and pushed as of this handover)
+Branch: `main`  
+Latest commit: `c88dd42` — unbuffered Whisper subprocess fix
 
-The `data/` directory is gitignored — audio, transcripts, SQLite DB, and PID files are local only.
+All code is committed and pushed. The `data/` directory is gitignored — audio files, transcripts, and SQLite DB are local only.
