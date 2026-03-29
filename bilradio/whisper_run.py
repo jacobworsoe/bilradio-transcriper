@@ -10,7 +10,7 @@ from pathlib import Path
 from bilradio.config import (
     DATA_DIR,
     TRANSCRIPTS_DIR,
-    WHISPER_BIN,
+    WHISPER_CMD,
     WHISPER_BOOT_SILENCE_SEC,
     WHISPER_DEVICE,
     WHISPER_HEARTBEAT_SEC,
@@ -38,8 +38,8 @@ def transcript_path_for_audio(audio_path: Path) -> Path:
 
 def _build_cmd(audio_path: Path) -> list[str]:
     return [
-        WHISPER_BIN,
-        str(audio_path),
+        *WHISPER_CMD,        # e.g. ['C:\Python311\python.exe', '-m', 'whisper']
+        str(audio_path.resolve()),  # Always absolute — some ffmpeg builds reject relative paths
         "--model",
         WHISPER_MODEL,
         "--language",
@@ -90,6 +90,7 @@ def _run_whisper_once(audio_path: Path, out_txt: Path) -> None:
     last_output_mono = time.monotonic()
     lock = threading.Lock()
     reader_done = threading.Event()
+    skipped_file: list[str] = []  # set by reader if Whisper prints "Skipping … due to"
 
     def reader() -> None:
         nonlocal latest_line, last_output_mono
@@ -101,6 +102,9 @@ def _run_whisper_once(audio_path: Path, out_txt: Path) -> None:
                     if stripped:
                         latest_line = stripped
                         last_output_mono = time.monotonic()
+                    # Detect Whisper's silent-skip pattern (exit code 0, no output file)
+                    if "Skipping" in stripped and "due to" in stripped:
+                        skipped_file.append(stripped)
                 try:
                     sys.stdout.write(line)
                     sys.stdout.flush()
@@ -177,6 +181,11 @@ def _run_whisper_once(audio_path: Path, out_txt: Path) -> None:
         pass
     if rc != 0:
         raise subprocess.CalledProcessError(rc, cmd)
+    # Whisper silently skips unreadable files and exits 0 with no output.
+    if skipped_file:
+        raise RuntimeError(
+            f"Whisper skipped the audio file (ffmpeg could not read it): {skipped_file[0][:200]}"
+        )
 
 
 def run_whisper(audio_path: Path) -> Path:

@@ -39,7 +39,35 @@ RSS_URL = os.environ.get("BILRADIO_RSS_URL", DEFAULT_RSS_URL)
 
 WHISPER_MODEL = os.environ.get("BILRADIO_WHISPER_MODEL", "medium")
 WHISPER_DEVICE = os.environ.get("BILRADIO_WHISPER_DEVICE", "cuda")
-WHISPER_BIN = os.environ.get("BILRADIO_WHISPER_CMD", "whisper")
+# The Python interpreter that has openai-whisper installed.
+# Auto-detected by finding the 'whisper' script on PATH and using its parent Python.
+# Override with BILRADIO_WHISPER_PYTHON=C:\Python311\python.exe if auto-detection fails.
+WHISPER_BIN = os.environ.get("BILRADIO_WHISPER_CMD", "whisper")  # kept for compat
+
+
+def _find_whisper_python() -> list[str]:
+    """Return argv prefix for 'python -m whisper' using the Python that owns the whisper script."""
+    override = os.environ.get("BILRADIO_WHISPER_PYTHON", "")
+    if override:
+        return [override, "-m", "whisper"]
+    import shutil
+    whisper_script = shutil.which(WHISPER_BIN)
+    if whisper_script:
+        scripts_dir = Path(whisper_script).parent
+        # Scripts/ lives inside the Python home; python.exe is one level up.
+        python_exe = scripts_dir.parent / "python.exe"
+        if python_exe.is_file():
+            return [str(python_exe), "-m", "whisper"]
+        # On Linux/Mac the binary may be in bin/ next to python3
+        for name in ("python3", "python"):
+            py = scripts_dir / name
+            if py.is_file():
+                return [str(py), "-m", "whisper"]
+    # Fallback: use the whisper script directly
+    return [WHISPER_BIN]
+
+
+WHISPER_CMD: list[str] = _find_whisper_python()
 
 # Kill Whisper if no new stdout line for this long (after first output line).
 WHISPER_STALL_SEC = int(os.environ.get("BILRADIO_WHISPER_STALL_SEC", "120"))

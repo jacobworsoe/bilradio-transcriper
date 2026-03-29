@@ -8,7 +8,9 @@ from bilradio.config import AUDIO_DIR, ensure_data_dirs
 
 
 def safe_filename_part(s: str, max_len: int = 80) -> str:
-    out = "".join(c if c.isalnum() or c in " -_." else "_" for c in s)
+    # ASCII-only: non-ASCII chars (ø, å, æ …) become underscores so that
+    # downstream tools (ffmpeg) can open the path on every platform.
+    out = "".join(c if c.isascii() and (c.isalnum() or c in " -_.") else "_" for c in s)
     out = out.strip().replace(" ", "_")[:max_len]
     return out or "episode"
 
