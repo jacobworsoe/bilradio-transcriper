@@ -1,0 +1,11 @@
+---
+description: Agent runs terminal commands; user does not run commands manually
+alwaysApply: true
+---
+
+# Run commands yourself
+
+- **Do not** ask the user to run shell commands, activate venvs, or copy-paste install steps. **Execute** builds, tests, `bilradio` / `pip` / `python` CLI, and short-lived servers yourself.
+- **Prefer** the project venv: `c:\Git\bilradio-transcriper\.venv\Scripts\python.exe` (or `pip.exe`) when running this repo on Windows.
+- If a server is needed (e.g. `bilradio serve`), start it in the background and tell the user the URL; do not instruct them to start it unless the environment blocks you.
+- Report outcomes from **actual command output** (success, errors, paths), not hypothetical steps.

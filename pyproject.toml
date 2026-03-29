@@ -1,0 +1,30 @@
+[project]
+name = "bilradio-transcriber"
+version = "0.1.0"
+description = "Download Bilradio episodes, transcribe with local Whisper, extract topic bullets, browse in web UI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.32.0",
+  "httpx>=0.27.0",
+  "feedparser>=6.0.11",
+  "jinja2>=3.1.4",
+  "python-dotenv>=1.0.1",
+  "typer>=0.15.0",
+  "mutagen>=1.47.0",
+]
+
+[project.scripts]
+bilradio = "bilradio.cli:app"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bilradio*"]
+
+[tool.setuptools.package-data]
+bilradio = ["web/templates/*.html", "web/static/*.css"]

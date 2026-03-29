@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bilradio — Topics</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Bilradio</h1>
+    <nav style="display:flex;gap:1.25rem;margin-bottom:.75rem;font-size:.9rem;">
+      <a href="/" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
+      <a href="/queue" style="color:var(--accent);text-decoration:none;">Queue</a>
+    </nav>
+    <p class="lede">Bullet-point summaries from all episodes. Select cars or themes to <strong>exclude</strong> from the overview.</p>
+  </header>
+
+  <section class="filters" id="filters">
+    <div class="filter-block">
+      <h2>Cars (exclude)</h2>
+      <div class="chips" id="car-chips"></div>
+    </div>
+    <div class="filter-block">
+      <h2>Themes (exclude)</h2>
+      <div class="chips" id="theme-chips"></div>
+    </div>
+    <p class="hint">Selections are saved in your browser (localStorage) between visits.</p>
+  </section>
+
+  <section class="summary">
+    <p id="count-line" class="count-line">Loading…</p>
+  </section>
+
+  <main>
+    <ul id="bullet-list" class="bullet-list"></ul>
+  </main>
+
+  <script>
+    const STORAGE_CARS   = "bilradio_exclude_cars";
+    const STORAGE_THEMES = "bilradio_exclude_themes";
+
+    function loadSet(key) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? new Set(JSON.parse(raw)) : new Set();
+      } catch { return new Set(); }
+    }
+    function saveSet(key, set) {
+      localStorage.setItem(key, JSON.stringify([...set]));
+    }
+
+    let excludeCars   = loadSet(STORAGE_CARS);
+    let excludeThemes = loadSet(STORAGE_THEMES);
+
+    function chip(label, kind, value, active) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip" + (active ? " chip-off" : "");
+      b.textContent = label;
+      b.title = active ? "Click to show bullets with this label again" : "Click to hide bullets with this label";
+      b.addEventListener("click", () => {
+        const set = kind === "car" ? excludeCars : excludeThemes;
+        const sk  = kind === "car" ? STORAGE_CARS : STORAGE_THEMES;
+        if (set.has(value)) set.delete(value); else set.add(value);
+        saveSet(sk, set);
+        renderFacets(window.__lastFacets || { cars: [], themes: [] });
+        loadBullets();
+      });
+      return b;
+    }
+
+    function renderFacets(data) {
+      window.__lastFacets = data;
+      const carEl   = document.getElementById("car-chips");
+      const themeEl = document.getElementById("theme-chips");
+      carEl.innerHTML = "";
+      themeEl.innerHTML = "";
+      for (const c of data.cars)   carEl.appendChild(chip(c,   "car",   c, excludeCars.has(c)));
+      for (const t of data.themes) themeEl.appendChild(chip(t, "theme", t, excludeThemes.has(t)));
+      if (!data.cars.length)   carEl.textContent   = "No car tags yet — run extract on episodes.";
+      if (!data.themes.length) themeEl.textContent = "No theme tags yet.";
+    }
+
+    async function loadFacets() {
+      const r = await fetch("/api/facets");
+      renderFacets(await r.json());
+    }
+
+    function qsParams() {
+      const p = new URLSearchParams();
+      for (const c of excludeCars)   p.append("exclude_car",   c);
+      for (const t of excludeThemes) p.append("exclude_theme", t);
+      return p.toString();
+    }
+
+    async function loadBullets() {
+      const list      = document.getElementById("bullet-list");
+      const countLine = document.getElementById("count-line");
+      list.innerHTML   = "";
+      countLine.textContent = "Loading…";
+      const q = qsParams();
+      const r = await fetch("/api/bullets" + (q ? "?" + q : ""));
+      const data = await r.json();
+      countLine.textContent = data.count + " bullet" + (data.count === 1 ? "" : "s") + " (after filters)";
+      for (const b of data.bullets) {
+        const li   = document.createElement("li");
+        li.className = "bullet" + (b.uncertain ? " uncertain" : "");
+        const meta = document.createElement("div");
+        meta.className   = "bullet-meta";
+        meta.textContent = b.episode_title + " · " + (b.pub_date || "").slice(0, 10);
+        const text = document.createElement("p");
+        text.className   = "bullet-text";
+        text.textContent = b.text;
+        const tags = document.createElement("div");
+        tags.className   = "tags";
+        for (const c of b.cars) {
+          const s = document.createElement("span");
+          s.className   = "tag car";
+          s.textContent = c;
+          tags.appendChild(s);
+        }
+        for (const t of b.themes) {
+          const s = document.createElement("span");
+          s.className   = "tag theme";
+          s.textContent = t;
+          tags.appendChild(s);
+        }
+        if (b.uncertain) {
+          const u = document.createElement("span");
+          u.className   = "uncertain-badge";
+          u.textContent = "Uncertain";
+          tags.appendChild(u);
+        }
+        li.appendChild(meta);
+        li.appendChild(text);
+        li.appendChild(tags);
+        list.appendChild(li);
+      }
+    }
+
+    loadFacets().then(loadBullets);
+  </script>
+</body>
+</html>

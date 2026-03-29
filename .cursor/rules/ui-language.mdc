@@ -1,0 +1,11 @@
+---
+description: Website UI must be in English; podcast content stays in Danish
+alwaysApply: true
+---
+
+# Language rules
+
+- All **web UI** text (labels, buttons, headings, status badges, tooltips, placeholder text, confirmations) must be in **English**.
+- **Podcast content** (episode titles, bullet text, theme/car tag values, transcript text) is in **Danish** and must not be translated.
+- Python CLI output (typer.echo, print) that the developer sees in the terminal is English.
+- Error messages surfaced to the user in the UI are English.

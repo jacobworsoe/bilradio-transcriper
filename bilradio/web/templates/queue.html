@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bilradio — Transcription Queue</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    .nav { display:flex; gap:1.25rem; margin-bottom:1.5rem; font-size:.9rem; }
+    .nav a { color:var(--accent); text-decoration:none; }
+    .nav a:hover { text-decoration:underline; }
+    .nav a.active { color:var(--text); font-weight:600; pointer-events:none; }
+
+    /* Control bar */
+    .ctrl-bar {
+      display:flex; flex-wrap:wrap; align-items:center; gap:.75rem;
+      margin-bottom:1.25rem; padding:.75rem 1rem;
+      background:var(--surface); border-radius:8px;
+    }
+    .ctrl-bar-label { font-size:.8rem; color:var(--muted); flex:1 1 100%; }
+
+    .btn {
+      padding:.35rem .85rem; border-radius:5px; font-size:.82rem;
+      cursor:pointer; border:1px solid transparent; white-space:nowrap;
+    }
+    .btn:disabled { opacity:.4; cursor:default; }
+
+    .btn-start {
+      background:rgba(107,203,119,.14); border-color:rgba(107,203,119,.4);
+      color:#6bcb77;
+    }
+    .btn-start:hover:not(:disabled) { background:rgba(107,203,119,.24); }
+
+    .btn-stop {
+      background:rgba(239,83,80,.12); border-color:rgba(239,83,80,.35);
+      color:#ef5350;
+    }
+    .btn-stop:hover:not(:disabled) { background:rgba(239,83,80,.22); }
+
+    .btn-sync {
+      background:rgba(61,156,245,.1); border-color:rgba(61,156,245,.3);
+      color:#3d9cf5;
+    }
+    .btn-sync:hover:not(:disabled) { background:rgba(61,156,245,.2); }
+
+    .btn-run {
+      background:rgba(199,156,255,.1); border-color:rgba(199,156,255,.3);
+      color:#c79cff; font-size:.75rem; padding:.22rem .55rem;
+    }
+    .btn-run:hover:not(:disabled) { background:rgba(199,156,255,.2); }
+
+    .runner-badge {
+      font-size:.75rem; padding:.2rem .55rem; border-radius:4px; font-weight:600;
+    }
+    .runner-on  { background:rgba(107,203,119,.15); color:#6bcb77; }
+    .runner-off { background:rgba(139,154,171,.1);  color:#636e7a; }
+
+    /* Summary chips */
+    .summary-bar { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+    .stat-chip { font-size:.78rem; padding:.3rem .65rem; border-radius:6px; background:var(--surface); }
+
+    /* Heartbeat */
+    .heartbeat-box {
+      background:var(--surface); border-radius:8px; padding:.75rem 1rem;
+      margin-bottom:1.25rem; font-size:.82rem; color:var(--muted);
+      display:none;
+    }
+    .heartbeat-box strong { color:var(--text); }
+    .hb-latest { font-family:monospace; color:var(--text); }
+
+    /* Table */
+    table { width:100%; border-collapse:collapse; font-size:.83rem; }
+    th {
+      text-align:left; padding:.5rem .6rem; color:var(--muted);
+      font-size:.72rem; text-transform:uppercase; letter-spacing:.05em;
+      border-bottom:1px solid #243044;
+    }
+    td { padding:.55rem .6rem; border-bottom:1px solid #1a222c; vertical-align:middle; }
+    tr.active-row td { background:rgba(61,156,245,.08); }
+    tr:hover td { background:rgba(255,255,255,.025); }
+
+    /* Status badges */
+    .status-badge {
+      display:inline-block; font-size:.7rem; padding:.2rem .45rem;
+      border-radius:4px; font-weight:600; white-space:nowrap;
+    }
+    .s-pending       { background:rgba(139,154,171,.15); color:#8b9aab; }
+    .s-downloaded    { background:rgba(61,156,245,.15);  color:#3d9cf5; }
+    .s-transcribing  { background:rgba(255,193,7,.15);   color:#ffc107; }
+    .s-transcribed   { background:rgba(199,156,255,.15); color:#c79cff; }
+    .s-extracted     { background:rgba(107,203,119,.15); color:#6bcb77; }
+    .s-error         { background:rgba(239,83,80,.15);   color:#ef5350; }
+    .s-skipped_short { background:rgba(139,154,171,.1);  color:#636e7a; }
+
+    .dur   { color:var(--muted); }
+    .ep-title { max-width:26rem; }
+    .error-text { color:#ef5350; font-size:.75rem; margin-top:.2rem; }
+
+    .auto-refresh { font-size:.72rem; color:var(--muted); text-align:right; margin-bottom:.5rem; }
+    .auto-refresh span { color:var(--text); font-variant-numeric:tabular-nums; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Bilradio</h1>
+    <nav class="nav">
+      <a href="/">Topics</a>
+      <a href="/queue" class="active">Queue</a>
+    </nav>
+  </header>
+
+  <!-- Controls -->
+  <div class="ctrl-bar" id="ctrl-bar">
+    <span class="ctrl-bar-label">
+      Queue runner: <span id="runner-badge" class="runner-badge runner-off">Idle</span>
+      &nbsp;·&nbsp;
+      Whisper: <span id="whisper-badge" class="runner-badge runner-off">Idle</span>
+    </span>
+    <button class="btn btn-start" id="btn-start-queue" onclick="startQueue()">&#9654; Start full queue</button>
+    <button class="btn btn-stop"  id="btn-stop"        onclick="stopAll()" disabled>&#9632; Stop</button>
+    <button class="btn btn-sync"  id="btn-sync"        onclick="syncFeed()">&#8635; Sync RSS</button>
+  </div>
+
+  <!-- Whisper heartbeat -->
+  <div id="heartbeat-box" class="heartbeat-box">
+    <strong>Whisper running</strong> (PID <span id="hb-pid"></span>)
+    &nbsp;·&nbsp; Last output at <span id="hb-utc" class="dur"></span>:
+    <span id="hb-latest" class="hb-latest"></span>
+  </div>
+
+  <!-- Status summary chips -->
+  <div class="summary-bar" id="summary-bar"></div>
+
+  <p class="auto-refresh">Auto-refresh in <span id="countdown">30</span>s</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Duration</th>
+        <th>Status</th>
+        <th>Bullets</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="ep-tbody"></tbody>
+  </table>
+
+  <script>
+    const STATUS_EN = {
+      pending:       "Pending",
+      downloaded:    "Downloaded",
+      transcribing:  "Transcribing",
+      transcribed:   "Transcribed",
+      extracted:     "Extracted",
+      error:         "Error",
+      skipped_short: "Skipped (short)",
+    };
+
+    function fmtDur(sec) {
+      if (sec == null) return "–";
+      const h = Math.floor(sec / 3600);
+      const m = Math.floor((sec % 3600) / 60);
+      const s = sec % 60;
+      if (h > 0) return `${h}h ${m}m`;
+      if (m > 0) return `${m}m ${s}s`;
+      return `${s}s`;
+    }
+
+    function fmtDate(iso) {
+      return iso ? iso.slice(0, 10) : "–";
+    }
+
+    function statusBadge(s) {
+      const label = STATUS_EN[s] || s;
+      return `<span class="status-badge s-${s}">${escHtml(label)}</span>`;
+    }
+
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    }
+
+    let _runnerPid = null;
+    let _whisperPid = null;
+
+    async function load() {
+      let data;
+      try {
+        const r = await fetch("/api/queue");
+        data = await r.json();
+      } catch (e) {
+        console.error("Failed to load queue:", e);
+        return;
+      }
+
+      _runnerPid  = data.queue_runner_pid;
+      _whisperPid = data.whisper_pid;
+      const currentGuid = data.current_transcribing_guid;
+      const hb = data.heartbeat || {};
+
+      // Runner / whisper badges
+      const runnerBadge  = document.getElementById("runner-badge");
+      const whisperBadge = document.getElementById("whisper-badge");
+      if (_runnerPid) {
+        runnerBadge.textContent = `Running (PID ${_runnerPid})`;
+        runnerBadge.className = "runner-badge runner-on";
+      } else {
+        runnerBadge.textContent = "Idle";
+        runnerBadge.className = "runner-badge runner-off";
+      }
+      if (_whisperPid) {
+        whisperBadge.textContent = `Running (PID ${_whisperPid})`;
+        whisperBadge.className = "runner-badge runner-on";
+      } else {
+        whisperBadge.textContent = "Idle";
+        whisperBadge.className = "runner-badge runner-off";
+      }
+
+      // Heartbeat box
+      const hbBox = document.getElementById("heartbeat-box");
+      if (_whisperPid) {
+        hbBox.style.display = "";
+        document.getElementById("hb-pid").textContent = _whisperPid;
+        document.getElementById("hb-utc").textContent = hb.utc || "–";
+        document.getElementById("hb-latest").textContent = hb.latest_line || "(no output yet)";
+      } else {
+        hbBox.style.display = "none";
+      }
+
+      // Buttons
+      const isRunning = !!(_runnerPid || _whisperPid);
+      document.getElementById("btn-start-queue").disabled = isRunning;
+      document.getElementById("btn-stop").disabled = !isRunning;
+
+      // Summary chips
+      const bar = document.getElementById("summary-bar");
+      bar.innerHTML = Object.entries(data.counts || {})
+        .map(([s, n]) => `<span class="stat-chip">${STATUS_EN[s] || s}: <strong>${n}</strong></span>`)
+        .join("");
+
+      // Episode table
+      const tbody = document.getElementById("ep-tbody");
+      tbody.innerHTML = "";
+      (data.episodes || []).forEach((ep, idx) => {
+        const isCurrent = currentGuid && ep.guid === currentGuid;
+        const tr = document.createElement("tr");
+        if (isCurrent) tr.className = "active-row";
+
+        // Determine display status
+        const displayStatus = (isCurrent && ep.status === "downloaded") ? "transcribing" : ep.status;
+
+        // Action button
+        let actionHtml = "";
+        const canRun = !isRunning && (ep.status === "pending" || ep.status === "downloaded" || ep.status === "error");
+        if (canRun) {
+          actionHtml = `<button class="btn btn-run" onclick="processEpisode('${escHtml(ep.guid)}', this)">&#9654; Run</button>`;
+        }
+
+        tr.innerHTML = `
+          <td class="dur">${idx + 1}</td>
+          <td class="ep-title">${escHtml(ep.title || "")}${ep.error ? `<div class="error-text">${escHtml(ep.error)}</div>` : ""}</td>
+          <td class="dur">${fmtDate(ep.pub_date)}</td>
+          <td class="dur">${fmtDur(ep.duration_sec)}</td>
+          <td>${statusBadge(displayStatus)}</td>
+          <td class="dur">${ep.bullet_count > 0 ? ep.bullet_count : "–"}</td>
+          <td>${actionHtml}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function startQueue() {
+      const btn = document.getElementById("btn-start-queue");
+      btn.disabled = true;
+      btn.textContent = "Starting…";
+      try {
+        const r = await fetch("/api/queue/start", { method: "POST" });
+        const body = await r.json();
+        if (!r.ok) {
+          alert("Error: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.textContent = "▶ Start full queue";
+      await load();
+      resetCountdown();
+    }
+
+    async function stopAll() {
+      if (!confirm("Stop the queue runner and any active Whisper process?")) return;
+      const btn = document.getElementById("btn-stop");
+      btn.disabled = true;
+      btn.textContent = "Stopping…";
+      try {
+        const r = await fetch("/api/queue/stop", { method: "POST" });
+        const body = await r.json();
+        if (!r.ok) {
+          alert("Error: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.textContent = "■ Stop";
+      await load();
+      resetCountdown();
+    }
+
+    async function processEpisode(guid, btn) {
+      btn.disabled = true;
+      btn.textContent = "Starting…";
+      try {
+        const r = await fetch(`/api/queue/process/${encodeURIComponent(guid)}`, { method: "POST" });
+        const body = await r.json();
+        if (!r.ok) {
+          alert("Error: " + (body.detail || r.statusText));
+          btn.disabled = false;
+          btn.textContent = "▶ Run";
+          return;
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+        btn.disabled = false;
+        btn.textContent = "▶ Run";
+        return;
+      }
+      await load();
+      resetCountdown();
+    }
+
+    async function syncFeed() {
+      const btn = document.getElementById("btn-sync");
+      btn.disabled = true;
+      btn.textContent = "Syncing…";
+      try {
+        const r = await fetch("/api/queue/sync", { method: "POST" });
+        const body = await r.json();
+        if (r.ok) {
+          await load();
+          resetCountdown();
+        } else {
+          alert("Sync failed: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.disabled = false;
+      btn.textContent = "⟳ Sync RSS";
+    }
+
+    // Countdown + auto-refresh
+    let remaining = 30;
+    function resetCountdown() { remaining = 30; }
+    function tick() {
+      document.getElementById("countdown").textContent = remaining;
+      if (--remaining < 0) {
+        remaining = 30;
+        load();
+      }
+    }
+    setInterval(tick, 1000);
+
+    load();
+  </script>
+</body>
+</html>
