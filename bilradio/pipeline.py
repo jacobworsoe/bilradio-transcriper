@@ -19,7 +19,10 @@ from bilradio.db import connect
 from bilradio.download import audio_path_for_guid, download_audio
 from bilradio.extract import load_bullets_from_json_path, write_cursor_inbox
 from bilradio.rss_feed import load_filtered_episodes
-from bilradio.whisper_run import run_whisper
+from bilradio.runtime_log import get_logger
+from bilradio.whisper_run import run_whisper, transcript_path_for_audio
+
+_queue_log = get_logger("bilradio.queue")
 
 EpisodeStatus = Literal[
     "pending",
@@ -164,6 +167,96 @@ def step_transcribe(guid: str | None = None) -> None:
                     DATA_DIR.joinpath("whisper_current_guid.txt").unlink(missing_ok=True)
                 except OSError:
                     pass
+
+
+def step_ingest_transcripts(guid: str | None = None) -> tuple[int, int]:
+    """
+    Promote episodes to ``transcribed`` when a non-empty transcript ``.txt`` already exists in
+    ``data/transcripts`` (same basename rule as integrated Whisper: ``stem(audio_path).txt``).
+
+    Considers rows with ``status`` ``downloaded`` or ``error`` so external/offline Whisper runs
+    can be synced into SQLite after ``bilradio download`` (or after fixing GPU errors).
+    """
+    ensure_data_dirs()
+    ingested = 0
+    skipped = 0
+    with connect(DB_PATH) as conn:
+        q = """
+            SELECT guid, audio_path, status FROM episodes
+            WHERE audio_path IS NOT NULL AND TRIM(audio_path) != ''
+            AND status IN ('downloaded', 'error')
+        """
+        args: tuple = ()
+        if guid:
+            q += " AND guid = ?"
+            args = (guid,)
+        q += " ORDER BY pub_date ASC"
+        rows = conn.execute(q, args).fetchall()
+        for row in rows:
+            ap_raw = row["audio_path"]
+            audio_path = Path(str(ap_raw))
+            if not audio_path.is_file():
+                skipped += 1
+                continue
+            txt_path = transcript_path_for_audio(audio_path)
+            if not txt_path.is_file():
+                skipped += 1
+                continue
+            try:
+                if txt_path.stat().st_size < 1:
+                    skipped += 1
+                    continue
+            except OSError:
+                skipped += 1
+                continue
+            try:
+                head = txt_path.read_text(encoding="utf-8", errors="replace")[:4096]
+            except OSError:
+                skipped += 1
+                continue
+            if not head.strip():
+                skipped += 1
+                continue
+
+            conn.execute(
+                """
+                UPDATE episodes SET status = 'transcribed', transcript_path = ?, error = NULL
+                WHERE guid = ?
+                """,
+                (str(txt_path.resolve()), row["guid"]),
+            )
+            conn.commit()
+            ingested += 1
+    return ingested, skipped
+
+
+def step_clear_episode_error(guid: str) -> tuple[bool, str]:
+    """
+    Clear a persisted failure: set ``status`` to ``downloaded`` and ``error`` to NULL so the
+    episode can be transcribed again. Only applies when the row is currently ``error`` and the
+    audio file still exists on disk.
+    """
+    ensure_data_dirs()
+    with connect(DB_PATH) as conn:
+        row = conn.execute(
+            "SELECT guid, status, audio_path FROM episodes WHERE guid = ?", (guid,)
+        ).fetchone()
+        if not row:
+            return False, "Episode not found."
+        if row["status"] != "error":
+            return False, "Episode is not in error state."
+        ap_raw = row["audio_path"]
+        if not ap_raw or not str(ap_raw).strip():
+            return False, "Episode has no audio path; sync or download again."
+        audio_path = Path(str(ap_raw))
+        if not audio_path.is_file():
+            return False, f"Audio file missing on disk: {audio_path}"
+        conn.execute(
+            "UPDATE episodes SET status = 'downloaded', error = NULL WHERE guid = ?",
+            (guid,),
+        )
+        conn.commit()
+    return True, "Error cleared; episode is Downloaded again."
 
 
 def _save_bullets_for_episode(
@@ -355,5 +448,6 @@ def step_run_queue(
         except Exception as e:
             print(f"[run-queue] Episode {guid!r} failed: {e}", flush=True)
             print(f"[run-queue] Continuing to next episode.", flush=True)
+            _queue_log.warning("Episode %s failed: %s", guid, e, exc_info=True)
 
 

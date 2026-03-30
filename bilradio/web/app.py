@@ -18,9 +18,12 @@ from bilradio.config import (
     WHISPER_CURRENT_GUID_FILE,
 )
 from bilradio.db import connect, parse_json_list
+from bilradio.pipeline import step_clear_episode_error
 from bilradio.whisper_run import WHISPER_HEARTBEAT_FILE, WHISPER_PID_FILE
 
 _BASE = Path(__file__).resolve().parent
+# Repository root (parent of the `bilradio` package); stable cwd for background workers.
+_REPO_ROOT = Path(__file__).resolve().parents[2]
 
 app = FastAPI(title="Bilradio topics")
 app.mount("/static", StaticFiles(directory=str(_BASE / "static")), name="static")
@@ -72,11 +75,17 @@ def _start_subprocess(args: list[str]) -> int:
     if sys.platform == "win32":
         proc = subprocess.Popen(
             args,
+            cwd=str(_REPO_ROOT),
             creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP,
             close_fds=True,
         )
     else:
-        proc = subprocess.Popen(args, close_fds=True, start_new_session=True)
+        proc = subprocess.Popen(
+            args,
+            cwd=str(_REPO_ROOT),
+            close_fds=True,
+            start_new_session=True,
+        )
     return proc.pid
 
 
@@ -258,6 +267,21 @@ def api_queue_stop() -> JSONResponse:
     if not killed:
         raise HTTPException(status_code=404, detail="No active queue runner or Whisper process found.")
     return JSONResponse({"stopped": killed})
+
+
+@app.post("/api/queue/clear-error/{guid}")
+def api_queue_clear_error(guid: str) -> JSONResponse:
+    """Clear stored error text and set episode back to downloaded (retry transcription)."""
+    if _read_pid_file(QUEUE_RUNNER_PID_FILE):
+        raise HTTPException(
+            status_code=409,
+            detail="Stop the queue runner before clearing errors.",
+        )
+    ok, msg = step_clear_episode_error(guid)
+    if not ok:
+        code = 404 if msg == "Episode not found." else 400
+        raise HTTPException(status_code=code, detail=msg)
+    return JSONResponse({"cleared": guid})
 
 
 @app.post("/api/queue/process/{guid}")

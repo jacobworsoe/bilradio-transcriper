@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Literal
 
 from dotenv import load_dotenv
 
@@ -29,6 +30,7 @@ CURSOR_INBOX_DIR = Path(
     os.environ.get("BILRADIO_CURSOR_INBOX_DIR", str(DATA_DIR / "cursor_inbox"))
 ).resolve()
 DB_PATH = DATA_DIR / "bilradio.sqlite"
+LOGS_DIR = DATA_DIR / "logs"
 
 # Written by the web server when it launches run-queue or a single-episode pipeline.
 QUEUE_RUNNER_PID_FILE = DATA_DIR / "queue_runner_pid.txt"
@@ -73,8 +75,36 @@ WHISPER_CMD: list[str] = _find_whisper_python()
 WHISPER_STALL_SEC = int(os.environ.get("BILRADIO_WHISPER_STALL_SEC", "120"))
 # Allow this long with zero stdout before first line (model load / GPU init).
 WHISPER_BOOT_SILENCE_SEC = int(os.environ.get("BILRADIO_WHISPER_BOOT_SILENCE_SEC", "300"))
-WHISPER_HEARTBEAT_SEC = int(os.environ.get("BILRADIO_WHISPER_HEARTBEAT_SEC", "120"))
+# Console + status file “heartbeat” interval (segment mode writes use SEGMENT_STATUS_SEC).
+WHISPER_HEARTBEAT_SEC = int(os.environ.get("BILRADIO_WHISPER_HEARTBEAT_SEC", "60"))
+# When Whisper prints segment lines (verbose default), throttle web status file updates.
+WHISPER_SEGMENT_STATUS_SEC = int(
+    os.environ.get("BILRADIO_WHISPER_SEGMENT_STATUS_SEC", "60")
+)
 WHISPER_MAX_RESTARTS = int(os.environ.get("BILRADIO_WHISPER_MAX_RESTARTS", "10"))
+
+
+def _env_whisper_verbose() -> bool:
+    """Default True — same as `whisper file.mp3` with no `--verbose` flag (segment lines to stdout)."""
+    raw = os.environ.get("BILRADIO_WHISPER_VERBOSE")
+    if raw is None or not raw.strip():
+        return True
+    return raw.strip().lower() not in ("0", "false", "no", "off")
+
+
+WHISPER_VERBOSE = _env_whisper_verbose()
+
+
+def _env_whisper_subprocess_mode() -> Literal["full", "simple"]:
+    """
+    ``simple``: inherit stdout/stderr (terminal-like), no pipe parsing or stall watchdog.
+    ``full`` (default): pipe stdout for progress + session logs + stall detection.
+    """
+    raw = (os.environ.get("BILRADIO_WHISPER_SUBPROCESS") or "").strip().lower()
+    return "simple" if raw == "simple" else "full"
+
+
+WHISPER_SUBPROCESS_MODE: Literal["full", "simple"] = _env_whisper_subprocess_mode()
 
 TRANSCRIPT_CHUNK_CHARS = int(os.environ.get("BILRADIO_TRANSCRIPT_CHUNK_CHARS", "45000"))
 
@@ -84,3 +114,4 @@ def ensure_data_dirs() -> None:
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     TRANSCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
     CURSOR_INBOX_DIR.mkdir(parents=True, exist_ok=True)
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)

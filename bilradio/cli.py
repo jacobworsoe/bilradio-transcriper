@@ -5,12 +5,26 @@ from typing import Optional
 
 import typer
 
-from bilradio.config import CURSOR_INBOX_DIR, DB_PATH, ensure_data_dirs
+from bilradio.config import (
+    CURSOR_INBOX_DIR,
+    DATA_DIR,
+    DB_PATH,
+    LOGS_DIR,
+    TRANSCRIPTS_DIR,
+    WHISPER_CMD,
+    WHISPER_DEVICE,
+    WHISPER_MODEL,
+    WHISPER_SUBPROCESS_MODE,
+    WHISPER_VERBOSE,
+    ensure_data_dirs,
+)
 from bilradio.db import init_db
 from bilradio.pipeline import (
     first_pending_guid,
+    step_clear_episode_error,
     step_download,
     step_import_bullets,
+    step_ingest_transcripts,
     step_prepare_cursor_inbox,
     step_run_queue,
     step_scaffold_bullets,
@@ -22,6 +36,76 @@ app = typer.Typer(
     no_args_is_help=True,
     help="Bilradio RSS, local Whisper, Cursor-based bullets, web UI",
 )
+
+
+@app.command()
+def doctor() -> None:
+    """Print data paths, Whisper command, and verify openai-whisper imports."""
+    from bilradio.whisper_run import check_whisper_import
+
+    ensure_data_dirs()
+    typer.echo(f"DATA_DIR: {DATA_DIR}")
+    typer.echo(f"LOGS_DIR: {LOGS_DIR}")
+    typer.echo(f"TRANSCRIPTS_DIR: {TRANSCRIPTS_DIR}")
+    typer.echo(f"WHISPER_MODEL: {WHISPER_MODEL}")
+    typer.echo(f"WHISPER_DEVICE: {WHISPER_DEVICE}")
+    typer.echo(f"WHISPER_VERBOSE: {WHISPER_VERBOSE}")
+    typer.echo(f"WHISPER_SUBPROCESS: {WHISPER_SUBPROCESS_MODE}")
+    typer.echo(f"WHISPER_CMD: {WHISPER_CMD}")
+    ok, msg = check_whisper_import()
+    if ok:
+        typer.echo(f"openai-whisper: OK ({msg})")
+    else:
+        typer.echo(f"openai-whisper: FAILED — {msg}", err=True)
+        raise typer.Exit(1)
+
+
+@app.command("self-test-transcribe")
+def self_test_transcribe() -> None:
+    """Run Whisper tiny on CPU against a short synthetic WAV (smoke test)."""
+    import math
+    import struct
+    import tempfile
+    import wave
+
+    from bilradio.whisper_run import check_whisper_import, run_whisper
+
+    init_db(DB_PATH)
+    ok, msg = check_whisper_import()
+    if not ok:
+        typer.echo(
+            f"openai-whisper not importable with WHISPER_CMD interpreter: {msg}",
+            err=True,
+        )
+        typer.echo("Run `bilradio doctor` and fix BILRADIO_WHISPER_PYTHON if needed.", err=True)
+        raise typer.Exit(1)
+
+    with tempfile.TemporaryDirectory(prefix="bilradio_whisper_test_") as td:
+        wav = Path(td) / "selftest.wav"
+        fr = 16000
+        sec = 4
+        n = fr * sec
+        samples = [
+            max(-32767, min(32767, int(8000 * math.sin(2 * math.pi * 440 * i / fr))))
+            for i in range(n)
+        ]
+        with wave.open(str(wav), "wb") as w:
+            w.setnchannels(1)
+            w.setsampwidth(2)
+            w.setframerate(fr)
+            w.writeframes(struct.pack(f"{len(samples)}h", *samples))
+
+        typer.echo(f"Wrote {sec}s test WAV; running Whisper (model=tiny, device=cpu)…")
+        try:
+            out = run_whisper(wav, model="tiny", device="cpu")
+        except Exception as e:
+            typer.echo(f"Transcription failed: {e}", err=True)
+            raise typer.Exit(2)
+        text = out.read_text(encoding="utf-8", errors="replace").strip()
+        if not text:
+            typer.echo(f"Transcript file is empty: {out}", err=True)
+            raise typer.Exit(1)
+        typer.echo(f"OK — transcript at {out} ({len(text)} non-whitespace chars).")
 
 
 @app.command()
@@ -58,6 +142,36 @@ def transcribe(
     init_db(DB_PATH)
     step_transcribe(guid)
     typer.echo("Transcribe pass complete.")
+
+
+@app.command("clear-error")
+def clear_error(
+    guid: str = typer.Option(..., "--guid", help="Episode guid to reset from error → downloaded"),
+) -> None:
+    """Clear stored error and set status to downloaded (audio file must still exist)."""
+    init_db(DB_PATH)
+    ok, msg = step_clear_episode_error(guid)
+    if not ok:
+        typer.echo(msg, err=True)
+        raise typer.Exit(1 if msg != "Episode not found." else 2)
+    typer.echo(msg)
+
+
+@app.command("ingest-transcripts")
+def ingest_transcripts(
+    guid: Optional[str] = typer.Option(
+        None,
+        "--guid",
+        help="Only this episode guid (still requires matching .txt under data/transcripts)",
+    ),
+) -> None:
+    """Promote downloaded/error rows to transcribed when a non-empty .txt already exists (e.g. after manual Whisper)."""
+    init_db(DB_PATH)
+    n, skipped = step_ingest_transcripts(guid)
+    typer.echo(
+        f"Ingest complete: {n} episode(s) updated; "
+        f"{skipped} row(s) skipped (no audio file, missing .txt, or empty transcript)."
+    )
 
 
 @app.command("prepare-extract")

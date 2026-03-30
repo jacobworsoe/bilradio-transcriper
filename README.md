@@ -5,8 +5,15 @@ Download [Bilradio](https://jyllands-posten.dk/podcast/bilradio/) from the Omny 
 ## Requirements
 
 - Python 3.11+
-- [OpenAI Whisper](https://github.com/openai/whisper) CLI on your `PATH` (`pip install openai-whisper`), with CUDA if you use `--device cuda`.
+- [OpenAI Whisper](https://github.com/openai/whisper) CLI on your `PATH` (`pip install openai-whisper` in the project venv), with CUDA if you use `--device cuda`.
 - `ffmpeg` (used by Whisper).
+
+## Security and secrets
+
+- **Do not commit** API keys, passwords, tokens, or private URLs. This repo is intended to run **fully local** (Whisper on your machine; Cursor is optional and uses your editor, not a committed key).
+- Optional settings go in **`.env`** at the repo root. **`.env` is listed in `.gitignore`** and must never be added to git.
+- The default RSS URL in code is the **public** Bilradio Omny feed — not a secret.
+- If you fork this repo, rotate any credentials you use elsewhere; do not paste them into issues or commits.
 
 ## Setup
 
@@ -15,7 +22,44 @@ cd bilradio-transcriper
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -e .
+pip install openai-whisper
 ```
+
+On Windows, point Bilradio at the venv interpreter if needed:
+
+```powershell
+# .env (local only, not committed)
+BILRADIO_WHISPER_PYTHON=C:\path\to\bilradio-transcriper\.venv\Scripts\python.exe
+```
+
+## Recommended: batch Whisper queue + ingest (two-stage)
+
+Use this when the integrated pipeline or web queue is fragile on long GPU runs. The script **syncs RSS**, **downloads new pending episodes**, then runs the **`whisper` executable** on each `data/audio/*.mp3` (default **medium** + **cuda** + Danish), writing `.txt` files into **`data/transcripts`**. Finally, import those files into SQLite.
+
+From the repo root:
+
+```powershell
+# 1) Sync RSS, download new episodes, transcribe all MP3s (skips if matching .txt already exists)
+.\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py
+
+# 2) Promote rows in SQLite to `transcribed` when a matching non-empty .txt exists
+.\.venv\Scripts\python.exe -m bilradio.cli ingest-transcripts
+```
+
+Useful options:
+
+```powershell
+# Skip RSS/download if you only want transcription
+.\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py --skip-sync-download
+
+# Re-run Whisper even when .txt already exists
+.\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py --retry-failed
+
+# CPU instead of GPU
+.\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py --device cpu
+```
+
+After ingest, continue with **`bilradio prepare-extract`** and the Cursor JSON flow (see below).
 
 ## Configuration
 
@@ -23,18 +67,22 @@ pip install -e .
 |----------|---------|---------|
 | `BILRADIO_DATA_DIR` | `data` | SQLite, audio, transcripts, `cursor_inbox`. |
 | `BILRADIO_CURSOR_INBOX_DIR` | `<data>/cursor_inbox` | Transcript + prompt files for Cursor. |
-| `BILRADIO_WHISPER_CMD` | `whisper` | Whisper executable. |
-| `BILRADIO_WHISPER_MODEL` | `medium` | Whisper model size. |
+| `BILRADIO_WHISPER_PYTHON` | _(auto)_ | Python that runs `python -m whisper` (set to venv `python.exe` on Windows if needed). |
+| `BILRADIO_WHISPER_CMD` | `whisper` | Fallback whisper executable name for detection. |
+| `BILRADIO_WHISPER_MODEL` | `medium` | Default for integrated `bilradio transcribe` (batch script defaults to `medium` in code). |
 | `BILRADIO_WHISPER_DEVICE` | `cuda` | Whisper `--device` (use `cpu` if no GPU). |
-| `BILRADIO_WHISPER_HEARTBEAT_SEC` | `120` | Log `[bilradio-whisper] heartbeat … latest: …` this often. |
-| `BILRADIO_WHISPER_STALL_SEC` | `120` | Kill Whisper if no new stdout line for this long (after boot grace). |
-| `BILRADIO_WHISPER_BOOT_SILENCE_SEC` | `300` | No stall kills before this many seconds from process start. |
-| `BILRADIO_WHISPER_MAX_RESTARTS` | `10` | After a stall, Whisper is restarted up to this many times. |
+| `BILRADIO_WHISPER_SUBPROCESS` | _(unset = full)_ | Set to `simple` for terminal-like integrated Whisper (inherit stdio; no stall watchdog). |
+| `BILRADIO_WHISPER_VERBOSE` | `true` | Set `false` for tqdm-only subprocess output in integrated mode. |
+| `BILRADIO_WHISPER_HEARTBEAT_SEC` | `60` | Console heartbeat interval in integrated `full` mode. |
+| `BILRADIO_WHISPER_STALL_SEC` | `120` | Kill Whisper if no new stdout in integrated `full` mode (after boot grace). |
+| `BILRADIO_WHISPER_BOOT_SILENCE_SEC` | `300` | Grace before stall detection in integrated `full` mode. |
+| `BILRADIO_WHISPER_MAX_RESTARTS` | `10` | Stall restarts in integrated mode. |
 | `BILRADIO_TRANSCRIPT_CHUNK_CHARS` | `45000` | Splits long transcripts into extra `*_chunk_*.txt` files. |
+| `BILRADIO_MIN_DURATION_SEC` | `0` | If **> 0**, RSS episodes shorter than this (seconds) are skipped. |
 
-Episodes are included when **`pubDate` ≥ 2025-11-07 12:02:43 UTC** and **`itunes:duration` ≥ 60 s** when present in the feed. If duration is missing, the episode is still queued; after download, duration is read from the MP3 and sub‑minute files are marked `skipped_short`.
+Episodes are included when **`pubDate` ≥ 2025-11-07 12:02:43 UTC** (see `config.MIN_PUBDATE_UTC`). Duration filtering applies only when `BILRADIO_MIN_DURATION_SEC` is set to a positive value.
 
-**Short test clip:** Guids listed in **`BILRADIO_TEST_EPISODE_GUIDS`** (comma-separated) bypass the ≥60s rule. If the variable is **unset**, it defaults to the Omny ~24 s promo (`cfedf6fc-bf33-4cf8-b0dd-b41a00c840d9`) for pipeline smoke tests. Set **`BILRADIO_TEST_EPISODE_GUIDS=`** (empty) to disable.
+**Short test clip:** Guids listed in **`BILRADIO_TEST_EPISODE_GUIDS`** (comma-separated) bypass the min-duration rule when it is enabled. If the variable is **unset**, a default Omny short promo guid may apply for smoke tests. Set **`BILRADIO_TEST_EPISODE_GUIDS=`** (empty) to disable.
 
 ## Cursor workflow (bullets + tags)
 
@@ -46,22 +94,26 @@ Episodes are included when **`pubDate` ≥ 2025-11-07 12:02:43 UTC** and **`itun
 
 **Quick web preview:** `bilradio process-first` runs **`scaffold-bullets`** by default: rough paragraph bullets with theme `forhåndsvisning` so you can open the site before Cursor. Replace with **`import-bullets`** when your JSON is ready.
 
-## Commands
+## Commands (Typer CLI)
 
 ```powershell
-bilradio init
-bilradio sync
-bilradio download [--guid ...]
-bilradio transcribe [--guid ...]
-bilradio prepare-extract [--guid ...]
-bilradio import-bullets --guid <guid> [--file path.json]
-bilradio scaffold-bullets --guid <guid>
-bilradio process-first          # sync + oldest pending: download, transcribe, prepare-extract, scaffold
-bilradio pipeline [--guid ...]  # sync, download, transcribe, prepare-extract
-bilradio serve                  # http://127.0.0.1:8765
+.\.venv\Scripts\python.exe -m bilradio.cli init
+.\.venv\Scripts\python.exe -m bilradio.cli sync
+.\.venv\Scripts\python.exe -m bilradio.cli download [--guid ...]
+.\.venv\Scripts\python.exe -m bilradio.cli transcribe [--guid ...]
+.\.venv\Scripts\python.exe -m bilradio.cli ingest-transcripts [--guid ...]
+.\.venv\Scripts\python.exe -m bilradio.cli clear-error --guid <guid>
+.\.venv\Scripts\python.exe -m bilradio.cli prepare-extract [--guid ...]
+.\.venv\Scripts\python.exe -m bilradio.cli import-bullets --guid <guid> [--file path.json]
+.\.venv\Scripts\python.exe -m bilradio.cli scaffold-bullets --guid <guid>
+.\.venv\Scripts\python.exe -m bilradio.cli process-first
+.\.venv\Scripts\python.exe -m bilradio.cli pipeline [--guid ...]
+.\.venv\Scripts\python.exe -m bilradio.cli run-queue
+.\.venv\Scripts\python.exe -m bilradio.cli serve
+.\.venv\Scripts\python.exe -m bilradio.cli doctor
 ```
 
-While transcribing, a heartbeat line is printed about every 2 minutes (`BILRADIO_WHISPER_HEARTBEAT_SEC`), and the same snapshot is written to **`data/whisper_heartbeat.txt`** so you or the agent can confirm progress without scrolling the terminal. If Whisper prints nothing new for 2 minutes after the first 5 minutes of runtime, the process is killed and restarted (see `BILRADIO_WHISPER_*` vars above).
+Integrated `bilradio transcribe` / `run-queue` use a subprocess wrapper (progress + optional stall restart). For behavior closest to typing `whisper` in a terminal, set **`BILRADIO_WHISPER_SUBPROCESS=simple`** in `.env` or use **`scripts/batch_whisper_transcribe.py`** above.
 
 Whisper is invoked equivalently to:
 
@@ -71,4 +123,6 @@ whisper "<audio.mp3>" --model medium --language da --device cuda --temperature 0
 
 ## Web UI
 
-Open the URL printed by `bilradio serve`. You get bullet points with car and theme tags. Click tags to **exclude** them; choices are stored in `localStorage`. Full transcripts are not shown in the UI.
+Open **`http://127.0.0.1:8765`** after `bilradio serve`. You get bullet points with car and theme tags. Click tags to **exclude** them; choices are stored in `localStorage`. Full transcripts are not shown in the UI.
+
+The **Queue** page can start/stop the integrated runner; for long GPU jobs, prefer the **batch script + ingest** workflow in this README.

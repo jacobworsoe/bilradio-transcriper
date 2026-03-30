@@ -66,7 +66,13 @@
       display:none;
     }
     .heartbeat-box strong { color:var(--text); }
-    .hb-latest { font-family:monospace; color:var(--text); }
+    .hb-latest {
+      font-family:monospace; color:var(--text); font-size:.78rem;
+      display:block; white-space:pre-wrap; word-break:break-word;
+    }
+
+    .hb-latest-wrap { margin-top:.5rem; }
+    .hb-latest-hint { font-size:.72rem; color:var(--muted); display:block; margin-bottom:.35rem; }
 
     /* Table */
     table { width:100%; border-collapse:collapse; font-size:.83rem; }
@@ -94,10 +100,26 @@
 
     .dur   { color:var(--muted); }
     .ep-title { max-width:26rem; }
-    .error-text { color:#ef5350; font-size:.75rem; margin-top:.2rem; }
+    .error-text {
+      color:#ef5350; font-size:.75rem; margin-top:.2rem;
+      max-height:10rem; overflow-y:auto; white-space:pre-wrap; word-break:break-word;
+    }
+
+    .btn-clear-error {
+      background:rgba(139,154,171,.12); border-color:rgba(139,154,171,.35);
+      color:#aeb9c6; font-size:.72rem; padding:.2rem .5rem;
+    }
+    .btn-clear-error:hover:not(:disabled) { background:rgba(139,154,171,.2); }
+    .ep-actions { display:flex; flex-wrap:wrap; gap:.35rem; align-items:center; justify-content:flex-end; }
 
     .auto-refresh { font-size:.72rem; color:var(--muted); text-align:right; margin-bottom:.5rem; }
     .auto-refresh span { color:var(--text); font-variant-numeric:tabular-nums; }
+
+    .queue-tip {
+      font-size:.72rem; color:var(--muted); line-height:1.45;
+      margin:-0.35rem 0 1rem 0; max-width:52rem;
+    }
+    .queue-tip code { font-size:.68rem; color:var(--text); }
   </style>
 </head>
 <body>
@@ -121,11 +143,20 @@
     <button class="btn btn-sync"  id="btn-sync"        onclick="syncFeed()">&#8635; Sync RSS</button>
   </div>
 
+  <p class="queue-tip">
+    Long CUDA runs: transcribe in a terminal with <code>--output_dir</code> set to <code>data/transcripts</code>,
+    then run <code>bilradio ingest-transcripts</code>. For terminal-like integrated Whisper (no piped progress),
+    set <code>BILRADIO_WHISPER_SUBPROCESS=simple</code> in <code>.env</code>.
+  </p>
+
   <!-- Whisper heartbeat -->
   <div id="heartbeat-box" class="heartbeat-box">
     <strong>Whisper running</strong> (PID <span id="hb-pid"></span>)
-    &nbsp;·&nbsp; Last output at <span id="hb-utc" class="dur"></span>:
-    <span id="hb-latest" class="hb-latest"></span>
+    &nbsp;·&nbsp; Last update <span id="hb-utc" class="dur"></span>
+    <div class="hb-latest-wrap">
+      <span class="hb-latest-hint">Latest Whisper output (segment lines refresh about once per minute; podcast text is unchanged).</span>
+      <span id="hb-latest" class="hb-latest"></span>
+    </div>
   </div>
 
   <!-- Status summary chips -->
@@ -253,11 +284,18 @@
         // Determine display status
         const displayStatus = (isCurrent && ep.status === "downloaded") ? "transcribing" : ep.status;
 
-        // Action button
+        // Action buttons (English labels per ui-language rule)
         let actionHtml = "";
+        const showClearError = !isRunning && ep.status === "error";
         const canRun = !isRunning && (ep.status === "pending" || ep.status === "downloaded" || ep.status === "error");
+        if (showClearError) {
+          actionHtml += `<button type="button" class="btn btn-clear-error" data-guid="${escHtml(ep.guid)}" onclick="clearEpisodeError(this)">Clear error</button>`;
+        }
         if (canRun) {
-          actionHtml = `<button class="btn btn-run" onclick="processEpisode('${escHtml(ep.guid)}', this)">&#9654; Run</button>`;
+          actionHtml += `<button type="button" class="btn btn-run" onclick="processEpisode('${escHtml(ep.guid)}', this)">&#9654; Run</button>`;
+        }
+        if (actionHtml) {
+          actionHtml = `<div class="ep-actions">${actionHtml}</div>`;
         }
 
         tr.innerHTML = `
@@ -306,6 +344,28 @@
         alert("Network error: " + e);
       }
       btn.textContent = "■ Stop";
+      await load();
+      resetCountdown();
+    }
+
+    async function clearEpisodeError(btn) {
+      const guid = btn.getAttribute("data-guid");
+      if (!guid) return;
+      if (!confirm("Clear this error and mark the episode as Downloaded again? You can run transcription after that.")) return;
+      btn.disabled = true;
+      const prev = btn.textContent;
+      btn.textContent = "Clearing…";
+      try {
+        const r = await fetch(`/api/queue/clear-error/${encodeURIComponent(guid)}`, { method: "POST" });
+        const body = await r.json();
+        if (!r.ok) {
+          alert("Error: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.textContent = prev;
+      btn.disabled = false;
       await load();
       resetCountdown();
     }

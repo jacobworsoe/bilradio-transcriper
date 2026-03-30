@@ -1,0 +1,15 @@
+---
+description: Install and verify Whisper (openai-whisper) in the project venv
+alwaysApply: true
+---
+
+# Venv pip and openai-whisper
+
+(See **agent-run-commands.mdc** for the general rule: run all required terminal commands yourself, including any `pip` / `bilradio` steps below.)
+
+- **openai-whisper** is required for transcription but is **not** listed in `pyproject.toml`. Install it into the **project venv** when setting up or fixing `ModuleNotFoundError: whisper`:
+  - Windows: `c:\Git\bilradio-transcriper\.venv\Scripts\pip.exe install openai-whisper`
+  - Use **`pip install`** (or `python -m pip install`) from that venv; execute it in the terminal, do not delegate to the user.
+- After installing or changing the Whisper environment, run **`bilradio doctor`** from the venv (`.\.venv\Scripts\python.exe -m bilradio.cli doctor`) and report the result. Optionally run **`bilradio self-test-transcribe`** for a quick CPU/tiny smoke test.
+- **`WHISPER_CMD`** is resolved at import from `PATH` (see `config._find_whisper_python`). If transcription should use the **venv** interpreter exclusively, set **`BILRADIO_WHISPER_PYTHON`** to the venv executable, e.g. `C:\Git\bilradio-transcriper\.venv\Scripts\python.exe`, so `python -m whisper` matches the env where you ran `pip install openai-whisper`.
+- If you change **`pyproject.toml`** dependencies, run **`pip install -e .`** from the venv to refresh the editable install.
