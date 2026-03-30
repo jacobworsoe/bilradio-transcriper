@@ -135,7 +135,7 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 Remote: `https://github.com/jacobworsoe/bilradio-transcriper`  
 Branch: `main`  
 
-See `git log -1` for latest commit on this clone.
+Latest pushed commit (this session): `5542905` — docs, batch Whisper script, ingest, simple subprocess mode, queue clear-error.
 
 ---
 
