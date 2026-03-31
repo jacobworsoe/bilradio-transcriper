@@ -1,0 +1,11 @@
+---
+description: After code or project file changes, commit and push unless blocked or user opts out
+alwaysApply: true
+---
+
+# Commit and push after changes
+
+- When a task **changes tracked project files** (code, config, rules, etc.), finish by **`git add`**, **`git commit`** with a short imperative subject line, and **`git push`** to the current branch.
+- Run **`git status`** first if needed; do not commit unrelated dirty files—scope the commit to what this task changed (or split commits if two unrelated changes were made).
+- **Skip** commit/push when: there is nothing to commit; the user explicitly asked **not** to commit or push; or **`git`** / **network** fails after a reasonable retry—in the last case, say what failed and leave the working tree as-is.
+- **Do not** commit secrets, `.env`, or `data/` contents; respect `.gitignore`.
