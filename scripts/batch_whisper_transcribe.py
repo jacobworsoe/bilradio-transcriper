@@ -28,9 +28,12 @@ def _parse_args() -> argparse.Namespace:
     )
     p.add_argument(
         "--output-format",
-        default="txt",
+        default=None,
         choices=["txt", "json", "all", "srt", "tsv", "vtt"],
-        help="Whisper output format (default: txt)",
+        help=(
+            "Whisper output format. "
+            "If omitted, --output_format is not passed and the whisper CLI defaults to all formats."
+        ),
     )
     p.add_argument(
         "--whisper-cmd",
@@ -95,9 +98,9 @@ def main() -> int:
             "True",
             "--output_dir",
             str(transcripts_dir),
-            "--output_format",
-            args.output_format,
         ]
+        if args.output_format is not None:
+            cmd.extend(["--output_format", args.output_format])
 
         print(f"[{i}/{len(files)}] transcribing: {mp3.name}")
         rc = subprocess.run(cmd, cwd=str(repo)).returncode
