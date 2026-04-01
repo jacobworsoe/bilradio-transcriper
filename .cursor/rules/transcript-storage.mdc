@@ -1,0 +1,44 @@
+---
+description: Where Whisper, improved CURSOR JSON, and app bullets live (disk vs SQLite)
+alwaysApply: true
+---
+
+# Transcript and summary storage (three layers)
+
+Use **disk for heavy, versionable sources**; use **SQLite only for the web app’s queryable bullet index**.
+
+## 1. Original Whisper output (on disk only)
+
+- **Path:** `data/transcripts/<audio_stem>.json` (and optionally `.txt` from the same run).
+- **Content:** Full Whisper result (e.g. `text`, `segments`, tokens, logprobs). Large and stable as the **raw capture**.
+- **SQLite:** Do **not** store this JSON body in the database. At most store **`transcript_path`** pointing at the chosen file (`.json` or `.txt`) for pipeline steps (`prepare-extract`, `ingest-transcripts`).
+
+## 2. Improved structured JSON (on disk only)
+
+- **Path:** `data/transcripts_improved/<audio_stem>.json`
+- **Content:** Model output that follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (typically `sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`). This is the **canonical edited/summarized artifact** for human review and re-import.
+- **SQLite:** Do **not** store this whole JSON in the database. Treat the file as source of truth; optional small **`_bilradio_meta`** inside the file is fine.
+
+## 3. Bullet summaries for the web app (SQLite)
+
+- **Tables:** `topic_sections` + `topic_bullets` (linked to `episodes.guid`).
+- **Purpose:** Fast **Topics** page, **facets** (cars/themes), filters, and ordering. This is a **denormalized index**, not a second master copy of the Whisper dump.
+- **How it gets there:** `bilradio import-bullets` (or equivalent) reads JSON matching the import shape—usually the same semantics as layer **2**, or a file under `data/cursor_inbox/<guid>.bullets.json` while iterating in Cursor.
+
+## Relationships
+
+- **1 → 2:** Manual or automated (e.g. `improve-transcripts` CLI) using `CURSOR_INSTRUCTIONS`; input text is derived from layer **1** (see `transcript_plain_text_from_file`).
+- **2 → 3:** `import-bullets` loads structured bullets into SQLite. Re-running import **replaces** rows for that episode; keep layer **2** on disk if you need history (git or backups outside this rule).
+
+## Do not
+
+- Put **full Whisper JSON** or **full improved JSON** into SQLite BLOB/TEXT columns for routine operation.
+- Treat SQLite bullets as the only copy if you care about archival: **keep layer 2 files** (and **1**) under `data/` with normal backup practice; `data/` stays gitignored.
+
+## Summary table
+
+| Layer | Role              | Location                          | SQLite        |
+|-------|-------------------|-----------------------------------|---------------|
+| 1     | Raw transcription | `data/transcripts/*.{json,txt}`   | Path only     |
+| 2     | CURSOR-shaped JSON| `data/transcripts_improved/*.json`| No            |
+| 3     | App bullets       | `topic_sections` / `topic_bullets`| Yes (primary for UI queries) |
