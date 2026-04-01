@@ -12,10 +12,12 @@ from bilradio.db import connect, parse_json_list
 from bilradio.episode_paths import (
     expected_audio_path,
     has_non_empty_json,
+    has_non_empty_txt,
     improved_transcript_json_path,
     whisper_transcript_json_path,
+    whisper_transcript_txt_path,
 )
-from bilradio.pipeline import step_clear_episode_error
+from bilradio.pipeline import step_clear_episode_error, step_ingest_transcripts
 
 _BASE = Path(__file__).resolve().parent
 
@@ -126,6 +128,31 @@ def episodes_page(request: Request) -> HTMLResponse:
     return templates.TemplateResponse(request, "episodes.html", {})
 
 
+def _effective_display_status(
+    db_status: str,
+    *,
+    downloaded: bool,
+    transcript_on_disk: bool,
+) -> tuple[str, str | None]:
+    """
+    Badge status when the database is stale (e.g. integrated Whisper expected .txt
+    but batch wrote .json only).
+    """
+    if db_status == "extracted":
+        return db_status, None
+    if db_status == "transcribed":
+        return db_status, None
+    if transcript_on_disk and downloaded and db_status in ("downloaded", "error"):
+        note = None
+        if db_status == "error":
+            note = (
+                "A transcript file exists on disk; the database error is stale. "
+                "Click “Ingest transcripts” to update the database, or clear the error if you prefer."
+            )
+        return "transcribed", note
+    return db_status, None
+
+
 @app.get("/api/episodes")
 def api_episodes() -> dict:
     with connect(DB_PATH) as conn:
@@ -146,13 +173,19 @@ def api_episodes() -> dict:
         ap = r["audio_path"]
         audio_path = expected_audio_path(guid, title, ap)
         wjson = whisper_transcript_json_path(guid, title, ap)
+        wtxt = whisper_transcript_txt_path(guid, title, ap)
         ij = improved_transcript_json_path(guid, title, ap)
         downloaded = audio_path.is_file()
         has_whisper_json = has_non_empty_json(wjson)
+        has_whisper_txt = has_non_empty_txt(wtxt)
+        transcript_on_disk = has_whisper_json or has_whisper_txt
         has_improved = has_non_empty_json(ij)
 
         st = r["status"]
-        counts[st] = counts.get(st, 0) + 1
+        disp, note = _effective_display_status(
+            st, downloaded=downloaded, transcript_on_disk=transcript_on_disk
+        )
+        counts[disp] = counts.get(disp, 0) + 1
 
         episodes.append(
             {
@@ -161,11 +194,14 @@ def api_episodes() -> dict:
                 "pub_date": r["pub_date"],
                 "duration_sec": r["duration_sec"],
                 "status": st,
+                "display_status": disp,
+                "status_note": note,
                 "error": r["error"],
                 "extract_at": r["extract_at"],
                 "bullet_count": r["bullet_count"],
                 "downloaded": downloaded,
                 "whisper_json": has_whisper_json,
+                "whisper_txt": has_whisper_txt,
                 "improved_transcript": has_improved,
             }
         )
@@ -179,6 +215,13 @@ def api_episodes_sync() -> JSONResponse:
 
     n = sync_episodes_from_rss()
     return JSONResponse({"upserted": n})
+
+
+@app.post("/api/episodes/ingest-transcripts")
+def api_episodes_ingest_transcripts() -> JSONResponse:
+    """Promote downloaded/error rows to transcribed when JSON or .txt exists (matches CLI ingest)."""
+    n, skipped = step_ingest_transcripts(None)
+    return JSONResponse({"ingested": n, "skipped": skipped})
 
 
 @app.post("/api/episodes/clear-error/{guid}")

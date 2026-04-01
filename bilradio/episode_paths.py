@@ -24,11 +24,22 @@ def whisper_transcript_json_path(guid: str, title: str, audio_path_db: str | Non
     return TRANSCRIPTS_DIR / f"{episode_stem(guid, title, audio_path_db)}.json"
 
 
+def whisper_transcript_txt_path(guid: str, title: str, audio_path_db: str | None) -> Path:
+    return TRANSCRIPTS_DIR / f"{episode_stem(guid, title, audio_path_db)}.txt"
+
+
 def improved_transcript_json_path(guid: str, title: str, audio_path_db: str | None) -> Path:
     return TRANSCRIPTS_IMPROVED_DIR / f"{episode_stem(guid, title, audio_path_db)}.json"
 
 
 def has_non_empty_json(path: Path) -> bool:
+    try:
+        return path.is_file() and path.stat().st_size > 0
+    except OSError:
+        return False
+
+
+def has_non_empty_txt(path: Path) -> bool:
     try:
         return path.is_file() and path.stat().st_size > 0
     except OSError:

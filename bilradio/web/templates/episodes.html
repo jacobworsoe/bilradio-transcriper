@@ -26,6 +26,11 @@
       color:#3d9cf5;
     }
     .btn-sync:hover:not(:disabled) { background:rgba(61,156,245,.2); }
+    .btn-ingest {
+      background:rgba(107,203,119,.12); border-color:rgba(107,203,119,.35);
+      color:#6bcb77;
+    }
+    .btn-ingest:hover:not(:disabled) { background:rgba(107,203,119,.22); }
 
     .summary-bar { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
     .stat-chip { font-size:.78rem; padding:.3rem .65rem; border-radius:6px; background:var(--surface); }
@@ -75,6 +80,15 @@
       margin:0 0 1rem 0; max-width:56rem;
     }
     .tip code { font-size:.68rem; color:var(--text); }
+
+    .status-note {
+      color: #e6a23c;
+      font-size: .75rem;
+      margin-top: .25rem;
+      line-height: 1.35;
+      max-width: 28rem;
+    }
+    .db-hint { font-size: .65rem; color: var(--muted); font-weight: 400; margin-left: .25rem; }
   </style>
 </head>
 <body>
@@ -88,12 +102,14 @@
 
   <div class="ctrl-bar">
     <button class="btn btn-sync" id="btn-sync" type="button" onclick="syncFeed()">Sync RSS</button>
+    <button class="btn btn-ingest" id="btn-ingest" type="button" onclick="ingestTranscripts()">Ingest transcripts</button>
   </div>
 
   <p class="tip">
-    Transcription runs outside this app (e.g. <code>scripts/batch_whisper_transcribe.py</code>), then
-    <code>bilradio ingest-transcripts</code>. <strong>Whisper JSON</strong> means <code>data/transcripts/&lt;stem&gt;.json</code>.
-    <strong>Improved</strong> means <code>data/transcripts_improved/&lt;stem&gt;.json</code> (from cleanup / your editor pipeline).
+    Transcription runs outside this app (e.g. <code>scripts/batch_whisper_transcribe.py</code>). Use
+    <strong>Ingest transcripts</strong> (or <code>bilradio ingest-transcripts</code>) to set SQLite to <em>transcribed</em>
+    when <code>data/transcripts/&lt;stem&gt;.json</code> or <code>.txt</code> exists.
+    <strong>Improved</strong> means <code>data/transcripts_improved/&lt;stem&gt;.json</code>.
   </p>
 
   <div class="summary-bar" id="summary-bar"></div>
@@ -107,9 +123,9 @@
         <th>Date</th>
         <th>Duration</th>
         <th>Downloaded</th>
-        <th>Whisper JSON</th>
+        <th>Whisper (disk)</th>
         <th>Improved</th>
-        <th>DB status</th>
+        <th>Status</th>
         <th>Bullets</th>
         <th></th>
       </tr>
@@ -144,6 +160,14 @@
 
     function yn(v) {
       return v ? '<span class="yes">Yes</span>' : '<span class="no">No</span>';
+    }
+
+    function whisperDisk(ep) {
+      const bits = [];
+      if (ep.whisper_json) bits.push("JSON");
+      if (ep.whisper_txt) bits.push("TXT");
+      if (!bits.length) return '<span class="no">—</span>';
+      return bits.map((b) => `<span class="yes">${b}</span>`).join(" ");
     }
 
     function statusBadge(s) {
@@ -181,15 +205,26 @@
         if (showClear) {
           actions = `<div class="ep-actions"><button type="button" class="btn-clear-error" data-guid="${escHtml(ep.guid)}" onclick="clearEpisodeError(this)">Clear error</button></div>`;
         }
+        const disp = ep.display_status || ep.status;
+        let badgeHtml = statusBadge(disp);
+        if (ep.status !== disp) {
+          badgeHtml += `<span class="db-hint">(SQLite: ${escHtml(STATUS_EN[ep.status] || ep.status)})</span>`;
+        }
+        let titleExtra = "";
+        if (ep.status_note) {
+          titleExtra = `<div class="status-note">${escHtml(ep.status_note)}</div>`;
+        } else if (ep.error) {
+          titleExtra = `<div class="error-text">${escHtml(ep.error)}</div>`;
+        }
         tr.innerHTML = `
           <td class="dur">${idx + 1}</td>
-          <td class="ep-title">${escHtml(ep.title || "")}${ep.error ? `<div class="error-text">${escHtml(ep.error)}</div>` : ""}</td>
+          <td class="ep-title">${escHtml(ep.title || "")}${titleExtra}</td>
           <td class="dur">${fmtDate(ep.pub_date)}</td>
           <td class="dur">${fmtDur(ep.duration_sec)}</td>
           <td>${yn(ep.downloaded)}</td>
-          <td>${yn(ep.whisper_json)}</td>
+          <td>${whisperDisk(ep)}</td>
           <td>${yn(ep.improved_transcript)}</td>
-          <td>${statusBadge(ep.status)}</td>
+          <td>${badgeHtml}</td>
           <td class="dur">${ep.bullet_count > 0 ? ep.bullet_count : "–"}</td>
           <td>${actions}</td>
         `;
@@ -237,6 +272,27 @@
       }
       btn.disabled = false;
       btn.textContent = "Sync RSS";
+    }
+
+    async function ingestTranscripts() {
+      const btn = document.getElementById("btn-ingest");
+      btn.disabled = true;
+      btn.textContent = "Ingesting…";
+      try {
+        const r = await fetch("/api/episodes/ingest-transcripts", { method: "POST" });
+        const body = await r.json();
+        if (r.ok) {
+          alert(`Ingest done: ${body.ingested} updated, ${body.skipped} skipped.`);
+          await load();
+          resetCountdown();
+        } else {
+          alert("Ingest failed: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.disabled = false;
+      btn.textContent = "Ingest transcripts";
     }
 
     let remaining = 30;
