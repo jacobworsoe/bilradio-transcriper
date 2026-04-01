@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Restart the web app after web-related changes
 
-- When a task modifies **`bilradio/web/`** (templates, `app.py`, static assets) or **HTTP routes / JSON responses** consumed by the browser (`/api/episodes`, `/api/bullets`, `/api/facets`, etc.), **restart** the local server so the UI picks up changes.
-- **How:** stop the running **`bilradio serve`** (or `python -m bilradio.cli serve`) process (Ctrl+C), then start it again from the project venv. Uvicorn is run **without** `--reload` by default, so edits do not hot-reload.
-- If the user already has the site open, tell them to **hard-refresh** the page after the restart.
+- When a task modifies **`bilradio/web/`** (templates, `app.py`, static assets) or **HTTP routes / JSON responses** consumed by the browser (`/api/episodes`, `/api/bullets`, `/api/facets`, etc.), the local server should pick up changes: **`bilradio serve` uses uvicorn auto-reload by default** (watches `bilradio/` `*.py` and `*.html`).
+- If the process was started with **`--no-reload`**, or changes live **outside** that package (e.g. editable install from another tree), **restart** the server (Ctrl+C, then start again from the project venv). Confirm the startup line **Web UI from …** points at this repo’s `bilradio` folder.
+- If the user already has the site open after a full restart, a **hard-refresh** can clear a stale browser cache; with auto-reload a normal refresh is usually enough.
 - Skip if the change is **SQLite/data-only** and the server code is unchanged (still optional refresh for cached JSON).

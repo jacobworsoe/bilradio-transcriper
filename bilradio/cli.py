@@ -399,17 +399,27 @@ def pipeline(
 def serve(
     host: str = typer.Option("127.0.0.1"),
     port: int = typer.Option(8765),
+    reload: bool = typer.Option(
+        True,
+        "--reload/--no-reload",
+        help="Watch bilradio package (Python + HTML templates) and restart on change.",
+    ),
 ) -> None:
     """Start the web UI (topic bullets + exclusions)."""
+    import bilradio
     import uvicorn
 
     init_db(DB_PATH)
-    uvicorn.run(
-        "bilradio.web.app:app",
-        host=host,
-        port=port,
-        reload=False,
+    bilradio_pkg = Path(bilradio.__file__).resolve().parent
+    typer.echo(
+        f"Web UI from {bilradio_pkg}"
+        + (" (auto-reload on)" if reload else " (auto-reload off)")
     )
+    run_kw = {"host": host, "port": port, "reload": reload}
+    if reload:
+        run_kw["reload_dirs"] = [str(bilradio_pkg)]
+        run_kw["reload_includes"] = ["*.py", "*.html"]
+    uvicorn.run("bilradio.web.app:app", **run_kw)
 
 
 def main() -> None:
