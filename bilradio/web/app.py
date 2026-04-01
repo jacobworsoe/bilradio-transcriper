@@ -135,19 +135,24 @@ def _effective_display_status(
     transcript_on_disk: bool,
 ) -> tuple[str, str | None]:
     """
-    Badge status when the database is stale (e.g. integrated Whisper expected .txt
-    but batch wrote .json only).
+    Badge status for the Episodes page. Maps DB ``extracted`` → ``summarized`` (bullets in SQLite).
+    When a Whisper file exists on disk but DB still says ``error`` (or ``downloaded``), show
+    ``transcribed`` and a short note — do not require audio on disk for the error override.
     """
     if db_status == "extracted":
-        return db_status, None
+        return "summarized", None
     if db_status == "transcribed":
         return db_status, None
-    if transcript_on_disk and downloaded and db_status in ("downloaded", "error"):
+    if transcript_on_disk and db_status in ("downloaded", "error"):
         note = None
         if db_status == "error":
             note = (
                 "A transcript file exists on disk; the database error is stale. "
                 "Click “Ingest transcripts” to update the database, or clear the error if you prefer."
+            )
+        elif db_status == "downloaded" and not downloaded:
+            note = (
+                "Transcript on disk but audio path missing or file not found; check download / DB audio_path."
             )
         return "transcribed", note
     return db_status, None

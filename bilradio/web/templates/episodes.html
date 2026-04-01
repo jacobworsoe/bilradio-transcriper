@@ -55,6 +55,7 @@
     .s-transcribing  { background:rgba(255,193,7,.15);   color:#ffc107; }
     .s-transcribed   { background:rgba(199,156,255,.15); color:#c79cff; }
     .s-extracted     { background:rgba(107,203,119,.15); color:#6bcb77; }
+    .s-summarized    { background:rgba(107,203,119,.18); color:#7dd87a; }
     .s-error         { background:rgba(239,83,80,.15);   color:#ef5350; }
     .s-skipped_short { background:rgba(139,154,171,.1);  color:#636e7a; }
 
@@ -139,6 +140,7 @@
       downloaded:    "Downloaded",
       transcribing:  "Transcribing",
       transcribed:   "Transcribed",
+      summarized:    "Summarized",
       extracted:     "Extracted",
       error:         "Error",
       skipped_short: "Skipped (short)",
@@ -208,12 +210,14 @@
         const disp = ep.display_status || ep.status;
         let badgeHtml = statusBadge(disp);
         if (ep.status !== disp) {
-          badgeHtml += `<span class="db-hint">(SQLite: ${escHtml(STATUS_EN[ep.status] || ep.status)})</span>`;
+          const sqliteLabel =
+            ep.status === "extracted" ? "Extracted (bullets loaded)" : (STATUS_EN[ep.status] || ep.status);
+          badgeHtml += `<span class="db-hint">(SQLite: ${escHtml(sqliteLabel)})</span>`;
         }
         let titleExtra = "";
         if (ep.status_note) {
           titleExtra = `<div class="status-note">${escHtml(ep.status_note)}</div>`;
-        } else if (ep.error) {
+        } else if (ep.error && disp === "error") {
           titleExtra = `<div class="error-text">${escHtml(ep.error)}</div>`;
         }
         tr.innerHTML = `
