@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-04-02. Operator + maintainer notes._
+_Last updated: 2026-04-03. Operator + maintainer notes._
 
 ---
 
@@ -14,7 +14,7 @@ A local pipeline that:
 4. Keeps **Whisper output on disk** under `data/transcripts/` (`.json` preferred; `.txt` also supported).
 5. **Improved** structured JSON (same shape as `CURSOR_INSTRUCTIONS` in `bilradio/extract.py`) under `data/transcripts_improved/<stem>.json` — **author with Cursor Auto Agent** (see `.cursor/rules/transcript-storage.mdc`).
 6. Imports sectioned bullets into **SQLite** (`topic_sections` + `topic_bullets`) via `import-bullets`.
-7. Serves a **FastAPI web UI:** **`/`** Topics (facets + sectioned bullets), **`/episodes`** Episodes status (disk + DB flags, RSS sync, ingest, clear error). **`/queue`** redirects to **`/episodes`**.
+7. Serves a **FastAPI web UI:** **`/`** Topics (facets + sectioned bullets), **`/episodes`** Episodes status (disk + DB flags, RSS sync, ingest, clear error). **`/queue`** redirects to **`/episodes`**. **`bilradio serve`** uses **auto-reload by default** (watch `bilradio` `*.py` / `*.html`); **`--no-reload`** for a stable process; startup prints **`Web UI from …`** for the resolved package path.
 
 ---
 
@@ -42,7 +42,7 @@ cd C:\Git\bilradio-transcriper
 
 Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--skip-sync-download`, `--retry-failed`, `--device cpu`, `--output-format` (omit for Whisper default `all`).
 
-**Web UI (`bilradio serve`):** open **`/episodes`** for **Sync RSS**, **Ingest transcripts**, stale-error hints, and columns: Downloaded / Whisper (JSON+TXT) / Improved / Status.
+**Web UI (`bilradio serve`):** open **`/episodes`** for **Sync RSS**, **Ingest transcripts**, and columns: Downloaded / Whisper (JSON+TXT) / Improved / Status / Bullets. **Display status** is normalized for the UI: SQLite **`extracted`** shows as **Summarized** (bullets loaded); if Whisper **JSON exists on disk** but the DB still has **`error`**, the row is shown as **transcribed** with an optional stale-error note instead of a blocking error badge. **`serve`** auto-reloads on code/template changes unless **`--no-reload`**; confirm the printed **`Web UI from …`** path if the site looks stale.
 
 ---
 
@@ -85,6 +85,8 @@ scripts/
   episode_cleanup.py        # CLI wrapper for coverage report
 .cursor/rules/
   transcript-storage.mdc    # Disk vs SQLite for the three layers
+  web-restart-after-changes.mdc  # Web/API edits + serve reload behavior
+  agent-run-commands.mdc    # Agents run commands; long servers in background
 data/                       # gitignored
 ```
 
@@ -119,7 +121,7 @@ scaffold-bullets        # Rough preview bullets
 episode-cleanup         # Count audio / whisper / improved on disk
 run-queue               # sync + download all + integrated transcribe all
 pipeline                # sync + download + transcribe + prepare-extract (per guid or all)
-serve                   # Web UI (127.0.0.1:8765)
+serve                   # Web UI (127.0.0.1:8765); auto-reload on by default; --no-reload off
 doctor
 self-test-transcribe
 ```
@@ -153,3 +155,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | Early | RSS, download, Whisper subprocess, web queue, stall/skip |
 | Mid | `ingest-transcripts`, batch script, `WHISPER_SUBPROCESS=simple`, `clear-error` |
 | Later | Episodes status page (disk truth for JSON), sectioned bullets + DB schema, transcript-storage rule, Cursor Auto Agent workflow (no OpenAI improver), `prepare-improved-agent` / `bootstrap-improved-json` |
+| 2026-04 | Episodes **display_status** (Summarized vs extracted, stale-error override when JSON on disk), **`serve`** auto-reload + package path echo, Cursor agent rule: start **`bilradio serve` in background** so the user’s terminal stays free |

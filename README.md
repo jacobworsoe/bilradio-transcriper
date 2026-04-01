@@ -109,7 +109,7 @@ Episodes are included when **`pubDate` ≥ 2025-11-07 12:02:43 UTC** (see `confi
 .\.venv\Scripts\python.exe -m bilradio.cli process-first
 .\.venv\Scripts\python.exe -m bilradio.cli pipeline [--guid ...]
 .\.venv\Scripts\python.exe -m bilradio.cli run-queue
-.\.venv\Scripts\python.exe -m bilradio.cli serve
+.\.venv\Scripts\python.exe -m bilradio.cli serve [--no-reload]
 .\.venv\Scripts\python.exe -m bilradio.cli doctor
 ```
 
@@ -123,6 +123,13 @@ whisper "<audio.mp3>" --model medium --language da --device cuda --temperature 0
 
 ## Web UI
 
-Open **`http://127.0.0.1:8765`** after `bilradio serve`. You get bullet points with car and theme tags. Click tags to **exclude** them; choices are stored in `localStorage`. Full transcripts are not shown in the UI.
+Open **`http://127.0.0.1:8765`** after **`bilradio serve`**.
 
-The **Queue** page can start/stop the integrated runner; for long GPU jobs, prefer the **batch script + ingest** workflow in this README.
+- **`/`** — Topic bullets with car and theme tags; click tags to **exclude** them (stored in `localStorage`).
+- **`/episodes`** — Pipeline status: RSS sync, ingest transcripts, disk vs DB columns, **Clear error**, auto-refresh. Status badges reflect **effective** state (for example **Summarized** when bullets are in SQLite, and a stale DB **error** is not shown as error if Whisper JSON already exists on disk).
+
+**`bilradio serve`** turns on **uvicorn auto-reload by default** (watches `bilradio/**/*.py` and `*.html`). Use **`bilradio serve --no-reload`** for a single long-lived process. On startup the CLI prints **`Web UI from …`** — if the UI looks wrong, confirm that path is this repo’s `bilradio` package (not another clone or stale editable install).
+
+The legacy **Queue** URL redirects to **`/episodes`**; there is no in-browser queue for Whisper. For long GPU runs, use the **batch script + ingest** workflow above.
+
+Full transcripts are not shown in the UI.
