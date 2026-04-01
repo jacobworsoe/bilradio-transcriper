@@ -7,6 +7,6 @@ alwaysApply: true
 
 - **Do not** ask the user to run shell commands, activate venvs, or copy-paste steps. **Execute** every terminal command that is required to **move forward** on the task: dependency installs (`pip`, `npm`, etc.), builds, tests, codegen, database or migration tools, CLI entry points, **`git`**, short probes (`curl`, `ffmpeg -version`, …), and **any other** command the work depends on.
 - **Prefer** the project venv on Windows: `c:\Git\bilradio-transcriper\.venv\Scripts\python.exe` (or `pip.exe`) for this repo’s Python tooling.
-- If a server is needed (e.g. `bilradio serve`), start it in the background and give the URL; only skip if the environment truly blocks it.
+- If a server is needed (e.g. `bilradio serve`), start it **in the background** and give the URL; only skip if the environment truly blocks it. **Never** tie up the user’s integrated terminal with a long-running foreground server unless they asked for that explicitly — foreground runs block them from using the same terminal for other commands.
 - If a command fails, **diagnose from real output**, retry or adjust, and keep iterating until unblocked or you hit a hard external limit — do not stop after the first failure with only instructions for the user.
 - Report outcomes from **actual command output** (success, errors, paths), not hypothetical steps.
