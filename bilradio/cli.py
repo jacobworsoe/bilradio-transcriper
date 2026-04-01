@@ -160,6 +160,56 @@ def clear_error(
     typer.echo(msg)
 
 
+@app.command("improve-transcripts")
+def improve_transcripts(
+    guid: Optional[str] = typer.Option(
+        None,
+        "--guid",
+        help="Only this episode (full guid)",
+    ),
+    force: bool = typer.Option(
+        False,
+        "--force",
+        help="Overwrite existing data/transcripts_improved/<stem>.json",
+    ),
+    limit: Optional[int] = typer.Option(
+        None,
+        "--limit",
+        help="Max episodes to process from the ordered list (newest order = pub_date ASC)",
+    ),
+    pause: float = typer.Option(
+        1.0,
+        "--pause",
+        help="Seconds to sleep between API calls (rate limiting)",
+    ),
+) -> None:
+    """Call OpenAI with CURSOR_INSTRUCTIONS; write sectioned JSON to data/transcripts_improved/. Requires OPENAI_API_KEY."""
+    import os
+
+    from bilradio.improve_transcripts import run_improve_batch
+
+    init_db(DB_PATH)
+    if not (os.environ.get("OPENAI_API_KEY") or "").strip():
+        typer.echo(
+            "OPENAI_API_KEY is not set. Add it to your environment or .env at the repo root.",
+            err=True,
+        )
+        raise typer.Exit(1)
+    ok, skip, err_n, errs = run_improve_batch(
+        guid=guid, force=force, limit=limit, pause_sec=pause
+    )
+    if guid and ok + skip + err_n == 0:
+        typer.echo(f"No episode found for guid {guid!r}.", err=True)
+        raise typer.Exit(2)
+    typer.echo(f"Finished. written={ok} skipped={skip} errors={err_n}")
+    for e in errs[:12]:
+        typer.echo(f"  {e}", err=True)
+    if len(errs) > 12:
+        typer.echo(f"  ... and {len(errs) - 12} more", err=True)
+    if err_n:
+        raise typer.Exit(3)
+
+
 @app.command("episode-cleanup")
 def episode_cleanup() -> None:
     """Print counts of episodes with audio, Whisper JSON, and improved JSON on disk."""
