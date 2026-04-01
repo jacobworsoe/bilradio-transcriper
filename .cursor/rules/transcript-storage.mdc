@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Transcript and summary storage (three layers)
 
-Use **disk for heavy, versionable sources**; use **SQLite only for the web app’s queryable bullet index**.
+Use **disk for heavy, versionable sources**; use **SQLite only** for the web app’s queryable bullet index.
 
 ## 1. Original Whisper output (on disk only)
 
@@ -16,24 +16,27 @@ Use **disk for heavy, versionable sources**; use **SQLite only for the web app�
 ## 2. Improved structured JSON (on disk only)
 
 - **Path:** `data/transcripts_improved/<audio_stem>.json`
-- **Content:** Model output that follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (typically `sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`). This is the **canonical edited/summarized artifact** for human review and re-import.
-- **SQLite:** Do **not** store this whole JSON in the database. Treat the file as source of truth; optional small **`_bilradio_meta`** inside the file is fine.
+- **Content:** JSON that follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (`sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`).
+- **Authoring (canonical):** Use **Cursor Auto Agent** (your Cursor license). Do **not** use third-party LLM APIs (OpenAI, Anthropic, etc.) for this step unless the project owner explicitly opts in again.
+- **Prompt files:** Run **`bilradio prepare-improved-agent`** to emit per-episode Markdown in `data/cursor_inbox/` with the exact output path and the same instructions as `CURSOR_INSTRUCTIONS`. Point Auto Agent at those files plus the Whisper transcript (`data/transcripts/<stem>.json` or `data/cursor_inbox/<guid>_transcript.txt`).
+- **Bootstrap only:** Optional **`bilradio bootstrap-improved-json`** may create extractive placeholders from Whisper text for local testing; if `_bilradio_meta.replace_with_cursor_agent` is true, replace the file with Auto Agent output when ready.
+- **SQLite:** Do **not** store this whole JSON in the database. Treat the file as source of truth; optional **`_bilradio_meta`** inside the file is fine.
 
 ## 3. Bullet summaries for the web app (SQLite)
 
 - **Tables:** `topic_sections` + `topic_bullets` (linked to `episodes.guid`).
 - **Purpose:** Fast **Topics** page, **facets** (cars/themes), filters, and ordering. This is a **denormalized index**, not a second master copy of the Whisper dump.
-- **How it gets there:** `bilradio import-bullets` (or equivalent) reads JSON matching the import shape—usually the same semantics as layer **2**, or a file under `data/cursor_inbox/<guid>.bullets.json` while iterating in Cursor.
+- **How it gets there:** `bilradio import-bullets` reads JSON matching the import shape—usually the same file as layer **2**, or `data/cursor_inbox/<guid>.bullets.json` while iterating in Cursor.
 
 ## Relationships
 
-- **1 → 2:** Manual or automated (e.g. `improve-transcripts` CLI) using `CURSOR_INSTRUCTIONS`; input text is derived from layer **1** (see `transcript_plain_text_from_file`).
+- **1 → 2:** Cursor Auto Agent (from `prepare-improved-agent` prompts) reading layer **1**; optional bootstrap for placeholders only.
 - **2 → 3:** `import-bullets` loads structured bullets into SQLite. Re-running import **replaces** rows for that episode; keep layer **2** on disk if you need history (git or backups outside this rule).
 
 ## Do not
 
 - Put **full Whisper JSON** or **full improved JSON** into SQLite BLOB/TEXT columns for routine operation.
-- Treat SQLite bullets as the only copy if you care about archival: **keep layer 2 files** (and **1**) under `data/` with normal backup practice; `data/` stays gitignored.
+- Add new **paid third-party LLM** dependencies for improved JSON without an explicit project decision (the OpenAI-based `improve-transcripts` path is removed/disabled in favour of Cursor Auto Agent).
 
 ## Summary table
 

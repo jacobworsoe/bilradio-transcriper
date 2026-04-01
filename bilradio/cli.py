@@ -160,8 +160,41 @@ def clear_error(
     typer.echo(msg)
 
 
-@app.command("improve-transcripts")
-def improve_transcripts(
+@app.command("prepare-improved-agent")
+def prepare_improved_agent(
+    guid: Optional[str] = typer.Option(
+        None,
+        "--guid",
+        help="Only this episode (full guid)",
+    ),
+    force: bool = typer.Option(
+        False,
+        "--force",
+        help="Write prompt even if data/transcripts_improved/<stem>.json already exists",
+    ),
+    limit: Optional[int] = typer.Option(
+        None,
+        "--limit",
+        help="Max episodes to consider (pub_date ASC)",
+    ),
+) -> None:
+    """Write Cursor Auto Agent Markdown prompts under data/cursor_inbox/ (improved JSON path inside)."""
+    from bilradio.prepare_improved_agent import write_improved_agent_prompts
+
+    init_db(DB_PATH)
+    paths = write_improved_agent_prompts(guid=guid, force=force, limit=limit)
+    if not paths:
+        typer.echo("No prompts written (missing Whisper transcript on disk, or all improved JSON exist).")
+        raise typer.Exit(1)
+    typer.echo(f"Wrote {len(paths)} prompt(s). Open each in Cursor and run Auto Agent on it.")
+    for p in paths[:10]:
+        typer.echo(f"  {p}")
+    if len(paths) > 10:
+        typer.echo("  ...")
+
+
+@app.command("bootstrap-improved-json")
+def bootstrap_improved_json(
     guid: Optional[str] = typer.Option(
         None,
         "--guid",
@@ -175,39 +208,17 @@ def improve_transcripts(
     limit: Optional[int] = typer.Option(
         None,
         "--limit",
-        help="Max episodes to process from the ordered list (newest order = pub_date ASC)",
-    ),
-    pause: float = typer.Option(
-        1.0,
-        "--pause",
-        help="Seconds to sleep between API calls (rate limiting)",
+        help="Max episodes to consider (pub_date ASC)",
     ),
 ) -> None:
-    """Call OpenAI with CURSOR_INSTRUCTIONS; write sectioned JSON to data/transcripts_improved/. Requires OPENAI_API_KEY."""
-    import os
-
-    from bilradio.improve_transcripts import run_improve_batch
+    """Extractive placeholders in transcripts_improved/; replace with Cursor Auto Agent when ready."""
+    from bilradio.bootstrap_improved import write_bootstrap_improved
 
     init_db(DB_PATH)
-    if not (os.environ.get("OPENAI_API_KEY") or "").strip():
-        typer.echo(
-            "OPENAI_API_KEY is not set. Add it to your environment or .env at the repo root.",
-            err=True,
-        )
-        raise typer.Exit(1)
-    ok, skip, err_n, errs = run_improve_batch(
-        guid=guid, force=force, limit=limit, pause_sec=pause
+    w, sk_nt, sk_ex = write_bootstrap_improved(guid=guid, force=force, limit=limit)
+    typer.echo(
+        f"Bootstrap done. written={w} skipped_no_transcript={sk_nt} skipped_existing={sk_ex}"
     )
-    if guid and ok + skip + err_n == 0:
-        typer.echo(f"No episode found for guid {guid!r}.", err=True)
-        raise typer.Exit(2)
-    typer.echo(f"Finished. written={ok} skipped={skip} errors={err_n}")
-    for e in errs[:12]:
-        typer.echo(f"  {e}", err=True)
-    if len(errs) > 12:
-        typer.echo(f"  ... and {len(errs) - 12} more", err=True)
-    if err_n:
-        raise typer.Exit(3)
 
 
 @app.command("episode-cleanup")
