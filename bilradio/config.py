@@ -26,6 +26,9 @@ MIN_DURATION_SEC = int(os.environ.get("BILRADIO_MIN_DURATION_SEC", "0"))
 DATA_DIR = Path(os.environ.get("BILRADIO_DATA_DIR", "data")).resolve()
 AUDIO_DIR = DATA_DIR / "audio"
 TRANSCRIPTS_DIR = DATA_DIR / "transcripts"
+TRANSCRIPTS_IMPROVED_DIR = Path(
+    os.environ.get("BILRADIO_TRANSCRIPTS_IMPROVED_DIR", str(DATA_DIR / "transcripts_improved"))
+).resolve()
 CURSOR_INBOX_DIR = Path(
     os.environ.get("BILRADIO_CURSOR_INBOX_DIR", str(DATA_DIR / "cursor_inbox"))
 ).resolve()
@@ -113,5 +116,6 @@ def ensure_data_dirs() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     TRANSCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
+    TRANSCRIPTS_IMPROVED_DIR.mkdir(parents=True, exist_ok=True)
     CURSOR_INBOX_DIR.mkdir(parents=True, exist_ok=True)
     LOGS_DIR.mkdir(parents=True, exist_ok=True)

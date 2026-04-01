@@ -32,7 +32,23 @@ CREATE TABLE IF NOT EXISTS topic_bullets (
 );
 
 CREATE INDEX IF NOT EXISTS idx_bullets_episode ON topic_bullets(episode_guid);
+
+CREATE TABLE IF NOT EXISTS topic_sections (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    episode_guid TEXT NOT NULL,
+    title TEXT NOT NULL,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    FOREIGN KEY (episode_guid) REFERENCES episodes(guid)
+);
+
+CREATE INDEX IF NOT EXISTS idx_sections_episode ON topic_sections(episode_guid);
 """
+
+
+def _migrate_schema(conn: sqlite3.Connection) -> None:
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(topic_bullets)").fetchall()}
+    if "section_id" not in cols:
+        conn.execute("ALTER TABLE topic_bullets ADD COLUMN section_id INTEGER")
 
 
 @contextmanager
@@ -42,6 +58,7 @@ def connect(db_path: Path) -> Generator[sqlite3.Connection, None, None]:
     conn.row_factory = sqlite3.Row
     try:
         conn.executescript(SCHEMA)
+        _migrate_schema(conn)
         conn.commit()
         yield conn
     finally:

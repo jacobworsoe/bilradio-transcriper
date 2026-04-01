@@ -11,6 +11,7 @@ from bilradio.config import (
     DB_PATH,
     LOGS_DIR,
     TRANSCRIPTS_DIR,
+    TRANSCRIPTS_IMPROVED_DIR,
     WHISPER_CMD,
     WHISPER_DEVICE,
     WHISPER_MODEL,
@@ -19,6 +20,7 @@ from bilradio.config import (
     ensure_data_dirs,
 )
 from bilradio.db import init_db
+from bilradio.episode_cleanup import run_episode_cleanup_report
 from bilradio.pipeline import (
     first_pending_guid,
     step_clear_episode_error,
@@ -47,6 +49,7 @@ def doctor() -> None:
     typer.echo(f"DATA_DIR: {DATA_DIR}")
     typer.echo(f"LOGS_DIR: {LOGS_DIR}")
     typer.echo(f"TRANSCRIPTS_DIR: {TRANSCRIPTS_DIR}")
+    typer.echo(f"TRANSCRIPTS_IMPROVED_DIR: {TRANSCRIPTS_IMPROVED_DIR}")
     typer.echo(f"WHISPER_MODEL: {WHISPER_MODEL}")
     typer.echo(f"WHISPER_DEVICE: {WHISPER_DEVICE}")
     typer.echo(f"WHISPER_VERBOSE: {WHISPER_VERBOSE}")
@@ -157,20 +160,27 @@ def clear_error(
     typer.echo(msg)
 
 
+@app.command("episode-cleanup")
+def episode_cleanup() -> None:
+    """Print counts of episodes with audio, Whisper JSON, and improved JSON on disk."""
+    init_db(DB_PATH)
+    run_episode_cleanup_report()
+
+
 @app.command("ingest-transcripts")
 def ingest_transcripts(
     guid: Optional[str] = typer.Option(
         None,
         "--guid",
-        help="Only this episode guid (still requires matching .txt under data/transcripts)",
+        help="Only this episode guid (prefers data/transcripts/<stem>.json, else .txt)",
     ),
 ) -> None:
-    """Promote downloaded/error rows to transcribed when a non-empty .txt already exists (e.g. after manual Whisper)."""
+    """Promote downloaded/error rows to transcribed when Whisper output exists on disk (JSON or .txt)."""
     init_db(DB_PATH)
     n, skipped = step_ingest_transcripts(guid)
     typer.echo(
         f"Ingest complete: {n} episode(s) updated; "
-        f"{skipped} row(s) skipped (no audio file, missing .txt, or empty transcript)."
+        f"{skipped} row(s) skipped (no audio file, missing transcript, or empty file)."
     )
 
 
@@ -203,7 +213,7 @@ def import_bullets(
         "--file",
         exists=False,
         dir_okay=False,
-        help='JSON with {"bullets": [...]}; default: data/cursor_inbox/<guid>.bullets.json',
+        help='JSON with {"sections":[...]} or legacy {"bullets":[...]}; default: cursor_inbox/<guid>.bullets.json',
     ),
 ) -> None:
     """Load bullets from JSON (after you save output from Cursor)."""

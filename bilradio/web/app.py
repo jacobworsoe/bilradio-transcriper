@@ -1,29 +1,23 @@
 from __future__ import annotations
 
-import os
-import signal
-import subprocess
-import sys
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Query, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from bilradio.config import (
-    DATA_DIR,
-    DB_PATH,
-    QUEUE_RUNNER_PID_FILE,
-    WHISPER_CURRENT_GUID_FILE,
-)
+from bilradio.config import DB_PATH
 from bilradio.db import connect, parse_json_list
+from bilradio.episode_paths import (
+    expected_audio_path,
+    has_non_empty_json,
+    improved_transcript_json_path,
+    whisper_transcript_json_path,
+)
 from bilradio.pipeline import step_clear_episode_error
-from bilradio.whisper_run import WHISPER_HEARTBEAT_FILE, WHISPER_PID_FILE
 
 _BASE = Path(__file__).resolve().parent
-# Repository root (parent of the `bilradio` package); stable cwd for background workers.
-_REPO_ROOT = Path(__file__).resolve().parents[2]
 
 app = FastAPI(title="Bilradio topics")
 app.mount("/static", StaticFiles(directory=str(_BASE / "static")), name="static")
@@ -35,67 +29,9 @@ def _norm(s: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Process-state helpers
-# ---------------------------------------------------------------------------
-
-def _read_pid_file(path: Path) -> int | None:
-    """Read a PID file and return the int PID if the process is alive, else None."""
-    try:
-        pid = int(path.read_text(encoding="utf-8").strip())
-        os.kill(pid, 0)
-        return pid
-    except (OSError, ValueError):
-        return None
-
-
-def _read_heartbeat() -> dict[str, str]:
-    try:
-        data: dict[str, str] = {}
-        for line in WHISPER_HEARTBEAT_FILE.read_text(encoding="utf-8").splitlines():
-            if "=" in line:
-                k, _, v = line.partition("=")
-                data[k.strip()] = v.strip()
-        return data
-    except OSError:
-        return {}
-
-
-def _kill_pid(pid: int) -> None:
-    if sys.platform == "win32":
-        subprocess.run(["taskkill", "/F", "/T", "/PID", str(pid)], check=False)
-    else:
-        try:
-            os.kill(pid, signal.SIGTERM)
-        except OSError:
-            pass
-
-
-def _start_subprocess(args: list[str]) -> int:
-    """Launch a detached background subprocess; return its PID."""
-    if sys.platform == "win32":
-        proc = subprocess.Popen(
-            args,
-            cwd=str(_REPO_ROOT),
-            creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP,
-            close_fds=True,
-        )
-    else:
-        proc = subprocess.Popen(
-            args,
-            cwd=str(_REPO_ROOT),
-            close_fds=True,
-            start_new_session=True,
-        )
-    return proc.pid
-
-
-def _venv_python() -> str:
-    return sys.executable
-
-
-# ---------------------------------------------------------------------------
 # Topics view
 # ---------------------------------------------------------------------------
+
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request) -> HTMLResponse:
@@ -138,11 +74,16 @@ def api_bullets(
         rows = conn.execute(
             """
             SELECT b.id, b.text, b.cars, b.themes, b.uncertain,
-                   e.title, e.pub_date, e.guid
+                   e.title, e.pub_date, e.guid,
+                   COALESCE(s.title, '') AS section_title,
+                   COALESCE(s.sort_order, 0) AS section_order
             FROM topic_bullets b
             JOIN episodes e ON e.guid = b.episode_guid
+            LEFT JOIN topic_sections s ON s.id = b.section_id
             WHERE e.status = 'extracted'
-            ORDER BY e.pub_date DESC, b.id ASC
+            ORDER BY e.pub_date DESC,
+                     COALESCE(s.sort_order, 0),
+                     b.id ASC
             """
         ).fetchall()
     out: list[dict] = []
@@ -163,168 +104,87 @@ def api_bullets(
                 "episode_title": r["title"],
                 "episode_guid": r["guid"],
                 "pub_date": r["pub_date"],
+                "section_title": r["section_title"] or "",
+                "section_order": int(r["section_order"] or 0),
             }
         )
     return {"bullets": out, "count": len(out)}
 
 
 # ---------------------------------------------------------------------------
-# Queue view
+# Episodes status (read-only + RSS sync + clear error)
 # ---------------------------------------------------------------------------
 
-@app.get("/queue", response_class=HTMLResponse)
-def queue_page(request: Request) -> HTMLResponse:
-    return templates.TemplateResponse(request, "queue.html", {})
+
+@app.get("/queue")
+def queue_redirect() -> RedirectResponse:
+    return RedirectResponse(url="/episodes", status_code=301)
 
 
-@app.get("/api/queue")
-def api_queue() -> dict:
+@app.get("/episodes", response_class=HTMLResponse)
+def episodes_page(request: Request) -> HTMLResponse:
+    return templates.TemplateResponse(request, "episodes.html", {})
+
+
+@app.get("/api/episodes")
+def api_episodes() -> dict:
     with connect(DB_PATH) as conn:
         rows = conn.execute(
             """
-            SELECT guid, title, pub_date, duration_sec, status, error,
-                   extract_at,
+            SELECT guid, title, pub_date, duration_sec, status, error, audio_path, extract_at,
                    (SELECT count(*) FROM topic_bullets WHERE episode_guid = e.guid) AS bullet_count
             FROM episodes e
             ORDER BY pub_date ASC
             """
         ).fetchall()
 
-    episodes = [
-        {
-            "guid": r["guid"],
-            "title": r["title"],
-            "pub_date": r["pub_date"],
-            "duration_sec": r["duration_sec"],
-            "status": r["status"],
-            "error": r["error"],
-            "extract_at": r["extract_at"],
-            "bullet_count": r["bullet_count"],
-        }
-        for r in rows
-    ]
-
+    episodes: list[dict] = []
     counts: dict[str, int] = {}
-    for ep in episodes:
-        counts[ep["status"]] = counts.get(ep["status"], 0) + 1
+    for r in rows:
+        guid = r["guid"]
+        title = r["title"]
+        ap = r["audio_path"]
+        audio_path = expected_audio_path(guid, title, ap)
+        wjson = whisper_transcript_json_path(guid, title, ap)
+        ij = improved_transcript_json_path(guid, title, ap)
+        downloaded = audio_path.is_file()
+        has_whisper_json = has_non_empty_json(wjson)
+        has_improved = has_non_empty_json(ij)
 
-    whisper_pid = _read_pid_file(WHISPER_PID_FILE)
-    queue_runner_pid = _read_pid_file(QUEUE_RUNNER_PID_FILE)
-    current_guid: str | None = None
-    try:
-        current_guid = WHISPER_CURRENT_GUID_FILE.read_text(encoding="utf-8").strip() or None
-    except OSError:
-        pass
+        st = r["status"]
+        counts[st] = counts.get(st, 0) + 1
 
-    return {
-        "episodes": episodes,
-        "counts": counts,
-        "whisper_pid": whisper_pid,
-        "queue_runner_pid": queue_runner_pid,
-        "current_transcribing_guid": current_guid,
-        "heartbeat": _read_heartbeat(),
-    }
-
-
-@app.post("/api/queue/start")
-def api_queue_start() -> JSONResponse:
-    """Start bilradio run-queue as a background process (sync + download all + transcribe all)."""
-    existing = _read_pid_file(QUEUE_RUNNER_PID_FILE)
-    if existing:
-        raise HTTPException(status_code=409, detail=f"Queue runner already running (PID {existing}).")
-    pid = _start_subprocess([_venv_python(), "-m", "bilradio.cli", "run-queue"])
-    try:
-        QUEUE_RUNNER_PID_FILE.write_text(str(pid), encoding="utf-8")
-    except OSError:
-        pass
-    return JSONResponse({"started": pid, "mode": "run-queue"})
-
-
-@app.post("/api/queue/stop")
-def api_queue_stop() -> JSONResponse:
-    """Stop the queue runner (and any Whisper child) immediately."""
-    runner_pid = _read_pid_file(QUEUE_RUNNER_PID_FILE)
-    whisper_pid = _read_pid_file(WHISPER_PID_FILE)
-    killed: list[int] = []
-    if runner_pid:
-        _kill_pid(runner_pid)
-        killed.append(runner_pid)
-        try:
-            QUEUE_RUNNER_PID_FILE.unlink(missing_ok=True)
-        except OSError:
-            pass
-    if whisper_pid and whisper_pid not in killed:
-        _kill_pid(whisper_pid)
-        killed.append(whisper_pid)
-        try:
-            WHISPER_PID_FILE.unlink(missing_ok=True)
-        except OSError:
-            pass
-    try:
-        WHISPER_CURRENT_GUID_FILE.unlink(missing_ok=True)
-    except OSError:
-        pass
-    if not killed:
-        raise HTTPException(status_code=404, detail="No active queue runner or Whisper process found.")
-    return JSONResponse({"stopped": killed})
-
-
-@app.post("/api/queue/clear-error/{guid}")
-def api_queue_clear_error(guid: str) -> JSONResponse:
-    """Clear stored error text and set episode back to downloaded (retry transcription)."""
-    if _read_pid_file(QUEUE_RUNNER_PID_FILE):
-        raise HTTPException(
-            status_code=409,
-            detail="Stop the queue runner before clearing errors.",
+        episodes.append(
+            {
+                "guid": guid,
+                "title": title,
+                "pub_date": r["pub_date"],
+                "duration_sec": r["duration_sec"],
+                "status": st,
+                "error": r["error"],
+                "extract_at": r["extract_at"],
+                "bullet_count": r["bullet_count"],
+                "downloaded": downloaded,
+                "whisper_json": has_whisper_json,
+                "improved_transcript": has_improved,
+            }
         )
+
+    return {"episodes": episodes, "counts": counts}
+
+
+@app.post("/api/episodes/sync")
+def api_episodes_sync() -> JSONResponse:
+    from bilradio.pipeline import sync_episodes_from_rss
+
+    n = sync_episodes_from_rss()
+    return JSONResponse({"upserted": n})
+
+
+@app.post("/api/episodes/clear-error/{guid}")
+def api_episodes_clear_error(guid: str) -> JSONResponse:
     ok, msg = step_clear_episode_error(guid)
     if not ok:
         code = 404 if msg == "Episode not found." else 400
         raise HTTPException(status_code=code, detail=msg)
     return JSONResponse({"cleared": guid})
-
-
-@app.post("/api/queue/process/{guid}")
-def api_queue_process_episode(guid: str) -> JSONResponse:
-    """Download (if needed) and transcribe a single episode in the background."""
-    existing = _read_pid_file(QUEUE_RUNNER_PID_FILE)
-    if existing:
-        raise HTTPException(
-            status_code=409,
-            detail=f"Queue runner already running (PID {existing}). Stop it first or let it finish.",
-        )
-    with connect(DB_PATH) as conn:
-        row = conn.execute(
-            "SELECT guid, status FROM episodes WHERE guid = ?", (guid,)
-        ).fetchone()
-    if not row:
-        raise HTTPException(status_code=404, detail=f"Episode {guid!r} not found.")
-    # Use 'pipeline' CLI which handles download + transcribe + prepare-extract
-    pid = _start_subprocess([_venv_python(), "-m", "bilradio.cli", "pipeline", "--guid", guid])
-    try:
-        QUEUE_RUNNER_PID_FILE.write_text(str(pid), encoding="utf-8")
-    except OSError:
-        pass
-    return JSONResponse({"started": pid, "guid": guid, "mode": "pipeline"})
-
-
-@app.post("/api/queue/kill-whisper")
-def api_kill_whisper() -> JSONResponse:
-    """Kill only the Whisper subprocess; the queue runner continues to the next episode."""
-    pid = _read_pid_file(WHISPER_PID_FILE)
-    if pid is None:
-        raise HTTPException(status_code=404, detail="No active Whisper process found.")
-    _kill_pid(pid)
-    try:
-        WHISPER_PID_FILE.unlink(missing_ok=True)
-    except OSError:
-        pass
-    return JSONResponse({"killed": pid})
-
-
-@app.post("/api/queue/sync")
-def api_queue_sync() -> JSONResponse:
-    """Sync RSS feed and discover new episodes (fast, non-blocking)."""
-    from bilradio.pipeline import sync_episodes_from_rss
-    n = sync_episodes_from_rss()
-    return JSONResponse({"upserted": n})

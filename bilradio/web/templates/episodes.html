@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bilradio — Episodes status</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    .nav { display:flex; gap:1.25rem; margin-bottom:1.5rem; font-size:.9rem; }
+    .nav a { color:var(--accent); text-decoration:none; }
+    .nav a:hover { text-decoration:underline; }
+    .nav a.active { color:var(--text); font-weight:600; pointer-events:none; }
+
+    .ctrl-bar {
+      display:flex; flex-wrap:wrap; align-items:center; gap:.75rem;
+      margin-bottom:1.25rem; padding:.75rem 1rem;
+      background:var(--surface); border-radius:8px;
+    }
+    .btn {
+      padding:.35rem .85rem; border-radius:5px; font-size:.82rem;
+      cursor:pointer; border:1px solid transparent; white-space:nowrap;
+    }
+    .btn:disabled { opacity:.4; cursor:default; }
+    .btn-sync {
+      background:rgba(61,156,245,.1); border-color:rgba(61,156,245,.3);
+      color:#3d9cf5;
+    }
+    .btn-sync:hover:not(:disabled) { background:rgba(61,156,245,.2); }
+
+    .summary-bar { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+    .stat-chip { font-size:.78rem; padding:.3rem .65rem; border-radius:6px; background:var(--surface); }
+
+    table { width:100%; border-collapse:collapse; font-size:.83rem; }
+    th {
+      text-align:left; padding:.5rem .6rem; color:var(--muted);
+      font-size:.72rem; text-transform:uppercase; letter-spacing:.05em;
+      border-bottom:1px solid #243044;
+    }
+    td { padding:.55rem .6rem; border-bottom:1px solid #1a222c; vertical-align:middle; }
+    tr:hover td { background:rgba(255,255,255,.025); }
+
+    .yes { color:#6bcb77; font-weight:600; }
+    .no { color:#636e7a; }
+    .status-badge {
+      display:inline-block; font-size:.7rem; padding:.2rem .45rem;
+      border-radius:4px; font-weight:600; white-space:nowrap;
+    }
+    .s-pending       { background:rgba(139,154,171,.15); color:#8b9aab; }
+    .s-downloaded    { background:rgba(61,156,245,.15);  color:#3d9cf5; }
+    .s-transcribing  { background:rgba(255,193,7,.15);   color:#ffc107; }
+    .s-transcribed   { background:rgba(199,156,255,.15); color:#c79cff; }
+    .s-extracted     { background:rgba(107,203,119,.15); color:#6bcb77; }
+    .s-error         { background:rgba(239,83,80,.15);   color:#ef5350; }
+    .s-skipped_short { background:rgba(139,154,171,.1);  color:#636e7a; }
+
+    .dur   { color:var(--muted); }
+    .ep-title { max-width:20rem; }
+    .error-text {
+      color:#ef5350; font-size:.75rem; margin-top:.2rem;
+      max-height:10rem; overflow-y:auto; white-space:pre-wrap; word-break:break-word;
+    }
+    .btn-clear-error {
+      background:rgba(139,154,171,.12); border-color:rgba(139,154,171,.35);
+      color:#aeb9c6; font-size:.72rem; padding:.2rem .5rem;
+      cursor:pointer; border-radius:4px;
+    }
+    .btn-clear-error:hover:not(:disabled) { background:rgba(139,154,171,.2); }
+    .ep-actions { display:flex; flex-wrap:wrap; gap:.35rem; justify-content:flex-end; }
+
+    .auto-refresh { font-size:.72rem; color:var(--muted); text-align:right; margin-bottom:.5rem; }
+    .auto-refresh span { color:var(--text); font-variant-numeric:tabular-nums; }
+
+    .tip {
+      font-size:.72rem; color:var(--muted); line-height:1.45;
+      margin:0 0 1rem 0; max-width:56rem;
+    }
+    .tip code { font-size:.68rem; color:var(--text); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Bilradio</h1>
+    <nav class="nav">
+      <a href="/">Topics</a>
+      <a href="/episodes" class="active">Episodes status</a>
+    </nav>
+  </header>
+
+  <div class="ctrl-bar">
+    <button class="btn btn-sync" id="btn-sync" type="button" onclick="syncFeed()">Sync RSS</button>
+  </div>
+
+  <p class="tip">
+    Transcription runs outside this app (e.g. <code>scripts/batch_whisper_transcribe.py</code>), then
+    <code>bilradio ingest-transcripts</code>. <strong>Whisper JSON</strong> means <code>data/transcripts/&lt;stem&gt;.json</code>.
+    <strong>Improved</strong> means <code>data/transcripts_improved/&lt;stem&gt;.json</code> (from cleanup / your editor pipeline).
+  </p>
+
+  <div class="summary-bar" id="summary-bar"></div>
+  <p class="auto-refresh">Auto-refresh in <span id="countdown">30</span>s</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Duration</th>
+        <th>Downloaded</th>
+        <th>Whisper JSON</th>
+        <th>Improved</th>
+        <th>DB status</th>
+        <th>Bullets</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="ep-tbody"></tbody>
+  </table>
+
+  <script>
+    const STATUS_EN = {
+      pending:       "Pending",
+      downloaded:    "Downloaded",
+      transcribing:  "Transcribing",
+      transcribed:   "Transcribed",
+      extracted:     "Extracted",
+      error:         "Error",
+      skipped_short: "Skipped (short)",
+    };
+
+    function fmtDur(sec) {
+      if (sec == null) return "–";
+      const h = Math.floor(sec / 3600);
+      const m = Math.floor((sec % 3600) / 60);
+      const s = sec % 60;
+      if (h > 0) return `${h}h ${m}m`;
+      if (m > 0) return `${m}m ${s}s`;
+      return `${s}s`;
+    }
+
+    function fmtDate(iso) {
+      return iso ? iso.slice(0, 10) : "–";
+    }
+
+    function yn(v) {
+      return v ? '<span class="yes">Yes</span>' : '<span class="no">No</span>';
+    }
+
+    function statusBadge(s) {
+      const label = STATUS_EN[s] || s;
+      return `<span class="status-badge s-${s}">${escHtml(label)}</span>`;
+    }
+
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    }
+
+    async function load() {
+      let data;
+      try {
+        const r = await fetch("/api/episodes");
+        data = await r.json();
+      } catch (e) {
+        console.error("Failed to load episodes:", e);
+        return;
+      }
+
+      const bar = document.getElementById("summary-bar");
+      bar.innerHTML = Object.entries(data.counts || {})
+        .map(([s, n]) => `<span class="stat-chip">${STATUS_EN[s] || s}: <strong>${n}</strong></span>`)
+        .join("");
+
+      const tbody = document.getElementById("ep-tbody");
+      tbody.innerHTML = "";
+      (data.episodes || []).forEach((ep, idx) => {
+        const tr = document.createElement("tr");
+        const showClear = ep.status === "error";
+        let actions = "";
+        if (showClear) {
+          actions = `<div class="ep-actions"><button type="button" class="btn-clear-error" data-guid="${escHtml(ep.guid)}" onclick="clearEpisodeError(this)">Clear error</button></div>`;
+        }
+        tr.innerHTML = `
+          <td class="dur">${idx + 1}</td>
+          <td class="ep-title">${escHtml(ep.title || "")}${ep.error ? `<div class="error-text">${escHtml(ep.error)}</div>` : ""}</td>
+          <td class="dur">${fmtDate(ep.pub_date)}</td>
+          <td class="dur">${fmtDur(ep.duration_sec)}</td>
+          <td>${yn(ep.downloaded)}</td>
+          <td>${yn(ep.whisper_json)}</td>
+          <td>${yn(ep.improved_transcript)}</td>
+          <td>${statusBadge(ep.status)}</td>
+          <td class="dur">${ep.bullet_count > 0 ? ep.bullet_count : "–"}</td>
+          <td>${actions}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function clearEpisodeError(btn) {
+      const guid = btn.getAttribute("data-guid");
+      if (!guid) return;
+      if (!confirm("Clear this error and mark the episode as Downloaded again?")) return;
+      btn.disabled = true;
+      const prev = btn.textContent;
+      btn.textContent = "Clearing…";
+      try {
+        const r = await fetch(`/api/episodes/clear-error/${encodeURIComponent(guid)}`, { method: "POST" });
+        const body = await r.json();
+        if (!r.ok) {
+          alert("Error: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.textContent = prev;
+      btn.disabled = false;
+      await load();
+      resetCountdown();
+    }
+
+    async function syncFeed() {
+      const btn = document.getElementById("btn-sync");
+      btn.disabled = true;
+      btn.textContent = "Syncing…";
+      try {
+        const r = await fetch("/api/episodes/sync", { method: "POST" });
+        const body = await r.json();
+        if (r.ok) {
+          await load();
+          resetCountdown();
+        } else {
+          alert("Sync failed: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.disabled = false;
+      btn.textContent = "Sync RSS";
+    }
+
+    let remaining = 30;
+    function resetCountdown() { remaining = 30; }
+    function tick() {
+      document.getElementById("countdown").textContent = remaining;
+      if (--remaining < 0) {
+        remaining = 30;
+        load();
+      }
+    }
+    setInterval(tick, 1000);
+
+    load();
+  </script>
+</body>
+</html>

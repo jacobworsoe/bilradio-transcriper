@@ -207,7 +207,7 @@ def _write_whisper_status_file(
     tqdm_state: dict[str, int | str | None],
     utc_ts: str | None = None,
 ) -> None:
-    """Persist fields consumed by /api/queue (see queue.html)."""
+    """Persist progress snapshot to ``data/whisper_heartbeat.txt`` (optional tooling / logs)."""
     try:
         ensure_data_dirs()
     except Exception:

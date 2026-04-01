@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -17,27 +18,134 @@ Flag uncertain corrections instead of guessing silently.
 Correct obvious transcription errors.
 Use context to infer the most likely wording.
 
-After editing, produce **topic bullets** for the web app (not a full transcript for reading).
+Organize the episode into **clear thematic sections** (e.g. intro, main topics, tests, closing).
+For **each section**, produce **3–5 topic bullets** for the web app (not a full transcript for reading).
 
 Respond with **JSON only** (no markdown fences), in this exact shape:
 {
-  "bullets": [
+  "sections": [
     {
-      "text": "Kort bullet på dansk (én sætning).",
-      "cars": ["mærke model eller tom liste"],
-      "themes": ["fx elbil", "leasing"],
-      "uncertain": false
+      "title": "Kort dansk sektionstitel",
+      "bullets": [
+        {
+          "text": "Kort bullet på dansk (én sætning).",
+          "cars": ["mærke model eller tom liste"],
+          "themes": ["fx elbil", "leasing"],
+          "uncertain": false
+        }
+      ]
     }
   ]
 }
 
 Rules:
-- `text`: one concise Danish sentence per topic discussed.
-- `cars`: concrete makes/models for that bullet, or [] if none.
-- `themes`: 0–3 short labels for filtering (e.g. elbil, leasing, brændstofpriser).
-- `uncertain`: true if the point is weakly supported in the audio/text.
-- Merge overlapping bullets; avoid duplicate facts.
+- **sections**: 1–12 sections per episode; each section must have **3–5 bullets** (merge or split if needed).
+- **title**: short Danish section heading.
+- **text**: one concise Danish sentence per bullet.
+- **cars**: concrete makes/models for that bullet, or [] if none.
+- **themes**: 0–3 short labels for filtering (e.g. elbil, leasing, brændstofpriser).
+- **uncertain**: true if the point is weakly supported in the audio/text.
+- Merge overlapping bullets; avoid duplicate facts across sections.
 """
+
+
+def _normalize_bullet_dict(b: dict[str, Any]) -> dict[str, Any] | None:
+    text = str(b.get("text", "")).strip()
+    if not text:
+        return None
+    cars = b.get("cars") or []
+    themes = b.get("themes") or []
+    if not isinstance(cars, list):
+        cars = []
+    if not isinstance(themes, list):
+        themes = []
+    cars = [str(c).strip() for c in cars if str(c).strip()]
+    themes = [str(t).strip() for t in themes if str(t).strip()]
+    uncertain = bool(b.get("uncertain", False))
+    return {
+        "text": text,
+        "cars": cars,
+        "themes": themes,
+        "uncertain": uncertain,
+    }
+
+
+@dataclass(frozen=True)
+class BulletSection:
+    title: str
+    bullets: tuple[dict[str, Any], ...]
+
+
+@dataclass(frozen=True)
+class BulletDocument:
+    sections: tuple[BulletSection, ...]
+
+    @property
+    def bullet_count(self) -> int:
+        return sum(len(s.bullets) for s in self.sections)
+
+
+def _parse_bullet_json_raw(data: dict[str, Any]) -> BulletDocument:
+    if "sections" in data and isinstance(data["sections"], list):
+        out_sections: list[BulletSection] = []
+        for sec in data["sections"]:
+            if not isinstance(sec, dict):
+                continue
+            title = str(sec.get("title", "")).strip() or "Episode"
+            raw_bullets = sec.get("bullets")
+            if not isinstance(raw_bullets, list):
+                continue
+            items: list[dict[str, Any]] = []
+            for b in raw_bullets:
+                if isinstance(b, dict):
+                    nb = _normalize_bullet_dict(b)
+                    if nb:
+                        items.append(nb)
+            if items:
+                out_sections.append(BulletSection(title=title, bullets=tuple(items)))
+        if out_sections:
+            return BulletDocument(sections=tuple(out_sections))
+
+    # Legacy: flat bullets list
+    bullets = data.get("bullets")
+    if not isinstance(bullets, list):
+        return BulletDocument(sections=())
+    items: list[dict[str, Any]] = []
+    for b in bullets:
+        if isinstance(b, dict):
+            nb = _normalize_bullet_dict(b)
+            if nb:
+                items.append(nb)
+    if not items:
+        return BulletDocument(sections=())
+    return BulletDocument(
+        sections=(BulletSection(title="Episode", bullets=tuple(items)),)
+    )
+
+
+def parse_bullet_document_from_string(raw: str) -> BulletDocument:
+    s = raw.strip()
+    s = re.sub(r"^```(?:json)?\s*", "", s)
+    s = re.sub(r"\s*```\s*$", "", s)
+    data = json.loads(s)
+    if not isinstance(data, dict):
+        return BulletDocument(sections=())
+    return _parse_bullet_json_raw(data)
+
+
+def load_bullet_document_from_json_path(path: Path) -> BulletDocument:
+    return parse_bullet_document_from_string(
+        path.read_text(encoding="utf-8", errors="replace")
+    )
+
+
+def load_bullets_from_json_path(path: Path) -> list[dict[str, Any]]:
+    """Flatten all bullets (legacy API for callers that expect a list)."""
+    doc = load_bullet_document_from_json_path(path)
+    out: list[dict[str, Any]] = []
+    for sec in doc.sections:
+        out.extend(sec.bullets)
+    return out
 
 
 def chunk_transcript(text: str, max_chars: int) -> list[str]:
@@ -59,45 +167,6 @@ def chunk_transcript(text: str, max_chars: int) -> list[str]:
             chunks.append(chunk)
         start = end
     return chunks
-
-
-def _parse_bullet_response(raw: str) -> list[dict[str, Any]]:
-    raw = raw.strip()
-    raw = re.sub(r"^```(?:json)?\s*", "", raw)
-    raw = re.sub(r"\s*```\s*$", "", raw)
-    data = json.loads(raw)
-    bullets = data.get("bullets")
-    if not isinstance(bullets, list):
-        return []
-    out: list[dict[str, Any]] = []
-    for b in bullets:
-        if not isinstance(b, dict):
-            continue
-        text = str(b.get("text", "")).strip()
-        if not text:
-            continue
-        cars = b.get("cars") or []
-        themes = b.get("themes") or []
-        if not isinstance(cars, list):
-            cars = []
-        if not isinstance(themes, list):
-            themes = []
-        cars = [str(c).strip() for c in cars if str(c).strip()]
-        themes = [str(t).strip() for t in themes if str(t).strip()]
-        uncertain = bool(b.get("uncertain", False))
-        out.append(
-            {
-                "text": text,
-                "cars": cars,
-                "themes": themes,
-                "uncertain": uncertain,
-            }
-        )
-    return out
-
-
-def load_bullets_from_json_path(path: Path) -> list[dict[str, Any]]:
-    return _parse_bullet_response(path.read_text(encoding="utf-8", errors="replace"))
 
 
 def write_cursor_inbox(

@@ -13,11 +13,19 @@ from bilradio.config import (
     DATA_DIR,
     DB_PATH,
     MIN_DURATION_SEC,
+    TRANSCRIPTS_DIR,
     ensure_data_dirs,
 )
 from bilradio.db import connect
 from bilradio.download import audio_path_for_guid, download_audio
-from bilradio.extract import load_bullets_from_json_path, write_cursor_inbox
+from bilradio.episode_paths import episode_stem, has_non_empty_json, whisper_transcript_json_path
+from bilradio.extract import (
+    BulletDocument,
+    BulletSection,
+    load_bullet_document_from_json_path,
+    write_cursor_inbox,
+)
+from bilradio.transcript_text import transcript_plain_text_from_file
 from bilradio.rss_feed import load_filtered_episodes
 from bilradio.runtime_log import get_logger
 from bilradio.whisper_run import run_whisper, transcript_path_for_audio
@@ -171,8 +179,8 @@ def step_transcribe(guid: str | None = None) -> None:
 
 def step_ingest_transcripts(guid: str | None = None) -> tuple[int, int]:
     """
-    Promote episodes to ``transcribed`` when a non-empty transcript ``.txt`` already exists in
-    ``data/transcripts`` (same basename rule as integrated Whisper: ``stem(audio_path).txt``).
+    Promote episodes to ``transcribed`` when a non-empty Whisper transcript exists under
+    ``data/transcripts``: prefers ``{stem}.json``, else ``{stem}.txt`` (same stem as audio basename).
 
     Considers rows with ``status`` ``downloaded`` or ``error`` so external/offline Whisper runs
     can be synced into SQLite after ``bilradio download`` (or after fixing GPU errors).
@@ -182,7 +190,7 @@ def step_ingest_transcripts(guid: str | None = None) -> tuple[int, int]:
     skipped = 0
     with connect(DB_PATH) as conn:
         q = """
-            SELECT guid, audio_path, status FROM episodes
+            SELECT guid, title, audio_path, status FROM episodes
             WHERE audio_path IS NOT NULL AND TRIM(audio_path) != ''
             AND status IN ('downloaded', 'error')
         """
@@ -198,23 +206,30 @@ def step_ingest_transcripts(guid: str | None = None) -> tuple[int, int]:
             if not audio_path.is_file():
                 skipped += 1
                 continue
-            txt_path = transcript_path_for_audio(audio_path)
-            if not txt_path.is_file():
-                skipped += 1
-                continue
-            try:
-                if txt_path.stat().st_size < 1:
-                    skipped += 1
-                    continue
-            except OSError:
-                skipped += 1
-                continue
-            try:
-                head = txt_path.read_text(encoding="utf-8", errors="replace")[:4096]
-            except OSError:
-                skipped += 1
-                continue
-            if not head.strip():
+            g = row["guid"]
+            title = row["title"]
+            json_path = whisper_transcript_json_path(g, title, ap_raw)
+            stem = episode_stem(g, title, ap_raw)
+            txt_path = TRANSCRIPTS_DIR / f"{stem}.txt"
+
+            chosen: Path | None = None
+            if has_non_empty_json(json_path):
+                chosen = json_path
+            elif txt_path.is_file():
+                try:
+                    if txt_path.stat().st_size < 1:
+                        chosen = None
+                except OSError:
+                    chosen = None
+                else:
+                    try:
+                        head = txt_path.read_text(encoding="utf-8", errors="replace")[:4096]
+                    except OSError:
+                        chosen = None
+                    else:
+                        chosen = txt_path if head.strip() else None
+
+            if chosen is None:
                 skipped += 1
                 continue
 
@@ -223,7 +238,7 @@ def step_ingest_transcripts(guid: str | None = None) -> tuple[int, int]:
                 UPDATE episodes SET status = 'transcribed', transcript_path = ?, error = NULL
                 WHERE guid = ?
                 """,
-                (str(txt_path.resolve()), row["guid"]),
+                (str(chosen.resolve()), g),
             )
             conn.commit()
             ingested += 1
@@ -259,27 +274,38 @@ def step_clear_episode_error(guid: str) -> tuple[bool, str]:
     return True, "Error cleared; episode is Downloaded again."
 
 
-def _save_bullets_for_episode(
+def _save_bullet_document(
     conn: sqlite3.Connection,
     guid: str,
-    bullets: list[dict],
+    doc: BulletDocument,
     source_label: str,
 ) -> None:
     conn.execute("DELETE FROM topic_bullets WHERE episode_guid = ?", (guid,))
-    for b in bullets:
-        conn.execute(
+    conn.execute("DELETE FROM topic_sections WHERE episode_guid = ?", (guid,))
+    for order, sec in enumerate(doc.sections):
+        cur = conn.execute(
             """
-            INSERT INTO topic_bullets (episode_guid, text, cars, themes, uncertain)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO topic_sections (episode_guid, title, sort_order)
+            VALUES (?, ?, ?)
             """,
-            (
-                guid,
-                b["text"],
-                json.dumps(b["cars"], ensure_ascii=False),
-                json.dumps(b["themes"], ensure_ascii=False),
-                1 if b["uncertain"] else 0,
-            ),
+            (guid, sec.title, order),
         )
+        sid = cur.lastrowid
+        for b in sec.bullets:
+            conn.execute(
+                """
+                INSERT INTO topic_bullets (episode_guid, section_id, text, cars, themes, uncertain)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    guid,
+                    sid,
+                    b["text"],
+                    json.dumps(b["cars"], ensure_ascii=False),
+                    json.dumps(b["themes"], ensure_ascii=False),
+                    1 if b["uncertain"] else 0,
+                ),
+            )
     now = datetime.now(timezone.utc).isoformat()
     conn.execute(
         """
@@ -311,7 +337,9 @@ def step_prepare_cursor_inbox(guid: str | None = None) -> list[Path]:
             if not tp:
                 continue
             tpath = Path(tp)
-            transcript = tpath.read_text(encoding="utf-8", errors="replace")
+            transcript = transcript_plain_text_from_file(tpath)
+            if not transcript.strip():
+                continue
             p = write_cursor_inbox(g, row["title"], transcript, inbox_dir=CURSOR_INBOX_DIR)
             written.append(p)
             # Chunk sidecar files may also exist
@@ -324,14 +352,14 @@ def step_prepare_cursor_inbox(guid: str | None = None) -> list[Path]:
 
 
 def step_import_bullets(guid: str, json_path: Path, source_label: str = "cursor-json") -> None:
-    bullets = load_bullets_from_json_path(json_path)
-    if not bullets:
+    doc = load_bullet_document_from_json_path(json_path)
+    if doc.bullet_count == 0:
         raise ValueError("No bullets parsed from JSON (empty or invalid).")
     with connect(DB_PATH) as conn:
         row = conn.execute("SELECT guid FROM episodes WHERE guid = ?", (guid,)).fetchone()
         if not row:
             raise ValueError(f"Unknown episode guid: {guid}")
-        _save_bullets_for_episode(conn, guid, bullets, source_label)
+        _save_bullet_document(conn, guid, doc, source_label)
 
 
 def step_scaffold_bullets(guid: str, max_bullets: int = 28) -> None:
@@ -356,7 +384,7 @@ def step_scaffold_bullets(guid: str, max_bullets: int = 28) -> None:
         tp = row["transcript_path"]
         if not tp:
             raise ValueError("Episode has no transcript_path")
-        text = Path(tp).read_text(encoding="utf-8", errors="replace")
+        text = transcript_plain_text_from_file(Path(tp))
         parts = re.split(r"\n\s*\n+", text.strip())
         bullets: list[dict] = []
         for p in parts:
@@ -382,7 +410,10 @@ def step_scaffold_bullets(guid: str, max_bullets: int = 28) -> None:
                     "uncertain": True,
                 }
             )
-        _save_bullets_for_episode(conn, guid, bullets, "scaffold-preview")
+        doc = BulletDocument(
+            sections=(BulletSection("Episode", tuple(bullets)),),
+        )
+        _save_bullet_document(conn, guid, doc, "scaffold-preview")
 
 
 def first_pending_guid() -> str | None:

@@ -92,6 +92,19 @@ body {
   color: var(--muted);
 }
 
+.section-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #243044;
+  color: var(--text);
+}
+
+.section-heading:first-child {
+  margin-top: 0.5rem;
+}
+
 .bullet-list {
   list-style: none;
   padding: 0;

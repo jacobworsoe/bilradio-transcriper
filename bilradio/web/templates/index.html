@@ -11,7 +11,7 @@
     <h1>Bilradio</h1>
     <nav style="display:flex;gap:1.25rem;margin-bottom:.75rem;font-size:.9rem;">
       <a href="/" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
-      <a href="/queue" style="color:var(--accent);text-decoration:none;">Queue</a>
+      <a href="/episodes" style="color:var(--accent);text-decoration:none;">Episodes status</a>
     </nav>
     <p class="lede">Bullet-point summaries from all episodes. Select cars or themes to <strong>exclude</strong> from the overview.</p>
   </header>
@@ -32,7 +32,7 @@
     <p id="count-line" class="count-line">Loading…</p>
   </section>
 
-  <main>
+  <main id="main-bullets">
     <ul id="bullet-list" class="bullet-list"></ul>
   </main>
 
@@ -95,20 +95,43 @@
     }
 
     async function loadBullets() {
-      const list      = document.getElementById("bullet-list");
+      const main      = document.getElementById("main-bullets");
       const countLine = document.getElementById("count-line");
-      list.innerHTML   = "";
+      main.innerHTML = "";
+      let list = null;
       countLine.textContent = "Loading…";
       const q = qsParams();
       const r = await fetch("/api/bullets" + (q ? "?" + q : ""));
       const data = await r.json();
       countLine.textContent = data.count + " bullet" + (data.count === 1 ? "" : "s") + " (after filters)";
+
+      let lastEp = "";
+      let lastSection = "";
       for (const b of data.bullets) {
+        const epKey = b.episode_guid + "|" + (b.pub_date || "");
+        const sec = (b.section_title || "").trim();
+        const needHeader = !list || epKey !== lastEp || sec !== lastSection;
+        if (needHeader) {
+          lastEp = epKey;
+          lastSection = sec;
+          const h = document.createElement("h2");
+          h.className = "section-heading";
+          h.textContent = sec
+            ? (b.episode_title + " · " + (b.pub_date || "").slice(0, 10) + " — " + sec)
+            : (b.episode_title + " · " + (b.pub_date || "").slice(0, 10));
+          main.appendChild(h);
+          list = document.createElement("ul");
+          list.className = "bullet-list";
+          main.appendChild(list);
+        }
+
         const li   = document.createElement("li");
         li.className = "bullet" + (b.uncertain ? " uncertain" : "");
         const meta = document.createElement("div");
         meta.className   = "bullet-meta";
-        meta.textContent = b.episode_title + " · " + (b.pub_date || "").slice(0, 10);
+        meta.textContent = sec
+          ? (b.episode_title + " · " + (b.pub_date || "").slice(0, 10) + " · " + sec)
+          : (b.episode_title + " · " + (b.pub_date || "").slice(0, 10));
         const text = document.createElement("p");
         text.className   = "bullet-text";
         text.textContent = b.text;
