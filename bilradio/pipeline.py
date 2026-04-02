@@ -285,17 +285,19 @@ def _save_bullet_document(
     for order, sec in enumerate(doc.sections):
         cur = conn.execute(
             """
-            INSERT INTO topic_sections (episode_guid, title, sort_order)
-            VALUES (?, ?, ?)
+            INSERT INTO topic_sections (episode_guid, title, sort_order, start_sec, end_sec)
+            VALUES (?, ?, ?, ?, ?)
             """,
-            (guid, sec.title, order),
+            (guid, sec.title, order, sec.start_sec, sec.end_sec),
         )
         sid = cur.lastrowid
         for b in sec.bullets:
             conn.execute(
                 """
-                INSERT INTO topic_bullets (episode_guid, section_id, text, cars, themes, uncertain)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO topic_bullets (
+                    episode_guid, section_id, text, cars, themes, uncertain, start_sec, end_sec
+                )
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     guid,
@@ -304,6 +306,8 @@ def _save_bullet_document(
                     json.dumps(b["cars"], ensure_ascii=False),
                     json.dumps(b["themes"], ensure_ascii=False),
                     1 if b["uncertain"] else 0,
+                    b.get("start_sec"),
+                    b.get("end_sec"),
                 ),
             )
     now = datetime.now(timezone.utc).isoformat()

@@ -161,3 +161,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | Later | Episodes status page (disk truth for JSON), sectioned bullets + DB schema, transcript-storage rule, Cursor Auto Agent workflow (no OpenAI improver), `prepare-improved-agent` / `bootstrap-improved-json` |
 | 2026-04 | Episodes **display_status** (Summarized vs extracted, stale-error override when JSON on disk), **`serve`** auto-reload + package path echo, Cursor agent rule: start **`bilradio serve` in background** so the user’s terminal stays free |
 | 2026-04 | Default **`MIN_DURATION_SEC=60`**, **`purge-short-episodes`** CLI + orphan short MP3 cleanup |
+| 2026-04 | Topics page condensed outline; optional **`start_sec`/`end_sec`** in improved JSON → SQLite → `/api/bullets` (re-import to backfill) |

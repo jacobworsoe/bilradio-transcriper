@@ -67,14 +67,14 @@ Save **JSON only** to this exact path (create parent dirs if needed):
 
 `{out_json.resolve()}`
 
-Same schema as in the instructions below (sections → bullets with `text`, `cars`, `themes`, `uncertain`).
+Same schema as in the instructions below (sections → bullets with `text`, `cars`, `themes`, `uncertain`), **plus optional `start_sec` / `end_sec`** (float seconds from audio start) on each bullet and section — copy from the Whisper JSON **`segments[].start`** and **`segments[].end`** that support each bullet.
 
 ## Transcript input
 
 Read plain text from Whisper:
 
 - **Preferred:** `{whisper_ref.resolve()}`  
-  (if JSON: use the top-level `text` field, or join `segments[].text`)
+  (if JSON: use the top-level `text` field, or join `segments[].text`; **use `segments[].start` / `end` for timestamps** in the output JSON)
 
 Optional helper copy (if you ran `bilradio prepare-extract`):
 

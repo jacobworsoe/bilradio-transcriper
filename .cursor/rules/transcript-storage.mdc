@@ -16,7 +16,7 @@ Use **disk for heavy, versionable sources**; use **SQLite only** for the web app
 ## 2. Improved structured JSON (on disk only)
 
 - **Path:** `data/transcripts_improved/<audio_stem>.json`
-- **Content:** JSON that follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (`sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`).
+- **Content:** JSON that follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (`sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`, and **optional `start_sec` / `end_sec`** in seconds aligned with Whisper **`segments`**).
 - **Authoring (canonical):** Use **Cursor Auto Agent** (your Cursor license). Do **not** use third-party LLM APIs (OpenAI, Anthropic, etc.) for this step unless the project owner explicitly opts in again.
 - **Prompt files:** Run **`bilradio prepare-improved-agent`** to emit per-episode Markdown in `data/cursor_inbox/` with the exact output path and the same instructions as `CURSOR_INSTRUCTIONS`. Point Auto Agent at those files plus the Whisper transcript (`data/transcripts/<stem>.json` or `data/cursor_inbox/<guid>_transcript.txt`).
 - **Bootstrap only:** Optional **`bilradio bootstrap-improved-json`** may create extractive placeholders from Whisper text for local testing; if `_bilradio_meta.replace_with_cursor_agent` is true, replace the file with Auto Agent output when ready.
@@ -24,14 +24,14 @@ Use **disk for heavy, versionable sources**; use **SQLite only** for the web app
 
 ## 3. Bullet summaries for the web app (SQLite)
 
-- **Tables:** `topic_sections` + `topic_bullets` (linked to `episodes.guid`).
+- **Tables:** `topic_sections` + `topic_bullets` (linked to `episodes.guid`), including optional **`start_sec` / `end_sec`** on each table for the condensed Topics outline (section bounds can be derived from bullets when missing).
 - **Purpose:** Fast **Topics** page, **facets** (cars/themes), filters, and ordering. This is a **denormalized index**, not a second master copy of the Whisper dump.
 - **How it gets there:** `bilradio import-bullets` reads JSON matching the import shape—usually the same file as layer **2**, or `data/cursor_inbox/<guid>.bullets.json` while iterating in Cursor.
 
 ## Relationships
 
 - **1 → 2:** Cursor Auto Agent (from `prepare-improved-agent` prompts) reading layer **1**; optional bootstrap for placeholders only.
-- **2 → 3:** `import-bullets` loads structured bullets into SQLite. Re-running import **replaces** rows for that episode; keep layer **2** on disk if you need history (git or backups outside this rule).
+- **2 → 3:** `import-bullets` loads structured bullets into SQLite. Re-running import **replaces** rows for that episode; keep layer **2** on disk if you need history (git or backups outside this rule). After adding timestamps to the JSON schema, **re-import** episodes so the Topics page can show time ranges.
 
 ## Do not
 

@@ -14,7 +14,7 @@ from bilradio.episode_paths import (
     whisper_transcript_json_path,
     whisper_transcript_txt_path,
 )
-from bilradio.transcript_text import transcript_plain_text_from_file
+from bilradio.transcript_text import transcript_plain_text_from_file, whisper_segments_from_json
 
 
 def _paragraphs(text: str) -> list[str]:
@@ -86,26 +86,48 @@ def write_bootstrap_improved(
             paras = [plain[:2000] + ("…" if len(plain) > 2000 else "")]
 
         section_chunks = _chunk_paragraphs(paras, per_section=5, max_sections=8)
+        segments = whisper_segments_from_json(jp) if has_non_empty_json(jp) else []
+        n_seg = len(segments)
+
+        def bullet_times(idx_in_section: int, n_in_section: int) -> tuple[float | None, float | None]:
+            if n_seg == 0 or n_in_section <= 0:
+                return None, None
+            a = idx_in_section * n_seg // n_in_section
+            b = (idx_in_section + 1) * n_seg // n_in_section
+            b = max(b, a + 1)
+            chunk = segments[a : min(b, n_seg)]
+            if not chunk:
+                return None, None
+            return float(chunk[0]["start"]), float(chunk[-1]["end"])
+
         sections: list[dict] = []
         for si, chunk in enumerate(section_chunks):
             bullets: list[dict] = []
-            for para in chunk[:5]:
+            chunk_bullets = chunk[:5]
+            n_b = len(chunk_bullets)
+            for bi, para in enumerate(chunk_bullets):
                 txt = para[:320] + ("…" if len(para) > 320 else "")
+                bs, be = bullet_times(bi, n_b)
                 bullets.append(
                     {
                         "text": txt,
                         "cars": [],
                         "themes": ["bootstrap"],
                         "uncertain": True,
+                        **({"start_sec": bs, "end_sec": be} if bs is not None and be is not None else {}),
                     }
                 )
             if bullets:
-                sections.append(
-                    {
-                        "title": f"Del {si + 1}",
-                        "bullets": bullets,
-                    }
-                )
+                sec_payload: dict = {
+                    "title": f"Del {si + 1}",
+                    "bullets": bullets,
+                }
+                b_starts = [b["start_sec"] for b in bullets if b.get("start_sec") is not None]
+                b_ends = [b["end_sec"] for b in bullets if b.get("end_sec") is not None]
+                if b_starts and b_ends:
+                    sec_payload["start_sec"] = min(b_starts)
+                    sec_payload["end_sec"] = max(b_ends)
+                sections.append(sec_payload)
 
         if not sections:
             sk_nt += 1

@@ -46,9 +46,19 @@ CREATE INDEX IF NOT EXISTS idx_sections_episode ON topic_sections(episode_guid);
 
 
 def _migrate_schema(conn: sqlite3.Connection) -> None:
-    cols = {row[1] for row in conn.execute("PRAGMA table_info(topic_bullets)").fetchall()}
-    if "section_id" not in cols:
+    bcols = {row[1] for row in conn.execute("PRAGMA table_info(topic_bullets)").fetchall()}
+    if "section_id" not in bcols:
         conn.execute("ALTER TABLE topic_bullets ADD COLUMN section_id INTEGER")
+    if "start_sec" not in bcols:
+        conn.execute("ALTER TABLE topic_bullets ADD COLUMN start_sec REAL")
+    if "end_sec" not in bcols:
+        conn.execute("ALTER TABLE topic_bullets ADD COLUMN end_sec REAL")
+
+    scols = {row[1] for row in conn.execute("PRAGMA table_info(topic_sections)").fetchall()}
+    if "start_sec" not in scols:
+        conn.execute("ALTER TABLE topic_sections ADD COLUMN start_sec REAL")
+    if "end_sec" not in scols:
+        conn.execute("ALTER TABLE topic_sections ADD COLUMN end_sec REAL")
 
 
 @contextmanager

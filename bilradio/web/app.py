@@ -18,6 +18,7 @@ from bilradio.episode_paths import (
     whisper_transcript_txt_path,
 )
 from bilradio.pipeline import step_clear_episode_error, step_ingest_transcripts
+from bilradio.time_format import format_time_range_bracket
 
 _BASE = Path(__file__).resolve().parent
 
@@ -28,6 +29,49 @@ templates = Jinja2Templates(directory=str(_BASE / "templates"))
 
 def _norm(s: str) -> str:
     return s.strip().lower()
+
+
+def _resolved_section_bounds(group: list[dict]) -> tuple[float | None, float | None]:
+    ss = group[0].get("section_start_sec")
+    es = group[0].get("section_end_sec")
+    bs_list = [g["start_sec"] for g in group if g.get("start_sec") is not None]
+    be_list = [g["end_sec"] for g in group if g.get("end_sec") is not None]
+    if ss is None and bs_list:
+        ss = min(bs_list)
+    if es is None and be_list:
+        es = max(be_list)
+    return ss, es
+
+
+def _apply_section_time_ranges(rows: list[dict]) -> None:
+    i = 0
+    while i < len(rows):
+        j = i + 1
+        key = (
+            rows[i]["episode_guid"],
+            rows[i]["section_order"],
+            rows[i]["section_title"],
+        )
+        while (
+            j < len(rows)
+            and (
+                rows[j]["episode_guid"],
+                rows[j]["section_order"],
+                rows[j]["section_title"],
+            )
+            == key
+        ):
+            j += 1
+        group = rows[i:j]
+        ss, es = _resolved_section_bounds(group)
+        for g in group:
+            g["section_start_sec"] = ss
+            g["section_end_sec"] = es
+            g["section_time_range"] = format_time_range_bracket(ss, es)
+            g["bullet_time_range"] = format_time_range_bracket(
+                g.get("start_sec"), g.get("end_sec")
+            )
+        i = j
 
 
 # ---------------------------------------------------------------------------
@@ -76,9 +120,13 @@ def api_bullets(
         rows = conn.execute(
             """
             SELECT b.id, b.text, b.cars, b.themes, b.uncertain,
+                   b.start_sec AS start_sec,
+                   b.end_sec AS end_sec,
                    e.title, e.pub_date, e.guid,
                    COALESCE(s.title, '') AS section_title,
-                   COALESCE(s.sort_order, 0) AS section_order
+                   COALESCE(s.sort_order, 0) AS section_order,
+                   s.start_sec AS section_start_sec,
+                   s.end_sec AS section_end_sec
             FROM topic_bullets b
             JOIN episodes e ON e.guid = b.episode_guid
             LEFT JOIN topic_sections s ON s.id = b.section_id
@@ -108,8 +156,13 @@ def api_bullets(
                 "pub_date": r["pub_date"],
                 "section_title": r["section_title"] or "",
                 "section_order": int(r["section_order"] or 0),
+                "start_sec": r["start_sec"],
+                "end_sec": r["end_sec"],
+                "section_start_sec": r["section_start_sec"],
+                "section_end_sec": r["section_end_sec"],
             }
         )
+    _apply_section_time_ranges(out)
     return {"bullets": out, "count": len(out)}
 
 

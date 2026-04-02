@@ -32,9 +32,7 @@
     <p id="count-line" class="count-line">Loading…</p>
   </section>
 
-  <main id="main-bullets">
-    <ul id="bullet-list" class="bullet-list"></ul>
-  </main>
+  <main id="main-bullets"></main>
 
   <script>
     const STORAGE_CARS   = "bilradio_exclude_cars";
@@ -94,71 +92,126 @@
       return p.toString();
     }
 
+    function sectionGroupKey(b) {
+      return (
+        b.episode_guid +
+        "\0" +
+        String(b.section_order ?? 0) +
+        "\0" +
+        (b.section_title || "").trim()
+      );
+    }
+
+    function aggregateSectionTags(bullets) {
+      const cars = [];
+      const themes = [];
+      const seenC = new Set();
+      const seenT = new Set();
+      for (const b of bullets) {
+        for (const c of b.cars || []) {
+          const x = String(c).trim();
+          if (x && !seenC.has(x.toLowerCase())) {
+            seenC.add(x.toLowerCase());
+            cars.push(x);
+          }
+        }
+        for (const t of b.themes || []) {
+          const x = String(t).trim();
+          if (x && !seenT.has(x.toLowerCase())) {
+            seenT.add(x.toLowerCase());
+            themes.push(x);
+          }
+        }
+      }
+      return { cars, themes };
+    }
+
     async function loadBullets() {
-      const main      = document.getElementById("main-bullets");
+      const main = document.getElementById("main-bullets");
       const countLine = document.getElementById("count-line");
       main.innerHTML = "";
-      let list = null;
       countLine.textContent = "Loading…";
       const q = qsParams();
       const r = await fetch("/api/bullets" + (q ? "?" + q : ""));
       const data = await r.json();
-      countLine.textContent = data.count + " bullet" + (data.count === 1 ? "" : "s") + " (after filters)";
+      countLine.textContent =
+        data.count + " bullet" + (data.count === 1 ? "" : "s") + " (after filters)";
 
-      let lastEp = "";
-      let lastSection = "";
+      const groups = [];
+      let cur = null;
       for (const b of data.bullets) {
-        const epKey = b.episode_guid + "|" + (b.pub_date || "");
-        const sec = (b.section_title || "").trim();
-        const needHeader = !list || epKey !== lastEp || sec !== lastSection;
-        if (needHeader) {
-          lastEp = epKey;
-          lastSection = sec;
-          const h = document.createElement("h2");
-          h.className = "section-heading";
-          h.textContent = sec
-            ? (b.episode_title + " · " + (b.pub_date || "").slice(0, 10) + " — " + sec)
-            : (b.episode_title + " · " + (b.pub_date || "").slice(0, 10));
-          main.appendChild(h);
-          list = document.createElement("ul");
-          list.className = "bullet-list";
-          main.appendChild(list);
+        const k = sectionGroupKey(b);
+        if (!cur || cur.key !== k) {
+          cur = { key: k, bullets: [] };
+          groups.push(cur);
         }
+        cur.bullets.push(b);
+      }
 
-        const li   = document.createElement("li");
-        li.className = "bullet" + (b.uncertain ? " uncertain" : "");
-        const meta = document.createElement("div");
-        meta.className   = "bullet-meta";
-        meta.textContent = sec
-          ? (b.episode_title + " · " + (b.pub_date || "").slice(0, 10) + " · " + sec)
-          : (b.episode_title + " · " + (b.pub_date || "").slice(0, 10));
-        const text = document.createElement("p");
-        text.className   = "bullet-text";
-        text.textContent = b.text;
-        const tags = document.createElement("div");
-        tags.className   = "tags";
-        for (const c of b.cars) {
+      for (const g of groups) {
+        const first = g.bullets[0];
+        const sec = (first.section_title || "").trim();
+        const h = document.createElement("h2");
+        h.className = "section-heading";
+        h.textContent = sec
+          ? first.episode_title +
+            " · " +
+            (first.pub_date || "").slice(0, 10) +
+            " — " +
+            sec
+          : first.episode_title + " · " + (first.pub_date || "").slice(0, 10);
+        main.appendChild(h);
+
+        const summary = document.createElement("div");
+        summary.className = "topic-section-summary";
+        const rangeEl = document.createElement("span");
+        rangeEl.className = "topic-time-range";
+        rangeEl.textContent = first.section_time_range || "[— – —]";
+        summary.appendChild(rangeEl);
+        const secTitle = document.createElement("span");
+        secTitle.className = "topic-section-title-inline";
+        secTitle.textContent = (sec || "Episode").trim();
+        summary.appendChild(secTitle);
+        const agg = aggregateSectionTags(g.bullets);
+        const tagWrap = document.createElement("span");
+        tagWrap.className = "topic-section-tags";
+        for (const c of agg.cars) {
           const s = document.createElement("span");
-          s.className   = "tag car";
+          s.className = "tag car tag-compact";
           s.textContent = c;
-          tags.appendChild(s);
+          tagWrap.appendChild(s);
         }
-        for (const t of b.themes) {
+        for (const t of agg.themes) {
           const s = document.createElement("span");
-          s.className   = "tag theme";
+          s.className = "tag theme tag-compact";
           s.textContent = t;
-          tags.appendChild(s);
+          tagWrap.appendChild(s);
         }
-        if (b.uncertain) {
-          const u = document.createElement("span");
-          u.className   = "uncertain-badge";
-          u.textContent = "Uncertain";
-          tags.appendChild(u);
+        summary.appendChild(tagWrap);
+        main.appendChild(summary);
+
+        const sub = document.createElement("ul");
+        sub.className = "topic-bullet-sublist";
+        for (const b of g.bullets) {
+          const li = document.createElement("li");
+          li.className = "topic-bullet-sub" + (b.uncertain ? " uncertain" : "");
+          const br = document.createElement("span");
+          br.className = "topic-time-range";
+          br.textContent = b.bullet_time_range || "[— – —]";
+          li.appendChild(br);
+          const tx = document.createElement("span");
+          tx.className = "topic-bullet-text";
+          tx.textContent = b.text;
+          li.appendChild(tx);
+          if (b.uncertain) {
+            const u = document.createElement("span");
+            u.className = "uncertain-badge uncertain-inline";
+            u.textContent = "Uncertain";
+            li.appendChild(u);
+          }
+          sub.appendChild(li);
         }
-        li.appendChild(meta);
-        li.appendChild(text);
-        li.appendChild(tags);
-        list.appendChild(li);
+        main.appendChild(sub);
       }
     }
 

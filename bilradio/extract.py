@@ -26,9 +26,13 @@ Respond with **JSON only** (no markdown fences), in this exact shape:
   "sections": [
     {
       "title": "Kort dansk sektionstitel",
+      "start_sec": 0.0,
+      "end_sec": 120.5,
       "bullets": [
         {
           "text": "Kort bullet på dansk (én sætning).",
+          "start_sec": 10.2,
+          "end_sec": 45.0,
           "cars": ["mærke model eller tom liste"],
           "themes": ["fx elbil", "leasing"],
           "uncertain": false
@@ -41,12 +45,28 @@ Respond with **JSON only** (no markdown fences), in this exact shape:
 Rules:
 - **sections**: 1–12 sections per episode; each section must have **3–5 bullets** (merge or split if needed).
 - **title**: short Danish section heading.
+- **start_sec** / **end_sec** (optional, floats): seconds from the start of the episode audio, aligned with the Whisper JSON **segments** timestamps. Set on each **bullet** for the span that supports that bullet; optionally on the **section** for the whole block (min/max of bullets is fine).
 - **text**: one concise Danish sentence per bullet.
 - **cars**: concrete makes/models for that bullet, or [] if none.
 - **themes**: 0–3 short labels for filtering (e.g. elbil, leasing, brændstofpriser).
 - **uncertain**: true if the point is weakly supported in the audio/text.
 - Merge overlapping bullets; avoid duplicate facts across sections.
 """
+
+
+def _parse_opt_sec(raw: Any) -> float | None:
+    if raw is None:
+        return None
+    if isinstance(raw, bool):
+        return None
+    if isinstance(raw, (int, float)):
+        x = float(raw)
+        return None if x != x else x  # reject NaN
+    try:
+        x = float(str(raw).strip())
+        return None if x != x else x
+    except (TypeError, ValueError):
+        return None
 
 
 def _normalize_bullet_dict(b: dict[str, Any]) -> dict[str, Any] | None:
@@ -62,11 +82,21 @@ def _normalize_bullet_dict(b: dict[str, Any]) -> dict[str, Any] | None:
     cars = [str(c).strip() for c in cars if str(c).strip()]
     themes = [str(t).strip() for t in themes if str(t).strip()]
     uncertain = bool(b.get("uncertain", False))
+    start_sec = _parse_opt_sec(b.get("start_sec"))
+    end_sec = _parse_opt_sec(b.get("end_sec"))
+    if (
+        start_sec is not None
+        and end_sec is not None
+        and end_sec < start_sec
+    ):
+        start_sec, end_sec = end_sec, start_sec
     return {
         "text": text,
         "cars": cars,
         "themes": themes,
         "uncertain": uncertain,
+        "start_sec": start_sec,
+        "end_sec": end_sec,
     }
 
 
@@ -74,6 +104,8 @@ def _normalize_bullet_dict(b: dict[str, Any]) -> dict[str, Any] | None:
 class BulletSection:
     title: str
     bullets: tuple[dict[str, Any], ...]
+    start_sec: float | None = None
+    end_sec: float | None = None
 
 
 @dataclass(frozen=True)
@@ -102,7 +134,18 @@ def _parse_bullet_json_raw(data: dict[str, Any]) -> BulletDocument:
                     if nb:
                         items.append(nb)
             if items:
-                out_sections.append(BulletSection(title=title, bullets=tuple(items)))
+                ss = _parse_opt_sec(sec.get("start_sec"))
+                es = _parse_opt_sec(sec.get("end_sec"))
+                if ss is not None and es is not None and es < ss:
+                    ss, es = es, ss
+                out_sections.append(
+                    BulletSection(
+                        title=title,
+                        bullets=tuple(items),
+                        start_sec=ss,
+                        end_sec=es,
+                    )
+                )
         if out_sections:
             return BulletDocument(sections=tuple(out_sections))
 

@@ -128,6 +128,7 @@ Open **`http://127.0.0.1:8765`** after **`bilradio serve`**.
 
 - **`/`** — Topic bullets with car and theme tags; click tags to **exclude** them (stored in `localStorage`).
 - **`/episodes`** — Pipeline status: RSS sync, ingest transcripts, disk vs DB columns, **Clear error**, auto-refresh. Status badges reflect **effective** state (for example **Summarized** when bullets are in SQLite, and a stale DB **error** is not shown as error if Whisper JSON already exists on disk).
+- **Topics time ranges:** Improved / import JSON may include **`start_sec` / `end_sec`** (from Whisper segment times). They are stored in SQLite and shown on the Topics page; **re-run `import-bullets`** after adding timestamps to existing JSON.
 
 **`bilradio serve`** turns on **uvicorn auto-reload by default** (watches `bilradio/**/*.py` and `*.html`). Use **`bilradio serve --no-reload`** for a single long-lived process. On startup the CLI prints **`Web UI from …`** — if the UI looks wrong, confirm that path is this repo’s `bilradio` package (not another clone or stale editable install).
 
