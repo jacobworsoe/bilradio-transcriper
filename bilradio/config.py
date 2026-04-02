@@ -19,9 +19,9 @@ DEFAULT_RSS_URL = (
 # Inclusive: episodes with pubDate >= this instant (UTC)
 MIN_PUBDATE_UTC = datetime(2025, 11, 7, 12, 2, 43, tzinfo=timezone.utc)
 
-# Set to 0 to include all episodes regardless of length.
-# Set via env BILRADIO_MIN_DURATION_SEC to filter out short clips.
-MIN_DURATION_SEC = int(os.environ.get("BILRADIO_MIN_DURATION_SEC", "0"))
+# Episodes shorter than this (seconds) are excluded from RSS ingest and skipped after download.
+# Set BILRADIO_MIN_DURATION_SEC=0 to include promos and sub-minute clips again.
+MIN_DURATION_SEC = int(os.environ.get("BILRADIO_MIN_DURATION_SEC", "60"))
 
 DATA_DIR = Path(os.environ.get("BILRADIO_DATA_DIR", "data")).resolve()
 AUDIO_DIR = DATA_DIR / "audio"

@@ -8,7 +8,7 @@ _Last updated: 2026-04-03. Operator + maintainer notes._
 
 A local pipeline that:
 
-1. Fetches the Bilradio podcast RSS feed (episodes from **2025-11-07** onwards; optional min duration via `BILRADIO_MIN_DURATION_SEC`).
+1. Fetches the Bilradio podcast RSS feed (episodes from **2025-11-07** onwards). By default, items **under 60 seconds** are excluded (`BILRADIO_MIN_DURATION_SEC`, default **60**; set **`0`** to allow promos/clips).
 2. Downloads MP3 audio files under `data/audio/`.
 3. Transcribes with **OpenAI Whisper** (typically CUDA + **medium**) — **recommended:** batch CLI script; integrated `bilradio transcribe` / `run-queue` remain optional.
 4. Keeps **Whisper output on disk** under `data/transcripts/` (`.json` preferred; `.txt` also supported).
@@ -73,6 +73,7 @@ bilradio/
   db.py                     # episodes, topic_sections, topic_bullets + migrations
   episode_paths.py          # stem / whisper / improved paths
   episode_cleanup.py        # Disk coverage report
+  short_episode_purge.py    # Remove sub-min-duration episodes + files
   bootstrap_improved.py     # Extractive improved JSON (optional)
   prepare_improved_agent.py # Auto Agent Markdown prompts
   transcript_text.py        # Plain text from .txt or Whisper .json
@@ -98,6 +99,8 @@ data/                       # gitignored
 
 **Paths:** `BILRADIO_DATA_DIR`, `BILRADIO_TRANSCRIPTS_IMPROVED_DIR` (optional).
 
+**Short episodes:** default **60s** minimum; **`purge-short-episodes`** drops matching rows and files (`--dry-run` to preview).
+
 Run **`bilradio doctor`** for resolved paths and Whisper import check.
 
 ---
@@ -119,6 +122,7 @@ bootstrap-improved-json # Placeholder improved JSON (replace with Agent)
 import-bullets          # JSON (sections/bullets) → SQLite + extracted
 scaffold-bullets        # Rough preview bullets
 episode-cleanup         # Count audio / whisper / improved on disk
+purge-short-episodes    # Delete rows & files under min duration (--dry-run, --seconds)
 run-queue               # sync + download all + integrated transcribe all
 pipeline                # sync + download + transcribe + prepare-extract (per guid or all)
 serve                   # Web UI (127.0.0.1:8765); auto-reload on by default; --no-reload off
@@ -156,3 +160,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | Mid | `ingest-transcripts`, batch script, `WHISPER_SUBPROCESS=simple`, `clear-error` |
 | Later | Episodes status page (disk truth for JSON), sectioned bullets + DB schema, transcript-storage rule, Cursor Auto Agent workflow (no OpenAI improver), `prepare-improved-agent` / `bootstrap-improved-json` |
 | 2026-04 | Episodes **display_status** (Summarized vs extracted, stale-error override when JSON on disk), **`serve`** auto-reload + package path echo, Cursor agent rule: start **`bilradio serve` in background** so the user’s terminal stays free |
+| 2026-04 | Default **`MIN_DURATION_SEC=60`**, **`purge-short-episodes`** CLI + orphan short MP3 cleanup |

@@ -10,6 +10,7 @@ from bilradio.config import (
     DATA_DIR,
     DB_PATH,
     LOGS_DIR,
+    MIN_DURATION_SEC,
     TRANSCRIPTS_DIR,
     TRANSCRIPTS_IMPROVED_DIR,
     WHISPER_CMD,
@@ -47,6 +48,7 @@ def doctor() -> None:
 
     ensure_data_dirs()
     typer.echo(f"DATA_DIR: {DATA_DIR}")
+    typer.echo(f"MIN_DURATION_SEC: {MIN_DURATION_SEC}")
     typer.echo(f"LOGS_DIR: {LOGS_DIR}")
     typer.echo(f"TRANSCRIPTS_DIR: {TRANSCRIPTS_DIR}")
     typer.echo(f"TRANSCRIPTS_IMPROVED_DIR: {TRANSCRIPTS_IMPROVED_DIR}")
@@ -226,6 +228,47 @@ def episode_cleanup() -> None:
     """Print counts of episodes with audio, Whisper JSON, and improved JSON on disk."""
     init_db(DB_PATH)
     run_episode_cleanup_report()
+
+
+@app.command("purge-short-episodes")
+def purge_short_episodes_cmd(
+    seconds: Optional[int] = typer.Option(
+        None,
+        "--seconds",
+        help="Minimum length to keep (default: BILRADIO_MIN_DURATION_SEC, or 60 if that is 0)",
+    ),
+    dry_run: bool = typer.Option(
+        False,
+        "--dry-run",
+        help="List targets only; do not delete rows or files",
+    ),
+    no_probe: bool = typer.Option(
+        False,
+        "--no-probe",
+        help="Do not measure MP3 duration when duration_sec is NULL",
+    ),
+    no_orphan_audio: bool = typer.Option(
+        False,
+        "--no-orphan-audio",
+        help="Do not remove short MP3s under data/audio with no matching episode row",
+    ),
+) -> None:
+    """Remove sub-threshold episodes from SQLite and delete their audio/transcripts/inbox files."""
+    from bilradio.short_episode_purge import purge_short_episodes as run_purge
+
+    init_db(DB_PATH)
+    n, lines = run_purge(
+        seconds,
+        dry_run=dry_run,
+        probe_audio_when_duration_unknown=not no_probe,
+        remove_orphan_short_mp3=not no_orphan_audio,
+    )
+    for line in lines:
+        typer.echo(line)
+    if dry_run:
+        typer.echo(f"Dry run: would remove {n} episode row(s).")
+    else:
+        typer.echo(f"Removed {n} episode row(s).")
 
 
 @app.command("ingest-transcripts")

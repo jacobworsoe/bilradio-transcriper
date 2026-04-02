@@ -78,11 +78,11 @@ After ingest, continue with **`bilradio prepare-extract`** and the Cursor JSON f
 | `BILRADIO_WHISPER_BOOT_SILENCE_SEC` | `300` | Grace before stall detection in integrated `full` mode. |
 | `BILRADIO_WHISPER_MAX_RESTARTS` | `10` | Stall restarts in integrated mode. |
 | `BILRADIO_TRANSCRIPT_CHUNK_CHARS` | `45000` | Splits long transcripts into extra `*_chunk_*.txt` files. |
-| `BILRADIO_MIN_DURATION_SEC` | `0` | If **> 0**, RSS episodes shorter than this (seconds) are skipped. |
+| `BILRADIO_MIN_DURATION_SEC` | `60` | Episodes shorter than this (seconds) are **not** inserted from RSS; after download, they become **`skipped_short`**. Set to **`0`** to allow sub-minute clips everywhere. |
 
-Episodes are included when **`pubDate` ≥ 2025-11-07 12:02:43 UTC** (see `config.MIN_PUBDATE_UTC`). Duration filtering applies only when `BILRADIO_MIN_DURATION_SEC` is set to a positive value.
+Episodes are included when **`pubDate` ≥ 2025-11-07 12:02:43 UTC** (see `config.MIN_PUBDATE_UTC`).
 
-**Short test clip:** Guids listed in **`BILRADIO_TEST_EPISODE_GUIDS`** (comma-separated) bypass the min-duration rule when it is enabled. If the variable is **unset**, a default Omny short promo guid may apply for smoke tests. Set **`BILRADIO_TEST_EPISODE_GUIDS=`** (empty) to disable.
+**One-time cleanup:** `bilradio purge-short-episodes` removes existing SQLite rows under the threshold (plus related files), with optional **`--dry-run`**. **`--no-probe`** skips probing MP3 length when `duration_sec` is unknown.
 
 ## Cursor workflow (bullets + tags)
 
@@ -110,6 +110,7 @@ Episodes are included when **`pubDate` ≥ 2025-11-07 12:02:43 UTC** (see `confi
 .\.venv\Scripts\python.exe -m bilradio.cli pipeline [--guid ...]
 .\.venv\Scripts\python.exe -m bilradio.cli run-queue
 .\.venv\Scripts\python.exe -m bilradio.cli serve [--no-reload]
+.\.venv\Scripts\python.exe -m bilradio.cli purge-short-episodes [--dry-run] [--seconds N]
 .\.venv\Scripts\python.exe -m bilradio.cli doctor
 ```
 
