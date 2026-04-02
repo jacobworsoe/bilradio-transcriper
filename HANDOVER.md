@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-04-03. Operator + maintainer notes._
+_Last updated: 2026-04-04. Operator + maintainer notes._
 
 ---
 
@@ -12,9 +12,9 @@ A local pipeline that:
 2. Downloads MP3 audio files under `data/audio/`.
 3. Transcribes with **OpenAI Whisper** (typically CUDA + **medium**) — **recommended:** batch CLI script; integrated `bilradio transcribe` / `run-queue` remain optional.
 4. Keeps **Whisper output on disk** under `data/transcripts/` (`.json` preferred; `.txt` also supported).
-5. **Improved** structured JSON (same shape as `CURSOR_INSTRUCTIONS` in `bilradio/extract.py`) under `data/transcripts_improved/<stem>.json` — **author with Cursor Auto Agent** (see `.cursor/rules/transcript-storage.mdc`).
-6. Imports sectioned bullets into **SQLite** (`topic_sections` + `topic_bullets`) via `import-bullets`.
-7. Serves a **FastAPI web UI:** **`/`** Topics (facets + sectioned bullets), **`/episodes`** Episodes status (disk + DB flags, RSS sync, ingest, clear error). **`/queue`** redirects to **`/episodes`**. **`bilradio serve`** uses **auto-reload by default** (watch `bilradio` `*.py` / `*.html`); **`--no-reload`** for a stable process; startup prints **`Web UI from …`** for the resolved package path.
+5. **Improved** structured JSON (same shape as `CURSOR_INSTRUCTIONS` in `bilradio/extract.py`) under `data/transcripts_improved/<stem>.json` — **author with Cursor Auto Agent** (see `.cursor/rules/transcript-storage.mdc`). Optional **`start_sec` / `end_sec`** on sections and bullets (seconds, aligned with Whisper **`segments`**); see **Timecodes** below.
+6. Imports sectioned bullets into **SQLite** (`topic_sections` + `topic_bullets`, including optional time columns) via `import-bullets`.
+7. Serves a **FastAPI web UI:** **`/`** Topics — facets, **condensed outline** (per-section time range + aggregated tags + nested bullets with ranges; **full episode title · date only on the first section** of each episode, then section-only headings). **`/episodes`** Episodes status (disk + DB flags, RSS sync, ingest, clear error). **`/queue`** redirects to **`/episodes`**. **`bilradio serve`** uses **auto-reload by default** (watch `bilradio` `*.py` / `*.html`); **`--no-reload`** for a stable process; startup prints **`Web UI from …`** for the resolved package path.
 
 ---
 
@@ -52,6 +52,13 @@ Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--s
 - **`bilradio prepare-improved-agent`** — writes `data/cursor_inbox/<guid>_improve_auto_agent.md` with output path and full `CURSOR_INSTRUCTIONS`.
 - **`bilradio bootstrap-improved-json`** — optional extractive placeholders (`_bilradio_meta.replace_with_cursor_agent: true`); replace with Agent output when ready.
 - **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`** — loads sections/bullets into SQLite and sets episode **`extracted`**.
+- **Timecodes:** JSON may include **`start_sec` / `end_sec`** (floats). After editing, **re-run `import-bullets`** so the Topics page and `/api/bullets` pick them up. For a **mechanical backfill** (proportional slices of Whisper segments per bullet, timeline order but not semantically perfect), run **`scripts/apply_whisper_timecodes.py`**:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\apply_whisper_timecodes.py `
+  data\transcripts\<stem>.json `
+  data\transcripts_improved\<stem>.json
+```
 
 Legacy path still works: `prepare-extract` → `*_CURSOR_PROMPT.md` → save `<guid>.bullets.json` in `cursor_inbox` → `import-bullets`.
 
@@ -76,13 +83,15 @@ bilradio/
   short_episode_purge.py    # Remove sub-min-duration episodes + files
   bootstrap_improved.py     # Extractive improved JSON (optional)
   prepare_improved_agent.py # Auto Agent Markdown prompts
-  transcript_text.py        # Plain text from .txt or Whisper .json
+  transcript_text.py        # Plain text + whisper_segments_from_json()
+  time_format.py            # Time range strings for /api/bullets
   extract.py                # CURSOR_INSTRUCTIONS, bullet parse/import shape
   pipeline.py               # sync, download, transcribe, ingest, import, scaffold, …
   whisper_run.py
   web/app.py                # /api/bullets, /api/episodes, …
 scripts/
   batch_whisper_transcribe.py
+  apply_whisper_timecodes.py  # Proportional segment times → improved JSON
   episode_cleanup.py        # CLI wrapper for coverage report
 .cursor/rules/
   transcript-storage.mdc    # Disk vs SQLite for the three layers
@@ -137,9 +146,9 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 ## After transcription: improved JSON and Topics
 
 1. Ensure **`data/transcripts/<stem>.json`** (or `.txt`) exists; run **`ingest-transcripts`** if DB should show **transcribed**.
-2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts) or bootstrap temporarily.
+2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts) or bootstrap temporarily. Optionally add **`start_sec`/`end_sec`** (or run **`apply_whisper_timecodes.py`** for a first pass).
 3. **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`**
-4. Open **`/`** in the web app to see sectioned bullets and facets.
+4. Open **`/`** in the web app: **facets**, **condensed section blocks**, and **`[M:SS – M:SS]`** ranges when times exist in SQLite (placeholder brackets when missing). **`/api/bullets`** exposes **`section_time_range`**, **`bullet_time_range`**, and raw seconds; section bounds can be **derived from bullets** if the section row has no times.
 
 ---
 
@@ -162,3 +171,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | 2026-04 | Episodes **display_status** (Summarized vs extracted, stale-error override when JSON on disk), **`serve`** auto-reload + package path echo, Cursor agent rule: start **`bilradio serve` in background** so the user’s terminal stays free |
 | 2026-04 | Default **`MIN_DURATION_SEC=60`**, **`purge-short-episodes`** CLI + orphan short MP3 cleanup |
 | 2026-04 | Topics page condensed outline; optional **`start_sec`/`end_sec`** in improved JSON → SQLite → `/api/bullets` (re-import to backfill) |
+| 2026-04 | Topics **`h2`**: full **episode · date** only on **first section** per episode; **`scripts/apply_whisper_timecodes.py`** for proportional Whisper times on improved JSON |
