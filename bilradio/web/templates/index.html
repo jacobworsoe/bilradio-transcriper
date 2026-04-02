@@ -148,18 +148,27 @@
         cur.bullets.push(b);
       }
 
+      let lastEpisodeGuid = null;
       for (const g of groups) {
         const first = g.bullets[0];
         const sec = (first.section_title || "").trim();
+        const epGuid = first.episode_guid;
+        const firstSectionOfEpisode = lastEpisodeGuid !== epGuid;
+        lastEpisodeGuid = epGuid;
+
         const h = document.createElement("h2");
         h.className = "section-heading";
-        h.textContent = sec
-          ? first.episode_title +
-            " · " +
-            (first.pub_date || "").slice(0, 10) +
-            " — " +
-            sec
-          : first.episode_title + " · " + (first.pub_date || "").slice(0, 10);
+        if (firstSectionOfEpisode) {
+          h.textContent = sec
+            ? first.episode_title +
+              " · " +
+              (first.pub_date || "").slice(0, 10) +
+              " — " +
+              sec
+            : first.episode_title + " · " + (first.pub_date || "").slice(0, 10);
+        } else {
+          h.textContent = sec || "Episode";
+        }
         main.appendChild(h);
 
         const summary = document.createElement("div");
@@ -168,10 +177,12 @@
         rangeEl.className = "topic-time-range";
         rangeEl.textContent = first.section_time_range || "[— – —]";
         summary.appendChild(rangeEl);
-        const secTitle = document.createElement("span");
-        secTitle.className = "topic-section-title-inline";
-        secTitle.textContent = (sec || "Episode").trim();
-        summary.appendChild(secTitle);
+        if (firstSectionOfEpisode) {
+          const secTitle = document.createElement("span");
+          secTitle.className = "topic-section-title-inline";
+          secTitle.textContent = (sec || "Episode").trim();
+          summary.appendChild(secTitle);
+        }
         const agg = aggregateSectionTags(g.bullets);
         const tagWrap = document.createElement("span");
         tagWrap.className = "topic-section-tags";
