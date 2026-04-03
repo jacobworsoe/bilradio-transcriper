@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-04-04. Operator + maintainer notes._
+_Last updated: 2026-04-05. Operator + maintainer notes._
 
 ---
 
@@ -50,7 +50,7 @@ Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--s
 
 - **Policy:** No third-party LLM APIs for improved JSON unless explicitly decided; use **Cursor Auto Agent** (see `.cursor/rules/transcript-storage.mdc`).
 - **`bilradio prepare-improved-agent`** — writes `data/cursor_inbox/<guid>_improve_auto_agent.md` with output path and full `CURSOR_INSTRUCTIONS`.
-- **`bilradio bootstrap-improved-json`** — optional extractive placeholders (`_bilradio_meta.replace_with_cursor_agent: true`); replace with Agent output when ready.
+- **`bilradio bootstrap-improved-json`** — optional extractive placeholders (`_bilradio_meta.replace_with_cursor_agent: true`); replace with Agent output when ready. **Limitation:** if Whisper **`.json`** has almost no paragraph breaks (one big block of segment lines), bootstrap may produce **one** tiny section — use **`scripts/improved_json_from_segments.py`** instead (chunks **segments** into bullets + sections, with **per-segment timecodes**).
 - **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`** — loads sections/bullets into SQLite and sets episode **`extracted`**.
 - **Timecodes:** JSON may include **`start_sec` / `end_sec`** (floats). After editing, **re-run `import-bullets`** so the Topics page and `/api/bullets` pick them up. For a **mechanical backfill** (proportional slices of Whisper segments per bullet, timeline order but not semantically perfect), run **`scripts/apply_whisper_timecodes.py`**:
 
@@ -59,6 +59,17 @@ Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--s
   data\transcripts\<stem>.json `
   data\transcripts_improved\<stem>.json
 ```
+
+**Segment-chunk improved JSON** (single-block Whisper JSON, extractive placeholders + times from segments):
+
+```powershell
+.\.venv\Scripts\python.exe scripts\improved_json_from_segments.py `
+  data\transcripts\<stem>.json `
+  data\transcripts_improved\<stem>.json `
+  --guid <episode-guid>
+```
+
+Optional: `--seg-per-bullet` (default 12), `--per-section` (default 5), `--max-text`, `--stem`. Then **`import-bullets`** as usual.
 
 Legacy path still works: `prepare-extract` → `*_CURSOR_PROMPT.md` → save `<guid>.bullets.json` in `cursor_inbox` → `import-bullets`.
 
@@ -92,6 +103,7 @@ bilradio/
 scripts/
   batch_whisper_transcribe.py
   apply_whisper_timecodes.py  # Proportional segment times → improved JSON
+  improved_json_from_segments.py  # Multi-section JSON from segment chunks (no para breaks)
   episode_cleanup.py        # CLI wrapper for coverage report
 .cursor/rules/
   transcript-storage.mdc    # Disk vs SQLite for the three layers
@@ -146,7 +158,7 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 ## After transcription: improved JSON and Topics
 
 1. Ensure **`data/transcripts/<stem>.json`** (or `.txt`) exists; run **`ingest-transcripts`** if DB should show **transcribed**.
-2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts) or bootstrap temporarily. Optionally add **`start_sec`/`end_sec`** (or run **`apply_whisper_timecodes.py`** for a first pass).
+2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts), **`bootstrap-improved-json`**, or **`improved_json_from_segments.py`** when bootstrap collapses to one block. Optionally add **`start_sec`/`end_sec`** (or run **`apply_whisper_timecodes.py`** on hand-edited JSON for proportional times).
 3. **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`**
 4. Open **`/`** in the web app: **facets**, **condensed section blocks**, and **`[M:SS – M:SS]`** ranges when times exist in SQLite (placeholder brackets when missing). **`/api/bullets`** exposes **`section_time_range`**, **`bullet_time_range`**, and raw seconds; section bounds can be **derived from bullets** if the section row has no times.
 
@@ -172,3 +184,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | 2026-04 | Default **`MIN_DURATION_SEC=60`**, **`purge-short-episodes`** CLI + orphan short MP3 cleanup |
 | 2026-04 | Topics page condensed outline; optional **`start_sec`/`end_sec`** in improved JSON → SQLite → `/api/bullets` (re-import to backfill) |
 | 2026-04 | Topics **`h2`**: full **episode · date** only on **first section** per episode; **`scripts/apply_whisper_timecodes.py`** for proportional Whisper times on improved JSON |
+| 2026-04 | **`scripts/improved_json_from_segments.py`** for improved JSON when Whisper JSON lacks paragraph breaks (e.g. ep. **318**); segment-bound **start_sec/end_sec** on each bullet |
