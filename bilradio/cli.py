@@ -438,6 +438,29 @@ def pipeline(
     typer.echo("Pipeline done through transcription + cursor_inbox. Use Cursor + import-bullets.")
 
 
+@app.command("export-github-pages")
+def export_github_pages_cmd(
+    output: Path = typer.Option(
+        Path("docs"),
+        "--output",
+        "-o",
+        help="Output directory (use docs/ for the default GitHub Pages branch folder).",
+        file_okay=False,
+        dir_okay=True,
+    ),
+    cname: str = typer.Option(
+        "bilradio.jacobworsoe.dk",
+        "--cname",
+        help="Hostname written to CNAME (GitHub Pages custom domain).",
+    ),
+) -> None:
+    """Write static HTML + JSON for GitHub Pages from the current SQLite database."""
+    from bilradio.export_pages import export_github_pages
+
+    export_github_pages(output, cname=cname)
+    typer.echo(f"GitHub Pages export written to {output.resolve()}")
+
+
 @app.command()
 def serve(
     host: str = typer.Option("127.0.0.1"),

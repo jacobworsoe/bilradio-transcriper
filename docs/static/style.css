@@ -1,0 +1,260 @@
+:root {
+  --bg: #0f1419;
+  --surface: #1a222c;
+  --text: #e7ecf1;
+  --muted: #8b9aab;
+  --accent: #3d9cf5;
+  --car: #6bcb77;
+  --theme: #c79cff;
+  --warn: #e6a23c;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  max-width: 85rem;
+  margin-inline: auto;
+  padding: 1.25rem 1rem 3rem;
+}
+
+.header h1 {
+  margin: 0 0 0.35rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.filters {
+  margin-top: 1.75rem;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border-radius: 10px;
+}
+
+.filter-block h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.filter-block + .filter-block {
+  margin-top: 1rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  border: 1px solid #334155;
+  background: #243044;
+  color: var(--text);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+}
+
+.chip-off {
+  color: #f87171;
+  opacity: 0.95;
+  text-decoration: line-through;
+}
+
+.hint {
+  margin: 1rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.count-line {
+  margin: 1.25rem 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.section-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #243044;
+  color: var(--text);
+}
+
+.section-heading:first-child {
+  margin-top: 0.5rem;
+}
+
+/* First row per episode: date - title only (no section name); 40% larger than .section-heading */
+.section-heading.episode-heading {
+  font-size: calc(0.95rem * 1.4);
+  margin: 5.5rem 0 0.5rem;
+}
+
+/* First episode on the page: keep tight top spacing (main is not preceded by another episode h2) */
+.section-heading.episode-heading:first-child {
+  margin-top: 0.5rem;
+}
+
+.topic-section-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.6rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  margin: 0 0 0.35rem;
+  padding: 0.15rem 0;
+  color: var(--muted);
+}
+
+/* Second and later sections per episode (no h2 above) */
+.topic-section-summary-follow {
+  margin-top: 1.35rem;
+}
+
+.topic-section-title-inline {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.25em;
+}
+
+.topic-section-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.topic-section-summary .topic-section-tags {
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.tag-compact {
+  font-size: 0.68rem;
+  padding: 0.12rem 0.35rem;
+}
+
+.topic-time-range {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 1.25em;
+}
+
+.topic-bullet-sublist {
+  list-style: disc;
+  list-style-position: outside;
+  padding: 0 0 0.75rem 1.5rem;
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+}
+
+.topic-bullet-sub {
+  font-size: 0.84rem;
+  line-height: 1.4;
+  margin: 0.28rem 0;
+  padding: 0;
+}
+
+.topic-bullet-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+}
+
+.topic-bullet-row .topic-time-range {
+  flex: 0 0 auto;
+}
+
+.topic-bullet-text {
+  color: var(--text);
+  flex: 1 1 12rem;
+  min-width: 8rem;
+}
+
+.topic-bullet-sub.uncertain .topic-bullet-text {
+  color: #cbd5e1;
+}
+
+.uncertain-inline {
+  flex: 0 0 auto;
+  margin-left: 0.15rem;
+}
+
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullet {
+  padding: 1rem 0;
+  border-bottom: 1px solid #243044;
+}
+
+.bullet-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.bullet-text {
+  margin: 0 0 0.5rem;
+}
+
+.bullet.uncertain .bullet-text {
+  color: #cbd5e1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.tag {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+}
+
+.tag.car {
+  background: rgba(107, 203, 119, 0.15);
+  color: var(--car);
+}
+
+.tag.theme {
+  background: rgba(199, 156, 255, 0.12);
+  color: var(--theme);
+}
+
+.uncertain-badge {
+  font-size: 0.7rem;
+  color: var(--warn);
+}

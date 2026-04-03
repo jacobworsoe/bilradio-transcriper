@@ -101,28 +101,14 @@
     </nav>
   </header>
 
-  {% if not static_site %}
-  <div class="ctrl-bar">
-    <button class="btn btn-sync" id="btn-sync" type="button" onclick="syncFeed()">Sync RSS</button>
-    <button class="btn btn-ingest" id="btn-ingest" type="button" onclick="ingestTranscripts()">Ingest transcripts</button>
-  </div>
-
-  <p class="tip">
-    Transcription runs outside this app (e.g. <code>scripts/batch_whisper_transcribe.py</code>). Use
-    <strong>Ingest transcripts</strong> (or <code>bilradio ingest-transcripts</code>) to set SQLite to <em>transcribed</em>
-    when <code>data/transcripts/&lt;stem&gt;.json</code> or <code>.txt</code> exists.
-    <strong>Improved</strong> means <code>data/transcripts_improved/&lt;stem&gt;.json</code>.
-  </p>
-  {% else %}
+  
   <p class="tip">
     This is a <strong>read-only snapshot</strong> on GitHub Pages. RSS sync, ingest, and error clearing run when you use the local server (<code>bilradio serve</code>).
   </p>
-  {% endif %}
+  
 
   <div class="summary-bar" id="summary-bar"></div>
-  {% if not static_site %}
-  <p class="auto-refresh">Auto-refresh in <span id="countdown">30</span>s</p>
-  {% endif %}
+  
 
   <table>
     <thead>
@@ -194,7 +180,7 @@
     async function load() {
       let data;
       try {
-        const r = await fetch({% if static_site %}"/api/episodes.json"{% else %}"/api/episodes"{% endif %});
+        const r = await fetch("/api/episodes.json");
         data = await r.json();
       } catch (e) {
         console.error("Failed to load episodes:", e);
@@ -245,10 +231,10 @@
     }
 
     async function clearEpisodeError(btn) {
-      {% if static_site %}
+      
       alert("Read-only snapshot: use the local app to clear errors.");
       return;
-      {% endif %}
+      
       const guid = btn.getAttribute("data-guid");
       if (!guid) return;
       if (!confirm("Clear this error and mark the episode as Downloaded again?")) return;
@@ -271,10 +257,10 @@
     }
 
     async function syncFeed() {
-      {% if static_site %}
+      
       alert("Read-only snapshot: use the local app to sync RSS.");
       return;
-      {% endif %}
+      
       const btn = document.getElementById("btn-sync");
       btn.disabled = true;
       btn.textContent = "Syncing…";
@@ -295,10 +281,10 @@
     }
 
     async function ingestTranscripts() {
-      {% if static_site %}
+      
       alert("Read-only snapshot: use the local app to ingest transcripts.");
       return;
-      {% endif %}
+      
       const btn = document.getElementById("btn-ingest");
       btn.disabled = true;
       btn.textContent = "Ingesting…";
@@ -319,18 +305,7 @@
       btn.textContent = "Ingest transcripts";
     }
 
-    {% if not static_site %}
-    let remaining = 30;
-    function resetCountdown() { remaining = 30; }
-    function tick() {
-      document.getElementById("countdown").textContent = remaining;
-      if (--remaining < 0) {
-        remaining = 30;
-        load();
-      }
-    }
-    setInterval(tick, 1000);
-    {% endif %}
+    
 
     load();
   </script>

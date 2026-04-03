@@ -83,7 +83,9 @@ def _apply_section_time_ranges(rows: list[dict]) -> None:
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request) -> HTMLResponse:
-    return templates.TemplateResponse(request, "index.html", {})
+    return templates.TemplateResponse(
+        request, "index.html", {"static_site": False}
+    )
 
 
 @app.get("/api/facets")
@@ -180,7 +182,9 @@ def queue_redirect() -> RedirectResponse:
 
 @app.get("/episodes", response_class=HTMLResponse)
 def episodes_page(request: Request) -> HTMLResponse:
-    return templates.TemplateResponse(request, "episodes.html", {})
+    return templates.TemplateResponse(
+        request, "episodes.html", {"static_site": False}
+    )
 
 
 def _effective_display_status(

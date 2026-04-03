@@ -81,7 +81,7 @@
     }
 
     async function loadFacets() {
-      const r = await fetch({% if static_site %}"/api/facets.json"{% else %}"/api/facets"{% endif %});
+      const r = await fetch("/api/facets.json");
       renderFacets(await r.json());
     }
 
@@ -132,7 +132,7 @@
       main.innerHTML = "";
       countLine.textContent = "Loading…";
       let data;
-      {% if static_site %}
+      
       const rb = await fetch("/api/bullets.json");
       const raw = await rb.json();
       function normF(s) { return String(s).trim().toLowerCase(); }
@@ -144,11 +144,7 @@
         return true;
       });
       data = { bullets, count: bullets.length };
-      {% else %}
-      const q = qsParams();
-      const r = await fetch("/api/bullets" + (q ? "?" + q : ""));
-      data = await r.json();
-      {% endif %}
+      
       countLine.textContent =
         data.count + " bullet" + (data.count === 1 ? "" : "s") + " (after filters)";
 
