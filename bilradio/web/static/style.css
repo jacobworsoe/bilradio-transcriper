@@ -122,6 +122,11 @@ body {
   color: var(--muted);
 }
 
+/* Second and later sections per episode (no h2 above) */
+.topic-section-summary-follow {
+  margin-top: 1.35rem;
+}
+
 .topic-section-title-inline {
   font-weight: 600;
   color: var(--text);

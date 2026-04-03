@@ -156,31 +156,28 @@
         const firstSectionOfEpisode = lastEpisodeGuid !== epGuid;
         lastEpisodeGuid = epGuid;
 
-        const h = document.createElement("h2");
-        h.className = "section-heading";
         if (firstSectionOfEpisode) {
-          h.classList.add("episode-heading");
+          const h = document.createElement("h2");
+          h.className = "section-heading episode-heading";
           const d = (first.pub_date || "").slice(0, 10);
           h.textContent = d
             ? d + " - " + first.episode_title
             : first.episode_title;
-        } else {
-          h.textContent = sec || "Episode";
+          main.appendChild(h);
         }
-        main.appendChild(h);
 
         const summary = document.createElement("div");
-        summary.className = "topic-section-summary";
+        summary.className =
+          "topic-section-summary" +
+          (firstSectionOfEpisode ? "" : " topic-section-summary-follow");
         const rangeEl = document.createElement("span");
         rangeEl.className = "topic-time-range";
         rangeEl.textContent = first.section_time_range || "[— – —]";
         summary.appendChild(rangeEl);
-        if (firstSectionOfEpisode) {
-          const secTitle = document.createElement("span");
-          secTitle.className = "topic-section-title-inline";
-          secTitle.textContent = (sec || "Episode").trim();
-          summary.appendChild(secTitle);
-        }
+        const secTitle = document.createElement("span");
+        secTitle.className = "topic-section-title-inline";
+        secTitle.textContent = (sec || "Episode").trim();
+        summary.appendChild(secTitle);
         const agg = aggregateSectionTags(g.bullets);
         const tagWrap = document.createElement("span");
         tagWrap.className = "topic-section-tags";
