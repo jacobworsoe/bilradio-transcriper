@@ -159,10 +159,11 @@ body {
 }
 
 .topic-bullet-sublist {
-  list-style: none;
-  padding: 0 0 0.75rem 0.85rem;
+  list-style: disc;
+  list-style-position: outside;
+  padding: 0 0 0.75rem 1.5rem;
   margin: 0 0 0.25rem;
-  border-left: 2px solid #243044;
+  color: var(--muted);
 }
 
 .topic-bullet-sub {
@@ -170,13 +171,16 @@ body {
   line-height: 1.4;
   margin: 0.28rem 0;
   padding: 0;
+}
+
+.topic-bullet-row {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.35rem 0.5rem;
 }
 
-.topic-bullet-sub .topic-time-range {
+.topic-bullet-row .topic-time-range {
   flex: 0 0 auto;
 }
 
