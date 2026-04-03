@@ -1,0 +1,34 @@
+---
+description: Deploy static site to GitHub Pages from docs/ after local data or web export changes
+alwaysApply: true
+---
+
+# GitHub Pages deployment
+
+The public site is **static** (no FastAPI on Pages). It is built from **`docs/`**, deployed by **GitHub Actions** (`.github/workflows/pages.yml`) on push to **`main`**, with optional **manual runs** (**Actions → Deploy GitHub Pages → Run workflow**).
+
+## When to refresh `docs/`
+
+After **SQLite topic data** changes (e.g. **`import-bullets`**, or anything that would change **`/`** or **`/episodes`** in the local app), or after edits that affect **exported HTML/JSON** (templates with `static_site`, `bilradio/export_pages.py`, `bilradio/web/static/*`), run from repo root:
+
+```powershell
+.\.venv\Scripts\python.exe -m bilradio.cli export-github-pages
+```
+
+Default output is **`docs/`** (`--output` / `-o` to override). **`--cname`** defaults to **`bilradio.jacobworsoe.dk`** (written to **`docs/CNAME`**).
+
+Then **commit and push** the updated **`docs/`** (including **`docs/api/*.json`**, HTML, **`docs/CNAME`**, **`docs/.nojekyll`**) so the workflow publishes the new snapshot. **`data/`** stays gitignored; only the **export** lands in git.
+
+## Live app vs snapshot
+
+- **Local:** **`bilradio serve`** — dynamic API, RSS sync, ingest, clear error on **`/episodes`**.
+- **Pages:** same templates with **`static_site`**: loads **`/api/*.json`** files; episodes actions are read-only (alerts). Custom domain: **https://bilradio.jacobworsoe.dk/** (also **https://jacobworsoe.github.io/bilradio-transcriper/**).
+
+## Repo settings
+
+Repository must allow **GitHub Pages** (public repo or Enterprise). **Settings → Pages → Source: GitHub Actions**. Enter the **custom domain** in Settings if DNS is set; **`docs/CNAME`** should match.
+
+## Do not
+
+- Expect the **FastAPI server** to run on Pages.
+- Use **`upload-pages-artifact@v4.0.0`** without fixing **dotfiles**: it drops **`.nojekyll`**; this workflow uses **`v3`** for that reason unless a newer v4 adds hidden-file support.

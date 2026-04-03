@@ -15,6 +15,7 @@ A local pipeline that:
 5. **Improved** structured JSON (shape from **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py`) under `data/transcripts_improved/<stem>.json` — **author with Cursor Auto Agent** (see `.cursor/rules/transcript-storage.mdc`). **Authoring is two steps:** Whisper on disk, then one improved JSON (summaries + structure); **`import-bullets`** loads that file into SQLite — no separate third “bullet authoring” step. Optional **`start_sec` / `end_sec` on each section** only (aligned with Whisper **`segments`**); per-bullet times are not part of the contract. **`CURSOR_INSTRUCTIONS`** also require **omitting sponsor/ad read copy** (e.g. GAVMIL spots) from bullets, and **section/bullet counts follow episode content** (not a fixed template).
 6. Imports sectioned bullets into **SQLite** (`topic_sections` + `topic_bullets`, including optional time columns on sections/bullets for legacy rows) via `import-bullets`.
 7. Serves a **FastAPI web UI:** **`/`** Topics — wide layout (**`body` max-width 85rem**), car/theme **exclude** chips (excluded chips use **red** strikethrough text), facets, **per-section** summary line (**time range** + **section title** + tags on **own line**), **disc list markers** for bullets, **`/api/bullets`** returns **`bullet_time_range` only when** the DB has per-bullet times (otherwise `null` — UI hides the span). **First block of each episode:** one **`h2.episode-heading`** with **`YYYY-MM-DD - [episode title]`** (larger type, **5.5rem** top margin **except** the **first** episode on the page, which keeps **0.5rem** top). **No extra `h2` per section** — section names live only in the summary row. **`/episodes`** Episodes status (disk + DB flags, RSS sync, ingest, clear error). **`/queue`** redirects to **`/episodes`**. **`bilradio serve`** uses **auto-reload by default** (watch `bilradio` `*.py` / `*.html`); **`--no-reload`** for a stable process; startup prints **`Web UI from …`** for the resolved package path.
+8. **Public static mirror on GitHub Pages:** **`bilradio export-github-pages`** writes **`docs/`** (HTML, **`docs/api/*.json`**, static CSS, **`CNAME`**, **`.nojekyll`**) from the current **`data/bilradio.sqlite`**. **`.github/workflows/pages.yml`** deploys **`docs/`** on push to **`main`** (and **`workflow_dispatch`**). Live URLs: **https://bilradio.jacobworsoe.dk** (custom domain; **`docs/CNAME`**) and **https://jacobworsoe.github.io/bilradio-transcriper/**. The Pages copy is **read-only** for RSS/ingest/clear-error; full controls stay on **`bilradio serve`**. See **`.cursor/rules/github-pages-deploy.mdc`**.
 
 ---
 
@@ -106,6 +107,9 @@ bilradio/
   web/app.py                # /api/bullets, /api/episodes, …
   web/templates/index.html  # Topics client render (episode h2, sections, bullets)
   web/static/style.css      # Topics + episodes layout
+  export_pages.py           # Static tree → docs/ for GitHub Pages
+docs/                       # Published static site (tracked); from export-github-pages
+.github/workflows/pages.yml # Deploy docs/ via GitHub Actions
 scripts/
   batch_whisper_transcribe.py
   apply_whisper_timecodes.py  # Section-level proportional Whisper times; strips bullet times
@@ -114,6 +118,7 @@ scripts/
 .cursor/rules/
   transcript-storage.mdc    # Two-step authoring + SQLite import (not three manual layers)
   web-restart-after-changes.mdc  # Web/API edits + serve reload behavior
+  github-pages-deploy.mdc   # When/how to export docs/ and deploy to Pages
   agent-run-commands.mdc    # Agents run commands; long servers in background
 data/                       # gitignored
 ```
@@ -153,6 +158,7 @@ purge-short-episodes    # Delete rows & files under min duration (--dry-run, --s
 run-queue               # sync + download all + integrated transcribe all
 pipeline                # sync + download + transcribe + prepare-extract (per guid or all)
 serve                   # Web UI (127.0.0.1:8765); auto-reload on by default; --no-reload off
+export-github-pages     # Write docs/ static snapshot for GitHub Pages (--output, --cname)
 doctor
 self-test-transcribe
 ```
@@ -167,6 +173,15 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts), **`bootstrap-improved-json`**, or **`improved_json_from_segments.py`** when bootstrap collapses to one block (or to bulk-fill many missing files before Agent polish). Optionally run **`apply_whisper_timecodes.py`** for **section**-level times when improved JSON was authored without segment-aligned bounds (often **skipped** immediately after `improved_json_from_segments.py`).
 3. **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`**
 4. Open **`/`** in the web app: **facets**, **section** time range on the summary line (no per-bullet range in the UI unless legacy DB rows still have bullet times), **episode heading** format **`date - title`**, and list **disc** markers for bullets.
+
+---
+
+## GitHub Pages
+
+- **Workflow:** `.github/workflows/pages.yml` — **build** (checkout, `configure-pages@v5`, `upload-pages-artifact@v3` from **`docs/`**) then **deploy** (`deploy-pages@v4`, environment **`github-pages`**). Triggers: **push to `main`**, **Run workflow** in Actions.
+- **Refresh published content:** with a populated local DB under **`data/`**, run **`bilradio export-github-pages`** (writes **`docs/`**), then **commit + push** `docs/` (tracked; **`data/`** is not). Optional **`--cname`**, **`--output`**.
+- **Repo:** must be **public** (or Enterprise) for free Pages; **Settings → Pages → Source: GitHub Actions**; set **custom domain** in Settings to match **`docs/CNAME`** when using **bilradio.jacobworsoe.dk**.
+- **Implementation:** `bilradio/export_pages.py`, Jinja templates in **`bilradio/web/templates/`** with **`static_site`** (FastAPI passes **`static_site: false`**). Do not upgrade to **`upload-pages-artifact@v4.0.0`** without handling **`.nojekyll`** (v4.0.0 excludes dotfiles from the tarball).
 
 ---
 
@@ -192,3 +207,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | 2026-04 | **`apply_whisper_timecodes.py`** → **section-only** times; **`improved_json_from_segments.py`** → section times only; Topics UI: **no per-section `h2`**, **episode `h2`** as **`date - title`**, summary row shows **every** section title, **disc** bullets, **wider** layout, **red** excluded chips, **`bullet_time_range`** omitted in API when bullets have no times |
 | 2026-04 | **`CURSOR_INSTRUCTIONS`**: content-driven section counts, **section-level** timecodes, **omit sponsor reads**; transcript-storage rule = **two authoring steps** + SQLite import; hand-curated / repaired improved JSON for sample episodes (**317**, **318**) |
 | 2026-04 | Handover: **`batch_whisper_transcribe.py`** = step 1 only; step 2 batch options (**`prepare-improved-agent`** backlog + **`improved_json_from_segments.py`** + **`import-bullets`**); backlog fill for missing prompts vs segment interim JSON |
+| 2026-04 | **GitHub Pages:** static export (**`export-github-pages`** → **`docs/`**), Actions workflow, custom domain **bilradio.jacobworsoe.dk**; **`.cursor/rules/github-pages-deploy.mdc`** for deploy discipline |
