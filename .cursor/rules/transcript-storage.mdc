@@ -1,55 +1,40 @@
 ---
-description: Three transcript artifacts per episode — Whisper JSON, CURSOR-shaped improved JSON, SQLite bullets
+description: Two-step pipeline — Whisper JSON then CURSOR improved JSON; SQLite loaded from step 2 for the web app
 alwaysApply: true
 ---
 
-# Transcript and summary storage (three layers)
+# Transcript and summaries (two authoring steps)
 
-Every episode that appears in the web app must have **three separate artifacts** (do not collapse or skip layers):
+**Authoring** has **two steps** only. There is no separate third step to “write bullet summaries”: the JSON from step 2 already **is** the structured summary (sections + topic bullets). **SQLite** is filled from that file so the site can query and render Topics quickly — it is **not** a second master document you maintain by hand.
 
-1. **Original Whisper JSON** (and optionally `.txt`) on disk — full model output.
-2. **Improved JSON** on disk — **must** match the schema and editorial rules in **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (thematic Danish sections, **3–5 bullets per section**, `cars` / `themes` / `uncertain`, optional `start_sec` / `end_sec`). This is **not** optional styling: agents must **read** `CURSOR_INSTRUCTIONS` from that file (or run `bilradio prepare-improved-agent` and follow the emitted prompt) before writing `data/transcripts_improved/<stem>.json`.
-3. **Bullet summaries in SQLite** — denormalized index for the Topics UI via `bilradio import-bullets` (from the same JSON as layer 2, or `data/cursor_inbox/<guid>.bullets.json`).
+## Step 1 — Whisper output (disk)
 
-**Mechanical helpers** (`bootstrap-improved-json`, `scripts/improved_json_from_segments.py`, `scripts/apply_whisper_timecodes.py`) may **only** produce **interim** files. If they do not satisfy **`CURSOR_INSTRUCTIONS`** (e.g. segment-chunk dumps instead of 3–5 thematic bullets per section), treat them as **placeholders**: keep `_bilradio_meta.replace_with_cursor_agent` or replace the file with Auto Agent output before considering the episode “done.”
+- **How:** Use the **Python / Whisper pipeline** (e.g. batch script or `bilradio transcribe`) to produce the raw transcript.
+- **Path:** `data/transcripts/<audio_stem>.json` (preferred) and optionally `.txt` / sidecar formats from the same run.
+- **Content:** Full Whisper payload (`text`, `segments`, etc.). Keep this as the **versionable raw capture**.
+- **SQLite:** Do **not** store the full Whisper JSON body in the database; at most **`transcript_path`** for ingest/pipeline.
 
-Use **disk for heavy, versionable sources**; use **SQLite only** for the web app’s queryable bullet index.
+## Step 2 — Improved JSON (disk), then import to SQLite
 
-## 1. Original Whisper output (on disk only)
+- **How:** **Cursor Auto Agent** reads the Whisper transcript and **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py`: fix obvious Whisper errors using context, organize into **thematic Danish sections**, and write **concise summary bullets** (not a full transcript for reading).
+- **Output path:** `data/transcripts_improved/<audio_stem>.json`
+- **Schema:** Must match the **current** `CURSOR_INSTRUCTIONS` in `bilradio/extract.py` (JSON shape: `sections` → `title`, optional **`start_sec` / `end_sec` on each section** aligned with Whisper **`segments`**, `bullets` with `text`, `cars`, `themes`, `uncertain`). Section and bullet counts follow **episode content**, not a fixed template.
+- **Prompt files:** Run **`bilradio prepare-improved-agent`** for per-episode Markdown in `data/cursor_inbox/` with the same instructions as `CURSOR_INSTRUCTIONS`.
+- **Policy:** Do **not** use third-party paid LLM APIs for this step unless the project owner explicitly opts in.
+- **Into the website:** Run **`bilradio import-bullets --guid … --file …`** so **`topic_sections`** and **`topic_bullets`** mirror that JSON. Re-import after JSON edits. The app reads SQLite for Topics, facets, and APIs — there is **no** extra “step 3” authoring layer.
 
-- **Path:** `data/transcripts/<audio_stem>.json` (and optionally `.txt` from the same run).
-- **Content:** Full Whisper result (e.g. `text`, `segments`, tokens, logprobs). Large and stable as the **raw capture**.
-- **SQLite:** Do **not** store this JSON body in the database. At most store **`transcript_path`** pointing at the chosen file (`.json` or `.txt`) for pipeline steps (`prepare-extract`, `ingest-transcripts`).
+**Mechanical helpers** (`bootstrap-improved-json`, `scripts/improved_json_from_segments.py`, `scripts/apply_whisper_timecodes.py`) are **optional** and may only produce **interim** output until Auto Agent delivers JSON that **fully** matches `CURSOR_INSTRUCTIONS`.
 
-## 2. Improved structured JSON (on disk only)
+## Storage summary
 
-- **Path:** `data/transcripts_improved/<audio_stem>.json`
-- **Content:** JSON that **fully** follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (`sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`, and **optional `start_sec` / `end_sec`** in seconds aligned with Whisper **`segments`**). **Section count (1–12) and 3–5 bullets per section** are part of the contract; do not ship a file that is only chunked Whisper segments unless it is explicitly interim and scheduled for replacement.
-- **Authoring (canonical):** Use **Cursor Auto Agent** (your Cursor license). Do **not** use third-party LLM APIs (OpenAI, Anthropic, etc.) for this step unless the project owner explicitly opts in again.
-- **Prompt files:** Run **`bilradio prepare-improved-agent`** to emit per-episode Markdown in `data/cursor_inbox/` with the exact output path and the same instructions as `CURSOR_INSTRUCTIONS`. Point Auto Agent at those files plus the Whisper transcript (`data/transcripts/<stem>.json` or `data/cursor_inbox/<guid>_transcript.txt`).
-- **Bootstrap only:** Optional **`bilradio bootstrap-improved-json`** may create extractive placeholders from Whisper text for local testing; if `_bilradio_meta.replace_with_cursor_agent` is true, replace the file with Auto Agent output when ready.
-- **SQLite:** Do **not** store this whole JSON in the database. Treat the file as source of truth; optional **`_bilradio_meta`** inside the file is fine.
-
-## 3. Bullet summaries for the web app (SQLite)
-
-- **Tables:** `topic_sections` + `topic_bullets` (linked to `episodes.guid`), including optional **`start_sec` / `end_sec`** on each table for the condensed Topics outline (section bounds can be derived from bullets when missing).
-- **Purpose:** Fast **Topics** page, **facets** (cars/themes), filters, and ordering. This is a **denormalized index**, not a second master copy of the Whisper dump.
-- **How it gets there:** `bilradio import-bullets` reads JSON matching the import shape—usually the same file as layer **2**, or `data/cursor_inbox/<guid>.bullets.json` while iterating in Cursor.
-
-## Relationships
-
-- **1 → 2:** Cursor Auto Agent (from `prepare-improved-agent` prompts) reading layer **1**; optional bootstrap for placeholders only.
-- **2 → 3:** `import-bullets` loads structured bullets into SQLite. Re-running import **replaces** rows for that episode; keep layer **2** on disk if you need history (git or backups outside this rule). After adding timestamps to the JSON schema, **re-import** episodes so the Topics page can show time ranges.
+| What | Role | Location | In SQLite as full JSON? |
+|------|------|----------|-------------------------|
+| Raw transcription | Step 1 source | `data/transcripts/*.{json,txt}` | No (path only) |
+| Improved + summaries | Step 2 source of truth | `data/transcripts_improved/*.json` | No (rows imported) |
+| Query index | Serving Topics / APIs | — | `topic_sections`, `topic_bullets` |
 
 ## Do not
 
-- Put **full Whisper JSON** or **full improved JSON** into SQLite BLOB/TEXT columns for routine operation.
-- Add new **paid third-party LLM** dependencies for improved JSON without an explicit project decision (the OpenAI-based `improve-transcripts` path is removed/disabled in favour of Cursor Auto Agent).
-
-## Summary table
-
-| Layer | Role              | Location                          | SQLite        |
-|-------|-------------------|-----------------------------------|---------------|
-| 1     | Raw transcription | `data/transcripts/*.{json,txt}`   | Path only     |
-| 2     | CURSOR-shaped JSON| `data/transcripts_improved/*.json`| No            |
-| 3     | App bullets       | `topic_sections` / `topic_bullets`| Yes (primary for UI queries) |
+- Treat SQLite as something to author separately from the improved JSON; **edit the JSON, then re-run `import-bullets`**.
+- Store **full Whisper JSON** or **full improved JSON** in SQLite BLOB/TEXT for routine operation.
+- Add **paid third-party LLM** dependencies for improved JSON without an explicit project decision.
