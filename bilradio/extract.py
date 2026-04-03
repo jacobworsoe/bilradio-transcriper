@@ -42,6 +42,7 @@ Respond with **JSON only** (no markdown fences), in this exact shape:
 }
 
 Rules:
+- **Sponsor and ads:** Always **exclude** paid sponsor messages and advertisement reads from the output. Do not put them in any bullet (e.g. omit lines like *"Episoden er sponsoreret af GAVMIL"*, similar sponsor intros/outros, URL pitches, and discount CTAs). Summarize only editorial podcast content; do not invent facts to fill the gap.
 - **sections**: the number of sections and number of bullets per section must be completely dependent on the content in the podcast.
 - **title**: short Danish section heading.
 - **start_sec** / **end_sec** (optional, floats): seconds from the start of the episode audio, aligned with the Whisper JSON **segments** timestamps. Set on each **section**. Not on each individual bullet in the section.
