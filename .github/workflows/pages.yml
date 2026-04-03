@@ -20,7 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      # v4.0.0 omits dotfiles from the tarball (.nojekyll would be dropped); v3 includes them.
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
