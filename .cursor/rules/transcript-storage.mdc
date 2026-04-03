@@ -1,9 +1,17 @@
 ---
-description: Where Whisper, improved CURSOR JSON, and app bullets live (disk vs SQLite)
+description: Three transcript artifacts per episode — Whisper JSON, CURSOR-shaped improved JSON, SQLite bullets
 alwaysApply: true
 ---
 
 # Transcript and summary storage (three layers)
+
+Every episode that appears in the web app must have **three separate artifacts** (do not collapse or skip layers):
+
+1. **Original Whisper JSON** (and optionally `.txt`) on disk — full model output.
+2. **Improved JSON** on disk — **must** match the schema and editorial rules in **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (thematic Danish sections, **3–5 bullets per section**, `cars` / `themes` / `uncertain`, optional `start_sec` / `end_sec`). This is **not** optional styling: agents must **read** `CURSOR_INSTRUCTIONS` from that file (or run `bilradio prepare-improved-agent` and follow the emitted prompt) before writing `data/transcripts_improved/<stem>.json`.
+3. **Bullet summaries in SQLite** — denormalized index for the Topics UI via `bilradio import-bullets` (from the same JSON as layer 2, or `data/cursor_inbox/<guid>.bullets.json`).
+
+**Mechanical helpers** (`bootstrap-improved-json`, `scripts/improved_json_from_segments.py`, `scripts/apply_whisper_timecodes.py`) may **only** produce **interim** files. If they do not satisfy **`CURSOR_INSTRUCTIONS`** (e.g. segment-chunk dumps instead of 3–5 thematic bullets per section), treat them as **placeholders**: keep `_bilradio_meta.replace_with_cursor_agent` or replace the file with Auto Agent output before considering the episode “done.”
 
 Use **disk for heavy, versionable sources**; use **SQLite only** for the web app’s queryable bullet index.
 
@@ -16,7 +24,7 @@ Use **disk for heavy, versionable sources**; use **SQLite only** for the web app
 ## 2. Improved structured JSON (on disk only)
 
 - **Path:** `data/transcripts_improved/<audio_stem>.json`
-- **Content:** JSON that follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (`sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`, and **optional `start_sec` / `end_sec`** in seconds aligned with Whisper **`segments`**).
+- **Content:** JSON that **fully** follows **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py` (`sections` with `bullets`: Danish text, `cars`, `themes`, `uncertain`, and **optional `start_sec` / `end_sec`** in seconds aligned with Whisper **`segments`**). **Section count (1–12) and 3–5 bullets per section** are part of the contract; do not ship a file that is only chunked Whisper segments unless it is explicitly interim and scheduled for replacement.
 - **Authoring (canonical):** Use **Cursor Auto Agent** (your Cursor license). Do **not** use third-party LLM APIs (OpenAI, Anthropic, etc.) for this step unless the project owner explicitly opts in again.
 - **Prompt files:** Run **`bilradio prepare-improved-agent`** to emit per-episode Markdown in `data/cursor_inbox/` with the exact output path and the same instructions as `CURSOR_INSTRUCTIONS`. Point Auto Agent at those files plus the Whisper transcript (`data/transcripts/<stem>.json` or `data/cursor_inbox/<guid>_transcript.txt`).
 - **Bootstrap only:** Optional **`bilradio bootstrap-improved-json`** may create extractive placeholders from Whisper text for local testing; if `_bilradio_meta.replace_with_cursor_agent` is true, replace the file with Auto Agent output when ready.
