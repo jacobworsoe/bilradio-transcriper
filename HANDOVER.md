@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-04-03. Operator + maintainer notes._
+_Last updated: 2026-04-04. Operator + maintainer notes._
 
 ---
 
@@ -42,6 +42,8 @@ cd C:\Git\bilradio-transcriper
 
 Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--skip-sync-download`, `--retry-failed`, `--device cpu`, `--output-format` (omit for Whisper default `all`).
 
+**Step 2 (improved JSON)** is **not** part of this script. Whisper → disk is step 1 only. **Cursor Auto Agent** runs inside Cursor on `data/cursor_inbox/*_improve_auto_agent.md`; there is no headless “run Agent from Python” hook in-repo. To **batch-fill missing** improved files without the Agent, use **`scripts/improved_json_from_segments.py`** per episode (stem + `--guid` from the prompt or DB), then **`import-bullets`** per guid — output is **interim** (`_bilradio_meta.replace_with_cursor_agent`, generic section titles, `themes: ["bootstrap"]`, `uncertain: true`) until replaced by a real Agent pass.
+
 **Web UI (`bilradio serve`):** open **`/episodes`** for **Sync RSS**, **Ingest transcripts**, and columns: Downloaded / Whisper (JSON+TXT) / Improved / Status / Bullets. **Display status** is normalized for the UI: SQLite **`extracted`** shows as **Summarized** (bullets loaded); if Whisper **JSON exists on disk** but the DB still has **`error`**, the row is shown as **transcribed** with an optional stale-error note instead of a blocking error badge. **`serve`** auto-reloads on code/template changes unless **`--no-reload`**; confirm the printed **`Web UI from …`** path if the site looks stale.
 
 ---
@@ -70,6 +72,8 @@ Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--s
 ```
 
 Optional: `--seg-per-bullet` (default 12), `--per-section` (default 5), `--max-text`, `--stem`. Then **`import-bullets`** as usual.
+
+**Working through a full `cursor_inbox` backlog:** run **`prepare-improved-agent`** once (optional `--limit`) so every episode that lacks improved JSON gets an `*_improve_auto_agent.md` file. Episodes that **already** have `data/transcripts_improved/<stem>.json` are skipped unless **`--force`**. For each prompt whose JSON path is still missing, run **`improved_json_from_segments.py`** (or open the `.md` in Cursor for a proper Agent run), then **`import-bullets --guid … --file …`**. Section times from the segment script follow Whisper **segment** groupings; **`apply_whisper_timecodes.py`** is optional (proportional slice of the whole timeline) and is usually **redundant** right after `improved_json_from_segments.py`.
 
 Legacy path still works: `prepare-extract` → `*_CURSOR_PROMPT.md` → save `<guid>.bullets.json` in `cursor_inbox` → `import-bullets`.
 
@@ -160,7 +164,7 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 ## After transcription: improved JSON and Topics
 
 1. Ensure **`data/transcripts/<stem>.json`** (or `.txt`) exists; run **`ingest-transcripts`** if DB should show **transcribed**.
-2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts), **`bootstrap-improved-json`**, or **`improved_json_from_segments.py`** when bootstrap collapses to one block. Optionally run **`apply_whisper_timecodes.py`** for **section**-level times from Whisper segments.
+2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts), **`bootstrap-improved-json`**, or **`improved_json_from_segments.py`** when bootstrap collapses to one block (or to bulk-fill many missing files before Agent polish). Optionally run **`apply_whisper_timecodes.py`** for **section**-level times when improved JSON was authored without segment-aligned bounds (often **skipped** immediately after `improved_json_from_segments.py`).
 3. **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`**
 4. Open **`/`** in the web app: **facets**, **section** time range on the summary line (no per-bullet range in the UI unless legacy DB rows still have bullet times), **episode heading** format **`date - title`**, and list **disc** markers for bullets.
 
@@ -187,3 +191,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | 2026-04 | Topics condensed outline; optional **section** times in improved JSON → SQLite → `/api/bullets` |
 | 2026-04 | **`apply_whisper_timecodes.py`** → **section-only** times; **`improved_json_from_segments.py`** → section times only; Topics UI: **no per-section `h2`**, **episode `h2`** as **`date - title`**, summary row shows **every** section title, **disc** bullets, **wider** layout, **red** excluded chips, **`bullet_time_range`** omitted in API when bullets have no times |
 | 2026-04 | **`CURSOR_INSTRUCTIONS`**: content-driven section counts, **section-level** timecodes, **omit sponsor reads**; transcript-storage rule = **two authoring steps** + SQLite import; hand-curated / repaired improved JSON for sample episodes (**317**, **318**) |
+| 2026-04 | Handover: **`batch_whisper_transcribe.py`** = step 1 only; step 2 batch options (**`prepare-improved-agent`** backlog + **`improved_json_from_segments.py`** + **`import-bullets`**); backlog fill for missing prompts vs segment interim JSON |
