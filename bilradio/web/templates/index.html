@@ -159,13 +159,11 @@
         const h = document.createElement("h2");
         h.className = "section-heading";
         if (firstSectionOfEpisode) {
-          h.textContent = sec
-            ? first.episode_title +
-              " · " +
-              (first.pub_date || "").slice(0, 10) +
-              " — " +
-              sec
-            : first.episode_title + " · " + (first.pub_date || "").slice(0, 10);
+          h.classList.add("episode-heading");
+          const d = (first.pub_date || "").slice(0, 10);
+          h.textContent = d
+            ? d + " - " + first.episode_title
+            : first.episode_title;
         } else {
           h.textContent = sec || "Episode";
         }

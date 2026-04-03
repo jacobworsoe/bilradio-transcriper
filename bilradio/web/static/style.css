@@ -101,6 +101,11 @@ body {
   color: var(--text);
 }
 
+/* First row per episode: date - title only (no section name); 40% larger than .section-heading */
+.section-heading.episode-heading {
+  font-size: calc(0.95rem * 1.4);
+}
+
 .section-heading:first-child {
   margin-top: 0.5rem;
 }
