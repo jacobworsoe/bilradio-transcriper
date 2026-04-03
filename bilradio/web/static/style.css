@@ -19,7 +19,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
-  max-width: 52rem;
+  max-width: 85rem;
   margin-inline: auto;
   padding: 1.25rem 1rem 3rem;
 }
