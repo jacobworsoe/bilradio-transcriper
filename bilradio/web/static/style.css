@@ -111,6 +111,11 @@ body {
   margin: 5.5rem 0 0.5rem;
 }
 
+/* First episode on the page: keep tight top spacing (main is not preceded by another episode h2) */
+.section-heading.episode-heading:first-child {
+  margin-top: 0.5rem;
+}
+
 .topic-section-summary {
   display: flex;
   flex-wrap: wrap;
