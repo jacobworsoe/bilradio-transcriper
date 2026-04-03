@@ -76,7 +76,8 @@ body {
 }
 
 .chip-off {
-  opacity: 0.45;
+  color: #f87171;
+  opacity: 0.95;
   text-decoration: line-through;
 }
 
