@@ -130,6 +130,7 @@ body {
 .topic-section-title-inline {
   font-weight: 600;
   color: var(--text);
+  font-size: 1.25em;
 }
 
 .topic-section-tags {
@@ -137,6 +138,12 @@ body {
   flex-wrap: wrap;
   gap: 0.25rem;
   align-items: center;
+}
+
+.topic-section-summary .topic-section-tags {
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 0.2rem;
 }
 
 .tag-compact {
@@ -148,6 +155,7 @@ body {
   font-variant-numeric: tabular-nums;
   color: var(--muted);
   white-space: nowrap;
+  font-size: 1.25em;
 }
 
 .topic-bullet-sublist {
