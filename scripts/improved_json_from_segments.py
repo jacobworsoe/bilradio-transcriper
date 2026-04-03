@@ -46,6 +46,7 @@ def main() -> int:
     max_t = max(80, args.max_text)
 
     bullets_flat: list[dict] = []
+    span_flat: list[tuple[float, float]] = []
     for i in range(0, n, spb):
         chunk = segs[i : i + spb]
         raw = " ".join(
@@ -62,9 +63,10 @@ def main() -> int:
                 "cars": [],
                 "themes": ["bootstrap"],
                 "uncertain": True,
-                "start_sec": round(float(chunk[0]["start"]), 2),
-                "end_sec": round(float(chunk[-1]["end"]), 2),
             }
+        )
+        span_flat.append(
+            (float(chunk[0]["start"]), float(chunk[-1]["end"]))
         )
 
     if not bullets_flat:
@@ -73,13 +75,14 @@ def main() -> int:
 
     sections: list[dict] = []
     for si in range(0, len(bullets_flat), bps):
-        chunk = bullets_flat[si : si + bps]
+        chunk_b = bullets_flat[si : si + bps]
+        chunk_t = span_flat[si : si + bps]
         sections.append(
             {
                 "title": f"Del {len(sections) + 1}",
-                "start_sec": round(min(b["start_sec"] for b in chunk), 2),
-                "end_sec": round(max(b["end_sec"] for b in chunk), 2),
-                "bullets": chunk,
+                "start_sec": round(min(t[0] for t in chunk_t), 2),
+                "end_sec": round(max(t[1] for t in chunk_t), 2),
+                "bullets": chunk_b,
             }
         )
 

@@ -206,10 +206,12 @@
         for (const b of g.bullets) {
           const li = document.createElement("li");
           li.className = "topic-bullet-sub" + (b.uncertain ? " uncertain" : "");
-          const br = document.createElement("span");
-          br.className = "topic-time-range";
-          br.textContent = b.bullet_time_range || "[— – —]";
-          li.appendChild(br);
+          if (b.bullet_time_range) {
+            const br = document.createElement("span");
+            br.className = "topic-time-range";
+            br.textContent = b.bullet_time_range;
+            li.appendChild(br);
+          }
           const tx = document.createElement("span");
           tx.className = "topic-bullet-text";
           tx.textContent = b.text;

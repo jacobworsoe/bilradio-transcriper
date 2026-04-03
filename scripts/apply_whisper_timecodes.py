@@ -1,4 +1,8 @@
-"""Fill start_sec/end_sec on improved JSON from Whisper segment indices (proportional by bullet count).
+"""Fill start_sec/end_sec on each **section** of improved JSON from Whisper segments.
+
+Slices the segment timeline proportionally by section, weighted by bullet count in each
+section. Removes any per-bullet start_sec/end_sec so output matches CURSOR_INSTRUCTIONS
+(section-level timecodes only).
 
 Usage (repo root):
   .venv\\Scripts\\python.exe scripts\\apply_whisper_timecodes.py data\\transcripts\\<stem>.json data\\transcripts_improved\\<stem>.json
@@ -33,64 +37,58 @@ def main() -> int:
         print("Improved JSON has no sections list.", file=sys.stderr)
         return 1
 
-    flat: list[tuple[int, int]] = []
+    counts: list[int] = []
+    for sec in sections:
+        if not isinstance(sec, dict):
+            counts.append(0)
+            continue
+        bullets = sec.get("bullets") or []
+        counts.append(len(bullets) if isinstance(bullets, list) else 0)
+
+    total_b = sum(counts)
+    if total_b == 0:
+        print("No bullets to anchor sections.", file=sys.stderr)
+        return 1
+
+    cum = 0
     for si, sec in enumerate(sections):
         if not isinstance(sec, dict):
             continue
-        bullets = sec.get("bullets") or []
-        if not isinstance(bullets, list):
+        k = counts[si] if si < len(counts) else 0
+        if k == 0:
             continue
-        for bi, _b in enumerate(bullets):
-            flat.append((si, bi))
-
-    b_count = len(flat)
-    if b_count == 0:
-        print("No bullets to annotate.", file=sys.stderr)
-        return 1
-
-    for idx, (si, bi) in enumerate(flat):
-        seg_a = idx * n // b_count
-        seg_b = (idx + 1) * n // b_count
-        if seg_b <= seg_a:
-            seg_b = min(seg_a + 1, n)
-        seg_b = min(seg_b, n)
-        bullet = sections[si]["bullets"][bi]
-        if not isinstance(bullet, dict):
-            continue
-        st = round(float(segs[seg_a]["start"]), 2)
-        en = round(float(segs[seg_b - 1]["end"]), 2)
-        bullet["start_sec"] = st
-        bullet["end_sec"] = en
-
-    for sec in sections:
-        if not isinstance(sec, dict):
-            continue
-        bullets = sec.get("bullets") or []
-        if not isinstance(bullets, list):
-            continue
-        starts: list[float] = []
-        ends: list[float] = []
-        for b in bullets:
-            if isinstance(b, dict) and "start_sec" in b and "end_sec" in b:
-                starts.append(float(b["start_sec"]))
-                ends.append(float(b["end_sec"]))
-        if starts and ends:
-            sec["start_sec"] = round(min(starts), 2)
-            sec["end_sec"] = round(max(ends), 2)
+        seg_i0 = cum * n // total_b
+        cum += k
+        seg_i1 = cum * n // total_b
+        if seg_i1 <= seg_i0:
+            seg_i1 = min(seg_i0 + 1, n)
+        seg_i1 = min(seg_i1, n)
+        st = round(float(segs[seg_i0]["start"]), 2)
+        en = round(float(segs[seg_i1 - 1]["end"]), 2)
+        sec["start_sec"] = st
+        sec["end_sec"] = en
+        bullets = sec.get("bullets")
+        if isinstance(bullets, list):
+            for b in bullets:
+                if isinstance(b, dict):
+                    b.pop("start_sec", None)
+                    b.pop("end_sec", None)
 
     meta = doc.get("_bilradio_meta")
     if isinstance(meta, dict):
-        meta["timecodes_applied"] = "whisper_segments_proportional_by_bullet_index"
+        meta["timecodes_applied"] = "whisper_segments_proportional_by_section"
     else:
         doc["_bilradio_meta"] = {
-            "timecodes_applied": "whisper_segments_proportional_by_bullet_index",
+            "timecodes_applied": "whisper_segments_proportional_by_section",
         }
 
     improved_path.write_text(
         json.dumps(doc, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(f"Wrote {improved_path} ({b_count} bullets, {n} segments)")
+    print(
+        f"Wrote {improved_path} ({len(sections)} sections, {total_b} bullets, {n} segments; section times only)"
+    )
     return 0
 
 

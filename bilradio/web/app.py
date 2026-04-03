@@ -68,9 +68,11 @@ def _apply_section_time_ranges(rows: list[dict]) -> None:
             g["section_start_sec"] = ss
             g["section_end_sec"] = es
             g["section_time_range"] = format_time_range_bracket(ss, es)
-            g["bullet_time_range"] = format_time_range_bracket(
-                g.get("start_sec"), g.get("end_sec")
-            )
+            bs, be = g.get("start_sec"), g.get("end_sec")
+            if bs is not None or be is not None:
+                g["bullet_time_range"] = format_time_range_bracket(bs, be)
+            else:
+                g["bullet_time_range"] = None
         i = j
 
 
