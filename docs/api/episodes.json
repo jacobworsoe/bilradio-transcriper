@@ -117,16 +117,16 @@
       "title": "324 VW og EU kan gøre elbiler billigere i Danmark",
       "pub_date": "2025-12-19T11:12:01+00:00",
       "duration_sec": 3966,
-      "status": "transcribed",
-      "display_status": "transcribed",
+      "status": "extracted",
+      "display_status": "summarized",
       "status_note": null,
       "error": null,
-      "extract_at": null,
-      "bullet_count": 0,
+      "extract_at": "2026-04-04T21:07:25.141424+00:00",
+      "bullet_count": 38,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": false
+      "improved_transcript": true
     },
     {
       "guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
@@ -370,7 +370,7 @@
     }
   ],
   "counts": {
-    "summarized": 8,
-    "transcribed": 15
+    "summarized": 9,
+    "transcribed": 14
   }
 }

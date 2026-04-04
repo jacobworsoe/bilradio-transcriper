@@ -672,6 +672,885 @@
       "bullet_time_range": null
     },
     {
+      "id": 1487,
+      "text": "Jan og Christian laver julehumor om sidste gang i studiet før jul og Christians fortsatte test af Firefly: dug på forruden, sædevarme og importørens forventning til en mere positiv oplevelse end Jans.",
+      "cars": [
+        "Firefly"
+      ],
+      "themes": [
+        "intro",
+        "testbil"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Juleintro, Firefly, Audi-diesel og duel-mod Renault 5",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 546.7,
+      "section_time_range": "[0:30 – 9:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1488,
+      "text": "Christian kører Audi A6 2.0 TDI som \"elbil\": rolig kørsel og konstant fokus på rækkevidde; ved ca. 100 km/t kan bilen ifølge udsendelsen køre omkring 1.300 km uden rækkeviddeangst – Jan ser frem til at låne den.",
+      "cars": [
+        "Audi A6"
+      ],
+      "themes": [
+        "diesel",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Juleintro, Firefly, Audi-diesel og duel-mod Renault 5",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 546.7,
+      "section_time_range": "[0:30 – 9:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1489,
+      "text": "Jan planlægger ladetest af Firefly fra lav SOC med varmt batteri; duel mod Renault 5 med Morten fra Bilbasen annonceres senere på dagen.",
+      "cars": [
+        "Firefly",
+        "Renault 5"
+      ],
+      "themes": [
+        "lading",
+        "sammenligning"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Juleintro, Firefly, Audi-diesel og duel-mod Renault 5",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 546.7,
+      "section_time_range": "[0:30 – 9:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1490,
+      "text": "Christian forbereder pitch til TV 2 og DR om \"bilåret 2025\"; Jan spøger med at han ikke bliver inviteret med.",
+      "cars": [],
+      "themes": [
+        "medier",
+        "jul"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Juleintro, Firefly, Audi-diesel og duel-mod Renault 5",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 546.7,
+      "section_time_range": "[0:30 – 9:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1491,
+      "text": "Tesla Model Y og andre biler med kraftig LED/matrixlys opleves blænde modkørende, cyklister og fodgængere; problemet tilskrives højere karosserier og stærk lys-teknologi, ikke nødvendigvis \"fejl\".",
+      "cars": [
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "lys",
+        "sikkerhed"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "LED-forlygter, blænding og FDM-undersøgelse",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 546.7,
+      "section_end_sec": 859.8,
+      "section_time_range": "[9:06 – 14:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1492,
+      "text": "FDM-undersøgelse nævnes som bekræftelse på hverdagserfaringer; Dansk Cyklistforbund og debatindlæg i JP fremhæver også cyklisters problemer med bilers matrixlys, der ikke altid registrerer cyklister.",
+      "cars": [],
+      "themes": [
+        "FDM",
+        "cykling"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "LED-forlygter, blænding og FDM-undersøgelse",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 546.7,
+      "section_end_sec": 859.8,
+      "section_time_range": "[9:06 – 14:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1493,
+      "text": "Christian beskriver Suzuki e-Vitara, der automatisk blænder op på lille vej, så naboer troede det var med vilje; Mercedes-lygter roses for god vejbelysning set fra førersæde, men kan stadig genere omgivelser.",
+      "cars": [
+        "Suzuki e Vitara",
+        "Mercedes-Benz"
+      ],
+      "themes": [
+        "lys",
+        "hverdag"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "LED-forlygter, blænding og FDM-undersøgelse",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 546.7,
+      "section_end_sec": 859.8,
+      "section_time_range": "[9:06 – 14:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1494,
+      "text": "Efter udsolgte to år gamle, lavt kørte G9 hos en forhandler til skarp pris orienterer Christian om Drevsens Biler, der importerer G9 Standard Range til 399.000 kr., nyindregistreret i december 2025 med oplyst fabriksgaranti til 2032.",
+      "cars": [
+        "Xpeng G9"
+      ],
+      "themes": [
+        "import",
+        "priser",
+        "garanti"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Xpeng G9 – nye importpartier og garanti",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 859.8,
+      "section_end_sec": 1020.1,
+      "section_time_range": "[14:19 – 17:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1495,
+      "text": "De understreger behov for at verificere fabriksgaranti og importspor, efter tidligere historier om G9-importer, hvor alt ikke stemte med fabrikstilknytning.",
+      "cars": [
+        "Xpeng G9"
+      ],
+      "themes": [
+        "garanti",
+        "forbruger"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Xpeng G9 – nye importpartier og garanti",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 859.8,
+      "section_end_sec": 1020.1,
+      "section_time_range": "[14:19 – 17:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1496,
+      "text": "VW løfter sløret for køreindtryk og data på ID. Polo; bilen ses som koncernens store bud på billig masse-elbil ud over Renault 5 og et tilbage til klassiske VW-ingeniørdyder med elmotor.",
+      "cars": [
+        "Volkswagen ID. Polo",
+        "Renault 5"
+      ],
+      "themes": [
+        "ny model",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1497,
+      "text": "Rulleteknik: Cupra Raval først, derefter ID. Polo, Skoda Epic og VW ID. Cross; forhandlere forventer top-10-potentiale i Danmark fra sensommeren 2026 og frem.",
+      "cars": [
+        "Cupra Raval",
+        "Volkswagen ID. Polo",
+        "Skoda"
+      ],
+      "themes": [
+        "modelprogram",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1498,
+      "text": "Morten Bech citerer VW-ingeniør, der kritiserer Herbert Diess’ ID.3-tilgang for at springe over, hvor gærdet var lavest og kopiere Tesla frem for tyske kvalitetsdyder – nu skal ID. Polo rette op.",
+      "cars": [
+        "Volkswagen ID.3"
+      ],
+      "themes": [
+        "historie",
+        "udvikling"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1499,
+      "text": "Journalister har kørt Cupra Raval og ID. Polo med 52 kWh batteri og 211–226 hk; DC-ladning op til 130 kW giver ifølge udsendelsen ca. 23 min 10–80 % med flad kurve. Lille LFP-pakke (37 kWh) giver kortere rækkevidde og kun 90 kW DC – kritiseres som svag til alt andet end ren bykørsel.",
+      "cars": [
+        "Volkswagen ID. Polo",
+        "Cupra Raval"
+      ],
+      "themes": [
+        "lading",
+        "rækkevidde"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1500,
+      "text": "Motorprogram udvidet: basis 116 hk, 135 hk, 211 hk og senere GTI med 226 hk; træk op til 1.200 kg nævnes (forbehold for batterivariant). VW siger, at minibilsegmentet i Europa på sigt bliver fuldt elektrisk.",
+      "cars": [
+        "Volkswagen ID. Polo"
+      ],
+      "themes": [
+        "motor",
+        "træk"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1501,
+      "text": "Gennemsnitlig daglig kørelængde i Europa diskuteres (ofte ca. 40 km ifølge Jan); danske tal og Bilbasen-data viser højere årlige kilometer for mange biler – vigtigt for rækkeviddevalg.",
+      "cars": [],
+      "themes": [
+        "forbrug",
+        "statistik"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1502,
+      "text": "Batterifabrik i Salzgitter åbner samme uge; tysk \"ID. Polo-tilskud\" med ca. 23 mia. kr. afsat nævnes som kombination af kontanttilskud og skatterabat for biler under et prisloft.",
+      "cars": [
+        "Volkswagen ID. Polo"
+      ],
+      "themes": [
+        "produktion",
+        "incitamenter",
+        "Tyskland"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1503,
+      "text": "Listepris under 25.000 euro (ca. 187.500 kr. + moms/justering → omkring 195.000 kr.); værterne håber på dansk startpris omkring 189.900 kr. som Renault 5 og \"drømmekonfig\" med lang rækkevidde nær 219.000–225.000 kr.",
+      "cars": [
+        "Volkswagen ID. Polo",
+        "Renault 5"
+      ],
+      "themes": [
+        "priser"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Volkswagen ID. Polo og MEB-smaabil-familien",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1020.1,
+      "section_end_sec": 1980.9,
+      "section_time_range": "[17:00 – 33:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1504,
+      "text": "EU-aftale nævnes: 100 % CO2-reduktion i 2035 ændret til 90 %, udskudelse af forbrændingsforbud mod 2040 diskuteres; René Tynner i radioen er skuffet på producenternes vegne og fryser \"ånden ud af flasken\" – yderligere lempelser kan følge.",
+      "cars": [],
+      "themes": [
+        "EU",
+        "CO2",
+        "politik"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "EU, CO2-mål, billige minibiler og betydning for Danmark",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1980.9,
+      "section_end_sec": 2355.4,
+      "section_time_range": "[33:00 – 39:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1505,
+      "text": "Analytikere peger på, at undtagelser primært hjælper superbil-producenter (Porsche, Ferrari, italienske mærker m.fl.) frem for volumenproducenter.",
+      "cars": [],
+      "themes": [
+        "EU",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "EU, CO2-mål, billige minibiler og betydning for Danmark",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1980.9,
+      "section_end_sec": 2355.4,
+      "section_time_range": "[33:00 – 39:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1506,
+      "text": "Særregler for billige elbiler under ca. 4,20 m: EU vil lette typegodkendelse/krav, så enklere og billigere minibiler kan produceres – ID. Polo, ID. Cross og Skoda Epic ligger ifølge udsendelsen under grænsen.",
+      "cars": [
+        "Volkswagen ID. Polo",
+        "Skoda"
+      ],
+      "themes": [
+        "regler",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "EU, CO2-mål, billige minibiler og betydning for Danmark",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1980.9,
+      "section_end_sec": 2355.4,
+      "section_time_range": "[33:00 – 39:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1507,
+      "text": "Stellantis nævnes som mulig stor vinder med allerede simple små elbiler; LFP-priser forventes 20–30 % lavere per kWh frem mod 2030.",
+      "cars": [],
+      "themes": [
+        "Stellantis",
+        "batteri"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "EU, CO2-mål, billige minibiler og betydning for Danmark",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1980.9,
+      "section_end_sec": 2355.4,
+      "section_time_range": "[33:00 – 39:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1508,
+      "text": "Konsekvens for Danmark: producenter skal stadig balancere emissionsloft med salg af store benzinbiler og vil producere flere elbiler, der søger mod markeder med høj efterspørgsel – herunder Danmark på nyt og brugt.",
+      "cars": [],
+      "themes": [
+        "Danmark",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "EU, CO2-mål, billige minibiler og betydning for Danmark",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1980.9,
+      "section_end_sec": 2355.4,
+      "section_time_range": "[33:00 – 39:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1509,
+      "text": "Ca. 15.000 MG’er kører i Danmark; mærket performer på brugtmarkedet med korte liggetider, fordi bilerne er nye, enkle og prisstærke – ofte i top 20 på Bilbasen-analyser.",
+      "cars": [
+        "MG"
+      ],
+      "themes": [
+        "brugtbil",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "MG – mærke, salg og ny MG S6 EV",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2355.4,
+      "section_end_sec": 2979.3,
+      "section_time_range": "[39:15 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1510,
+      "text": "MG S5 roses som velkørende og veludstyret; MG S6 EV lanceres som stor familie-SUV konkurrent til Model Y, Enyaq, ID.4 m.fl. – pris fra 299.999 kr. (RWD) og 335.000 kr. (AWD), 77 kWh, 530 km WLTP, massivt standardudstyr.",
+      "cars": [
+        "MG S5",
+        "MG S6",
+        "Tesla Model Y",
+        "Skoda Enyaq"
+      ],
+      "themes": [
+        "ny model",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "MG – mærke, salg og ny MG S6 EV",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2355.4,
+      "section_end_sec": 2979.3,
+      "section_time_range": "[39:15 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1511,
+      "text": "Kritik: maks 144 kW DC og ikke flad ladekurve giver omkring 44 min 10–80 % – langsommere end de fleste konkurrenter i klassen og på niveau med ældre teknologi; værterne undrer sig over underpræstation på netop ladehastighed.",
+      "cars": [
+        "MG S6"
+      ],
+      "themes": [
+        "lading",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "MG – mærke, salg og ny MG S6 EV",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2355.4,
+      "section_end_sec": 2979.3,
+      "section_time_range": "[39:15 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1512,
+      "text": "MG beskrives som stadig mest solgte kinesiske mærke i Europa og stærkt i Danmark; fanbase sammenlignes med gammel Dacia-kultur – \"meget bil for pengene\".",
+      "cars": [
+        "MG"
+      ],
+      "themes": [
+        "mærke",
+        "Kina"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "MG – mærke, salg og ny MG S6 EV",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2355.4,
+      "section_end_sec": 2979.3,
+      "section_time_range": "[39:15 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1513,
+      "text": "Invitation til fremvisning 13. januar med danske priser i stedet for klassisk pressemeddelelse; Seres 7 GT beskrives som lav, sportslig \"shooting brake\"/stationcar sammenlignelig med VW Arteon, med 800 V og op til ca. 650 hk i top som 7X.",
+      "cars": [
+        "Seres 7 GT",
+        "Volkswagen Arteon",
+        "Seres 7X"
+      ],
+      "themes": [
+        "ny model",
+        "Kina"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Seres 7 GT på vej til Danmark",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.3,
+      "section_end_sec": 3189.0,
+      "section_time_range": "[49:39 – 53:09]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1514,
+      "text": "Pris forventes mellem Seres X (fra ca. 260.000 kr.) og 7X (fra ca. 400.000 kr.); Kina-pris ca. 10 % under 7X peger mod omkring 360.000 kr., men værterne tvivler på, at den rammer under 350.000 kr. i DK.",
+      "cars": [
+        "Seres 7 GT",
+        "Seres 7X"
+      ],
+      "themes": [
+        "priser"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Seres 7 GT på vej til Danmark",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.3,
+      "section_end_sec": 3189.0,
+      "section_time_range": "[49:39 – 53:09]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1515,
+      "text": "Christian er positiv på design og teknologi, Jan er skeptisk over danskernes lyst til lav kinesisk bil i det segment – salgspotentiale anslås beskedent uden pris-chok.",
+      "cars": [
+        "Seres 7 GT"
+      ],
+      "themes": [
+        "marked",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Seres 7 GT på vej til Danmark",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.3,
+      "section_end_sec": 3189.0,
+      "section_time_range": "[49:39 – 53:09]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1516,
+      "text": "Skoda Elroq RS er i praksis Elroq med 79 kWh batteri, 340 hk og fuld udstyrspakke til ca. 380.000 kr.; RS-brandet er ifølge Christian udvandet fra tidligere \"hardcore\" Octavia/Fabia RS til topudstyrede hurtige SUV’er.",
+      "cars": [
+        "Skoda Elroq"
+      ],
+      "themes": [
+        "RS",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Testgarage: Skoda Elroq RS",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3189.0,
+      "section_end_sec": 3589.9,
+      "section_time_range": "[53:09 – 59:49]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1517,
+      "text": "Køreegenskaberne roses (286 hk MEB omtales som \"ultimativ\" reference); bilen er ikke sjov som gamle RS, men fungerer som diskret hurtig familie-elbil.",
+      "cars": [
+        "Skoda Elroq"
+      ],
+      "themes": [
+        "køreegenskaber"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Testgarage: Skoda Elroq RS",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3189.0,
+      "section_end_sec": 3589.9,
+      "section_time_range": "[53:09 – 59:49]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1518,
+      "text": "Kun ca. 30.000 kr. dyrere end Sportline; Jan tror de fleste købere konfigurerer almindelig Elroq tæt på 345.000–350.000 kr., så springet til RS er lille for nogle.",
+      "cars": [
+        "Skoda Elroq"
+      ],
+      "themes": [
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Testgarage: Skoda Elroq RS",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3189.0,
+      "section_end_sec": 3589.9,
+      "section_time_range": "[53:09 – 59:49]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1519,
+      "text": "Stor læserinteresse på JP-artiklen og opmærksomhed fra andre Elroq-ejere i trafikken nævnes som tegn på, at RS-varianten vækker nysgerrighed.",
+      "cars": [
+        "Skoda Elroq"
+      ],
+      "themes": [
+        "medier",
+        "ejere"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Testgarage: Skoda Elroq RS",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3189.0,
+      "section_end_sec": 3589.9,
+      "section_time_range": "[53:09 – 59:49]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1520,
+      "text": "Kasper Thompson vil erstatte 12 år gammel Seat Mii (ca. 200.000 km) før øget pendling på ca. 120 km/dag; familien har allerede elbil, garage og plads til lader to.",
+      "cars": [
+        "Seat Mii"
+      ],
+      "themes": [
+        "lytterråd",
+        "pendling"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Lytter: Seat Mii, LFP og pendling",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3589.9,
+      "section_end_sec": 3973.3,
+      "section_time_range": "[59:49 – 1:06:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1521,
+      "text": "Ønske om LFP, daglig opladning til 100 %, V2L, gode assistenter og komfort; Renault 5, kommende ID. Polo, Panda, EV2, Twingo nævnes som kandidater.",
+      "cars": [
+        "Renault 5",
+        "Volkswagen ID. Polo",
+        "Fiat Panda"
+      ],
+      "themes": [
+        "LFP",
+        "udstyr"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Lytter: Seat Mii, LFP og pendling",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3589.9,
+      "section_end_sec": 3973.3,
+      "section_time_range": "[59:49 – 1:06:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1522,
+      "text": "Jan og Christian anbefaler at aflevere Mii tidligt i 2026 mens værdi er god (ca. 25.000–30.000 kr.); Renault 5 får LFP næste år, ID. Polo får LFP i mindste variant – begge kan passe, men bagsædeplads i Renault 5 er trang til teenagere.",
+      "cars": [
+        "Renault 5",
+        "Volkswagen ID. Polo",
+        "Seat Mii"
+      ],
+      "themes": [
+        "handel",
+        "familiebil"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Lytter: Seat Mii, LFP og pendling",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3589.9,
+      "section_end_sec": 3973.3,
+      "section_time_range": "[59:49 – 1:06:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1523,
+      "text": "De fraråder at købe bil udelukkende efter sommerbehov uden vinter-rækkevidde-test; brugt ID.3 med lang rækkevidde og tilkøbsgaranti nævnes som alternativ.",
+      "cars": [
+        "Volkswagen ID.3"
+      ],
+      "themes": [
+        "rækkevidde",
+        "brugtbil"
+      ],
+      "uncertain": false,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Lytter: Seat Mii, LFP og pendling",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3589.9,
+      "section_end_sec": 3973.3,
+      "section_time_range": "[59:49 – 1:06:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1524,
+      "text": "Kia EV2 / Hyundai-søster med V2L og pris omkring 220.000 kr. efter januar-premiere nævnes; Fiat Panda frarådes.",
+      "cars": [
+        "Kia EV2",
+        "Hyundai",
+        "Fiat Panda"
+      ],
+      "themes": [
+        "ny model",
+        "V2L"
+      ],
+      "uncertain": true,
+      "episode_title": "324 VW og EU kan gøre elbiler billigere i Danmark",
+      "episode_guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
+      "pub_date": "2025-12-19T11:12:01+00:00",
+      "section_title": "Lytter: Seat Mii, LFP og pendling",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3589.9,
+      "section_end_sec": 3973.3,
+      "section_time_range": "[59:49 – 1:06:13]",
+      "bullet_time_range": null
+    },
+    {
       "id": 1437,
       "text": "Udsendelsen optages på bagsædet af en Tesla Model 3, mens bilen med FSD (Full Self-Driving) og supervisor kører fra Tesla Aarhus på Bredskiftevej ud i trafikken – ifølge værterne med særlig dispensation til demonstrationen.",
       "cars": [
@@ -6078,5 +6957,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 266
+  "count": 304
 }
