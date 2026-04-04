@@ -165,16 +165,16 @@
       "title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
       "pub_date": "2026-01-09T11:56:23+00:00",
       "duration_sec": 4312,
-      "status": "transcribed",
-      "display_status": "transcribed",
+      "status": "extracted",
+      "display_status": "summarized",
       "status_note": null,
       "error": null,
-      "extract_at": null,
-      "bullet_count": 0,
+      "extract_at": "2026-04-04T21:14:39.218633+00:00",
+      "bullet_count": 44,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": false
+      "improved_transcript": true
     },
     {
       "guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
@@ -370,7 +370,7 @@
     }
   ],
   "counts": {
-    "summarized": 11,
-    "transcribed": 12
+    "summarized": 12,
+    "transcribed": 11
   }
 }

@@ -672,6 +672,1058 @@
       "bullet_time_range": null
     },
     {
+      "id": 1605,
+      "text": "Jan kører Mercedes CLA el og fremhæver stabil vinterrækkevidde omkring 500 km i praksis og problemfri langtur Aarhus–København.",
+      "cars": [
+        "Mercedes CLA"
+      ],
+      "themes": [
+        "elbil",
+        "rækkevidde",
+        "vinter"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Vinterkørsel, Mercedes CLA og MG6",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.7,
+      "section_end_sec": 586.1,
+      "section_time_range": "[1:01 – 9:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1606,
+      "text": "De diskuterer vinterkørsel i elbil: vægt, moment, risiko for udskridning med one-pedal-kørsel, og vigtigheden af ordentlige vinterdæk.",
+      "cars": [],
+      "themes": [
+        "vinter",
+        "sikkerhed"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Vinterkørsel, Mercedes CLA og MG6",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.7,
+      "section_end_sec": 586.1,
+      "section_time_range": "[1:01 – 9:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1607,
+      "text": "Christians planlagte Kia PV5-test udskydes pga. fejl på infotainment; i stedet kører han MG S6 (kinesisk SUV) og roser kabinekvalitet men kritiserer klimaanlæggets kalibrering og behov for manuel styring frem for auto.",
+      "cars": [
+        "Kia PV5",
+        "MG"
+      ],
+      "themes": [
+        "testbil",
+        "elbil",
+        "UX"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Vinterkørsel, Mercedes CLA og MG6",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.7,
+      "section_end_sec": 586.1,
+      "section_time_range": "[1:01 – 9:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1608,
+      "text": "Bruxelles Motor Show nævnes som stadig relevant for producenter, der vil vise nyheder for medier og publikum efter Geneves fald.",
+      "cars": [],
+      "themes": [
+        "messe",
+        "nyheder"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Vinterkørsel, Mercedes CLA og MG6",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.7,
+      "section_end_sec": 586.1,
+      "section_time_range": "[1:01 – 9:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1609,
+      "text": "Kia EV2 placeres i samme lille crossover-klasse som bl.a. Volkswagen ID. Polo og Renault 4/5; længde omkring 4,05 m og karakteristisk Kia EV-design.",
+      "cars": [
+        "Kia EV2",
+        "Volkswagen ID. Polo",
+        "Renault 4",
+        "Renault 5"
+      ],
+      "themes": [
+        "elbil",
+        "ny model"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Kia EV2",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 586.1,
+      "section_end_sec": 1012.8,
+      "section_time_range": "[9:46 – 16:52]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1610,
+      "text": "To batterier (42 kWh og 61 kWh) giver ifølge udsendelsen WLTP-rækkevidde omkring 317 km hhv. 448 km; 10–80 % ladning på omkring en halv time nævnes.",
+      "cars": [
+        "Kia EV2"
+      ],
+      "themes": [
+        "elbil",
+        "rækkevidde",
+        "ladning"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Kia EV2",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 586.1,
+      "section_end_sec": 1012.8,
+      "section_time_range": "[9:46 – 16:52]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1611,
+      "text": "Produktion i Europa og lancering senere på året (før sommer) nævnes; de forventer lavere leveringstid end langfragt fra Asien.",
+      "cars": [
+        "Kia EV2"
+      ],
+      "themes": [
+        "elbil",
+        "produktion"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Kia EV2",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 586.1,
+      "section_end_sec": 1012.8,
+      "section_time_range": "[9:46 – 16:52]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1612,
+      "text": "Prisdiskussion: Kia har sagt start under 30.000 euro, men de argumenterer for dansk start under 200.000 kr. for basis og omkring 230.000 kr. for stor batteri for at matche Renault 4 og kommende MEB-billigbiler.",
+      "cars": [
+        "Kia EV2",
+        "Kia EV3",
+        "Renault 4",
+        "Skoda Epic"
+      ],
+      "themes": [
+        "priser",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Kia EV2",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 586.1,
+      "section_end_sec": 1012.8,
+      "section_time_range": "[9:46 – 16:52]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1613,
+      "text": "P7+ adskilles fra sedan P7; stor hatchback (over fem meter), 800 V-platform som G6, og position som alternativ til bl.a. Volkswagen ID.7 og Mercedes CLA-størrelse.",
+      "cars": [
+        "Xpeng P7+",
+        "Xpeng P7",
+        "Volkswagen ID.7",
+        "Mercedes CLA"
+      ],
+      "themes": [
+        "elbil",
+        "ny model"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Xpeng P7+",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1012.8,
+      "section_end_sec": 1505.1,
+      "section_time_range": "[16:52 – 25:05]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1614,
+      "text": "Priser i Danmark annonceres: Long Range fra 360.000 kr. (baghjulstræk, 313 hk, ca. 530 km WLTP, 75 kWh) og Performance fra 390.000 kr. (firehjulstræk, 503 hk, ca. 500 km).",
+      "cars": [
+        "Xpeng P7+"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Xpeng P7+",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1012.8,
+      "section_end_sec": 1505.1,
+      "section_time_range": "[16:52 – 25:05]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1615,
+      "text": "Bilen bygges i Europa (Magna Steyr i Østrig nævnt) for at undgå høje toldsatser; elektronisk dæmpet undervogn som standard, rig plads og stort bagagerum fremhæves.",
+      "cars": [
+        "Xpeng P7+"
+      ],
+      "themes": [
+        "elbil",
+        "import"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Xpeng P7+",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1012.8,
+      "section_end_sec": 1505.1,
+      "section_time_range": "[16:52 – 25:05]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1616,
+      "text": "De diskuterer, om en lav stor bil kan sælge i et SUV-domineret marked, men ser bedre mulighed nu hvor prisen er kendt; hurtigladning og 500 kW-stationer i Danmark/Tyskland nævnes kort.",
+      "cars": [
+        "Xpeng P7+"
+      ],
+      "themes": [
+        "marked",
+        "ladning"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Xpeng P7+",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1012.8,
+      "section_end_sec": 1505.1,
+      "section_time_range": "[16:52 – 25:05]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1617,
+      "text": "Zeekr 7 GT får europæisk premiere i Bruxelles samme dag; stationcar/hatchback-profil som søster til 7X med tilsvarende batterier (75 kWh basis, op til ca. 100 kWh) og lynladning som 7X.",
+      "cars": [
+        "Zeekr 7 GT",
+        "Zeekr 7X"
+      ],
+      "themes": [
+        "elbil",
+        "ny model"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Zeekr 7 GT",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1505.1,
+      "section_end_sec": 1785.3,
+      "section_time_range": "[25:05 – 29:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1618,
+      "text": "Europæiske priser fra ca. 46.000 euro (lille batteri, baghjulstræk) til ca. 57.000 euro (top) indikerer ifølge dem omkring 50.000 kr. lavere end 7X med stort batteri – dvs. stor stationcar potentielt under 400.000 kr.",
+      "cars": [
+        "Zeekr 7 GT",
+        "Zeekr 7X"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Zeekr 7 GT",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1505.1,
+      "section_end_sec": 1785.3,
+      "section_time_range": "[25:05 – 29:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1619,
+      "text": "Konkrete danske priser forventes tirsdag efter optagelse; levering før sommer nævnes også for P7+.",
+      "cars": [
+        "Zeekr 7 GT",
+        "Xpeng P7+"
+      ],
+      "themes": [
+        "priser",
+        "ny model"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Zeekr 7 GT",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1505.1,
+      "section_end_sec": 1785.3,
+      "section_time_range": "[25:05 – 29:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1620,
+      "text": "De ser stationcar-segmentet som svært men mener pris/udstyr gør 7 GT relevant sammenlignet med Audi A6 e-tron og ID.7.",
+      "cars": [
+        "Zeekr 7 GT",
+        "Audi A6 e-tron",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "marked",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Zeekr 7 GT",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1505.1,
+      "section_end_sec": 1785.3,
+      "section_time_range": "[25:05 – 29:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1621,
+      "text": "Tesla tilføjer Model Y Standard Long Range med baghjulstræk til 350.000 kr. og ca. 657 km WLTP; kun 10.000 kr. under Premium Long Range, hvilket de finder en lille nyhed.",
+      "cars": [
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Tesla Model Y Long Range",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1785.3,
+      "section_end_sec": 1833.6,
+      "section_time_range": "[29:45 – 30:33]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1622,
+      "text": "Positiv stemning omkring Volvo efter Håkan Samuelssons tilbagekomst som CEO og ansættelse af Thomas Ingenlath til fremtidig design; Ingenlath nævnes ikke som designer af den kommende EX60.",
+      "cars": [
+        "Volvo"
+      ],
+      "themes": [
+        "strategi",
+        "organisation"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volvo EX60 og strategisk comeback",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1833.6,
+      "section_end_sec": 2399.0,
+      "section_time_range": "[30:33 – 39:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1623,
+      "text": "EX60 som elektrisk efterfølger til den sælgende XC60; verdenspremiere 21. januar, svensk produktion i Torslanda med gigatech og op til ca. 810 km WLTP samt ca. 400 kW ladning nævnt.",
+      "cars": [
+        "Volvo EX60",
+        "Volvo XC60"
+      ],
+      "themes": [
+        "elbil",
+        "ny model",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volvo EX60 og strategisk comeback",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1833.6,
+      "section_end_sec": 2399.0,
+      "section_time_range": "[30:33 – 39:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1624,
+      "text": "SPA3-platformen beskrives som udviklet i Göteborg, ikke som ren kinesisk platform; adskilt fra ES90 mht. bl.a. ladefart.",
+      "cars": [
+        "Volvo EX60",
+        "Volvo ES90"
+      ],
+      "themes": [
+        "platform",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volvo EX60 og strategisk comeback",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1833.6,
+      "section_end_sec": 2399.0,
+      "section_time_range": "[30:33 – 39:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1625,
+      "text": "Prisforventning omkring BMW iX3-niveau, dvs. ca. 600.000 kr. for topversion med lang rækkevidde; billigere udgaver med mindre batteri (ca. 75–80 kWh) og baghjulstræk gættes ned mod halv million.",
+      "cars": [
+        "Volvo EX60",
+        "BMW iX3"
+      ],
+      "themes": [
+        "priser",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volvo EX60 og strategisk comeback",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1833.6,
+      "section_end_sec": 2399.0,
+      "section_time_range": "[30:33 – 39:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1626,
+      "text": "Traction battery får ti års garanti; Audi Q6 e-tron nævnes som risiko for at havne i skyggen af de tre tyske rivaler og Volvo.",
+      "cars": [
+        "Volvo EX60",
+        "Audi Q6 e-tron"
+      ],
+      "themes": [
+        "garanti",
+        "konkurrence"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volvo EX60 og strategisk comeback",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1833.6,
+      "section_end_sec": 2399.0,
+      "section_time_range": "[30:33 – 39:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1627,
+      "text": "Volvos danske markedsandel faldt i 2025; EX30-salget kollapser efter 2024-boom, og permanente prisnedslag (i gennemsnit ca. 50.000 kr. siden lancering) diskuteres som nødvendige i priskrigen.",
+      "cars": [
+        "Volvo EX30"
+      ],
+      "themes": [
+        "marked",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volvo EX60 og strategisk comeback",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1833.6,
+      "section_end_sec": 2399.0,
+      "section_time_range": "[30:33 – 39:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1628,
+      "text": "Volvo EX30 kan fås fra ca. 245.000 kr. i basis (kort rækkevidde); plus med stort batteri nævnes til 278.900 kr.; Cross Country er blevet ca. 32.000 kr. billigere kort efter lancering.",
+      "cars": [
+        "Volvo EX30"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Priser: EX30, Omoda og Zeekr X",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2399.0,
+      "section_end_sec": 2663.1,
+      "section_time_range": "[39:59 – 44:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1629,
+      "text": "Segmentet 250.000–300.000 kr. med Skoda Elroq som reference nævnes som kernen i dansk elbil-konkurrence.",
+      "cars": [
+        "Skoda Elroq"
+      ],
+      "themes": [
+        "marked",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Priser: EX30, Omoda og Zeekr X",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2399.0,
+      "section_end_sec": 2663.1,
+      "section_time_range": "[39:59 – 44:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1630,
+      "text": "Omoda 5 sænkes 20.000 kr. til 220.000 kr.; de tvivler på at det ændrer salget væsentligt og ser mærket som svagt i Danmark.",
+      "cars": [
+        "Omoda 5"
+      ],
+      "themes": [
+        "priser",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Priser: EX30, Omoda og Zeekr X",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2399.0,
+      "section_end_sec": 2663.1,
+      "section_time_range": "[39:59 – 44:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1631,
+      "text": "Jan fortæller nostalgi om Golf I-facelift (1980) med diode-varselsdisplay og enkel instrumentering som kontrast til nutidens kompleksitet.",
+      "cars": [
+        "Volkswagen Golf"
+      ],
+      "themes": [
+        "historie",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volkswagen Golf-historik og ID. Polo",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2663.1,
+      "section_end_sec": 2977.1,
+      "section_time_range": "[44:23 – 49:37]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1632,
+      "text": "Volkswagen markedsfører ID. Polo med retro-instrumentlayout inspireret af Golf 1 som \"reset\" efter Diess’ for minimalistisk Tesla-lignende linje, som kunderne ikke ønskede.",
+      "cars": [
+        "Volkswagen ID. Polo",
+        "Volkswagen ID.3"
+      ],
+      "themes": [
+        "elbil",
+        "UX",
+        "strategi"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volkswagen Golf-historik og ID. Polo",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2663.1,
+      "section_end_sec": 2977.1,
+      "section_time_range": "[44:23 – 49:37]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1633,
+      "text": "Kommende MEB-billigbiler (ID. Cross, Skoda Epic, Cupra Raval) får fysiske knapper til ruder, bedre materialer og højere kabinekvalitet end tidlige ID.3-løsninger.",
+      "cars": [
+        "Volkswagen ID. Cross",
+        "Skoda Epic",
+        "Cupra Raval"
+      ],
+      "themes": [
+        "elbil",
+        "UX"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Volkswagen Golf-historik og ID. Polo",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2663.1,
+      "section_end_sec": 2977.1,
+      "section_time_range": "[44:23 – 49:37]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1634,
+      "text": "Zeekr X (Volvo EX30-teknisk slægtning) har solgt meget lidt i Danmark (kun 17–18 i 2025 nævnt); priser sænkes kraftigt, fx topmodel fra 370.000 til 320.000 kr. og Long Range med 20.000 kr. rabat til 290.000 kr.",
+      "cars": [
+        "Zeekr X",
+        "Volvo EX30"
+      ],
+      "themes": [
+        "elbil",
+        "priser",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Zeekr X kampanje",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2977.1,
+      "section_end_sec": 3048.1,
+      "section_time_range": "[49:37 – 50:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1635,
+      "text": "De vurderer prisdumpen som sandsynligvis for sen til at redde modellens gennembrud.",
+      "cars": [
+        "Zeekr X"
+      ],
+      "themes": [
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Zeekr X kampanje",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2977.1,
+      "section_end_sec": 3048.1,
+      "section_time_range": "[49:37 – 50:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1636,
+      "text": "Topmodeller efter bilstatistik.dk: Skoda Elroq (10.623), Volkswagen ID.4, Tesla Model Y, Skoda Enyaq, Volkswagen ID.3 m.fl. – VW-koncernen dominerer listen.",
+      "cars": [
+        "Skoda Elroq",
+        "Volkswagen ID.4",
+        "Tesla Model Y",
+        "Skoda Enyaq",
+        "Volkswagen ID.3"
+      ],
+      "themes": [
+        "marked",
+        "salg"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Bilåret 2025: salgstal og trends",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3048.1,
+      "section_end_sec": 3710.1,
+      "section_time_range": "[50:48 – 1:01:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1637,
+      "text": "Volkswagen mærke +15 % salg og næsten 16 % markedsandel; Skoda +77 % (især pga. Elroq); Cupra stærkt op (fx Tavascan fra lavt 2024-udgangspunkt).",
+      "cars": [
+        "Volkswagen",
+        "Skoda",
+        "Cupra Tavascan"
+      ],
+      "themes": [
+        "marked",
+        "salg"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Bilåret 2025: salgstal og trends",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3048.1,
+      "section_end_sec": 3710.1,
+      "section_time_range": "[50:48 – 1:01:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1638,
+      "text": "Renault 5 nævnes omkring 10. plads med ca. 3.000 biler; de mener privatleasing-mangel begrænser potentialet sammenlignet med købssucces.",
+      "cars": [
+        "Renault 5"
+      ],
+      "themes": [
+        "leasing",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Bilåret 2025: salgstal og trends",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3048.1,
+      "section_end_sec": 3710.1,
+      "section_time_range": "[50:48 – 1:01:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1639,
+      "text": "Tabere: Tesla ca. −41 %, Toyota problemer med elbil-portefølje og syvendeplads, Stellantis/Vismo under pres, Ford Explorer sælger dårligt trods delt platform med Elroq/ID.4, Nissan svagt år.",
+      "cars": [
+        "Tesla",
+        "Toyota",
+        "Ford Explorer",
+        "Nissan"
+      ],
+      "themes": [
+        "marked",
+        "salg"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Bilåret 2025: salgstal og trends",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3048.1,
+      "section_end_sec": 3710.1,
+      "section_time_range": "[50:48 – 1:01:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1640,
+      "text": "Volkswagen ID. Buzz nævnes med ca. 4.493 solgte som populær familie- og varebil uden varebil-registreringer i tallet.",
+      "cars": [
+        "Volkswagen ID. Buzz"
+      ],
+      "themes": [
+        "elbil",
+        "salg"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Bilåret 2025: salgstal og trends",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3048.1,
+      "section_end_sec": 3710.1,
+      "section_time_range": "[50:48 – 1:01:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1641,
+      "text": "Ioniq 9 roses for byggekvalitet, kørekomfort og enorm kabine – også brugbar tredje sæderække for voksne med bagagerum tilbage.",
+      "cars": [
+        "Hyundai Ioniq 9"
+      ],
+      "themes": [
+        "test",
+        "elbil",
+        "plads"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Testgarage: Hyundai Ioniq 9",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3710.1,
+      "section_end_sec": 4037.1,
+      "section_time_range": "[1:01:50 – 1:07:17]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1642,
+      "text": "Pris omkring 540.000–600.000 kr. med ét stort batteri og ca. 600 km WLTP; 800 V og hurtig DC-ladning nævnes.",
+      "cars": [
+        "Hyundai Ioniq 9"
+      ],
+      "themes": [
+        "elbil",
+        "priser",
+        "ladning"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Testgarage: Hyundai Ioniq 9",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3710.1,
+      "section_end_sec": 4037.1,
+      "section_time_range": "[1:01:50 – 1:07:17]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1643,
+      "text": "Konkurrence med Kia EV9 og Volkswagen ID. Buzz: Ioniq 9 foretrækkes designmæssigt, men segmentet for store syv-personers el-SUV er smalt og prisfølsomt; danskere tøver med meget dyre ikke-premium-elbiler.",
+      "cars": [
+        "Hyundai Ioniq 9",
+        "Kia EV9",
+        "Volkswagen ID. Buzz"
+      ],
+      "themes": [
+        "marked",
+        "konkurrence"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Testgarage: Hyundai Ioniq 9",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3710.1,
+      "section_end_sec": 4037.1,
+      "section_time_range": "[1:01:50 – 1:07:17]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1644,
+      "text": "Ioniq 9’s prisudgangspunkt vurderes bedre end EV9’s oprindelige prisføring; ID. Buzz Long Style kan også passere en halv million og føles trygere for mange købere.",
+      "cars": [
+        "Hyundai Ioniq 9",
+        "Kia EV9",
+        "Volkswagen ID. Buzz"
+      ],
+      "themes": [
+        "priser",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Testgarage: Hyundai Ioniq 9",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3710.1,
+      "section_end_sec": 4037.1,
+      "section_time_range": "[1:01:50 – 1:07:17]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1645,
+      "text": "Bertram overvejer brugt Volkswagen Polo GTI (2019–20) eller BMW F30 320d/320i; faren fraråder diesel pga. fremtidige afgifter.",
+      "cars": [
+        "Volkswagen Polo GTI",
+        "BMW 3-serie"
+      ],
+      "themes": [
+        "rådgivning",
+        "brugt"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Lytter: første bil efter kørekort",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4037.1,
+      "section_end_sec": 4316.0,
+      "section_time_range": "[1:07:17 – 1:11:56]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1646,
+      "text": "De retter at F30 ikke er nyeste 3-serie; Polo GTI privatleasing til ca. 3.300 kr./md. viser sig muligvis forældet i søgning – advarsel om stale Google-resultater.",
+      "cars": [
+        "Volkswagen Polo GTI"
+      ],
+      "themes": [
+        "leasing",
+        "brugt"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Lytter: første bil efter kørekort",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4037.1,
+      "section_end_sec": 4316.0,
+      "section_time_range": "[1:07:17 – 1:11:56]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1647,
+      "text": "Anbefaling: overvej Polo R-Line med ca. 150 hk og sportsundervogn frem for GTI for lavere forsikring og budget omkring 180.000 kr.",
+      "cars": [
+        "Volkswagen Polo"
+      ],
+      "themes": [
+        "rådgivning",
+        "brugt"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Lytter: første bil efter kørekort",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4037.1,
+      "section_end_sec": 4316.0,
+      "section_time_range": "[1:07:17 – 1:11:56]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1648,
+      "text": "Diesel-BMW frarådes til langt ejerskab; få til salg, høj pris og stigende omkostninger; kortsigtet diesel kan diskuteres men er niche.",
+      "cars": [
+        "BMW 3-serie"
+      ],
+      "themes": [
+        "diesel",
+        "rådgivning"
+      ],
+      "uncertain": false,
+      "episode_title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
+      "episode_guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
+      "pub_date": "2026-01-09T11:56:23+00:00",
+      "section_title": "Lytter: første bil efter kørekort",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4037.1,
+      "section_end_sec": 4316.0,
+      "section_time_range": "[1:07:17 – 1:11:56]",
+      "bullet_time_range": null
+    },
+    {
       "id": 1556,
       "text": "Værterne ønsker godt nytår og ser frem til et bilår med endnu flere elbil-nyheder og skarp konkurrence på pris.",
       "cars": [],
@@ -8832,5 +9884,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 384
+  "count": 428
 }
