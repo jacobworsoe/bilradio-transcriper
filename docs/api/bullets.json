@@ -672,6 +672,720 @@
       "bullet_time_range": null
     },
     {
+      "id": 1525,
+      "text": "Udsendelsen optages før jul og udgives anden juledag; værterne laver julehumor om julemanden og lytternes fokus på bilstof frem for højtider.",
+      "cars": [],
+      "themes": [
+        "intro",
+        "jul"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Jul, optagelse og testbiler",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 374.0,
+      "section_time_range": "[0:30 – 6:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1526,
+      "text": "Christian kører Jans Audi A6 2.0 TDI med 48 V mild hybrid: rolig diesel, lange gear i comfort, omkring 57 liter tank og op til ca. 1.320 km ved ~100 km/t ifølge hans måling.",
+      "cars": [
+        "Audi A6"
+      ],
+      "themes": [
+        "diesel",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Jul, optagelse og testbiler",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 374.0,
+      "section_time_range": "[0:30 – 6:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1527,
+      "text": "Jan kører Volvo EX90 og er mere positiv end tidligere, men nøglekort på dørhåndtag og i midtkonsol giver fortsat frustrerende betjening sammenlignet med den lave Audi.",
+      "cars": [
+        "Volvo EX90",
+        "Audi A6"
+      ],
+      "themes": [
+        "UX",
+        "testbil"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Jul, optagelse og testbiler",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 374.0,
+      "section_time_range": "[0:30 – 6:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1528,
+      "text": "BMC Leasing i Horsens tilbyder ifølge udsendelsen meget skarp privatleasing på Renault 4 Evolution (52 kWh, ca. 410 km WLTP): omkring 2.499 kr./md. i 36 mdr., 7.000 kr. førstegangsydelse og 2.000 kr. oprettelse – samlet ca. 98.962 kr. over tre år med 15.000 km/år.",
+      "cars": [
+        "Renault 4"
+      ],
+      "themes": [
+        "leasing",
+        "priser"
+      ],
+      "uncertain": true,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "BMC Leasing og Renault 4",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 374.0,
+      "section_end_sec": 888.0,
+      "section_time_range": "[6:14 – 14:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1529,
+      "text": "Samme bil hos anden forhandler (Autohuset Vestergaard nævnt) koster ifølge Jan næsten 123.000 kr. over tre år; de sammenligner med Citroën C3 Aircross til samme total omkring 98.000 kr. men med kortere rækkevidde og svagere produkt.",
+      "cars": [
+        "Renault 4",
+        "Citroën C3 Aircross"
+      ],
+      "themes": [
+        "leasing",
+        "konkurrence"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "BMC Leasing og Renault 4",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 374.0,
+      "section_end_sec": 888.0,
+      "section_time_range": "[6:14 – 14:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1530,
+      "text": "Forretningsmodellen: BMC forventer at beholde bilen mindst seks år efter endt leasingperiode, hvilket giver længere indtjening end klassiske treårige operationelle leasingaftaler – derfor kan månedssatsen presses.",
+      "cars": [],
+      "themes": [
+        "leasing",
+        "forretning"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "BMC Leasing og Renault 4",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 374.0,
+      "section_end_sec": 888.0,
+      "section_time_range": "[6:14 – 14:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1531,
+      "text": "Færre vildt aggressive fabrikstilbud i anden halvdel af 2025 forklares med risiko for store værditab på flåder af billige elbiler; Stellantis-samarbejde nævnes som undtagelse med bl.a. Citroën- og Opel-tilbud.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "leasing"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "BMC Leasing og Renault 4",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 374.0,
+      "section_end_sec": 888.0,
+      "section_time_range": "[6:14 – 14:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1532,
+      "text": "Danmark har ifølge sammenligning mellem Bilbasen og tyske portaler proportionalt langt flere brugte elbiler end generel bilbestand – Danmark er \"stort\" på elbil i europæisk målestok.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "BMC Leasing og Renault 4",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 374.0,
+      "section_end_sec": 888.0,
+      "section_time_range": "[6:14 – 14:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1533,
+      "text": "Microlino (schweizisk design, italiensk produktion) kommer til salg i Danmark hos bl.a. Bil Lindholm – bitte to-personers bybil, ca. 2,52 m, 10,5 kWh batteri, topfart omkring 90 km/t og realistisk kort rækkevidde; pris omkring 120.000 kr. eller ~20.000 euro bestilt fra fabrik.",
+      "cars": [
+        "Microlino"
+      ],
+      "themes": [
+        "ny model",
+        "microbil"
+      ],
+      "uncertain": true,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Microlino, VW ID og 10.000 Elroq",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 888.0,
+      "section_end_sec": 1488.0,
+      "section_time_range": "[14:48 – 24:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1534,
+      "text": "Engelske anmeldelser nævnes med kritik af upræcist styretøj, hård affjedring og nervøs kørsel – passende for meget lille bil.",
+      "cars": [
+        "Microlino"
+      ],
+      "themes": [
+        "test",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Microlino, VW ID og 10.000 Elroq",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 888.0,
+      "section_end_sec": 1488.0,
+      "section_time_range": "[14:48 – 24:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1535,
+      "text": "Volkswagen: stille år på ID.3/4/5/7 bortset fra ID. Polo-rygter; ID.4 og ID.5 får Style Edition med bl.a. panoramaglastag og ekstra udstyr på GTX; ny ID.4 verdenspremiere i slutning af 2026, Danmark tidligst januar 2027 ifølge importør.",
+      "cars": [
+        "Volkswagen ID.4",
+        "Volkswagen ID.5"
+      ],
+      "themes": [
+        "nyheder",
+        "udstyr"
+      ],
+      "uncertain": true,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Microlino, VW ID og 10.000 Elroq",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 888.0,
+      "section_end_sec": 1488.0,
+      "section_time_range": "[14:48 – 24:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1536,
+      "text": "Skoda Elroq passerer 10.000 registreringer på under et år og er ifølge værterne Danmarks mest solgte bil i 2025; sammenlignes med Teslas gamle volumenrekorder, men betragtes som stært segment-hit med få reelle konkurrenter i prislejet omkring 265.000 kr.",
+      "cars": [
+        "Skoda Elroq",
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "salg",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Microlino, VW ID og 10.000 Elroq",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 888.0,
+      "section_end_sec": 1488.0,
+      "section_time_range": "[14:48 – 24:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1537,
+      "text": "Jan forventer fortsat stærkt salg i 2026, men mulig overlap når Skoda Epic kommer; Toyota C-HR+ og flere modeller omkring 300.000 kr. øger konkurrencen.",
+      "cars": [
+        "Skoda Elroq",
+        "Skoda",
+        "Toyota C-HR"
+      ],
+      "themes": [
+        "marked",
+        "2026"
+      ],
+      "uncertain": true,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Microlino, VW ID og 10.000 Elroq",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 888.0,
+      "section_end_sec": 1488.0,
+      "section_time_range": "[14:48 – 24:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1538,
+      "text": "Christian fremhæver Renault 5 som en af de vigtigste elbiler for dansk marked – arvtager efter Mini Electric med stærkt image, køreglæde og solidt skruet sammen produkt, dog med let konkurrencefordel fordi rivaler længe manglede.",
+      "cars": [
+        "Renault 5",
+        "Mini Electric"
+      ],
+      "themes": [
+        "årsopgør",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Tilbageblik: Renault 5 og Firefly-duel",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1488.0,
+      "section_end_sec": 1712.0,
+      "section_time_range": "[24:48 – 28:32]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1539,
+      "text": "Efter dobbelttest Renault 5 mod Firefly påpeger Christian, at Firefly har enklere og mere roligt interiør, mens Renault 5s cockpit med skærme, stænger og gearføler opleves mere forvirrende – sandsynligvis ikke en trussel mod Renaults popularitet.",
+      "cars": [
+        "Renault 5",
+        "Firefly"
+      ],
+      "themes": [
+        "sammenligning",
+        "UX"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Tilbageblik: Renault 5 og Firefly-duel",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1488.0,
+      "section_end_sec": 1712.0,
+      "section_time_range": "[24:48 – 28:32]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1540,
+      "text": "Jan placerer Omoda 5 (Umoda i lyden) som den svageste test: langsom lading, kort rækkevidde, uharmonisk kørsel, overflødigt udstyr og design som ældre Nissan Qashqai; pris omkring 240.000 kr. føles forældet.",
+      "cars": [
+        "Omoda 5"
+      ],
+      "themes": [
+        "kritik",
+        "årsopgør"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Årets skuffelser: Omoda og Volvo/Polestar",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1712.0,
+      "section_end_sec": 2109.0,
+      "section_time_range": "[28:32 – 35:09]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1541,
+      "text": "De kritiserer forhandler-ejede YouTube-kanaler, der fremstår som uafhængige biltests.",
+      "cars": [],
+      "themes": [
+        "journalistik",
+        "etik"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Årets skuffelser: Omoda og Volvo/Polestar",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1712.0,
+      "section_end_sec": 2109.0,
+      "section_time_range": "[28:32 – 35:09]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1542,
+      "text": "Volvo EX90 og Polestar 3: software og elektronik beskrives som katastrofale med uferdige biler på markedet; eksempel med låst bil på parkeringsplads og fabrikshjælp nævnt. Bilens køreegenskaber og komfort roses, men UX og pålidelighed underminerer oplevelsen.",
+      "cars": [
+        "Volvo EX90",
+        "Polestar 3"
+      ],
+      "themes": [
+        "software",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Årets skuffelser: Omoda og Volvo/Polestar",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1712.0,
+      "section_end_sec": 2109.0,
+      "section_time_range": "[28:32 – 35:09]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1543,
+      "text": "Jan savner klassisk Volvo-instrumentering og forventer tilbagevenden til fysiske målere i kommende generationer; EX60 og opdateret EX90 med ny computer og 800 V nævnes i horisonten.",
+      "cars": [
+        "Volvo"
+      ],
+      "themes": [
+        "fremtid",
+        "design"
+      ],
+      "uncertain": true,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Årets skuffelser: Omoda og Volvo/Polestar",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1712.0,
+      "section_end_sec": 2109.0,
+      "section_time_range": "[28:32 – 35:09]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1544,
+      "text": "Mercedes CLA el: fejlfri testperiode, hurtig lading, lav siddeposition og køredynamik der minder om klassisk Mercedes – et af årets bedste elbiler for begge værter trods kontroversielt interiør.",
+      "cars": [
+        "Mercedes-Benz CLA"
+      ],
+      "themes": [
+        "årsopgør",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Årets plusser: Mercedes CLA, Elroq og Mazda 6e",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2109.0,
+      "section_end_sec": 2561.0,
+      "section_time_range": "[35:09 – 42:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1545,
+      "text": "Skoda Elroq på top-3: Jan roser snusfornuft, få svagheder og salgssucces; erindrer fælles søgning efter forskelle mod Enyaq på bagsæde – Elroq har domineret salget.",
+      "cars": [
+        "Skoda Elroq",
+        "Skoda Enyaq"
+      ],
+      "themes": [
+        "årsopgør",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Årets plusser: Mercedes CLA, Elroq og Mazda 6e",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2109.0,
+      "section_end_sec": 2561.0,
+      "section_time_range": "[35:09 – 42:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1546,
+      "text": "Mazda 6e skuffer efter stor hype og flot design: middelmådig kinesisk platform, uharmonisk chassis, langsom UI, højt forbrug og ringe konkurrenceevne mod bl.a. Volkswagen ID.7 og Tesla Model 3 i gruppetest.",
+      "cars": [
+        "Mazda 6e",
+        "Volkswagen ID.7",
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "kritik",
+        "årsopgør"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Årets plusser: Mercedes CLA, Elroq og Mazda 6e",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2109.0,
+      "section_end_sec": 2561.0,
+      "section_time_range": "[35:09 – 42:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1547,
+      "text": "Tesla Model 3 (basis til ca. 300.000 kr.) fremhæves som \"skyggebil\" man glemmer: fremragende køreegenskaber og samlekvalitet; billigere variant til ~250.000 kr. skal stadig vurderes.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "årsopgør",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Tesla Model 3, Porsche 911, Seres 7X og el-G-klasse",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2561.0,
+      "section_end_sec": 2979.0,
+      "section_time_range": "[42:41 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1548,
+      "text": "Jan nævner Porsche 911 som ren køreglæde og Seres 7X med luftundervogn som den kinesiske bil der gjorde størst indtryk – stærk til omkring en halv million trods hype og små volumener.",
+      "cars": [
+        "Porsche 911",
+        "Seres 7X"
+      ],
+      "themes": [
+        "årsopgør",
+        "køreglæde"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Tesla Model 3, Porsche 911, Seres 7X og el-G-klasse",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2561.0,
+      "section_end_sec": 2979.0,
+      "section_time_range": "[42:41 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1549,
+      "text": "Mercedes el-G-klasse kalder Christian den mest underholdende testbil i 2025: perfekt bybil med kort venderadius og ikonisk attitude, men kommercielt fiasko i Europa fordi traditionelle G-købere vil have V8.",
+      "cars": [
+        "Mercedes-Benz G-Klasse"
+      ],
+      "themes": [
+        "elbiler",
+        "oplevelse"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Tesla Model 3, Porsche 911, Seres 7X og el-G-klasse",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2561.0,
+      "section_end_sec": 2979.0,
+      "section_time_range": "[42:41 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1550,
+      "text": "Suzuki e Vitara (søstermodel til Toyota Urban Cruiser) opleves som teknisk forældet: DC-ladning sjældent over ca. 61 kW, lang opladningstid, problemer med tunge ladepistoler som hos flere Stellantis-biler.",
+      "cars": [
+        "Suzuki e Vitara",
+        "Toyota Urban Cruiser"
+      ],
+      "themes": [
+        "lading",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Suzuki e Vitara og fire positive fra 2025",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.0,
+      "section_end_sec": 3281.0,
+      "section_time_range": "[49:39 – 54:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1551,
+      "text": "Jan opsummerer fire positive 2025-temaer: god stemning på elbilmesse i Herning, mere ro omkring bilafgifter frem mod 2026/27, konstruktiv München-tur, og stærkt dansk brugtbilsmarked med rekorder og skarpe elbilpriser i europæisk sammenligning.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "politik"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Suzuki e Vitara og fire positive fra 2025",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.0,
+      "section_end_sec": 3281.0,
+      "section_time_range": "[49:39 – 54:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1552,
+      "text": "Næste uge annonceres kig frem mod 2026 med spændende modeller.",
+      "cars": [],
+      "themes": [
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Suzuki e Vitara og fire positive fra 2025",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.0,
+      "section_end_sec": 3281.0,
+      "section_time_range": "[49:39 – 54:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1553,
+      "text": "Alan Clausen har kørt Model 3 i seks år og 160.000 km, har bestilt Model Y Juniper AWD med rabat, men overvejer tre år gammel BMW iX xDrive40 pga. politik omkring Tesla.",
+      "cars": [
+        "Tesla Model 3",
+        "Tesla Model Y",
+        "BMW iX"
+      ],
+      "themes": [
+        "lytterråd",
+        "valg"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Lytter: Tesla Model Y eller BMW iX?",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3281.0,
+      "section_end_sec": 3467.0,
+      "section_time_range": "[54:41 – 57:47]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1554,
+      "text": "Værterne fraråder iX40 med lille batteri til generel brug: meget kort vinterrækkevidde (omkring 250 km realistisk nævnt); Jan deler erfaring med stram rækkevidde til Billund.",
+      "cars": [
+        "BMW iX"
+      ],
+      "themes": [
+        "rækkevidde",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Lytter: Tesla Model Y eller BMW iX?",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3281.0,
+      "section_end_sec": 3467.0,
+      "section_time_range": "[54:41 – 57:47]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1555,
+      "text": "Anbefaling: behold Model Y-bestillingen; MEB-platform og Skoda alternativer afvises af lytteren, Seres 7X nævnes som mulig men Tesla anses som bedst match.",
+      "cars": [
+        "Tesla Model Y",
+        "Seres 7X"
+      ],
+      "themes": [
+        "anbefaling"
+      ],
+      "uncertain": false,
+      "episode_title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
+      "episode_guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
+      "pub_date": "2025-12-26T04:00:00+00:00",
+      "section_title": "Lytter: Tesla Model Y eller BMW iX?",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3281.0,
+      "section_end_sec": 3467.0,
+      "section_time_range": "[54:41 – 57:47]",
+      "bullet_time_range": null
+    },
+    {
       "id": 1487,
       "text": "Jan og Christian laver julehumor om sidste gang i studiet før jul og Christians fortsatte test af Firefly: dug på forruden, sædevarme og importørens forventning til en mere positiv oplevelse end Jans.",
       "cars": [
@@ -6957,5 +7671,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 304
+  "count": 335
 }
