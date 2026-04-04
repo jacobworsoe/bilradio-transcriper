@@ -46,167 +46,167 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
       "title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
       "pub_date": "2025-11-21T09:35:02+00:00",
       "duration_sec": 3152,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:21.312676+00:00",
-      "bullet_count": 104,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
       "title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
       "pub_date": "2025-11-28T10:51:33+00:00",
       "duration_sec": 4003,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:20.646055+00:00",
-      "bullet_count": 93,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
       "title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
       "pub_date": "2025-12-05T11:26:28+00:00",
       "duration_sec": 4099,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:19.011078+00:00",
-      "bullet_count": 101,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
       "title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
       "pub_date": "2025-12-12T11:37:13+00:00",
       "duration_sec": 4486,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:21.981942+00:00",
-      "bullet_count": 119,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
       "title": "324 VW og EU kan gøre elbiler billigere i Danmark",
       "pub_date": "2025-12-19T11:12:01+00:00",
       "duration_sec": 3966,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:20.341218+00:00",
-      "bullet_count": 100,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "f4dac0d9-ff97-4f0e-8d95-b3be00de5a72",
       "title": "325 Det stærkeste leasingtilbud lige nu og de bedste biler i 2025",
       "pub_date": "2025-12-26T04:00:00+00:00",
       "duration_sec": 3461,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:20.983295+00:00",
-      "bullet_count": 83,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "9ad8e4e0-157c-434c-b51a-b3c50134dbfb",
       "title": "326 Bilåret starter med Danmarks billigste elbil og nye kæmpe rabatter",
       "pub_date": "2026-01-02T11:58:57+00:00",
       "duration_sec": 4010,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:20.012690+00:00",
-      "bullet_count": 116,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "86f78b40-c95d-4509-ac4f-b3cd00c2b28d",
       "title": "327 Vilde nyheder fra Zeekr og Xpeng, billig Kia og markant Volvo-rækkevidde",
       "pub_date": "2026-01-09T11:56:23+00:00",
       "duration_sec": 4312,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:19.669262+00:00",
-      "bullet_count": 105,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
       "title": "328 Vild priskrig giver elbilchok til 325.000 kr",
       "pub_date": "2026-01-16T10:35:53+00:00",
       "duration_sec": 4528,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:21.652262+00:00",
-      "bullet_count": 115,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "3b0046a7-d227-43af-bfa8-b3db00a52667",
       "title": "329 Helt nye elbiler fra Volvo og BMW overrasker med billig privatleasing",
       "pub_date": "2026-01-23T10:44:33+00:00",
       "duration_sec": 4394,
-      "status": "extracted",
-      "display_status": "summarized",
+      "status": "transcribed",
+      "display_status": "transcribed",
       "status_note": null,
       "error": null,
-      "extract_at": "2026-04-03T22:10:19.329667+00:00",
-      "bullet_count": 124,
+      "extract_at": null,
+      "bullet_count": 0,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "f7e88062-5174-45f4-8f78-b3df00edf529",
@@ -222,7 +222,7 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "85328dee-3a54-4db3-9c87-b3e200b9385b",
@@ -238,19 +238,19 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "d47a2845-d2d9-4065-bc32-b3e900ae2c4d",
       "title": "332 Teslas leasingangreb og BMW-rækkeviddemonster",
       "pub_date": "2026-02-06T11:00:00+00:00",
       "duration_sec": 3998,
-      "status": "transcribed",
-      "display_status": "transcribed",
+      "status": "extracted",
+      "display_status": "summarized",
       "status_note": null,
       "error": null,
-      "extract_at": null,
-      "bullet_count": 0,
+      "extract_at": "2026-04-04T19:43:34.364888+00:00",
+      "bullet_count": 30,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
@@ -270,7 +270,7 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
@@ -286,7 +286,7 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
@@ -302,7 +302,7 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
@@ -318,7 +318,7 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
@@ -334,7 +334,7 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "218f4141-0688-473c-9027-b41300aec060",
@@ -350,7 +350,7 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     },
     {
       "guid": "944284db-260d-44e0-86ff-b41a00c25aef",
@@ -366,11 +366,11 @@
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": true
+      "improved_transcript": false
     }
   ],
   "counts": {
-    "summarized": 12,
-    "transcribed": 11
+    "summarized": 3,
+    "transcribed": 20
   }
 }
