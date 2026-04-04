@@ -184,15 +184,28 @@ def prepare_improved_agent(
     from bilradio.prepare_improved_agent import write_improved_agent_prompts
 
     init_db(DB_PATH)
-    paths = write_improved_agent_prompts(guid=guid, force=force, limit=limit)
-    if not paths:
-        typer.echo("No prompts written (missing Whisper transcript on disk, or all improved JSON exist).")
+    written, removed = write_improved_agent_prompts(guid=guid, force=force, limit=limit)
+    if removed:
+        typer.echo(
+            f"Removed {len(removed)} stale *_improve_auto_agent.md "
+            "(improved JSON already on disk)."
+        )
+        for p in removed[:10]:
+            typer.echo(f"  {p}")
+        if len(removed) > 10:
+            typer.echo("  ...")
+    if written:
+        typer.echo(f"Wrote {len(written)} prompt(s). Open each in Cursor and run Auto Agent on it.")
+        for p in written[:10]:
+            typer.echo(f"  {p}")
+        if len(written) > 10:
+            typer.echo("  ...")
+    if not written and not removed:
+        typer.echo(
+            "No prompts written (missing Whisper transcript on disk, or all improved JSON exist "
+            "with no stale prompts to remove)."
+        )
         raise typer.Exit(1)
-    typer.echo(f"Wrote {len(paths)} prompt(s). Open each in Cursor and run Auto Agent on it.")
-    for p in paths[:10]:
-        typer.echo(f"  {p}")
-    if len(paths) > 10:
-        typer.echo("  ...")
 
 
 @app.command("bootstrap-improved-json")

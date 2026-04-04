@@ -20,11 +20,13 @@ def write_improved_agent_prompts(
     guid: str | None,
     force: bool,
     limit: int | None,
-) -> list[Path]:
+) -> tuple[list[Path], list[Path]]:
+    """Returns (written prompt paths, removed stale prompt paths)."""
     ensure_data_dirs()
     inbox = CURSOR_INBOX_DIR
     inbox.mkdir(parents=True, exist_ok=True)
     written: list[Path] = []
+    removed: list[Path] = []
 
     with connect(DB_PATH) as conn:
         q = "SELECT guid, title, audio_path FROM episodes ORDER BY pub_date ASC"
@@ -43,6 +45,13 @@ def write_improved_agent_prompts(
         stem = episode_stem(g, title, ap)
         out_json = improved_transcript_json_path(g, title, ap)
         if out_json.exists() and not force:
+            stale = inbox / f"{g}_improve_auto_agent.md"
+            if stale.is_file():
+                try:
+                    stale.unlink()
+                    removed.append(stale)
+                except OSError:
+                    pass
             continue
         wj = whisper_transcript_json_path(g, title, ap)
         wt = whisper_transcript_txt_path(g, title, ap)
@@ -87,4 +96,4 @@ Optional helper copy (if you ran `bilradio prepare-extract`):
         path_out.write_text(body, encoding="utf-8")
         written.append(path_out)
 
-    return written
+    return written, removed
