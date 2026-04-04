@@ -672,6 +672,682 @@
       "bullet_time_range": null
     },
     {
+      "id": 1366,
+      "text": "Christian kører Kia EV4 og oplever mærkbart lavere strømforbrug og omkring 50 km bedre rækkevidde i praksis end EV3 trods lignende WLTP — EV4 roses som økonomisk som lavere biltype.",
+      "cars": [
+        "Kia EV4",
+        "Kia EV3"
+      ],
+      "themes": [
+        "elbil",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Kia EV4 i praksis",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 67.6,
+      "section_end_sec": 315.2,
+      "section_time_range": "[1:07 – 5:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1367,
+      "text": "Jan synes formsproget på EV4 bliver bombastisk på en lav bil og foretrækker EV3/EV9-linjen; begge roser Kia for ikke at kopiere konkurrenternes design.",
+      "cars": [
+        "Kia EV4",
+        "Kia EV3"
+      ],
+      "themes": [
+        "elbil",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Kia EV4 i praksis",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 67.6,
+      "section_end_sec": 315.2,
+      "section_time_range": "[1:07 – 5:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1368,
+      "text": "Christian kører Volvo EX90 med baglustræk efter aflyst duel mod Kia EV9; magnetkort til døråbning virker upålideligt, og bilen opleves som alt for stor — generel træthed af oppustede el-SUV'er.",
+      "cars": [
+        "Volvo EX90",
+        "Kia EV9"
+      ],
+      "themes": [
+        "elbil",
+        "SUV"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Cupra Raval og billige VAG-elbiler 2026",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 315.2,
+      "section_end_sec": 850.3,
+      "section_time_range": "[5:15 – 14:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1369,
+      "text": "Cupra Raval er første journalistkørsel på VAGs nye billige elbilplatform; ID. Polo, Skoda Epic og VW ID. Cross følger i 2026 — Jens Høj og Morten Beck roser køreegenskaber og greb på VZ-variant, bagsædeplads kritiseres som snæver.",
+      "cars": [
+        "Cupra Raval",
+        "Volkswagen ID. Polo",
+        "Skoda Epic"
+      ],
+      "themes": [
+        "elbil",
+        "nyhed"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Cupra Raval og billige VAG-elbiler 2026",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 315.2,
+      "section_end_sec": 850.3,
+      "section_time_range": "[5:15 – 14:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1370,
+      "text": "Topversionen forventes i et prisleje omkring 250.000–280.000 kr.; de ser det som tegn på at små elbiler endelig får ordentlig dynamik.",
+      "cars": [
+        "Cupra Raval"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": true,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Cupra Raval og billige VAG-elbiler 2026",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 315.2,
+      "section_end_sec": 850.3,
+      "section_time_range": "[5:15 – 14:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1371,
+      "text": "Alfa Romeo Junior er billigste Alfa i mange år — pris nævnes ned mod cirka 235.000 kr.; bilen deler teknik med Peugeot 2008/Opel Mokka men får ros for samlet pakke og udstyr.",
+      "cars": [
+        "Alfa Romeo Junior",
+        "Peugeot 2008",
+        "Opel Mokka"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Alfa Junior og billige italienske elbiler",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 850.3,
+      "section_end_sec": 1344.5,
+      "section_time_range": "[14:10 – 22:24]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1372,
+      "text": "De sammenligner med Jeep Avenger og Fiat 500e og diskuterer, hvilken der trækker mest; salgstallene for Alfa i Danmark har været meget lave (omkring 87 biler på et år nævnt).",
+      "cars": [
+        "Alfa Romeo Junior",
+        "Jeep Avenger",
+        "Fiat 500e"
+      ],
+      "themes": [
+        "elbil",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Alfa Junior og billige italienske elbiler",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 850.3,
+      "section_end_sec": 1344.5,
+      "section_time_range": "[14:10 – 22:24]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1373,
+      "text": "Jan opfordrer til at se Junior som «husmands-teknik» med italiensk finish frem for ren premium — debat om mærkeloyalitet blandt Alfisti.",
+      "cars": [
+        "Alfa Romeo Junior"
+      ],
+      "themes": [
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Alfa Junior og billige italienske elbiler",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 850.3,
+      "section_end_sec": 1344.5,
+      "section_time_range": "[14:10 – 22:24]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1374,
+      "text": "BMW Z4, delt platform med Toyota Supra, udgår — sportsvognsmarkedet aftager ifølge udsendelsen.",
+      "cars": [
+        "BMW Z4",
+        "Toyota Supra"
+      ],
+      "themes": [
+        "sportsvogn",
+        "historie"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "BMW Z4 udgår",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1344.5,
+      "section_end_sec": 1732.8,
+      "section_time_range": "[22:24 – 28:52]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1375,
+      "text": "Christian kender to ejere af brugte 3,0-liters Z4, som beskriver bilen som livsforandrende køreglæde.",
+      "cars": [
+        "BMW Z4"
+      ],
+      "themes": [
+        "sportsvogn"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "BMW Z4 udgår",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1344.5,
+      "section_end_sec": 1732.8,
+      "section_time_range": "[22:24 – 28:52]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1376,
+      "text": "Kort snak om Z3 som James Bond-model og Anders Warming-design.",
+      "cars": [
+        "BMW Z3",
+        "BMW Z4"
+      ],
+      "themes": [
+        "historie"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "BMW Z4 udgår",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1344.5,
+      "section_end_sec": 1732.8,
+      "section_time_range": "[22:24 – 28:52]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1377,
+      "text": "Uddybning af Renault 5 som stærkt produkt med charme og svagheder; registreringstal for Renault 4 nævnes som overraskende lave, konkurrence med Skoda Elrock diskuteres.",
+      "cars": [
+        "Renault 5",
+        "Renault 4",
+        "Skoda Elrock"
+      ],
+      "themes": [
+        "elbil",
+        "årets bil"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Renault 5 og Årets bil",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1732.8,
+      "section_end_sec": 2059.7,
+      "section_time_range": "[28:52 – 34:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1378,
+      "text": "Årets Bil i Danmark og særpriser: Nissan Micra nævnes som vinder af en særpris ifølge udsendelsen.",
+      "cars": [
+        "Nissan Micra"
+      ],
+      "themes": [
+        "årets bil"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Renault 5 og Årets bil",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1732.8,
+      "section_end_sec": 2059.7,
+      "section_time_range": "[28:52 – 34:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1379,
+      "text": "Danske ejere af Audi e-tron (2019–2022) samler sig i «e-tron claim initiative» med mål om erstatningssag mod Audi; centrale påstande om fejl i elmotorer og kølevæske der kan trænge ind i motor pga. fabriksfejl og lille opsamlingsbeholder.",
+      "cars": [
+        "Audi e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "garanti",
+        "fejl"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Audi e-tron — motorproblemer og ejer-initiativ",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2059.7,
+      "section_end_sec": 2593.76,
+      "section_time_range": "[34:19 – 43:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1380,
+      "text": "Eksempler på meget dyre reparationer nævnes (bagmotor, begge motorer, kobling); forsikringsselskaber og forhandlere skal angiveligt have begrænset interesse i e-tron pga. risiko.",
+      "cars": [
+        "Audi e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "service",
+        "økonomi"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Audi e-tron — motorproblemer og ejer-initiativ",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2059.7,
+      "section_end_sec": 2593.76,
+      "section_time_range": "[34:19 – 43:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1381,
+      "text": "Norske brugtbileksperter anbefaler ifølge podcasten ikke længere køb; EV Clinic i Kroatien og danske elbilseksperter (fx Kettner i Nørrebro nævnt) skal have dokumenteret problemstillingen.",
+      "cars": [
+        "Audi e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "brugtbil"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Audi e-tron — motorproblemer og ejer-initiativ",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2059.7,
+      "section_end_sec": 2593.76,
+      "section_time_range": "[34:19 – 43:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1382,
+      "text": "Initiativets hjemmeside lukker midlertidigt 1. december for at samle status; Audi Danmark beskrives som ikke part i individuelle sager mellem ejer og værksted ifølge værterne.",
+      "cars": [
+        "Audi e-tron"
+      ],
+      "themes": [
+        "forbruger",
+        "jura"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Audi e-tron — motorproblemer og ejer-initiativ",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2059.7,
+      "section_end_sec": 2593.76,
+      "section_time_range": "[34:19 – 43:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1383,
+      "text": "DS 8 lanceres i Danmark med priser fra cirka 415.000 kr. for mellemstor udgave med cirka 73,7 kWh batteri — op til cirka 480.000 kr. for stor batteripakke.",
+      "cars": [
+        "DS 8",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "DS8 mod Volkswagen ID.7",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2593.76,
+      "section_end_sec": 2924.72,
+      "section_time_range": "[43:13 – 48:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1384,
+      "text": "Værterne er skeptiske: danskere er konservative i klassen, og ID.7 ses som dominerende konkurrent; DS8 er kortere end ID.7 og får kritik for udseende og realistiske salgsforventninger.",
+      "cars": [
+        "DS 8",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "elbil",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "DS8 mod Volkswagen ID.7",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2593.76,
+      "section_end_sec": 2924.72,
+      "section_time_range": "[43:13 – 48:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1385,
+      "text": "Franske «luksus»-forsøg (Peugeot 607, DS-modeller) nævnes som mønster med hurtigt faldende brugtpriser.",
+      "cars": [],
+      "themes": [
+        "historie",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "DS8 mod Volkswagen ID.7",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2593.76,
+      "section_end_sec": 2924.72,
+      "section_time_range": "[43:13 – 48:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1386,
+      "text": "MG5 og MG4 klarer sig godt på brugtmarked som billige biler; MG6 forventes i ID.4/Model Y-klassen med premiere i Danmark 18. december.",
+      "cars": [
+        "MG4",
+        "MG5",
+        "MG6",
+        "Volkswagen ID.4",
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "MG6 og prisloft mod Tesla Model Y",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2924.72,
+      "section_end_sec": 3088.8,
+      "section_time_range": "[48:44 – 51:28]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1387,
+      "text": "Jan og Christian er enige om, at MG6 ikke må koste væsentligt over cirka 300.000 kr., når billigste Model Y ligger der — ellers bliver den svær at sælge ny.",
+      "cars": [
+        "MG6",
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "MG6 og prisloft mod Tesla Model Y",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2924.72,
+      "section_end_sec": 3088.8,
+      "section_time_range": "[48:44 – 51:28]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1388,
+      "text": "MG5 roses som undervurderet; software og assistentsystemer nævnes som svage punkter.",
+      "cars": [
+        "MG5"
+      ],
+      "themes": [
+        "elbil",
+        "software"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "MG6 og prisloft mod Tesla Model Y",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2924.72,
+      "section_end_sec": 3088.8,
+      "section_time_range": "[48:44 – 51:28]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1389,
+      "text": "Mazda 6e omtales som næsten fem meter lang el-sedan til omkring 300.000 kr.; stor interesse hos forhandlere, men pris og kinesisk platform/delte komponenter skaber debat ifølge udsendelsen.",
+      "cars": [
+        "Mazda 6e"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Testgarage: Mazda 6e mod Tesla Model 3",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3088.8,
+      "section_end_sec": 3584.6,
+      "section_time_range": "[51:28 – 59:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1390,
+      "text": "Christian er positiv over køreoplevelse og Mazda-DNA trods kinesisk basis; sammenligning med Tesla Model 3 og Model Y på pris og segment.",
+      "cars": [
+        "Mazda 6e",
+        "Tesla Model 3",
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "elbil",
+        "test"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Testgarage: Mazda 6e mod Tesla Model 3",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3088.8,
+      "section_end_sec": 3584.6,
+      "section_time_range": "[51:28 – 59:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1391,
+      "text": "Diskussion om, hvorvidt Mazda har tilstrækkeligt differentieret produktet fra platformbrødre.",
+      "cars": [
+        "Mazda 6e"
+      ],
+      "themes": [
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Testgarage: Mazda 6e mod Tesla Model 3",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3088.8,
+      "section_end_sec": 3584.6,
+      "section_time_range": "[51:28 – 59:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1392,
+      "text": "Lytter skifter fra benzin til el og køber typisk to år gamle brugte biler; spørgsmål om forventet levetid og batteri før større værditab.",
+      "cars": [],
+      "themes": [
+        "elbil",
+        "brugtbil",
+        "lyttere"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Lytterspørgsmål om elbil og brugtkøb",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3584.6,
+      "section_end_sec": 4008.0,
+      "section_time_range": "[59:44 – 1:06:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1393,
+      "text": "Værterne forklarer brugtmarkedets afskrivning som mulighed for at skifte oftere; generelle betragtninger om batterilevetid og teknologiudvikling frem mod slutningen af 2025.",
+      "cars": [],
+      "themes": [
+        "elbil",
+        "økonomi"
+      ],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Lytterspørgsmål om elbil og brugtkøb",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3584.6,
+      "section_end_sec": 4008.0,
+      "section_time_range": "[59:44 – 1:06:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1394,
+      "text": "Afslutning med tak til lyttere; Mortens spørgsmål nævnes som besvaret.",
+      "cars": [],
+      "themes": [],
+      "uncertain": false,
+      "episode_title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
+      "episode_guid": "eb4c9e26-d589-4c21-9158-b3a300a8b2de",
+      "pub_date": "2025-11-28T10:51:33+00:00",
+      "section_title": "Lytterspørgsmål om elbil og brugtkøb",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3584.6,
+      "section_end_sec": 4008.0,
+      "section_time_range": "[59:44 – 1:06:48]",
+      "bullet_time_range": null
+    },
+    {
       "id": 1316,
       "text": "Christian kører Audi A6 e-tron med luftaffjedring til København og roser komfort og klasse; bilen er ifølge udsendelsen blevet mærkbart billigere end den første testbil omkring en million kroner med udstyr.",
       "cars": [
@@ -3294,5 +3970,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 145
+  "count": 174
 }

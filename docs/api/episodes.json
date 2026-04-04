@@ -69,16 +69,16 @@
       "title": "321 Audi-ejere i chok over fejl og rekordbillig elbil",
       "pub_date": "2025-11-28T10:51:33+00:00",
       "duration_sec": 4003,
-      "status": "transcribed",
-      "display_status": "transcribed",
+      "status": "extracted",
+      "display_status": "summarized",
       "status_note": null,
       "error": null,
-      "extract_at": null,
-      "bullet_count": 0,
+      "extract_at": "2026-04-04T20:06:30.733443+00:00",
+      "bullet_count": 29,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": false
+      "improved_transcript": true
     },
     {
       "guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
@@ -370,7 +370,7 @@
     }
   ],
   "counts": {
-    "summarized": 5,
-    "transcribed": 18
+    "summarized": 6,
+    "transcribed": 17
   }
 }
