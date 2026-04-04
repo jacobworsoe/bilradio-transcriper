@@ -1,0 +1,1 @@
+Create the improved JSON for the oldest episode that is not yet improved and delete the inbox file for that episode when you are done.
