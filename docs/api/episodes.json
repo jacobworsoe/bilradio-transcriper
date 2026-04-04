@@ -37,16 +37,16 @@
       "title": "319 Historisk prisdump: Producent trykker på nødknappen",
       "pub_date": "2025-11-14T11:14:17+00:00",
       "duration_sec": 3676,
-      "status": "transcribed",
-      "display_status": "transcribed",
+      "status": "extracted",
+      "display_status": "summarized",
       "status_note": null,
       "error": null,
-      "extract_at": null,
-      "bullet_count": 0,
+      "extract_at": "2026-04-04T20:02:54.481647+00:00",
+      "bullet_count": 31,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": false
+      "improved_transcript": true
     },
     {
       "guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
@@ -370,7 +370,7 @@
     }
   ],
   "counts": {
-    "summarized": 4,
-    "transcribed": 19
+    "summarized": 5,
+    "transcribed": 18
   }
 }

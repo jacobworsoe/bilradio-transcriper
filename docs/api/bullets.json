@@ -1122,6 +1122,707 @@
       "bullet_time_range": null
     },
     {
+      "id": 1335,
+      "text": "Jan har holdt foredrag i Aalborg, Vejle, Lyngby og Aarhus for branchen om Bilbasens undersøgelse «Sådan køber danskerne bil» og et kommende webinar.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "forbruger"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Bilbasen på landevejen og nye bilkøbere",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 52.0,
+      "section_end_sec": 285.7,
+      "section_time_range": "[0:52 – 4:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1336,
+      "text": "Unge købere af billige elbiler opleves mindre tilfredse med bilforhandlernes online tilstedeværelse og stiller større krav end traditionelle købere; Renault Twingo til under 130.000 kr. nævnes som eksempel.",
+      "cars": [
+        "Renault Twingo"
+      ],
+      "themes": [
+        "elbil",
+        "handel"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Bilbasen på landevejen og nye bilkøbere",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 52.0,
+      "section_end_sec": 285.7,
+      "section_time_range": "[0:52 – 4:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1337,
+      "text": "Let snak om tv og afslapning før bilindholdet; værterne lover «marginal klogere» lyttere.",
+      "cars": [],
+      "themes": [],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Bilbasen på landevejen og nye bilkøbere",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 52.0,
+      "section_end_sec": 285.7,
+      "section_time_range": "[0:52 – 4:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1338,
+      "text": "Christian kører Omoda igen til dwell-test og kritiserer klimaanlægget: dug, langsom varme og sammenligning med andre kinesiske elbilers svage kabinekomfort i kulde.",
+      "cars": [
+        "Omoda"
+      ],
+      "themes": [
+        "elbil",
+        "komfort",
+        "vinter"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Omoda, kinesisk klima og vinterdæk",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 285.7,
+      "section_end_sec": 473.8,
+      "section_time_range": "[4:45 – 7:53]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1339,
+      "text": "De diskuterer, at kinesiske producenter mangler erfaring med effektive klimaanlæg mod ældre europæiske biler, og at mange kinesiske modeller nu møder dansk vinter.",
+      "cars": [],
+      "themes": [
+        "elbil",
+        "vinter"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Omoda, kinesisk klima og vinterdæk",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 285.7,
+      "section_end_sec": 473.8,
+      "section_time_range": "[4:45 – 7:53]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1340,
+      "text": "Nye regler og medieopmærksomhed om bøder for sommerdæk om vinteren; helårsdæk med korrekt mærkning kan bruges lovligt, og de fleste helårsdæk i Danmark opfylder kravet.",
+      "cars": [],
+      "themes": [
+        "dæk",
+        "regler"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Omoda, kinesisk klima og vinterdæk",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 285.7,
+      "section_end_sec": 473.8,
+      "section_time_range": "[4:45 – 7:53]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1341,
+      "text": "Store prisnedsættelser på MINIs kinesiske elbiler: eksempelvis én model nævnes ca. 48.000 kr. billigere med startpris omkring 225.000 kr.; de konstaterer, at mærket har mistet relevans og premium-følelse på det segment.",
+      "cars": [
+        "MINI"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "MINI: historisk prisfald",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 473.8,
+      "section_end_sec": 1175.8,
+      "section_time_range": "[7:53 – 19:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1342,
+      "text": "Værterne er skarpe på design og oplevelse af de nye el-MINI'er versus klassisk MINI-DNA og mener, at platform og udtryk ikke har vundet danskernes gunst.",
+      "cars": [
+        "MINI"
+      ],
+      "themes": [
+        "elbil",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "MINI: historisk prisfald",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 473.8,
+      "section_end_sec": 1175.8,
+      "section_time_range": "[7:53 – 19:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1343,
+      "text": "Diskussion om importørers og fabrikkers kolde holdning til brugtmarkedet ved prisdump — sammenligning med Tesla — og risiko for leasing- og brugtvogns-partnere, hvis man ignorerer restværdier.",
+      "cars": [
+        "MINI",
+        "Tesla"
+      ],
+      "themes": [
+        "pris",
+        "brugtbil",
+        "leasing"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "MINI: historisk prisfald",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 473.8,
+      "section_end_sec": 1175.8,
+      "section_time_range": "[7:53 – 19:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1344,
+      "text": "Toyotas femte elbil omtales som en elektrisk Hilux — uventet produkt, der ifølge udsendelsen virker modstridende med Toyotas tidligere pickup-fokus og Hilux-mytologien.",
+      "cars": [
+        "Toyota Hilux"
+      ],
+      "themes": [
+        "elbil",
+        "pickup",
+        "nyhed"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Toyota Hilux med elmotor",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1175.8,
+      "section_end_sec": 1438.5,
+      "section_time_range": "[19:35 – 23:58]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1345,
+      "text": "De sammenligner med andre el-pickupper (fx KGM nævnt) og spørger, om Toyota har lavet en bil uden tydelig køberlogik — «verdens mest hårdføre elbil» versus praktisk mening.",
+      "cars": [
+        "Toyota Hilux"
+      ],
+      "themes": [
+        "elbil",
+        "pickup"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Toyota Hilux med elmotor",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1175.8,
+      "section_end_sec": 1438.5,
+      "section_time_range": "[19:35 – 23:58]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1346,
+      "text": "Top Gear-referencer om Hilux' robusthed bruges humoristisk i studiet.",
+      "cars": [
+        "Toyota Hilux"
+      ],
+      "themes": [
+        "historie"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Toyota Hilux med elmotor",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1175.8,
+      "section_end_sec": 1438.5,
+      "section_time_range": "[19:35 – 23:58]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1347,
+      "text": "Mercedes EQB får afløser med klassisk navngivning (GLB med EQ-teknologi); mange børnefamilier og taxaer kører i dagens EQB, især i Aarhus nævnt.",
+      "cars": [
+        "Mercedes EQB",
+        "Mercedes GLB"
+      ],
+      "themes": [
+        "elbil",
+        "familie"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Mercedes GLB EQ — syv sæders familie-el",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1438.5,
+      "section_end_sec": 1715.16,
+      "section_time_range": "[23:58 – 28:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1348,
+      "text": "Ny platform som CLA-forventes at give lang rækkevidde og bedre plads; de er skeptiske over, om bagsædepraktikken bliver markant bedre end den nuværende smalle tredje række.",
+      "cars": [
+        "Mercedes CLA",
+        "Mercedes EQB"
+      ],
+      "themes": [
+        "elbil",
+        "plads"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Mercedes GLB EQ — syv sæders familie-el",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1438.5,
+      "section_end_sec": 1715.16,
+      "section_time_range": "[23:58 – 28:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1349,
+      "text": "Prisdiskussion: hvorfor skulle en GLB blive billigere end CLA; håb om bedre bagsæde for børnefamilier der føler sig klemt i nuværende EQB.",
+      "cars": [
+        "Mercedes GLB",
+        "Mercedes CLA"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Mercedes GLB EQ — syv sæders familie-el",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1438.5,
+      "section_end_sec": 1715.16,
+      "section_time_range": "[23:58 – 28:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1350,
+      "text": "Henvisning til podcasten «Bilradio Special — årets firmabil» med Morten Beck; roser hans præcise gengivelse af juryens oplevelser.",
+      "cars": [],
+      "themes": [
+        "firmabil",
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Årets firmabil-special og firmabilmarked",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1715.16,
+      "section_end_sec": 2234.8,
+      "section_time_range": "[28:35 – 37:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1351,
+      "text": "Cupra Tavascan nævnes med kritik af midterkonsol og opbevaring, mens platformen i øvrigt anerkendes.",
+      "cars": [
+        "Cupra Tavascan"
+      ],
+      "themes": [
+        "elbil",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Årets firmabil-special og firmabilmarked",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1715.16,
+      "section_end_sec": 2234.8,
+      "section_time_range": "[28:35 – 37:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1352,
+      "text": "Volkswagen ID.7 fremhæves af jurymedlemmer som særligt behagelig firmabil; udvalget af elektriske firmabiler kaldes stadig marginalt, og kinesiske kandidater (Seeker 7X nævnt) får begrænset jury-interesse ifølge udsendelsen.",
+      "cars": [
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "firmabil",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Årets firmabil-special og firmabilmarked",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1715.16,
+      "section_end_sec": 2234.8,
+      "section_time_range": "[28:35 – 37:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1353,
+      "text": "De noterer, at meget hurtig DC-ladning ikke var afgørende for juryen, når man alligevel holder pause ved ladning.",
+      "cars": [],
+      "themes": [
+        "lading",
+        "firmabil"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Årets firmabil-special og firmabilmarked",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1715.16,
+      "section_end_sec": 2234.8,
+      "section_time_range": "[28:35 – 37:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1354,
+      "text": "Kort om Bentley: Christians anekdote om Mulsanne i Wolfsburg og lav profil for Bentley ift. elbil-omstilling ifølge værterne.",
+      "cars": [
+        "Bentley Mulsanne"
+      ],
+      "themes": [
+        "luksus",
+        "historie"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Bentley og bilaktier",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2234.8,
+      "section_end_sec": 2903.8,
+      "section_time_range": "[37:14 – 48:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1355,
+      "text": "Analyse fra stort amerikansk firma (tirsdag) om bilproducenters aktier og markedsværdi diskuteres — hvordan investorer vurderer bilbranchen i elbil-æraen.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "økonomi"
+      ],
+      "uncertain": true,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Bentley og bilaktier",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2234.8,
+      "section_end_sec": 2903.8,
+      "section_time_range": "[37:14 – 48:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1356,
+      "text": "Sammenligning med for ti år siden, da aktiekurser på bilmærker næsten ikke var nyhedsstof; nu følger medierne børsen tættere.",
+      "cars": [],
+      "themes": [
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Bentley og bilaktier",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2234.8,
+      "section_end_sec": 2903.8,
+      "section_time_range": "[37:14 – 48:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1357,
+      "text": "Xpeng og privatleasing: udsving forklares delvist med usikkerhed hos partnere om restværdi.",
+      "cars": [
+        "Xpeng"
+      ],
+      "themes": [
+        "leasing",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Polestar, Xpeng og Opel Corsa-e sagen",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2903.8,
+      "section_end_sec": 3208.8,
+      "section_time_range": "[48:23 – 53:28]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1358,
+      "text": "Polestar: stort underskud, aktiekurs under Nasdaq-grænse, reverse split som desperat træk; afhængighed af Europa og først Polestar 7 i 2027 nævnes som udfordring.",
+      "cars": [
+        "Polestar"
+      ],
+      "themes": [
+        "marked",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Polestar, Xpeng og Opel Corsa-e sagen",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2903.8,
+      "section_end_sec": 3208.8,
+      "section_time_range": "[48:23 – 53:28]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1359,
+      "text": "JP-historie om Sandra Chemnitz med parallelimporteret Opel Corsa-e, driftsproblemer, tilkøbt operationsforsikring og vanskeligheder — bruges til at understrege vigtigheden af de rigtige forsikringer ved elbil-køb.",
+      "cars": [
+        "Opel Corsa-e",
+        "Peugeot e-208"
+      ],
+      "themes": [
+        "elbil",
+        "forsikring",
+        "import"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Polestar, Xpeng og Opel Corsa-e sagen",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2903.8,
+      "section_end_sec": 3208.8,
+      "section_time_range": "[48:23 – 53:28]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1360,
+      "text": "Christian tester Volvo EX30 Cross Country som pressebil med tau-kurve på taget og beskriver massiv vindstøj i venstre side, så motorvejskørsel København-tur opleves næsten umulig — ikke set på gadebiler med samme udstyr.",
+      "cars": [
+        "Volvo EX30"
+      ],
+      "themes": [
+        "elbil",
+        "test"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Testgarage: Volvo EX30 Cross Country",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3208.8,
+      "section_end_sec": 3424.8,
+      "section_time_range": "[53:28 – 57:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1361,
+      "text": "Til trods for støjen roser de Cross Country-undervognen som den mest komfortable EX30 og en stærk bybil efter tidlige softwareproblemer; pris omkring 365.000 kr. og 428 hk nævnes som svær at forsvare i markedet.",
+      "cars": [
+        "Volvo EX30"
+      ],
+      "themes": [
+        "elbil",
+        "pris",
+        "test"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Testgarage: Volvo EX30 Cross Country",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3208.8,
+      "section_end_sec": 3424.8,
+      "section_time_range": "[53:28 – 57:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1362,
+      "text": "Humor om alder, stadion og høretab i forbindelse med testoplevelsen.",
+      "cars": [],
+      "themes": [],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Testgarage: Volvo EX30 Cross Country",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3208.8,
+      "section_end_sec": 3424.8,
+      "section_time_range": "[53:28 – 57:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1363,
+      "text": "Søren Jakobsen flytter hjem til Danmark efter 25 år i udlandet og vil have europæisk EL-SUV (ikke kinesisk); han kigger på nye BMW iX3 og Mercedes GLC og vil have fysiske betjeninger — gerne med kørehandsker i varmt klima.",
+      "cars": [
+        "BMW iX3",
+        "Mercedes GLC"
+      ],
+      "themes": [
+        "elbil",
+        "lyttere",
+        "rådgivning"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Lytter: Søren og valg af europæisk EL-SUV",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3424.8,
+      "section_end_sec": 3686.8,
+      "section_time_range": "[57:04 – 1:01:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1364,
+      "text": "Værterne anbefaler BMW iX3 frem for Mercedes på grund af mere traditionel betjening og knapper; diskuterer import fra USA og godkendelse — de mener ikke hans niveau matcher opdateret Volkswagen ID.4 som alternativ.",
+      "cars": [
+        "BMW iX3",
+        "Mercedes GLC",
+        "Volkswagen ID.4"
+      ],
+      "themes": [
+        "elbil",
+        "import"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Lytter: Søren og valg af europæisk EL-SUV",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3424.8,
+      "section_end_sec": 3686.8,
+      "section_time_range": "[57:04 – 1:01:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1365,
+      "text": "Jens Høj kører iX3 i Sydeuropa under embargo; første indtryk forventes i næste uge — afslutning med tak til lyttere.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "test",
+        "nyhed"
+      ],
+      "uncertain": false,
+      "episode_title": "319 Historisk prisdump: Producent trykker på nødknappen",
+      "episode_guid": "cfe84a50-4580-42fb-8d4d-b395009a1e19",
+      "pub_date": "2025-11-14T11:14:17+00:00",
+      "section_title": "Lytter: Søren og valg af europæisk EL-SUV",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3424.8,
+      "section_end_sec": 3686.8,
+      "section_time_range": "[57:04 – 1:01:26]",
+      "bullet_time_range": null
+    },
+    {
       "id": 161,
       "text": "Episoden er sponsoreret af GAVMIL; indholdet handler om årets firmabil, arrangeret af Jyllands-Posten og Business Danmark med ekstern jury af firmabilister.",
       "cars": [],
@@ -2593,5 +3294,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 114
+  "count": 145
 }
