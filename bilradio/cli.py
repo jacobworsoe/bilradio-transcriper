@@ -236,6 +236,47 @@ def bootstrap_improved_json(
     )
 
 
+@app.command("prune-placeholder-improved-json")
+def prune_placeholder_improved_json_cmd(
+    dry_run: bool = typer.Option(
+        False,
+        "--dry-run",
+        help="List files that would be removed; do not delete or update SQLite",
+    ),
+    no_db: bool = typer.Option(
+        False,
+        "--no-db",
+        help="Delete JSON files only; do not clear topic_* rows or reset episode status",
+    ),
+    path: Optional[Path] = typer.Option(
+        None,
+        "--path",
+        exists=False,
+        help="Only this improved JSON file (default: all *.json under transcripts_improved)",
+    ),
+) -> None:
+    """Remove bootstrap/segment placeholders and bad transcript dumps from transcripts_improved/."""
+    from bilradio.improved_json_prune import prune_placeholder_improved_json
+
+    init_db(DB_PATH)
+    removed, guids = prune_placeholder_improved_json(
+        dry_run=dry_run,
+        update_db=not no_db,
+        single_path=path,
+    )
+    if not removed:
+        typer.echo("No placeholder or invalid improved JSON found.")
+        raise typer.Exit(0)
+    label = "Would remove" if dry_run else "Removed"
+    typer.echo(f"{label} {len(removed)} file(s):")
+    for p, reason in removed:
+        typer.echo(f"  {p.name}  ({reason})")
+    if dry_run:
+        typer.echo("Run again without --dry-run to delete and sync SQLite.")
+    elif not no_db and guids:
+        typer.echo(f"Cleared topics and reset status to transcribed for {len(guids)} episode(s).")
+
+
 @app.command("episode-cleanup")
 def episode_cleanup() -> None:
     """Print counts of episodes with audio, Whisper JSON, and improved JSON on disk."""
