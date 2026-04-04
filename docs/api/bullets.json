@@ -672,6 +672,972 @@
       "bullet_time_range": null
     },
     {
+      "id": 1395,
+      "text": "Jan henter Christian i en Firefly; forruden dugger kraftigt, parkeringssensor hyler højt, og asiatiske biler opleves som meget \"paternaliske\" i advarslerne.",
+      "cars": [
+        "Firefly"
+      ],
+      "themes": [
+        "hverdagsbil",
+        "komfort"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Intro, Firefly og plan for MG5-test",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 222.0,
+      "section_time_range": "[0:30 – 3:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1396,
+      "text": "Christian har to MG5 på parkeringspladsen, kørt op til 100 %; efter optagelse skal Bilbasen måle forbrug med og uden varmepumpe på en ca. 50 km tur ved ca. fire graders frost.",
+      "cars": [
+        "MG5"
+      ],
+      "themes": [
+        "elbiler",
+        "forbrug",
+        "varmepumpe"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Intro, Firefly og plan for MG5-test",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 222.0,
+      "section_time_range": "[0:30 – 3:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1397,
+      "text": "De lover mange nyheder i udsendelsen, herunder billigste Tesla i Danmark til dato og omfattende omtale af BMW iX3.",
+      "cars": [],
+      "themes": [
+        "nyheder",
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Intro, Firefly og plan for MG5-test",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 222.0,
+      "section_time_range": "[0:30 – 3:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1398,
+      "text": "Ny Model 3 Standard kan konfigureres fra omkring 250.000–270.000 kr. og erstatter den tidligere basisversion, der lå omkring 300.000 kr.; værten kalder det en historisk lav indstigningspris for Tesla i Danmark.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "priser",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Tesla Model 3 Standard til lav pris",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 222.0,
+      "section_end_sec": 556.0,
+      "section_time_range": "[3:42 – 9:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1399,
+      "text": "Ifølge udsendelsen er der tilsyneladende ikke motor-, ydelses- eller batteriændringer, men nedskæringer i udstyr: stofsæder, begrænset sædevarme, færre højttalere og manglende bagsædeskærm; WLTP-rækkevidde nævnes omkring 533 km mod tidligere ca. 520 km.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "udstyr",
+        "rækkevidde"
+      ],
+      "uncertain": true,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Tesla Model 3 Standard til lav pris",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 222.0,
+      "section_end_sec": 556.0,
+      "section_time_range": "[3:42 – 9:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1400,
+      "text": "De diskuterer, at bilen rammer prissegmentet omkring 250.000 kr. og kan trække kunder fra andre mærker, men at Skoda Elroq og Model 3 appellerer til forskellige kundetyper (familie-SUV vs. sedan).",
+      "cars": [
+        "Tesla Model 3",
+        "Skoda Elroq"
+      ],
+      "themes": [
+        "marked",
+        "konkurrence"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Tesla Model 3 Standard til lav pris",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 222.0,
+      "section_end_sec": 556.0,
+      "section_time_range": "[3:42 – 9:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1401,
+      "text": "Tidligere generations Model 3 fik kritik for hård affjedring og støj; værterne minder om, at komfort kan afvige i forskellige markeder, men forventer ikke revolutionerende ændringer i køreoplevelsen.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "komfort",
+        "køreegenskaber"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Tesla Model 3 Standard til lav pris",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 222.0,
+      "section_end_sec": 556.0,
+      "section_time_range": "[3:42 – 9:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1402,
+      "text": "Nissan Ariya omtales i en leasingkampagne med små batteri: omkring 2.400 kr./md., 30.000 kr. i udbetaling og ca. 116.000–134.000 kr. samlet over 36 måneder afhængigt af version – omtrent 40–44 % af kontantpris, med lavt årligt kilometerloft.",
+      "cars": [
+        "Nissan Ariya"
+      ],
+      "themes": [
+        "leasing",
+        "priser"
+      ],
+      "uncertain": true,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Nissan Ariya og Xpeng – leasing og kampagner",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 556.0,
+      "section_end_sec": 1181.0,
+      "section_time_range": "[9:16 – 19:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1403,
+      "text": "Xpeng tilbyder også aggressive privatleasingpriser på G6 og G9 med 10.000 km/år og stor udbetaling; værterne regner det til over halvdelen af bilens pris over tre år og finder tilbuddet mindre attraktivt end det ser ud ved månedlig ydelse alene.",
+      "cars": [
+        "Xpeng G6",
+        "Xpeng G9"
+      ],
+      "themes": [
+        "leasing",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Nissan Ariya og Xpeng – leasing og kampagner",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 556.0,
+      "section_end_sec": 1181.0,
+      "section_time_range": "[9:16 – 19:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1404,
+      "text": "De latterliggør Xpengs presseforklaring, der med pendler-matematik retfærdiggør 10.000 km/år, og peger på, at danske biler i snit kører markant længere – de efterlyser minimum 15.000 km i leasingaftaler.",
+      "cars": [
+        "Xpeng"
+      ],
+      "themes": [
+        "leasing",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Nissan Ariya og Xpeng – leasing og kampagner",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 556.0,
+      "section_end_sec": 1181.0,
+      "section_time_range": "[9:16 – 19:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1405,
+      "text": "To år gamle, lavt kørte G9 Standard Range til ca. 380.000 kr. hos forhandler sælges hurtigt ud; det illustrerer efterspørgsel efter skarpe priser på \"0 km\"-biler registreret tidligere og rygtet om nye Xpeng-modeller til Danmark.",
+      "cars": [
+        "Xpeng G9"
+      ],
+      "themes": [
+        "marked",
+        "lagerbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Nissan Ariya og Xpeng – leasing og kampagner",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 556.0,
+      "section_end_sec": 1181.0,
+      "section_time_range": "[9:16 – 19:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1406,
+      "text": "Branchemøde i Amsterdam nævnes: et overslag på omkring én million overskuds-2025-biler i Europa kan give en bølge af kampagnepriser og nye modeller, når logistik og restriktioner letter.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "Europa"
+      ],
+      "uncertain": true,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Nissan Ariya og Xpeng – leasing og kampagner",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 556.0,
+      "section_end_sec": 1181.0,
+      "section_time_range": "[9:16 – 19:41]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1407,
+      "text": "Historien fremhæves som usædvanlig: Mercedes ændrer ifølge udsendelsen hurtigt pris og standardudstyr på CLA-programmet kort efter introduktion – et sjældent tydeligt kampagneskifte.",
+      "cars": [
+        "Mercedes-Benz CLA"
+      ],
+      "themes": [
+        "priser",
+        "nyheder"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Mercedes CLA – pris og udstyr justeret kort efter launch",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1181.0,
+      "section_end_sec": 1621.0,
+      "section_time_range": "[19:41 – 27:01]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1408,
+      "text": "De understreger forskellen mellem at lancere en bil og at justere kampagnen næsten med det samme, og at det kan påvirke købernes tillid og forhandlernes kommunikation.",
+      "cars": [
+        "Mercedes-Benz CLA"
+      ],
+      "themes": [
+        "marked",
+        "strategi"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Mercedes CLA – pris og udstyr justeret kort efter launch",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1181.0,
+      "section_end_sec": 1621.0,
+      "section_time_range": "[19:41 – 27:01]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1409,
+      "text": "BMW iX3 beskrives som en af 2025’s mest hypede biler med stærk marketing om \"Neue Klasse\"-fortællingen og høj medieomtale sammenlignet med fx Mercedes GLC EQ.",
+      "cars": [
+        "BMW iX3",
+        "Mercedes GLC EQ"
+      ],
+      "themes": [
+        "marketing",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "BMW iX3 – hype, næste klasse og forventninger",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1621.0,
+      "section_end_sec": 1795.0,
+      "section_time_range": "[27:01 – 29:55]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1410,
+      "text": "Den gamle iX3 har været populær men teknisk forældet; den nye model skal revitalisere BMW’s el-SUV-position og møde høje forventninger fra både privat- og firmakunder.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "elbiler",
+        "modelskifte"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "BMW iX3 – hype, næste klasse og forventninger",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1621.0,
+      "section_end_sec": 1795.0,
+      "section_time_range": "[27:01 – 29:55]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1411,
+      "text": "Embargo på køreindtryk udløber; Jyllands-Postens Jens Høj har kørt bilen i Sydspanien og skal live på telefon.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "test",
+        "journalistik"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "BMW iX3 – hype, næste klasse og forventninger",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1621.0,
+      "section_end_sec": 1795.0,
+      "section_time_range": "[27:01 – 29:55]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1412,
+      "text": "På Ascari-banen i regn og glat asfalt roser Jens bremser, stabilitet og kurvegenskaber: bilen holder linjen gennem øvelser med køller og hård opbremsning uden tydelig understyring.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "køreegenskaber",
+        "sikkerhed"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Jens Høj om iX3 på våd bane og motorvej",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1797.0,
+      "section_end_sec": 2245.0,
+      "section_time_range": "[29:57 – 37:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1413,
+      "text": "Elektronik og sensorer arbejder så fint, at føreren næsten ikke mærker indgreb; en lille håndbremse-demo viser, hvor præist bremse- og stabilitetssystemet doserer.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "teknologi",
+        "bremser"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Jens Høj om iX3 på våd bane og motorvej",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1797.0,
+      "section_end_sec": 2245.0,
+      "section_time_range": "[29:57 – 37:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1414,
+      "text": "Niveau 2-assistance beskrives som stærk i tåge og regn: bilen følger forankørende og kan hjælpe med vognbaneskift, når der er plads – opleves som \"to biler i én\" (komfort og dynamik).",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "ADAS",
+        "motorvej"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Jens Høj om iX3 på våd bane og motorvej",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1797.0,
+      "section_end_sec": 2245.0,
+      "section_time_range": "[29:57 – 37:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1415,
+      "text": "Design og kabine er kantet og karakterfuldt; instrumentering kan virke hektisk for nogle. På 21\" føles undervognen fast men ikke usle; konventionel undervogn uden luftaffjedring.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "design",
+        "komfort"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Jens Høj om iX3 på våd bane og motorvej",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1797.0,
+      "section_end_sec": 2245.0,
+      "section_time_range": "[29:57 – 37:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1416,
+      "text": "iX50-startpris nævnes omkring 600.000 kr. med stort batteri (ca. 109 kWh), rækkevidde over 800 km WLTP, hurtig DC-ladning og høj effekt; veludstyret testbil nærmer sig ca. 700.000 kr.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "priser",
+        "rækkevidde",
+        "lading"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "iX3 priser, specifikationer, konkurrenter og garanti",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2245.0,
+      "section_end_sec": 2718.0,
+      "section_time_range": "[37:25 – 45:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1417,
+      "text": "De forventer senere billigere varianter: baghjulstræk og mindre batteri, muligvis omkring 520.000 kr. i basis – vigtigt ift. firmabilbeskatning omkring halv million.",
+      "cars": [
+        "BMW iX3"
+      ],
+      "themes": [
+        "priser",
+        "firmabil"
+      ],
+      "uncertain": true,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "iX3 priser, specifikationer, konkurrenter og garanti",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2245.0,
+      "section_end_sec": 2718.0,
+      "section_time_range": "[37:25 – 45:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1418,
+      "text": "Mercedes GLC EQ nævnes som direkte konkurrent med lignende kræfter og lynlading, større frunk og ifølge udsendelsen ca. 20.000 kr. højere pris; nogle Mercedes-kunder finder BMW-interiøret for voldsomt, andre omvendt.",
+      "cars": [
+        "BMW iX3",
+        "Mercedes GLC EQ"
+      ],
+      "themes": [
+        "konkurrence",
+        "interiør"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "iX3 priser, specifikationer, konkurrenter og garanti",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2245.0,
+      "section_end_sec": 2718.0,
+      "section_time_range": "[37:25 – 45:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1419,
+      "text": "Audi Q6 e-tron roses som bil, men får ikke samme hype som iX3; designet på BMW deler vandene på sociale medier, mens førstehåndsindtryk i Danmark og på messe opleves mere positivt.",
+      "cars": [
+        "BMW iX3",
+        "Audi Q6 e-tron"
+      ],
+      "themes": [
+        "design",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "iX3 priser, specifikationer, konkurrenter og garanti",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2245.0,
+      "section_end_sec": 2718.0,
+      "section_time_range": "[37:25 – 45:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1420,
+      "text": "Værterne kritiserer skarpt BMW’s to års nybilsgaranti på dyre modeller og kræver fem år som normen hos konkurrenter – især for privatkøbere.",
+      "cars": [
+        "BMW"
+      ],
+      "themes": [
+        "garanti",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "iX3 priser, specifikationer, konkurrenter og garanti",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2245.0,
+      "section_end_sec": 2718.0,
+      "section_time_range": "[37:25 – 45:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1421,
+      "text": "Audi e-tron claim initiative er vokset fra ca. 450 til over 900 medlemmer på en uge; problemet knyttes især til elmotorer, hvor kølevæske kan sive ind og ødelægge motoren.",
+      "cars": [
+        "Audi e-tron"
+      ],
+      "themes": [
+        "fejl",
+        "ejergruppe"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Audi e-tron claim – voksende ejergruppe",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2718.0,
+      "section_end_sec": 2979.0,
+      "section_time_range": "[45:18 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1422,
+      "text": "Værterne mener, Audi burde have kommunikeret proaktivt til alle berørte ejere i Europa – også uden for mærkeforhandlere – og at manglende transparens kan ramme mærkets omdømme.",
+      "cars": [
+        "Audi"
+      ],
+      "themes": [
+        "service",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Audi e-tron claim – voksende ejergruppe",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2718.0,
+      "section_end_sec": 2979.0,
+      "section_time_range": "[45:18 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1423,
+      "text": "En anden e-tron-variant (sportsvogn) nævnes med ifølge Audi anden motorkonstruktion og dermed anden risikoprofil end de ramte modeller.",
+      "cars": [
+        "Audi e-tron"
+      ],
+      "themes": [
+        "teknik"
+      ],
+      "uncertain": true,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Audi e-tron claim – voksende ejergruppe",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2718.0,
+      "section_end_sec": 2979.0,
+      "section_time_range": "[45:18 – 49:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1424,
+      "text": "Christians oplevelse med Fiat Panda på lang tur: flere Clever-standere meldte kommunikationsfejl; problemet viser sig at handle om slidte, tunge CCS-pistoler og kompatibilitet med visse biler.",
+      "cars": [
+        "Fiat Panda"
+      ],
+      "themes": [
+        "ladeinfrastruktur",
+        "Clever"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Clever, Firefly og tunge DC-ladepistoler",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.0,
+      "section_end_sec": 3306.0,
+      "section_time_range": "[49:39 – 55:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1425,
+      "text": "Firefly kunne ikke DC-lade på udvalgte Clever-standere i Odense; tekniker henviser til, at OK’s luftkølede ladere lettere kobler på, hvilket peger på vægt og mekanisk slitage på kablet.",
+      "cars": [
+        "Firefly"
+      ],
+      "themes": [
+        "lading",
+        "fejl"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Clever, Firefly og tunge DC-ladepistoler",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.0,
+      "section_end_sec": 3306.0,
+      "section_time_range": "[49:39 – 55:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1426,
+      "text": "Stellantis-SUV’er (Peugeot 3008/5008, Opel Grandland m.fl.) nævnes som særligt udsatte over for de tunge pistoler; der er ingen fælles industriløsning endnu, og lyttere improviserer med understøtning af stikket.",
+      "cars": [
+        "Peugeot 3008",
+        "Opel Grandland"
+      ],
+      "themes": [
+        "lading",
+        "kompatibilitet"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Clever, Firefly og tunge DC-ladepistoler",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.0,
+      "section_end_sec": 3306.0,
+      "section_time_range": "[49:39 – 55:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1427,
+      "text": "Jan foreslår halvt seriøst en \"ladestok\" til at aflaste stikket – et billede på, at hardware på standerne og bilernes indgange ikke er afstemt i praksis.",
+      "cars": [],
+      "themes": [
+        "ladeinfrastruktur",
+        "humor"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Clever, Firefly og tunge DC-ladepistoler",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2979.0,
+      "section_end_sec": 3306.0,
+      "section_time_range": "[49:39 – 55:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1428,
+      "text": "Christian fortæller om gentagne fejl med nøglekort på Volvo EX90: swipe på dørhåndtag virker ofte ikke, hvilket skaber frustration i hverdagen.",
+      "cars": [
+        "Volvo EX90"
+      ],
+      "themes": [
+        "UX",
+        "fejl"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Volvo EX90-nøgle og kinesiske nyheder",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3306.0,
+      "section_end_sec": 3646.5,
+      "section_time_range": "[55:06 – 1:00:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1429,
+      "text": "Automatisk parkeringsservice på testbil gav fejl og bøde i praksis – eksempel på, at avanceret udstyr ikke altid matcher virkelige forhold.",
+      "cars": [
+        "Volvo EX90"
+      ],
+      "themes": [
+        "parkering",
+        "kritik"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Volvo EX90-nøgle og kinesiske nyheder",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3306.0,
+      "section_end_sec": 3646.5,
+      "section_time_range": "[55:06 – 1:00:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1430,
+      "text": "Shenzhen Deepal (kinesisk mærke med lang historie ifølge udsendelsen) indgår importaftale med Andersen Motors (bl.a. Suzuki); to SUV’er kommer – S05 og en Model 3-konkurrent; platformdele med Mazda 6 nævnes.",
+      "cars": [],
+      "themes": [
+        "import",
+        "Kina"
+      ],
+      "uncertain": true,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Volvo EX90-nøgle og kinesiske nyheder",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3306.0,
+      "section_end_sec": 3646.5,
+      "section_time_range": "[55:06 – 1:00:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1431,
+      "text": "Modellerne omtales med op til ca. 475 km rækkevidde, 200 kW-ladning og lang batterigaranti; priser kendes ikke, men værterne drøfter skarpe målpriser i forhold til Tesla Model 3.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "priser",
+        "elbiler"
+      ],
+      "uncertain": true,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Volvo EX90-nøgle og kinesiske nyheder",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3306.0,
+      "section_end_sec": 3646.5,
+      "section_time_range": "[55:06 – 1:00:46]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1432,
+      "text": "BYD melder ifølge udsendelsen udvidet batterigaranti til 250.000 km – et løft, der sætter pres på konkurrenter og matcher forbrugernes angst for batterilevetid.",
+      "cars": [
+        "BYD"
+      ],
+      "themes": [
+        "garanti",
+        "batteri"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "BYD udvider batterigaranti",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3646.0,
+      "section_end_sec": 3777.6,
+      "section_time_range": "[1:00:46 – 1:02:57]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1433,
+      "text": "De sammenligner med typiske 150.000 km på europæiske premium-batterier og med kinesiske mærkers lange garantier – og ser det som en vigtig markedsmæssig markør.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "garanti"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "BYD udvider batterigaranti",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3646.0,
+      "section_end_sec": 3777.6,
+      "section_time_range": "[1:00:46 – 1:02:57]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1434,
+      "text": "Mark Hansen anklager udsendelsen for at være for Tesla-positive; værterne afviser sponsorat og minder om hård kritik af ældre Model 3 (synsproblemer m.m.) og at ros af nye modeller bygger på friskere indtryk.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "lyttere",
+        "journalistik"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Lyttermail om Tesla og elbil-råd",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3777.0,
+      "section_end_sec": 4105.0,
+      "section_time_range": "[1:02:57 – 1:08:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1435,
+      "text": "Jan understreger erfaring fra brugtbilsmarkedet siden 1997 og forventer bedre holdbarhed på den opdaterede Model 3 end på første generation.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "brugtbil",
+        "kvalitet"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Lyttermail om Tesla og elbil-råd",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3777.0,
+      "section_end_sec": 4105.0,
+      "section_time_range": "[1:02:57 – 1:08:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1436,
+      "text": "Kim Frederiksen med Subaru XV vil have elbil med ca. 500 km rækkevidde og 1.500 kg træk, ikke Skoda; Christian anbefaler primært Hyundai Ioniq 5, mens Jan peger på ny Subaru-elbil med pris i ugen og Toyota C-HR+ med firehjulstræk som alternativer.",
+      "cars": [
+        "Subaru XV",
+        "Hyundai Ioniq 5",
+        "Toyota C-HR"
+      ],
+      "themes": [
+        "lytterråd",
+        "elbiler",
+        "træk"
+      ],
+      "uncertain": false,
+      "episode_title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
+      "episode_guid": "1f917055-bcfc-4474-9d67-b3aa0097ec1c",
+      "pub_date": "2025-12-05T11:26:28+00:00",
+      "section_title": "Lyttermail om Tesla og elbil-råd",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3777.0,
+      "section_end_sec": 4105.0,
+      "section_time_range": "[1:02:57 – 1:08:25]",
+      "bullet_time_range": null
+    },
+    {
       "id": 1366,
       "text": "Christian kører Kia EV4 og oplever mærkbart lavere strømforbrug og omkring 50 km bedre rækkevidde i praksis end EV3 trods lignende WLTP — EV4 roses som økonomisk som lavere biltype.",
       "cars": [
@@ -3970,5 +4936,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 174
+  "count": 216
 }

@@ -85,16 +85,16 @@
       "title": "322 BMW leverer chok: Ny elbil kører som noget fra en anden verden",
       "pub_date": "2025-12-05T11:26:28+00:00",
       "duration_sec": 4099,
-      "status": "transcribed",
-      "display_status": "transcribed",
+      "status": "extracted",
+      "display_status": "summarized",
       "status_note": null,
       "error": null,
-      "extract_at": null,
-      "bullet_count": 0,
+      "extract_at": "2026-04-04T20:51:44.112711+00:00",
+      "bullet_count": 42,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": false
+      "improved_transcript": true
     },
     {
       "guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
@@ -370,7 +370,7 @@
     }
   ],
   "counts": {
-    "summarized": 6,
-    "transcribed": 17
+    "summarized": 7,
+    "transcribed": 16
   }
 }
