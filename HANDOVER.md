@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-04-04. Operator + maintainer notes._
+_Last updated: 2026-04-04 (session: inbox backlog 326–328 + handover refresh). Operator + maintainer notes._
 
 ---
 
@@ -55,6 +55,7 @@ Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--s
 - **`bilradio prepare-improved-agent`** — writes `data/cursor_inbox/<guid>_improve_auto_agent.md` with output path and full `CURSOR_INSTRUCTIONS`.
 - **`bilradio bootstrap-improved-json`** — optional extractive placeholders (`_bilradio_meta.replace_with_cursor_agent: true`); replace with Agent output when ready. **Limitation:** if Whisper **`.json`** has almost no paragraph breaks (one big block of segment lines), bootstrap may produce **one** tiny section — use **`scripts/improved_json_from_segments.py`** instead (interim segment-chunk placeholders; **section-level** time spans only, no per-bullet times).
 - **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`** — loads sections/bullets into SQLite and sets episode **`extracted`**.
+- **Typical Agent completion loop (one episode):** write improved JSON to the path named in `data/cursor_inbox/<guid>_improve_auto_agent.md` → **`import-bullets --guid <guid> --file …`** → **delete** that inbox **`.md`** → **`export-github-pages`** → **commit + push** tracked **`docs/api/*.json`** (and any template changes). **`data/`** stays gitignored. To pick the **oldest** episode still missing improved JSON among inbox prompts, order by **`episodes.pub_date`** in SQLite and skip GUIDs that already have a non-empty `data/transcripts_improved/*_<guid>.json`.
 - **Timecodes:** JSON may include **`start_sec` / `end_sec` on sections** (floats). After editing, **re-run `import-bullets`**. For a **mechanical backfill**, **`scripts/apply_whisper_timecodes.py`** slices the Whisper **segment** timeline **proportionally by section** (weighted by bullet count per section), writes **section** bounds, and **strips any per-bullet** `start_sec`/`end_sec` so output matches **`CURSOR_INSTRUCTIONS`**:
 
 ```powershell
@@ -208,3 +209,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | 2026-04 | **`CURSOR_INSTRUCTIONS`**: content-driven section counts, **section-level** timecodes, **omit sponsor reads**; transcript-storage rule = **two authoring steps** + SQLite import; hand-curated / repaired improved JSON for sample episodes (**317**, **318**) |
 | 2026-04 | Handover: **`batch_whisper_transcribe.py`** = step 1 only; step 2 batch options (**`prepare-improved-agent`** backlog + **`improved_json_from_segments.py`** + **`import-bullets`**); backlog fill for missing prompts vs segment interim JSON |
 | 2026-04 | **GitHub Pages:** static export (**`export-github-pages`** → **`docs/`**), Actions workflow, custom domain **bilradio.jacobworsoe.dk**; **`.cursor/rules/github-pages-deploy.mdc`** for deploy discipline |
+| 2026-04-04 | **Cursor Auto Agent improved JSON** for inbox backlog (oldest first by **`pub_date`**): episodes **326**, **327**, **328** (`9ad8e4e0`, `86f78b40`, `f828e145`) — Zeekr/Xpeng/Volvo themes, priskrig 325k, etc.; each run ended with **`import-bullets`**, removed **`*_improve_auto_agent.md`**, **`export-github-pages`**, and **git push** of **`docs/`** API JSON |
