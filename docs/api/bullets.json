@@ -672,6 +672,456 @@
       "bullet_time_range": null
     },
     {
+      "id": 1316,
+      "text": "Christian kører Audi A6 e-tron med luftaffjedring til København og roser komfort og klasse; bilen er ifølge udsendelsen blevet mærkbart billigere end den første testbil omkring en million kroner med udstyr.",
+      "cars": [
+        "Audi A6 e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Studio, Audi A6 e-tron og Årets bil",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 52.0,
+      "section_end_sec": 432.0,
+      "section_time_range": "[0:52 – 7:12]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1317,
+      "text": "Kia EV4 nævnes som kandidat til Årets Bil i Danmark (afsløring på tirsdag); Jan skal køre den senere og de roser blandt andet at klimaanlæg kan stå på med åben rude uden at bilen slukker alt, når føreren stiger ud.",
+      "cars": [
+        "Kia EV4"
+      ],
+      "themes": [
+        "elbil",
+        "årets bil"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Studio, Audi A6 e-tron og Årets bil",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 52.0,
+      "section_end_sec": 432.0,
+      "section_time_range": "[0:52 – 7:12]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1318,
+      "text": "De tipper Renault 5 som stærkest kort mod Mercedes CLA blandt finalister og sammenligner 5’erens image med den første elektriske Mini; Renault 5 har vundet Auto Awards og omtales som næsten uden dårlige anmeldelser.",
+      "cars": [
+        "Renault 5",
+        "Mercedes CLA"
+      ],
+      "themes": [
+        "årets bil",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Studio, Audi A6 e-tron og Årets bil",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 52.0,
+      "section_end_sec": 432.0,
+      "section_time_range": "[0:52 – 7:12]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1319,
+      "text": "Den elektriske Porsche Cayenne omtales som et generationsskifte efter enormt salg af Cayenne siden 2002; de husker bilen som status på hvide plader til høj pris frem for gule plader.",
+      "cars": [
+        "Porsche Cayenne"
+      ],
+      "themes": [
+        "elbil",
+        "SUV",
+        "historie"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Porsche Cayenne som elbil",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 432.0,
+      "section_end_sec": 1119.0,
+      "section_time_range": "[7:12 – 18:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1320,
+      "text": "Verdenspremiere og levering i Danmark nævnes til starten af 2026; de diskuterer om Porsche er tvunget ud i elbilen trods tøven og store udviklingsomkostninger, men understreger at selve produktet lyder stærkt.",
+      "cars": [
+        "Porsche Cayenne"
+      ],
+      "themes": [
+        "elbil",
+        "nyhed"
+      ],
+      "uncertain": true,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Porsche Cayenne som elbil",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 432.0,
+      "section_end_sec": 1119.0,
+      "section_time_range": "[7:12 – 18:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1321,
+      "text": "Tekniske slægtning med Macan og fælles koncernkomponenter med Audi/VW nævnes i forklaringen på, at Porsche ikke står alene med udviklingen.",
+      "cars": [
+        "Porsche Cayenne",
+        "Porsche Macan"
+      ],
+      "themes": [
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Porsche Cayenne som elbil",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 432.0,
+      "section_end_sec": 1119.0,
+      "section_time_range": "[7:12 – 18:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1322,
+      "text": "Ny generation af den populære Mercedes EQB (syv sæder, taxa og politi nævnt) får verdenspremiere 8. december; modelnavne går tilbage mod GLB-logik og platform som CLA med lovet rækkevidde over 700 km og bedre plads end den ældre EQB.",
+      "cars": [
+        "Mercedes EQB",
+        "Mercedes CLA",
+        "Mercedes GLB"
+      ],
+      "themes": [
+        "elbil",
+        "nyhed"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Mercedes EQB-opfølger og E-klasse på el",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1119.0,
+      "section_end_sec": 1520.0,
+      "section_time_range": "[18:39 – 25:20]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1323,
+      "text": "Prisforventning diskuteres omkring 450.000 kr. og succes på brugtmarked som følge af ‘meget bil for pengene’; Skoda Enyaq m.m. nævnes som konkurrenter med bedre drivlinje og hurtigere ladning til lavere pris.",
+      "cars": [
+        "Mercedes EQB",
+        "Skoda Enyaq"
+      ],
+      "themes": [
+        "elbil",
+        "pris",
+        "brugtbil"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Mercedes EQB-opfølger og E-klasse på el",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1119.0,
+      "section_end_sec": 1520.0,
+      "section_time_range": "[18:39 – 25:20]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1324,
+      "text": "Autocar citeres for syvende generation E-klasse som ren elbil i 2027; de spekulerer i om BMW, Mercedes og VW kan sælge nye elbilgenerationer i Europa — firmabilskatter i Tyskland og ID.7 nævnes som lys punkt.",
+      "cars": [
+        "Mercedes E-klasse",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "elbil",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Mercedes EQB-opfølger og E-klasse på el",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1119.0,
+      "section_end_sec": 1520.0,
+      "section_time_range": "[18:39 – 25:20]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1325,
+      "text": "JP-historie om Frederik Østergaard: Skoda Enyaq 2022, højt kilometertal — batterigarantien 160.000 km overskrides med ca. 910 km, hvorefter bilen melder batterifejl og værksted anbefaler udskiftning af battericelle til typisk 30.000–40.000 kr.",
+      "cars": [
+        "Skoda Enyaq"
+      ],
+      "themes": [
+        "elbil",
+        "batteri",
+        "garanti"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Skoda Enyaq: battericelle efter garantikilometer",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1520.0,
+      "section_end_sec": 2160.0,
+      "section_time_range": "[25:20 – 36:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1326,
+      "text": "Fejlen kobles til kendt celleproblem på MEB-platformen (ID.3/4/5, Enyaq, Audi Q4 e-tron m.fl.); bilen havde ifølge udsendelsen mange andre garantireparationer uden for drivlinjen, men her får han ingen kolofoni/kulanc fra Skoda eller importør trods loyal servicehistorik.",
+      "cars": [
+        "Skoda Enyaq",
+        "Volkswagen ID.3",
+        "Volkswagen ID.4",
+        "Audi Q4 e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "batteri",
+        "garanti"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Skoda Enyaq: battericelle efter garantikilometer",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1520.0,
+      "section_end_sec": 2160.0,
+      "section_time_range": "[25:20 – 36:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1327,
+      "text": "Skoda Danmark vil ifølge udsendelsen ikke kommentere sagen; værterne advarer om systemrisiko for mange danske MEB-ejere når 160.000 km nærmer sig og nævner ekstra forsikringer, der ofte kun dækker til 200.000 km.",
+      "cars": [],
+      "themes": [
+        "elbil",
+        "garanti",
+        "forsikring"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Skoda Enyaq: battericelle efter garantikilometer",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1520.0,
+      "section_end_sec": 2160.0,
+      "section_time_range": "[25:20 – 36:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1328,
+      "text": "Fejlmeldingen forsvinder pludseligt efter et par dage, hvilket rejser spørgsmål om unødvendige celleskift og ‘Wild West’ i fejldiagnosticering; FDM og uvildig celle-test (fra omkring 500 kr.) adskilles fra almindelige kapacitetstests, der ikke nødvendigvis afslører defekte celler.",
+      "cars": [],
+      "themes": [
+        "elbil",
+        "batteri",
+        "service"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Skoda Enyaq: battericelle efter garantikilometer",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1520.0,
+      "section_end_sec": 2160.0,
+      "section_time_range": "[25:20 – 36:00]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1329,
+      "text": "Christian fortæller om Ford Focus på Geneve-messen 1998 og bilens betydning med New Edge-design og køreegenskaber (Richard Parry-Jones); Jan mindes egen leased Focus med EcoBoost.",
+      "cars": [
+        "Ford Focus"
+      ],
+      "themes": [
+        "historie"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Ford Focus — ende på en æra",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2160.0,
+      "section_end_sec": 2625.0,
+      "section_time_range": "[36:00 – 43:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1330,
+      "text": "Produktionen i Saarlouis er stoppet (sidste bil nævnt 14. oktober); fabrikken står tom, Ford forsøger at sælge den, og de ser det som udtryk for Fords krise i Europa.",
+      "cars": [
+        "Ford Focus"
+      ],
+      "themes": [
+        "marked",
+        "historie"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Ford Focus — ende på en æra",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2160.0,
+      "section_end_sec": 2625.0,
+      "section_time_range": "[36:00 – 43:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1331,
+      "text": "Focus blev både årets bil i Danmark 1998 og igen med sidste generation i 2019 — sidste danske ‘Årets bil’ før elbil-dominerede år; de nævner ny kompakt crossover planlagt til 2027 uden at love navnet Focus.",
+      "cars": [
+        "Ford Focus"
+      ],
+      "themes": [
+        "historie",
+        "årets bil"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Ford Focus — ende på en æra",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2160.0,
+      "section_end_sec": 2625.0,
+      "section_time_range": "[36:00 – 43:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1332,
+      "text": "Jan rapporterer god rækkevidde i kulde i Kia EV4 (cirka 450 km vist) og sammenligner med egen EV3; de diskuterer at EV4 er lav som hatchback, hvilket kan gøre den svær at sælge kontra SUV-trend og typisk firmabilvalg.",
+      "cars": [
+        "Kia EV4",
+        "Kia EV3"
+      ],
+      "themes": [
+        "elbil",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Kia EV4, Polestar-leasing og familie-elbil",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2625.0,
+      "section_end_sec": 3160.0,
+      "section_time_range": "[43:45 – 52:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1333,
+      "text": "Lytterhistorie: Polestar 2-leasing — selskab vil først have betaling for ekstra km, ringer derefter tilbage og giver 10.000 km gratis mod at bilen beholdes til 2027; de tolker det som nervøsitet for restværdi med 800+ brugte Polestar 2 til salg på Bilbasen.",
+      "cars": [
+        "Polestar 2"
+      ],
+      "themes": [
+        "leasing",
+        "brugtbil",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Kia EV4, Polestar-leasing og familie-elbil",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2625.0,
+      "section_end_sec": 3160.0,
+      "section_time_range": "[43:45 – 52:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1334,
+      "text": "Jakob Poulsen spørger om erstatning for Ford Focus 2016 (familie, 20.000 km/år, sommerferie til Frankrig, budget ca. 250.000 kr.); de anbefaler brugt Volkswagen ID.4 med stort batteri frem for ny bil i prisklassen og nævner stort udbud på brugtmarkedet.",
+      "cars": [
+        "Ford Focus",
+        "Volkswagen ID.4"
+      ],
+      "themes": [
+        "elbil",
+        "brugtbil",
+        "rådgivning"
+      ],
+      "uncertain": false,
+      "episode_title": "320 Populær elbil fik batterifejl lige efter garantien: Ingen ville hjælpe",
+      "episode_guid": "f65e72cf-b132-4291-b3bd-b39c007fe010",
+      "pub_date": "2025-11-21T09:35:02+00:00",
+      "section_title": "Kia EV4, Polestar-leasing og familie-elbil",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2625.0,
+      "section_end_sec": 3160.0,
+      "section_time_range": "[43:45 – 52:40]",
+      "bullet_time_range": null
+    },
+    {
       "id": 161,
       "text": "Episoden er sponsoreret af GAVMIL; indholdet handler om årets firmabil, arrangeret af Jyllands-Posten og Business Danmark med ekstern jury af firmabilister.",
       "cars": [],
@@ -2143,5 +2593,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 95
+  "count": 114
 }
