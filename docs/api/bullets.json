@@ -672,6 +672,1148 @@
       "bullet_time_range": null
     },
     {
+      "id": 1437,
+      "text": "Udsendelsen optages på bagsædet af en Tesla Model 3, mens bilen med FSD (Full Self-Driving) og supervisor kører fra Tesla Aarhus på Bredskiftevej ud i trafikken – ifølge værterne med særlig dispensation til demonstrationen.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "FSD",
+        "autonom kørsel",
+        "Aarhus"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Optagelse i Tesla Model 3 med FSD i Aarhus",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 498.3,
+      "section_time_range": "[0:30 – 8:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1438,
+      "text": "De beskriver rolig, næsten køreprøve-agtig kørsel: bløde opbremsninger, korrekt placering i feltet og tydelig visualisering på skærmen; Christian oplever turen mere behagelig end med en aggressiv menneskelig chauffør.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "køreoplevelse",
+        "ADAS"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Optagelse i Tesla Model 3 med FSD i Aarhus",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 498.3,
+      "section_time_range": "[0:30 – 8:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1439,
+      "text": "Teknologien sammenlignes med Waymos tunge sensor-setup; Tesla kører primært på kamera og AI trænet på massive mængder køredata fra ejere – bilen ligner en helt almindelig Model 3 udadtil.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "teknologi",
+        "sammenligning"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Optagelse i Tesla Model 3 med FSD i Aarhus",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 498.3,
+      "section_time_range": "[0:30 – 8:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1440,
+      "text": "Jan konstaterer, at bilen ikke dugger på forruden på samme måde som hans Firefly med flere personer ombord – en praktisk forskel midt i optagelsen.",
+      "cars": [
+        "Tesla Model 3",
+        "Firefly"
+      ],
+      "themes": [
+        "komfort"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Optagelse i Tesla Model 3 med FSD i Aarhus",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 498.3,
+      "section_time_range": "[0:30 – 8:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1441,
+      "text": "Bilbasens månedsrapport: handel med brugte biler faldt i november 2025 sammenlignet med året før, men året som helhed er stadig på vej mod rekord med ca. 6 % flere handler end 2024.",
+      "cars": [],
+      "themes": [
+        "brugtbil",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Brugtbilsmarked og prisfald op mod nytår",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 498.3,
+      "section_end_sec": 618.0,
+      "section_time_range": "[8:18 – 10:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1442,
+      "text": "Faldet tilskrives blandt andet afgiftsusikkerhed og stærkere salg af nye biler; elbilhandelen på brugtmarkedet stiger dog og bidrager til det samlede rekordbillede.",
+      "cars": [],
+      "themes": [
+        "afgifter",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Brugtbilsmarked og prisfald op mod nytår",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 498.3,
+      "section_end_sec": 618.0,
+      "section_time_range": "[8:18 – 10:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1443,
+      "text": "Prisindekset er faldet igen; forhandlerne har ifølge Jan sat mange biler ned i pris op til nytår – tendensen gennem året er billigere biler i Danmark.",
+      "cars": [],
+      "themes": [
+        "priser",
+        "forhandlere"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Brugtbilsmarked og prisfald op mod nytår",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 498.3,
+      "section_end_sec": 618.0,
+      "section_time_range": "[8:18 – 10:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1444,
+      "text": "De diskuterer GPS-rutevalg: Jan mener systemet vælger ruter, der er nemmest for softwaret, ikke nødvendigvis hurtigste vej ind til midtbyen, som en erfaren Aarhus-bilist ville vælge.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "navigation",
+        "bytrafik"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "FSD i kompleks bytrafik",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 618.0,
+      "section_end_sec": 764.0,
+      "section_time_range": "[10:18 – 12:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1445,
+      "text": "Ved Ringgaden/Vibyvej håndterer bilen mange cyklister og parkerede biler roligt; værterne kommenterer cykelhjelm og cyklisters adfærd i kryds.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "sikkerhed",
+        "cyklister"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "FSD i kompleks bytrafik",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 618.0,
+      "section_end_sec": 764.0,
+      "section_time_range": "[10:18 – 12:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1446,
+      "text": "I myldretid ender de i kø – som forventet i Aarhus trods politiske udmeldinger om fri flydende trafik.",
+      "cars": [],
+      "themes": [
+        "bytrafik"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "FSD i kompleks bytrafik",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 618.0,
+      "section_end_sec": 764.0,
+      "section_time_range": "[10:18 – 12:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1447,
+      "text": "Ugens store overraskelse: Ford indgår alliance med Renault i stedet for at bygge små elbiler på Volkswagens MEB Entry; analytikere og markedet havde primært regnet med VW-platformen.",
+      "cars": [
+        "Ford",
+        "Renault"
+      ],
+      "themes": [
+        "strategi",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Ford og Renault – billige elbiler uden MEB Entry",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 764.0,
+      "section_end_sec": 1406.0,
+      "section_time_range": "[12:44 – 23:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1448,
+      "text": "De nye Ford-småbiler forventes baseret på Renault 5/4/Ampere-arkitektur med LFP-batterier og produktion i Nordfrankrig; der spekuleres i elektrisk Fiesta-lignende model og Puma-afløser.",
+      "cars": [
+        "Ford",
+        "Renault 5"
+      ],
+      "themes": [
+        "platform",
+        "produktion"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Ford og Renault – billige elbiler uden MEB Entry",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 764.0,
+      "section_end_sec": 1406.0,
+      "section_time_range": "[12:44 – 23:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1449,
+      "text": "Jan citerer AutoInc-analytiker René Tynner (som i lyden): aftalen er \"vind eller forsvind\" for Ford Europa – mærket er under 3 % markedsandel og fra over en million biler til ca. 260.000 årligt på ti år.",
+      "cars": [
+        "Ford"
+      ],
+      "themes": [
+        "marked",
+        "Europa"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Ford og Renault – billige elbiler uden MEB Entry",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 764.0,
+      "section_end_sec": 1406.0,
+      "section_time_range": "[12:44 – 23:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1450,
+      "text": "Fords nye udviklingschef i Europa antages at have skubbet på en hurtig beslutning; design og køreegenskaber skal stadig tilpasses Fords DNA frem for ren badge-engineering à la gammel Nissan Micra/Renault 5.",
+      "cars": [
+        "Ford"
+      ],
+      "themes": [
+        "ledelse",
+        "udvikling"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Ford og Renault – billige elbiler uden MEB Entry",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 764.0,
+      "section_end_sec": 1406.0,
+      "section_time_range": "[12:44 – 23:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1451,
+      "text": "Der forhandles om at udskyde kravet om kun nulemissionsbiler i EU fra 2035 til 2040; ACEA og bilproducerende lande peger på op imod en million jobs i spil og for hårde omstillingsrammer.",
+      "cars": [],
+      "themes": [
+        "EU",
+        "politik",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "EU 2035, jobs og tysk elbilsalg",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1406.0,
+      "section_end_sec": 1804.0,
+      "section_time_range": "[23:26 – 30:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1452,
+      "text": "Værterne diskuterer vindere og tabere: rene elbilproducenter og kinesiske mærker kan få det sværere, hvis fossile biler lever længere i EU; Ford nævnes som mærke der gik all-in på el og kom i klemme.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "politik"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "EU 2035, jobs og tysk elbilsalg",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1406.0,
+      "section_end_sec": 1804.0,
+      "section_time_range": "[23:26 – 30:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1453,
+      "text": "Tyskland satte rekord i november med hver femte nybil som elbil; høje firmabilsskatterabatter på store el-SUV’er (BMW iX3, ID.7, Model Y m.fl.) forklarer en del af volumenet.",
+      "cars": [
+        "BMW iX3",
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "Tyskland",
+        "firmabil"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "EU 2035, jobs og tysk elbilsalg",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1406.0,
+      "section_end_sec": 1804.0,
+      "section_time_range": "[23:26 – 30:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1454,
+      "text": "Spanien MOVE 3 og skatteincitamenter nævnes som model, hvor tilskud kombineres med lavere skat over ejertiden, så folk beholder elbilerne.",
+      "cars": [],
+      "themes": [
+        "incitamenter",
+        "Spanien"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "EU 2035, jobs og tysk elbilsalg",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1406.0,
+      "section_end_sec": 1804.0,
+      "section_time_range": "[23:26 – 30:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1455,
+      "text": "FSD-pakken til Tesla omtales til omkring 58.000 kr.; Mercedes EQS må i Tyskland kun køre assistancen op til 60 km/t, mens Tesla-demoen følger normale hastighedsgrænser i byen.",
+      "cars": [
+        "Tesla Model 3",
+        "Mercedes EQS"
+      ],
+      "themes": [
+        "FSD",
+        "regler"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "EU 2035, jobs og tysk elbilsalg",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1406.0,
+      "section_end_sec": 1804.0,
+      "section_time_range": "[23:26 – 30:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1456,
+      "text": "Mercedes lancerer afløseren for EQB som GLB EQ – et skridt væk fra EQ-navne, som forventes helt væk når EQE/EQS stopper om et til halvandet år.",
+      "cars": [
+        "Mercedes-Benz GLB"
+      ],
+      "themes": [
+        "ny model",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Mercedes GLB EQ – syv sæder og nye tal",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1804.0,
+      "section_end_sec": 2411.0,
+      "section_time_range": "[30:04 – 40:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1457,
+      "text": "Startpris nævnes omkring 420.000 kr. plus ca. 17.000 kr. for tredje sæderække; prisforudsigelsen begrundes med CLA-prissætning – værterne understreger, at det ikke er en \"syv sæders til 420.000\" uden tillæg.",
+      "cars": [
+        "Mercedes-Benz GLB",
+        "Mercedes-Benz CLA"
+      ],
+      "themes": [
+        "priser",
+        "familiebil"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Mercedes GLB EQ – syv sæder og nye tal",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1804.0,
+      "section_end_sec": 2411.0,
+      "section_time_range": "[30:04 – 40:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1458,
+      "text": "Ny GLB bygger på samme arkitektur som CLA og nyeste Shooting Brake; 800 V, op til ca. 320 kW laden og stor batteripakke (ca. 85 kWh) giver omkring 553 km WLTP, men forbrug og rækkevidde er markant dårligere end på CLA – op til ca. 150–160 km forskel.",
+      "cars": [
+        "Mercedes-Benz GLB",
+        "Mercedes-Benz CLA"
+      ],
+      "themes": [
+        "rækkevidde",
+        "forbrug",
+        "lading"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Mercedes GLB EQ – syv sæder og nye tal",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1804.0,
+      "section_end_sec": 2411.0,
+      "section_time_range": "[30:04 – 40:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1459,
+      "text": "Strømforbruget er ifølge Morten fra Bilbasen højere end på den gamle EQB trods ny platform; Jan kalder det en skuffelse, men anbefaler alligevel den nye model frem for udgående EQB på næsten alle punkter.",
+      "cars": [
+        "Mercedes-Benz GLB",
+        "Mercedes-Benz EQB"
+      ],
+      "themes": [
+        "forbrug",
+        "anbefaling"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Mercedes GLB EQ – syv sæder og nye tal",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1804.0,
+      "section_end_sec": 2411.0,
+      "section_time_range": "[30:04 – 40:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1460,
+      "text": "Plads: bedre anden og tredje række (op til ca. 1,71 m i tredje række nævnt humoristisk); gamle EQB bagsæde omtales som kirkebænk-agtigt; forhandlerne sætter gamle EQB kraftigt ned før nye priser.",
+      "cars": [
+        "Mercedes-Benz GLB",
+        "Mercedes-Benz EQB"
+      ],
+      "themes": [
+        "plads",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Mercedes GLB EQ – syv sæder og nye tal",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1804.0,
+      "section_end_sec": 2411.0,
+      "section_time_range": "[30:04 – 40:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1461,
+      "text": "Undervejs: komplekse sving, Randersvej/Viborgvej, bakmanøvre fra Rådhuspladsen og høflig prioritering af varmevogn – FSD afsluttes med retur mod Tesla; hollandske myndigheder kan ifølge planen tage stilling til godkendelse omkring februar.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "FSD",
+        "Aarhus",
+        "regler"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Mercedes GLB EQ – syv sæder og nye tal",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1804.0,
+      "section_end_sec": 2411.0,
+      "section_time_range": "[30:04 – 40:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1462,
+      "text": "Tilbage i studiet beskriver Christian turen som en af de største køreoplevelser – sammenlignelig med første gang med kørekort; Jan er enig om det transporterende og rolige.",
+      "cars": [
+        "Tesla Model 3"
+      ],
+      "themes": [
+        "FSD",
+        "oplevelse"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Efter turen: oplevelse og perspektiv",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2411.0,
+      "section_end_sec": 2615.0,
+      "section_time_range": "[40:11 – 43:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1463,
+      "text": "De diskuterer samfundsmæssige konsekvenser: selvkørende biler kan ændre transport, logistik og hverdagskørsel fundamentalt, hvis regulering følger med.",
+      "cars": [],
+      "themes": [
+        "fremtid",
+        "mobilitet"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Efter turen: oplevelse og perspektiv",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2411.0,
+      "section_end_sec": 2615.0,
+      "section_time_range": "[40:11 – 43:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1464,
+      "text": "Tesla-aktien er ifølge AutoInc-dækning delvist priset på forventninger om FSD i Europa, fordi teknologien allerede kører i USA.",
+      "cars": [
+        "Tesla"
+      ],
+      "themes": [
+        "aktier",
+        "FSD"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Efter turen: oplevelse og perspektiv",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2411.0,
+      "section_end_sec": 2615.0,
+      "section_time_range": "[40:11 – 43:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1465,
+      "text": "Christian kører Suzuki e Vitara produceret i Indien og finder elbil-delen forældet (fx DC-ladning omkring 60–67 kW); bilen føles undervældende som elbil men kan have andre kvaliteter.",
+      "cars": [
+        "Suzuki e Vitara"
+      ],
+      "themes": [
+        "elbiler",
+        "lading"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Suzuki e Vitara, Toyota Urban Cruiser og Hyundai Ioniq 9",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2615.0,
+      "section_end_sec": 2918.0,
+      "section_time_range": "[43:35 – 48:38]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1466,
+      "text": "Toyota Urban Cruiser er søstermodel med samme begrænsninger; omkring 2.000 forhåndsreservationer nævnes trods den tekniske profil.",
+      "cars": [
+        "Toyota Urban Cruiser"
+      ],
+      "themes": [
+        "elbiler"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Suzuki e Vitara, Toyota Urban Cruiser og Hyundai Ioniq 9",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2615.0,
+      "section_end_sec": 2918.0,
+      "section_time_range": "[43:35 – 48:38]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1467,
+      "text": "Jan roser Hyundai Ioniq 9: bedre pladsudnyttelse og forståelighed end Kia EV9, pæn samlekvalitet, lavere forbrug end ventet og interessant pris i syvsæders-segmentet; Christian er mindre begejstret for det asiatisk-inspirerede design og den hårdere affjedring end Kia.",
+      "cars": [
+        "Hyundai Ioniq 9",
+        "Kia EV9"
+      ],
+      "themes": [
+        "test",
+        "familiebil"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Suzuki e Vitara, Toyota Urban Cruiser og Hyundai Ioniq 9",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2615.0,
+      "section_end_sec": 2918.0,
+      "section_time_range": "[43:35 – 48:38]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1468,
+      "text": "Jan viser forbrugsfordeling på skærm: klima bruger omkring 2 kW og øvrige el-funktioner ca. 0,6 kW efter opvarmning – illustration af højt startforbrug om vinteren i elbiler.",
+      "cars": [
+        "Hyundai Ioniq 9"
+      ],
+      "themes": [
+        "forbrug",
+        "vinter"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Suzuki e Vitara, Toyota Urban Cruiser og Hyundai Ioniq 9",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2615.0,
+      "section_end_sec": 2918.0,
+      "section_time_range": "[43:35 – 48:38]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1469,
+      "text": "I Danmark sælges ifølge udsendelsen kun tre nye Opel-modeller: Frontera, Grandland og elektrisk Zafira-varevogn; Astra, Corsa-e og Mokka mangler på listen – til gavn for brugtbilsmarkedet og 0 km-lagerbiler.",
+      "cars": [
+        "Opel"
+      ],
+      "themes": [
+        "import",
+        "modelprogram"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Opel Astra Electric og et udtyndet Opel-program",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2918.0,
+      "section_end_sec": 3105.0,
+      "section_time_range": "[48:38 – 51:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1470,
+      "text": "Faceliftet Opel Astra EV får kraftigt nyt design og vokset batteri til ca. 58 kWh med over 450 km WLTP – i boldgade med mellemste ID.3/Elroq; Borgen-tilbud nævnes omkring 188.000 kr., mens relevant ny pris ifølge værterne nok skal omkring 200.000 kr. for at matche markedet.",
+      "cars": [
+        "Opel Astra",
+        "Skoda Elroq",
+        "Volkswagen ID.3"
+      ],
+      "themes": [
+        "priser",
+        "elbiler"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Opel Astra Electric og et udtyndet Opel-program",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2918.0,
+      "section_end_sec": 3105.0,
+      "section_time_range": "[48:38 – 51:45]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1471,
+      "text": "Citroën viser den kompakte konceptbil Ëlio (~4,10 m) rettet mod billig, praktisk nærtransport til familier – sammenlignes med Berlingo-tænkning; værterne er skeptiske over for, at konceptbiler sjældent når markedet.",
+      "cars": [
+        "Citroën"
+      ],
+      "themes": [
+        "koncept",
+        "elbiler"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Citroën Ëlio, KGM Musso EV og pickup-priser",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3105.0,
+      "section_end_sec": 3419.0,
+      "section_time_range": "[51:45 – 56:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1472,
+      "text": "KGM (tidligere SsangYong) Musso EV: over fem meters pickup, kan registreres på hvide plader som personbil fra ca. 380.000 kr., opleves behagelig at køre og under halv pris mod diesel-pickups – niche ift. dyrere Maxus m.fl.",
+      "cars": [
+        "KGM Musso"
+      ],
+      "themes": [
+        "pickup",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Citroën Ëlio, KGM Musso EV og pickup-priser",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3105.0,
+      "section_end_sec": 3419.0,
+      "section_time_range": "[51:45 – 56:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1473,
+      "text": "Toyota Hilux hybrid på hvide plader nævnes med meget lille batteri og begrænset rækkevidde – under 60 km el nævnt; værten vil gerne teste den.",
+      "cars": [
+        "Toyota Hilux"
+      ],
+      "themes": [
+        "pickup",
+        "hybrid"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Citroën Ëlio, KGM Musso EV og pickup-priser",
+      "section_order": 9,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3105.0,
+      "section_end_sec": 3419.0,
+      "section_time_range": "[51:45 – 56:59]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1474,
+      "text": "Fra nytår forsvinder elafgiften og dermed refusionen; markedet for elbilabonnementer og leverandørpakker skal genfindes, og priser gøres mere gennemsigtige for forbrugerne.",
+      "cars": [],
+      "themes": [
+        "afgifter",
+        "lading"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Elafgift væk og OK’s nye ladestrategi",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3419.0,
+      "section_end_sec": 3623.0,
+      "section_time_range": "[56:59 – 1:00:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1475,
+      "text": "OK nulstiller ifølge udsendelsen e-mobilitetsforretningen og tilbyder strøm og ladeudstyr mere kvit og frit uden tunge bindinger – FDM anerkender retningen; Klever og FDM-pakker sammenlignes.",
+      "cars": [],
+      "themes": [
+        "ladeoperatører",
+        "forbruger"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Elafgift væk og OK’s nye ladestrategi",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3419.0,
+      "section_end_sec": 3623.0,
+      "section_time_range": "[56:59 – 1:00:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1476,
+      "text": "Jan mener danskerne historisk har været villige til at overbetale for ladepakker, men at billig hjemmeladning og gennemsigtighed nu presser den model.",
+      "cars": [],
+      "themes": [
+        "lading",
+        "økonomi"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Elafgift væk og OK’s nye ladestrategi",
+      "section_order": 10,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3419.0,
+      "section_end_sec": 3623.0,
+      "section_time_range": "[56:59 – 1:00:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1477,
+      "text": "EV4 er tæt slægt med EV3 men med skarpere, konceptbil-agtigt design, som begge værter har svært ved; EV4 kører bedre og føles mere dynamisk end EV3.",
+      "cars": [
+        "Kia EV4",
+        "Kia EV3"
+      ],
+      "themes": [
+        "design",
+        "køreegenskaber"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Testgarage: Kia EV4",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3623.0,
+      "section_end_sec": 4090.0,
+      "section_time_range": "[1:00:23 – 1:08:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1478,
+      "text": "Jan målte i praksis omkring 40 km længere rækkevidde i EV4 end EV3 på tilsvarende tur trods lignende papirtal – lavere luftmodstand nævnes som forklaring.",
+      "cars": [
+        "Kia EV4",
+        "Kia EV3"
+      ],
+      "themes": [
+        "rækkevidde",
+        "forbrug"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Testgarage: Kia EV4",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3623.0,
+      "section_end_sec": 4090.0,
+      "section_time_range": "[1:00:23 – 1:08:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1479,
+      "text": "Prisforskel omkring 15.000 kr. til fordel for EV3; interiør og skærmgrafik kritiseres som rodet og \"amerikansk 15 år tilbage\"; trods det fungerer bilen teknisk solidt med lang garanti.",
+      "cars": [
+        "Kia EV4",
+        "Kia EV3"
+      ],
+      "themes": [
+        "priser",
+        "interiør"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Testgarage: Kia EV4",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3623.0,
+      "section_end_sec": 4090.0,
+      "section_time_range": "[1:00:23 – 1:08:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1480,
+      "text": "Tesla Model 3 til ca. 270.000 kr. (standard) og testbil med stort batteri til ca. 295.000 kr. gør EV4 risiko for \"skyggebil\" på markedet – som Ioniq 6 – med stærkt faldende brugtpriser om få år, især pga. polariserende design.",
+      "cars": [
+        "Kia EV4",
+        "Tesla Model 3",
+        "Hyundai Ioniq 6"
+      ],
+      "themes": [
+        "marked",
+        "konkurrence"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Testgarage: Kia EV4",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3623.0,
+      "section_end_sec": 4090.0,
+      "section_time_range": "[1:00:23 – 1:08:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1481,
+      "text": "Rygte: EV2 får blødere design og verdenspremiere i januar – håb om mindre ekstrem formsprog fra Kia.",
+      "cars": [
+        "Kia"
+      ],
+      "themes": [
+        "rygter",
+        "design"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Testgarage: Kia EV4",
+      "section_order": 11,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3623.0,
+      "section_end_sec": 4090.0,
+      "section_time_range": "[1:00:23 – 1:08:10]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1482,
+      "text": "Kasper Hansen vil skifte Skoda Fabia Combi til rummelig elbil under 400.000 kr. til familie med autostole; de fraråder generelt selvimport fra Tyskland pga. garanti, praktik og at Danmark ofte er prismæssigt konkurrencedygtigt på nye elbiler.",
+      "cars": [
+        "Skoda Fabia"
+      ],
+      "themes": [
+        "lytterråd",
+        "import"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Lytter: familie-elbil under 400.000 kr.",
+      "section_order": 12,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4090.0,
+      "section_end_sec": 4516.0,
+      "section_time_range": "[1:08:10 – 1:15:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1483,
+      "text": "Anbefalinger: Skoda Enyaq i veludstyret udgave til budgettet (ikke kun Borgen-tilbud); Renault Scenic E-Tech med stort batteri til omkring 300.000 kr. som prisvenlig alternativ.",
+      "cars": [
+        "Skoda Enyaq",
+        "Renault Scenic"
+      ],
+      "themes": [
+        "familiebil",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Lytter: familie-elbil under 400.000 kr.",
+      "section_order": 12,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4090.0,
+      "section_end_sec": 4516.0,
+      "section_time_range": "[1:08:10 – 1:15:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1484,
+      "text": "Brugt Scenic (~1 år, 20–30.000 km) til ca. 260.000 kr. nævnes, men uden fem års nybilsgaranti; tilkøbsgaranti udligner en del af besparelsen ift. ny bil.",
+      "cars": [
+        "Renault Scenic"
+      ],
+      "themes": [
+        "brugtbil",
+        "garanti"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Lytter: familie-elbil under 400.000 kr.",
+      "section_order": 12,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4090.0,
+      "section_end_sec": 4516.0,
+      "section_time_range": "[1:08:10 – 1:15:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1485,
+      "text": "Fabiaen vil ifølge Jan give en god byttepris; de nævner også diskrepans mellem Danmarks Statistiks gennemsnitlige nybilspris (nævnt ~480.000 kr.) og deres egen fornemmelse – noget de vil undersøge nærmere.",
+      "cars": [],
+      "themes": [
+        "priser",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Lytter: familie-elbil under 400.000 kr.",
+      "section_order": 12,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4090.0,
+      "section_end_sec": 4516.0,
+      "section_time_range": "[1:08:10 – 1:15:16]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1486,
+      "text": "Afsnit afsluttes med påmindelse om jule-udgivelse af Bilradio og tak til lytterne.",
+      "cars": [],
+      "themes": [
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
+      "episode_guid": "fbd1ff7a-bb17-4c53-8c4a-b3b100bb3112",
+      "pub_date": "2025-12-12T11:37:13+00:00",
+      "section_title": "Lytter: familie-elbil under 400.000 kr.",
+      "section_order": 12,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4090.0,
+      "section_end_sec": 4516.0,
+      "section_time_range": "[1:08:10 – 1:15:16]",
+      "bullet_time_range": null
+    },
+    {
       "id": 1395,
       "text": "Jan henter Christian i en Firefly; forruden dugger kraftigt, parkeringssensor hyler højt, og asiatiske biler opleves som meget \"paternaliske\" i advarslerne.",
       "cars": [
@@ -4936,5 +6078,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 216
+  "count": 266
 }

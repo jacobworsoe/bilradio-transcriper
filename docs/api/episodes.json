@@ -101,16 +101,16 @@
       "title": "323 Bilradio i Tesla der kører selv og årets vigtigste Mercedes",
       "pub_date": "2025-12-12T11:37:13+00:00",
       "duration_sec": 4486,
-      "status": "transcribed",
-      "display_status": "transcribed",
+      "status": "extracted",
+      "display_status": "summarized",
       "status_note": null,
       "error": null,
-      "extract_at": null,
-      "bullet_count": 0,
+      "extract_at": "2026-04-04T21:05:02.122060+00:00",
+      "bullet_count": 50,
       "downloaded": true,
       "whisper_json": true,
       "whisper_txt": true,
-      "improved_transcript": false
+      "improved_transcript": true
     },
     {
       "guid": "a8b2b97d-865c-4bc6-9bdb-b3b800b0689b",
@@ -370,7 +370,7 @@
     }
   ],
   "counts": {
-    "summarized": 7,
-    "transcribed": 16
+    "summarized": 8,
+    "transcribed": 15
   }
 }
