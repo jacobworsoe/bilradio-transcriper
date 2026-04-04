@@ -672,6 +672,914 @@
       "bullet_time_range": null
     },
     {
+      "id": 1649,
+      "text": "Jan har Renault 4 som testbil og vælger Kia EV3 til lang tur Varde–København, fordi Renault 4 med kort vinterrækkevidde ikke er en langtursbil.",
+      "cars": [
+        "Renault 4",
+        "Kia EV3"
+      ],
+      "themes": [
+        "elbil",
+        "rækkevidde",
+        "vinter"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Vinter, Renault 4 og Volkswagen ID. Buzz",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.0,
+      "section_end_sec": 323.0,
+      "section_time_range": "[1:01 – 5:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1650,
+      "text": "De oplever, at elbilister kører roligere på motorvejen om vinteren, hvilket gør E45 mere behagelig.",
+      "cars": [],
+      "themes": [
+        "vinter",
+        "trafik"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Vinter, Renault 4 og Volkswagen ID. Buzz",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.0,
+      "section_end_sec": 323.0,
+      "section_time_range": "[1:01 – 5:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1651,
+      "text": "Christian kører Volkswagen ID. Buzz som konkurrent til den kommende Kia PV5 og fremhæver tysk kalibreret klima: 21 grader på auto uden konstant manuel justering, i modsætning til typiske kinesiske elbiler.",
+      "cars": [
+        "Volkswagen ID. Buzz",
+        "Kia PV5"
+      ],
+      "themes": [
+        "elbil",
+        "UX",
+        "testbil"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Vinter, Renault 4 og Volkswagen ID. Buzz",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.0,
+      "section_end_sec": 323.0,
+      "section_time_range": "[1:01 – 5:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1652,
+      "text": "JP/Bilbasen arbejder på en historie om dårligt kalibrerede klimaanlæg i mange kinesiske elbiler (gammel teknologi, svag automatik).",
+      "cars": [],
+      "themes": [
+        "elbil",
+        "journalistik"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Vinter, Renault 4 og Volkswagen ID. Buzz",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 61.0,
+      "section_end_sec": 323.0,
+      "section_time_range": "[1:01 – 5:23]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1653,
+      "text": "Zeekr beskrives som et af få kinesiske mærker, der har fået fodfæste i Danmark; 7 GT er en stor hatchback (ca. 4,85 m) nærmere ID.7 end klassisk stationcar og uden særlig stort bagagerum.",
+      "cars": [
+        "Zeekr 7 GT",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "elbil",
+        "ny model",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Zeekr 7 GT fra 325.000 kr.",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 323.0,
+      "section_end_sec": 882.0,
+      "section_time_range": "[5:23 – 14:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1654,
+      "text": "Startpris 325.000 kr. for baghjulstræk med 421 hk, 75 kWh batteri og 519 km WLTP; de finder prisen markant under billigste Zeekr 7X (tidligere fra ca. 400.000 kr., nu ca. 25.000 kr. lavere) og ser den som reel konkurrence til Volkswagen ID.7 i firmabilklassen.",
+      "cars": [
+        "Zeekr 7 GT",
+        "Zeekr 7X",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Zeekr 7 GT fra 325.000 kr.",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 323.0,
+      "section_end_sec": 882.0,
+      "section_time_range": "[5:23 – 14:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1655,
+      "text": "Rækkevidden på 519 km kritiseres som for kort ift. bilens størrelse; stort batteri-version til 360.000 kr. giver knap 600 km WLTP. Hurtig DC-ladning (10–80 % på ca. 13 minutter under ideelle forhold) og 800 V-system fremhæves.",
+      "cars": [
+        "Zeekr 7 GT"
+      ],
+      "themes": [
+        "elbil",
+        "ladning",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Zeekr 7 GT fra 325.000 kr.",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 323.0,
+      "section_end_sec": 882.0,
+      "section_time_range": "[5:23 – 14:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1656,
+      "text": "Topmodel til 440.000 kr. med firehjulstræk, kortere WLTP (558 km) og 646 hk; 0–100 på 3,3 sekunder afvises som ligegyldigt for de fleste købere.",
+      "cars": [
+        "Zeekr 7 GT"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Zeekr 7 GT fra 325.000 kr.",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 323.0,
+      "section_end_sec": 882.0,
+      "section_time_range": "[5:23 – 14:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1657,
+      "text": "Lytteren Bo fra Esbjerg kritiserer fokus på 0–100-tider (eksempel Audi Q6) og efterlyser mere nyttig dækning; værterne er enige om at ton ned accelerationstal som salgsargument.",
+      "cars": [
+        "Audi Q6 e-tron"
+      ],
+      "themes": [
+        "journalistik",
+        "rådgivning"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Zeekr 7 GT fra 325.000 kr.",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 323.0,
+      "section_end_sec": 882.0,
+      "section_time_range": "[5:23 – 14:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1658,
+      "text": "Levering slut forår nævnes; mærke-image som kinesisk bil ses som største salgs hurdle frem for teknik.",
+      "cars": [
+        "Zeekr 7 GT"
+      ],
+      "themes": [
+        "marked",
+        "import"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Zeekr 7 GT fra 325.000 kr.",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 323.0,
+      "section_end_sec": 882.0,
+      "section_time_range": "[5:23 – 14:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1659,
+      "text": "Mazda 6e sedan oplevedes som flot og billig (ca. 300.000 kr.), men undervældende på elbil-discipliner; SUV-varianten CX-6e er ca. 4,85 m og større end Audi Q6 e-tron men deler svag el-teknisk platform (Changan-baseret, ikke Zeekr/Xpeng-niveau).",
+      "cars": [
+        "Mazda 6e",
+        "Mazda CX-6e",
+        "Audi Q6 e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "ny model"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Mazda CX-6e",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 900.0,
+      "section_end_sec": 1266.0,
+      "section_time_range": "[15:00 – 21:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1660,
+      "text": "CX-6e: 78 kWh batteri, 258 hk baghjulstræk, WLTP 484 km; højt strømforbrug vs. konkurrenter. Ekstrem én meters bred skærm i kabinen bryder med klassisk Mazda-instrumentering og frustrerer Mazda-loyale.",
+      "cars": [
+        "Mazda CX-6e"
+      ],
+      "themes": [
+        "elbil",
+        "UX",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Mazda CX-6e",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 900.0,
+      "section_end_sec": 1266.0,
+      "section_time_range": "[15:00 – 21:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1661,
+      "text": "Prisdiskussion: skal understige ca. 330.000 kr. for at være relevant mod bl.a. prisdumpet Zeekr 7X; lancering til sommer.",
+      "cars": [
+        "Mazda CX-6e",
+        "Zeekr 7X"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Mazda CX-6e",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 900.0,
+      "section_end_sec": 1266.0,
+      "section_time_range": "[15:00 – 21:06]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1662,
+      "text": "Audi Q6 e-tron solgte ca. 1.750 stk. i Danmark (plads 28) — ikke fiasko, men under forventning; høj startpris, sparsomt udstyr og krav om luftundervogn for god køreoplevelse nævnes som årsager.",
+      "cars": [
+        "Audi Q6 e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "marked",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Audi Q6 e-tron og SQ6",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1266.0,
+      "section_end_sec": 1603.0,
+      "section_time_range": "[21:06 – 26:43]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1663,
+      "text": "Permanent europæisk prisjustering: hele programmet ca. 35.000 kr. ned, mere standardudstyr (S line, adaptiv fartpilot med vognbaneassistent, komfortundervogn); luftundervogn kan tilkøbes til alle varianter for 26.000 kr.",
+      "cars": [
+        "Audi Q6 e-tron"
+      ],
+      "themes": [
+        "elbil",
+        "kampagner",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Audi Q6 e-tron og SQ6",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1266.0,
+      "section_end_sec": 1603.0,
+      "section_time_range": "[21:06 – 26:43]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1664,
+      "text": "SQ6 tidligere ca. 950.000 kr., nu 765.000 kr. (ca. 180.000 kr. lavere); Q6 med firehjulstræk og stort batteri fra ca. 640.000 kr., basis fra ca. 520.000 kr. — stadig tæt på BMW Neue Klasse iX3 og Mercedes GLC EQ-prisleje.",
+      "cars": [
+        "Audi SQ6 e-tron",
+        "Audi Q6 e-tron",
+        "BMW iX3",
+        "Mercedes GLC"
+      ],
+      "themes": [
+        "elbil",
+        "priser"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Audi Q6 e-tron og SQ6",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1266.0,
+      "section_end_sec": 1603.0,
+      "section_time_range": "[21:06 – 26:43]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1665,
+      "text": "Fra januar 2025: Mercedes advarer om potentiel brandrisiko i batteri hos EQA/EQB (produktion feb. 2021–jan. 2024); i stedet for batteriskift vælger fabrikken softwareopdatering med opladningsloft 80 %.",
+      "cars": [
+        "Mercedes EQA",
+        "Mercedes EQB"
+      ],
+      "themes": [
+        "sikkerhed",
+        "batteri",
+        "tilbagekaldelse"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Mercedes EQA, EQB og batteri-software",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1603.0,
+      "section_end_sec": 2223.0,
+      "section_time_range": "[26:43 – 37:03]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1666,
+      "text": "Anders Berner og tyske advokater beskriver, at opdateringen kan reducere brugbar kapacitet med ca. 10–20 % og sænke DC-ladning markant (eksempelvis fra 100 kW mod 50 kW) — muligt væsentligt mangel ved produktet.",
+      "cars": [
+        "Mercedes EQA",
+        "Mercedes EQB"
+      ],
+      "themes": [
+        "batteri",
+        "ladning",
+        "forbruger"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Mercedes EQA, EQB og batteri-software",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1603.0,
+      "section_end_sec": 2223.0,
+      "section_time_range": "[26:43 – 37:03]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1667,
+      "text": "Mercedes Danmark/Sverige vil ikke kommentere anklagerne; skriftligt: kun mindre del af biler berørt, påvirkning afhænger af individuelle forhold. Kundebrev nævner op til ca. 15 minutter længere DC-ladning.",
+      "cars": [
+        "Mercedes-Benz"
+      ],
+      "themes": [
+        "service",
+        "forbruger"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Mercedes EQA, EQB og batteri-software",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1603.0,
+      "section_end_sec": 2223.0,
+      "section_time_range": "[26:43 – 37:03]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1668,
+      "text": "Ca. 614 direkte omfattede biler i Danmark (usikkert ift. samlet salg); brugtværdi og tillid til opdatering diskuteres; Farasis som celleleverandør nævnt.",
+      "cars": [
+        "Mercedes EQA",
+        "Mercedes EQB"
+      ],
+      "themes": [
+        "marked",
+        "brugt"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Mercedes EQA, EQB og batteri-software",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1603.0,
+      "section_end_sec": 2223.0,
+      "section_time_range": "[26:43 – 37:03]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1669,
+      "text": "Mercedes CLA vinder Car of the Year 2026; Mercedes deltog ikke i konkurrencen i mange år og vandt sidste gang med S-klasse i 1974.",
+      "cars": [
+        "Mercedes CLA",
+        "Mercedes S-Klasse"
+      ],
+      "themes": [
+        "journalistik",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Car of the Year og Mercedes CLA",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2468.0,
+      "section_end_sec": 2919.0,
+      "section_time_range": "[41:08 – 48:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1670,
+      "text": "Podiet: CLA foran Skoda Elroq og Kia EV4; dommerstemmer varierer stærkt mellem lande (Tyskland/UK/Frankrig positive på Mercedes; andre stemmer på Fiat/Dacia).",
+      "cars": [
+        "Mercedes CLA",
+        "Skoda Elroq",
+        "Kia EV4"
+      ],
+      "themes": [
+        "journalistik",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Car of the Year og Mercedes CLA",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2468.0,
+      "section_end_sec": 2919.0,
+      "section_time_range": "[41:08 – 48:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1671,
+      "text": "Christian roser CLA som ekstraordinært god elbil, tæt på men under Volkswagen ID.7 i komfort; Jan måler 9–80 % ladning på ca. 8 min 45 sek. ved ~353 kW peak på 400 kW-stander — flad ladekurve fremhæves.",
+      "cars": [
+        "Mercedes CLA",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "elbil",
+        "ladning",
+        "test"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Car of the Year og Mercedes CLA",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2468.0,
+      "section_end_sec": 2919.0,
+      "section_time_range": "[41:08 – 48:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1672,
+      "text": "Britiske medier kritiseres for at ignorere ladekurver og forvarmning; rygter om kommende BMW M-baseret elbil (Neue Klasse) med fire motorer og 700–800 hk og \"Heart of Joy\"-styring nævnes.",
+      "cars": [
+        "BMW"
+      ],
+      "themes": [
+        "elbil",
+        "ny model"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Car of the Year og Mercedes CLA",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2468.0,
+      "section_end_sec": 2919.0,
+      "section_time_range": "[41:08 – 48:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1673,
+      "text": "Rekord i brugtbilsalg 2025: ca. 471.000 handler (+3 %); få nye biler under 150.000 kr. og svag privatleasing presser købere mod brugt marked.",
+      "cars": [],
+      "themes": [
+        "brugt",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Brugte elbiler i 2025",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2919.0,
+      "section_end_sec": 3847.0,
+      "section_time_range": "[48:39 – 1:04:07]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1674,
+      "text": "Ca. 146.000 brugte elbiler solgt; omkring 100.000 kan føres til import — stort udbud fra Europa holder priser skarpe.",
+      "cars": [],
+      "themes": [
+        "brugt",
+        "elbil",
+        "import"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Brugte elbiler i 2025",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2919.0,
+      "section_end_sec": 3847.0,
+      "section_time_range": "[48:39 – 1:04:07]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1675,
+      "text": "Top brugte elbiler: Volkswagen ID.4 (mest solgte), Skoda Enyaq, Tesla Model Y (faldende på listen), Volkswagen ID.3 tæt på Enyaq, Mercedes EQA, Audi Q4 e-tron, Polestar 2 (årets brugtbil nr. 2, mange til salg, pris fra ca. 160.000–170.000 kr.), Mini Cooper Electric.",
+      "cars": [
+        "Volkswagen ID.4",
+        "Skoda Enyaq",
+        "Tesla Model Y",
+        "Volkswagen ID.3",
+        "Mercedes EQA",
+        "Audi Q4 e-tron",
+        "Polestar 2",
+        "Mini Cooper Electric"
+      ],
+      "themes": [
+        "brugt",
+        "elbil",
+        "salg"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Brugte elbiler i 2025",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2919.0,
+      "section_end_sec": 3847.0,
+      "section_time_range": "[48:39 – 1:04:07]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1676,
+      "text": "ID.3-forventes at vokse i 2026 pga. pris og plads; facelift til sommer med front som ID. Polo. Stadig fossile top-sælgere: Volkswagen Passat og Up på listen.",
+      "cars": [
+        "Volkswagen ID.3",
+        "Volkswagen ID. Polo",
+        "Volkswagen Passat",
+        "Volkswagen Up"
+      ],
+      "themes": [
+        "brugt",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Brugte elbiler i 2025",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2919.0,
+      "section_end_sec": 3847.0,
+      "section_time_range": "[48:39 – 1:04:07]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1677,
+      "text": "Antal forhandlere der sælger brugte elbiler forventes fordoblet mod midten af 2026; de anbefaler reparations-/garantiforsikring og opmærksomhed på batterigaranti-grænser ved køb.",
+      "cars": [],
+      "themes": [
+        "brugt",
+        "rådgivning"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Brugte elbiler i 2025",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2919.0,
+      "section_end_sec": 3847.0,
+      "section_time_range": "[48:39 – 1:04:07]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1678,
+      "text": "Eksempel: Cupra Born 77 kWh til 204.000 kr. uden sædevarme i annonce — understreger vigtighed af at spørge forhandleren om konkret udstyr.",
+      "cars": [
+        "Cupra Born"
+      ],
+      "themes": [
+        "brugt",
+        "rådgivning"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Brugte elbiler i 2025",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2919.0,
+      "section_end_sec": 3847.0,
+      "section_time_range": "[48:39 – 1:04:07]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1679,
+      "text": "Forventning: over 200.000 brugte elbiler i 2026; risiko for \"gulfeber\" afvises pga. hård konkurrence og lav marginal hos forhandlerne.",
+      "cars": [],
+      "themes": [
+        "brugt",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Brugte elbiler i 2025",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2919.0,
+      "section_end_sec": 3847.0,
+      "section_time_range": "[48:39 – 1:04:07]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1680,
+      "text": "Suzuki e Vitara (søstermodel Toyota Urban Cruiser) testes af Christian: som elbil vurderes den grundlæggende svag — meget højt forbrug (ca. 26–27 kWh/100 km ved 110 km/t) og kort motorvejsrækkevidde med 61 kWh batteri (ca. 235 km teoretisk).",
+      "cars": [
+        "Suzuki e Vitara",
+        "Toyota Urban Cruiser"
+      ],
+      "themes": [
+        "elbil",
+        "test",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Test: Suzuki e Vitara",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3847.0,
+      "section_end_sec": 4302.0,
+      "section_time_range": "[1:04:07 – 1:11:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1681,
+      "text": "DC-ladning officielt 67 kW og 10–80 % på 45 minutter; i praksis ofte 50–55 minutter og faldende kurve — sammenlignes med Dacia Spring-niveau.",
+      "cars": [
+        "Suzuki e Vitara",
+        "Dacia Spring"
+      ],
+      "themes": [
+        "elbil",
+        "ladning"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Test: Suzuki e Vitara",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3847.0,
+      "section_end_sec": 4302.0,
+      "section_time_range": "[1:04:07 – 1:11:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1682,
+      "text": "Pris: testbil top ca. 267.000 kr.; anbefaler 61 kWh-version fra ca. 247.000 frem for basis 49 kWh (for lille batteri). Positivt: seks års garanti, rigt udstyr, klassisk Suzuki-betjening, anhængertræk 750 kg, men dårlig pladsudnyttelse og kun ca. 230 liter bagage med bagsæde skubbet tilbage.",
+      "cars": [
+        "Suzuki e Vitara"
+      ],
+      "themes": [
+        "elbil",
+        "priser",
+        "plads"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Test: Suzuki e Vitara",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3847.0,
+      "section_end_sec": 4302.0,
+      "section_time_range": "[1:04:07 – 1:11:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1683,
+      "text": "YouTube-anmeldelse med ca. 390 km rækkevidde og 15,9 kWh/100 km afvises som useriøs i forhold til andre testeres målinger.",
+      "cars": [
+        "Suzuki e Vitara"
+      ],
+      "themes": [
+        "journalistik",
+        "test"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Test: Suzuki e Vitara",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3847.0,
+      "section_end_sec": 4302.0,
+      "section_time_range": "[1:04:07 – 1:11:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1684,
+      "text": "Frederik har Volkswagen ID.4 som primær bil og overvejer brugt benzinbil (Golf VII, Opel Astra stc., Audi A3) til 130.000–150.000 kr. for ferier og vinter pga. ladetid; kører kun ca. 10.000 km/år i bil to.",
+      "cars": [
+        "Volkswagen ID.4",
+        "Volkswagen Golf",
+        "Opel Astra",
+        "Audi A3"
+      ],
+      "themes": [
+        "rådgivning",
+        "brugt",
+        "ferie"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Lytter: familiebil nr. to efter ID.4",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4302.0,
+      "section_end_sec": 4530.0,
+      "section_time_range": "[1:11:42 – 1:15:30]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1685,
+      "text": "Værterne anbefaler generelt elbil som bil nummer to af økonomiske grunde og foreslår at bruge ID.4 på ferie eller leje bil til ferien frem for at vælge gammel benzinbil ud fra få årlige langture.",
+      "cars": [
+        "Volkswagen ID.4"
+      ],
+      "themes": [
+        "rådgivning",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Lytter: familiebil nr. to efter ID.4",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4302.0,
+      "section_end_sec": 4530.0,
+      "section_time_range": "[1:11:42 – 1:15:30]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1686,
+      "text": "Brugte større benzinbiler fra efter 2020 i golfklassen er sjældne og dyre; ældre biler giver ofte dårlig værdi — alternativet med \"billig\" benzinbil er sværere end det lyder.",
+      "cars": [],
+      "themes": [
+        "brugt",
+        "priser"
+      ],
+      "uncertain": false,
+      "episode_title": "328 Vild priskrig giver elbilchok til 325.000 kr",
+      "episode_guid": "f828e145-784b-431e-87bb-b3d4009a6a4e",
+      "pub_date": "2026-01-16T10:35:53+00:00",
+      "section_title": "Lytter: familiebil nr. to efter ID.4",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 4302.0,
+      "section_end_sec": 4530.0,
+      "section_time_range": "[1:11:42 – 1:15:30]",
+      "bullet_time_range": null
+    },
+    {
       "id": 1605,
       "text": "Jan kører Mercedes CLA el og fremhæver stabil vinterrækkevidde omkring 500 km i praksis og problemfri langtur Aarhus–København.",
       "cars": [
@@ -9884,5 +10792,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 428
+  "count": 466
 }
