@@ -87,6 +87,87 @@ body {
   color: var(--muted);
 }
 
+.read-toolbar {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #243044;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+}
+
+.read-toolbar-btn {
+  border: 1px solid #334155;
+  background: #243044;
+  color: var(--text);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.read-toolbar-btn:hover {
+  border-color: var(--accent);
+}
+
+.read-toolbar-hint {
+  margin: 0;
+  flex: 1 1 12rem;
+}
+
+.main-empty {
+  margin: 1.5rem 0;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.episode-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 5.5rem 0 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #243044;
+}
+
+.episode-heading-row:first-child {
+  margin-top: 0.5rem;
+}
+
+.episode-heading-row .section-heading.episode-heading {
+  margin: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  flex: 1 1 14rem;
+}
+
+.read-action {
+  border: 1px solid #334155;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.read-action:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.read-action-section {
+  margin-left: auto;
+  align-self: center;
+}
+
 .count-line {
   margin: 1.25rem 0 0.75rem;
   font-size: 0.9rem;
@@ -106,15 +187,9 @@ body {
   margin-top: 0.5rem;
 }
 
-/* First row per episode: date - title only (no section name); 40% larger than .section-heading */
+/* Episode title inside .episode-heading-row; row handles vertical spacing */
 .section-heading.episode-heading {
   font-size: calc(0.95rem * 1.4);
-  margin: 5.5rem 0 0.5rem;
-}
-
-/* First episode on the page: keep tight top spacing (main is not preceded by another episode h2) */
-.section-heading.episode-heading:first-child {
-  margin-top: 0.5rem;
 }
 
 .topic-section-summary {
@@ -127,6 +202,7 @@ body {
   margin: 0 0 0.35rem;
   padding: 0.15rem 0;
   color: var(--muted);
+  position: relative;
 }
 
 /* Second and later sections per episode (no h2 above) */

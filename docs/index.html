@@ -26,6 +26,12 @@
       <div class="chips" id="theme-chips"></div>
     </div>
     <p class="hint">Selections are saved in your browser (localStorage) between visits.</p>
+    <div class="read-toolbar">
+      <button type="button" class="read-toolbar-btn" id="clear-read-btn" title="Show all episodes and sections you marked read">
+        Clear all read
+      </button>
+      <span class="hint read-toolbar-hint">Episodes or sections you mark read are hidden here only on this device.</span>
+    </div>
   </section>
 
   <section class="summary">
@@ -37,6 +43,8 @@
   <script>
     const STORAGE_CARS   = "bilradio_exclude_cars";
     const STORAGE_THEMES = "bilradio_exclude_themes";
+    const STORAGE_READ_EPISODES = "bilradio_read_episodes";
+    const STORAGE_READ_SECTIONS = "bilradio_read_sections";
 
     function loadSet(key) {
       try {
@@ -50,6 +58,16 @@
 
     let excludeCars   = loadSet(STORAGE_CARS);
     let excludeThemes = loadSet(STORAGE_THEMES);
+    let readEpisodes  = loadSet(STORAGE_READ_EPISODES);
+    let readSections  = loadSet(STORAGE_READ_SECTIONS);
+
+    document.getElementById("clear-read-btn").addEventListener("click", () => {
+      readEpisodes = new Set();
+      readSections = new Set();
+      saveSet(STORAGE_READ_EPISODES, readEpisodes);
+      saveSet(STORAGE_READ_SECTIONS, readSections);
+      loadBullets();
+    });
 
     function chip(label, kind, value, active) {
       const b = document.createElement("button");
@@ -145,12 +163,12 @@
       });
       data = { bullets, count: bullets.length };
       
-      countLine.textContent =
-        data.count + " bullet" + (data.count === 1 ? "" : "s") + " (after filters)";
+
+      let bullets = (data.bullets || []).filter((b) => !readEpisodes.has(b.episode_guid));
 
       const groups = [];
       let cur = null;
-      for (const b of data.bullets) {
+      for (const b of bullets) {
         const k = sectionGroupKey(b);
         if (!cur || cur.key !== k) {
           cur = { key: k, bullets: [] };
@@ -159,22 +177,53 @@
         cur.bullets.push(b);
       }
 
+      const visibleGroups = groups.filter((g) => !readSections.has(sectionGroupKey(g.bullets[0])));
+      const visibleCount = visibleGroups.reduce((n, g) => n + g.bullets.length, 0);
+      countLine.textContent =
+        visibleCount + " bullet" + (visibleCount === 1 ? "" : "s") + " (after filters)";
+
+      if (!visibleGroups.length) {
+        const empty = document.createElement("p");
+        empty.className = "main-empty";
+        empty.textContent =
+          bullets.length === 0
+            ? "Nothing to show. Try clearing read state or changing the car and theme filters above."
+            : "All remaining sections are marked read. Use Clear all read to show them again.";
+        main.appendChild(empty);
+        return;
+      }
+
       let lastEpisodeGuid = null;
-      for (const g of groups) {
+      for (const g of visibleGroups) {
         const first = g.bullets[0];
         const sec = (first.section_title || "").trim();
         const epGuid = first.episode_guid;
+        const sectionKey = sectionGroupKey(first);
         const firstSectionOfEpisode = lastEpisodeGuid !== epGuid;
         lastEpisodeGuid = epGuid;
 
         if (firstSectionOfEpisode) {
+          const row = document.createElement("div");
+          row.className = "episode-heading-row";
           const h = document.createElement("h2");
           h.className = "section-heading episode-heading";
           const d = (first.pub_date || "").slice(0, 10);
           h.textContent = d
             ? d + " - " + first.episode_title
             : first.episode_title;
-          main.appendChild(h);
+          row.appendChild(h);
+          const epBtn = document.createElement("button");
+          epBtn.type = "button";
+          epBtn.className = "read-action";
+          epBtn.textContent = "Mark episode read";
+          epBtn.title = "Hide this entire episode on this page until you clear read state";
+          epBtn.addEventListener("click", () => {
+            readEpisodes.add(epGuid);
+            saveSet(STORAGE_READ_EPISODES, readEpisodes);
+            loadBullets();
+          });
+          row.appendChild(epBtn);
+          main.appendChild(row);
         }
 
         const summary = document.createElement("div");
@@ -205,6 +254,17 @@
           tagWrap.appendChild(s);
         }
         summary.appendChild(tagWrap);
+        const secBtn = document.createElement("button");
+        secBtn.type = "button";
+        secBtn.className = "read-action read-action-section";
+        secBtn.textContent = "Mark section read";
+        secBtn.title = "Hide this section until you clear read state";
+        secBtn.addEventListener("click", () => {
+          readSections.add(sectionKey);
+          saveSet(STORAGE_READ_SECTIONS, readSections);
+          loadBullets();
+        });
+        summary.appendChild(secBtn);
         main.appendChild(summary);
 
         const sub = document.createElement("ul");
