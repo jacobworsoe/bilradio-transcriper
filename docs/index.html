@@ -377,8 +377,8 @@
             readSections
           );
           if (ur) {
-            secCell = String(ur.sections);
-            bulletCell = String(ur.bullets);
+            secCell = ur.sections > 0 ? String(ur.sections) : "–";
+            bulletCell = ur.bullets > 0 ? String(ur.bullets) : "–";
           }
         }
         tr.innerHTML = `
