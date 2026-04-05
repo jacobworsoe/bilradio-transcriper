@@ -151,8 +151,8 @@
         <th>Date</th>
         <th>Duration</th>
         <th>Status</th>
-        <th>Sections</th>
-        <th>Bullets</th>
+        <th title="Topic sections not marked read on this device">Sections</th>
+        <th title="Topic bullets in sections not marked read on this device">Bullets</th>
         <th></th>
       </tr>
     </thead>
@@ -205,6 +205,39 @@
         m.get(g).add(sectionGroupKey(b));
       }
       return m;
+    }
+
+    function bulletsByEpisodeGuid(bullets) {
+      const m = new Map();
+      for (const b of bullets) {
+        const g = b.episode_guid;
+        if (!g) continue;
+        if (!m.has(g)) m.set(g, []);
+        m.get(g).push(b);
+      }
+      return m;
+    }
+
+    function unreadSectionAndBulletCounts(guid, episodeBullets, readEpisodes, readSections) {
+      if (readEpisodes.has(guid)) {
+        return { sections: 0, bullets: 0 };
+      }
+      if (!episodeBullets.length) {
+        return null;
+      }
+      const keys = new Set();
+      for (const b of episodeBullets) {
+        keys.add(sectionGroupKey(b));
+      }
+      let unreadSections = 0;
+      for (const k of keys) {
+        if (!readSections.has(k)) unreadSections++;
+      }
+      let unreadBullets = 0;
+      for (const b of episodeBullets) {
+        if (!readSections.has(sectionGroupKey(b))) unreadBullets++;
+      }
+      return { sections: unreadSections, bullets: unreadBullets };
     }
 
     function readProgressHtml(guid, bulletCount, sectionKeys, readEpisodes, readSections, readTitle) {
@@ -304,6 +337,7 @@
         console.warn("Failed to load bullets for read progress:", e);
       }
       const secByGuid = sectionKeysByEpisodeGuid(bulletsList);
+      const bulletsByGuid = bulletsByEpisodeGuid(bulletsList);
 
       const readEpisodes = loadReadEpisodes();
       const readSections = loadReadSections();
@@ -346,15 +380,29 @@
           titleExtra = `<div class="error-text">${escHtml(ep.error)}</div>`;
         }
         const titleCell = episodeTitleHtml(ep);
-        const secN = ep.section_count != null ? Number(ep.section_count) : 0;
+        const epBullets = bulletsByGuid.get(ep.guid) || [];
+        let secCell = "–";
+        let bulletCell = "–";
+        if (bCount > 0 && epBullets.length > 0) {
+          const ur = unreadSectionAndBulletCounts(
+            ep.guid,
+            epBullets,
+            readEpisodes,
+            readSections
+          );
+          if (ur) {
+            secCell = String(ur.sections);
+            bulletCell = String(ur.bullets);
+          }
+        }
         tr.innerHTML = `
           <td class="dur">${idx + 1}</td>
           <td class="ep-title">${titleCell}${titleExtra}</td>
           <td class="dur">${fmtDate(ep.pub_date)}</td>
           <td class="dur">${fmtDur(ep.duration_sec)}</td>
           <td>${badgeHtml}</td>
-          <td class="dur">${secN > 0 ? secN : "–"}</td>
-          <td class="dur">${ep.bullet_count > 0 ? ep.bullet_count : "–"}</td>
+          <td class="dur">${secCell}</td>
+          <td class="dur">${bulletCell}</td>
           <td>${actions}</td>
         `;
         tbody.appendChild(tr);
