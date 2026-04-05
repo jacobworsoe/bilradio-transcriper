@@ -173,6 +173,65 @@
       );
     }
 
+    async function ensureEpisodeReadIfAllSectionsMarked(episodeGuid) {
+      if (!episodeGuid || readEpisodes.has(episodeGuid) || readSections.size === 0) return;
+      let full;
+      try {
+        const r = await fetch(
+          "/api/bullets?episode_guid=" + encodeURIComponent(episodeGuid)
+        );
+        full = await r.json();
+      } catch {
+        return;
+      }
+      const list = full.bullets || [];
+      if (!list.length) return;
+      const keys = new Set();
+      for (const b of list) keys.add(sectionGroupKey(b));
+      for (const k of keys) {
+        if (!readSections.has(k)) return;
+      }
+      readEpisodes.add(episodeGuid);
+      saveSet(STORAGE_READ_EPISODES, readEpisodes);
+    }
+
+    async function syncReadEpisodesWhenAllSectionsMarked(epScoped) {
+      if (readSections.size === 0) return;
+      if (epScoped) {
+        await ensureEpisodeReadIfAllSectionsMarked(epScoped);
+        return;
+      }
+      let full;
+      try {
+        const r = await fetch("/api/bullets");
+        full = await r.json();
+      } catch {
+        return;
+      }
+      const byEp = new Map();
+      for (const b of full.bullets || []) {
+        const g = b.episode_guid;
+        if (!byEp.has(g)) byEp.set(g, new Set());
+        byEp.get(g).add(sectionGroupKey(b));
+      }
+      let changed = false;
+      for (const [g, keys] of byEp) {
+        if (readEpisodes.has(g) || keys.size === 0) continue;
+        let all = true;
+        for (const k of keys) {
+          if (!readSections.has(k)) {
+            all = false;
+            break;
+          }
+        }
+        if (all) {
+          readEpisodes.add(g);
+          changed = true;
+        }
+      }
+      if (changed) saveSet(STORAGE_READ_EPISODES, readEpisodes);
+    }
+
     function aggregateSectionTags(bullets) {
       const cars = [];
       const themes = [];
@@ -206,6 +265,8 @@
       const q = qsParams();
       const r = await fetch("/api/bullets" + (q ? "?" + q : ""));
       const data = await r.json();
+
+      await syncReadEpisodesWhenAllSectionsMarked(epGuid);
 
       let bullets = (data.bullets || []).filter((b) => !readEpisodes.has(b.episode_guid));
 
