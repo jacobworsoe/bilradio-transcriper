@@ -82,9 +82,22 @@ def _apply_section_time_ranges(rows: list[dict]) -> None:
 
 
 @app.get("/", response_class=HTMLResponse)
-def index(request: Request) -> HTMLResponse:
+def home_episodes(request: Request) -> HTMLResponse:
     return templates.TemplateResponse(
-        request, "index.html", {"static_site": False}
+        request, "episodes.html", {"static_site": False}
+    )
+
+
+@app.get("/topics", response_class=HTMLResponse)
+@app.get("/topics/", response_class=HTMLResponse)
+def topics_page(
+    request: Request,
+    guid: str | None = Query(default=None, alias="guid"),
+) -> HTMLResponse:
+    return templates.TemplateResponse(
+        request,
+        "topics.html",
+        {"static_site": False, "filter_episode_guid": guid.strip() if guid else None},
     )
 
 
@@ -117,12 +130,13 @@ def api_facets() -> dict:
 def api_bullets(
     exclude_car: list[str] = Query(default=[]),
     exclude_theme: list[str] = Query(default=[]),
+    episode_guid: str | None = Query(default=None),
 ) -> dict:
     ex_c = {_norm(x) for x in exclude_car if x and x.strip()}
     ex_t = {_norm(x) for x in exclude_theme if x and x.strip()}
+    eg = episode_guid.strip() if episode_guid and episode_guid.strip() else None
     with connect(DB_PATH) as conn:
-        rows = conn.execute(
-            """
+        sql = """
             SELECT b.id, b.text, b.cars, b.themes, b.uncertain,
                    b.start_sec AS start_sec,
                    b.end_sec AS end_sec,
@@ -135,11 +149,17 @@ def api_bullets(
             JOIN episodes e ON e.guid = b.episode_guid
             LEFT JOIN topic_sections s ON s.id = b.section_id
             WHERE e.status = 'extracted'
+            """
+        params: list[str] = []
+        if eg:
+            sql += " AND e.guid = ?"
+            params.append(eg)
+        sql += """
             ORDER BY e.pub_date DESC,
                      COALESCE(s.sort_order, 0),
                      b.id ASC
             """
-        ).fetchall()
+        rows = conn.execute(sql, params if params else ()).fetchall()
     out: list[dict] = []
     for r in rows:
         cars = parse_json_list(r["cars"])
@@ -177,14 +197,12 @@ def api_bullets(
 
 @app.get("/queue")
 def queue_redirect() -> RedirectResponse:
-    return RedirectResponse(url="/episodes", status_code=301)
+    return RedirectResponse(url="/", status_code=301)
 
 
-@app.get("/episodes", response_class=HTMLResponse)
-def episodes_page(request: Request) -> HTMLResponse:
-    return templates.TemplateResponse(
-        request, "episodes.html", {"static_site": False}
-    )
+@app.get("/episodes")
+def episodes_legacy_redirect() -> RedirectResponse:
+    return RedirectResponse(url="/", status_code=301)
 
 
 def _effective_display_status(

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bilradio — Episodes status</title>
+  <title>Bilradio — Episodes</title>
   <link rel="stylesheet" href="/static/style.css" />
   <style>
     .nav { display:flex; gap:1.25rem; margin-bottom:1.5rem; font-size:.9rem; }
@@ -58,9 +58,16 @@
     .s-summarized    { background:rgba(107,203,119,.18); color:#7dd87a; }
     .s-error         { background:rgba(239,83,80,.15);   color:#ef5350; }
     .s-skipped_short { background:rgba(139,154,171,.1);  color:#636e7a; }
+    .s-read {
+      display:inline-block; font-size:.65rem; padding:.15rem .4rem;
+      border-radius:4px; font-weight:600; margin-left:.35rem;
+      background:rgba(139,154,171,.2); color:#aeb9c6; vertical-align:middle;
+    }
 
     .dur   { color:var(--muted); }
     .ep-title { max-width:20rem; }
+    .ep-title a { color:var(--text); text-decoration:none; }
+    .ep-title a:hover { color:var(--accent); text-decoration:underline; }
     .error-text {
       color:#ef5350; font-size:.75rem; margin-top:.2rem;
       max-height:10rem; overflow-y:auto; white-space:pre-wrap; word-break:break-word;
@@ -96,8 +103,8 @@
   <header class="header">
     <h1>Bilradio</h1>
     <nav class="nav">
-      <a href="/">Topics</a>
-      <a href="/episodes" class="active">Episodes status</a>
+      <a href="/" class="active">Episodes</a>
+      <a href="{% if static_site %}/topics/{% else %}/topics{% endif %}">Topics</a>
     </nav>
   </header>
 
@@ -143,6 +150,17 @@
   </table>
 
   <script>
+    const STORAGE_READ_EPISODES = "bilradio_read_episodes";
+
+    function loadReadEpisodes() {
+      try {
+        const raw = localStorage.getItem(STORAGE_READ_EPISODES);
+        return raw ? new Set(JSON.parse(raw)) : new Set();
+      } catch {
+        return new Set();
+      }
+    }
+
     const STATUS_EN = {
       pending:       "Pending",
       downloaded:    "Downloaded",
@@ -191,6 +209,15 @@
         .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
     }
 
+    function topicsUrlForGuid(guid) {
+      const q = encodeURIComponent(guid);
+      {% if static_site %}
+      return "/topics/?guid=" + q;
+      {% else %}
+      return "/topics?guid=" + q;
+      {% endif %}
+    }
+
     async function load() {
       let data;
       try {
@@ -200,6 +227,8 @@
         console.error("Failed to load episodes:", e);
         return;
       }
+
+      const readEpisodes = loadReadEpisodes();
 
       const bar = document.getElementById("summary-bar");
       bar.innerHTML = Object.entries(data.counts || {})
@@ -217,6 +246,9 @@
         }
         const disp = ep.display_status || ep.status;
         let badgeHtml = statusBadge(disp);
+        if (readEpisodes.has(ep.guid)) {
+          badgeHtml += ` <span class="s-read" title="Marked read on Topics (this device)">Read</span>`;
+        }
         if (ep.status !== disp) {
           const sqliteLabel =
             ep.status === "extracted" ? "Extracted (bullets loaded)" : (STATUS_EN[ep.status] || ep.status);
@@ -228,9 +260,10 @@
         } else if (ep.error && disp === "error") {
           titleExtra = `<div class="error-text">${escHtml(ep.error)}</div>`;
         }
+        const titleLink = `<a href="${topicsUrlForGuid(ep.guid)}">${escHtml(ep.title || "")}</a>`;
         tr.innerHTML = `
           <td class="dur">${idx + 1}</td>
-          <td class="ep-title">${escHtml(ep.title || "")}${titleExtra}</td>
+          <td class="ep-title">${titleLink}${titleExtra}</td>
           <td class="dur">${fmtDate(ep.pub_date)}</td>
           <td class="dur">${fmtDur(ep.duration_sec)}</td>
           <td>${yn(ep.downloaded)}</td>

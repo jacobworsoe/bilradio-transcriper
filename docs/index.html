@@ -3,301 +3,342 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bilradio — Topics</title>
+  <title>Bilradio — Episodes</title>
   <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    .nav { display:flex; gap:1.25rem; margin-bottom:1.5rem; font-size:.9rem; }
+    .nav a { color:var(--accent); text-decoration:none; }
+    .nav a:hover { text-decoration:underline; }
+    .nav a.active { color:var(--text); font-weight:600; pointer-events:none; }
+
+    .ctrl-bar {
+      display:flex; flex-wrap:wrap; align-items:center; gap:.75rem;
+      margin-bottom:1.25rem; padding:.75rem 1rem;
+      background:var(--surface); border-radius:8px;
+    }
+    .btn {
+      padding:.35rem .85rem; border-radius:5px; font-size:.82rem;
+      cursor:pointer; border:1px solid transparent; white-space:nowrap;
+    }
+    .btn:disabled { opacity:.4; cursor:default; }
+    .btn-sync {
+      background:rgba(61,156,245,.1); border-color:rgba(61,156,245,.3);
+      color:#3d9cf5;
+    }
+    .btn-sync:hover:not(:disabled) { background:rgba(61,156,245,.2); }
+    .btn-ingest {
+      background:rgba(107,203,119,.12); border-color:rgba(107,203,119,.35);
+      color:#6bcb77;
+    }
+    .btn-ingest:hover:not(:disabled) { background:rgba(107,203,119,.22); }
+
+    .summary-bar { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.5rem; }
+    .stat-chip { font-size:.78rem; padding:.3rem .65rem; border-radius:6px; background:var(--surface); }
+
+    table { width:100%; border-collapse:collapse; font-size:.83rem; }
+    th {
+      text-align:left; padding:.5rem .6rem; color:var(--muted);
+      font-size:.72rem; text-transform:uppercase; letter-spacing:.05em;
+      border-bottom:1px solid #243044;
+    }
+    td { padding:.55rem .6rem; border-bottom:1px solid #1a222c; vertical-align:middle; }
+    tr:hover td { background:rgba(255,255,255,.025); }
+
+    .yes { color:#6bcb77; font-weight:600; }
+    .no { color:#636e7a; }
+    .status-badge {
+      display:inline-block; font-size:.7rem; padding:.2rem .45rem;
+      border-radius:4px; font-weight:600; white-space:nowrap;
+    }
+    .s-pending       { background:rgba(139,154,171,.15); color:#8b9aab; }
+    .s-downloaded    { background:rgba(61,156,245,.15);  color:#3d9cf5; }
+    .s-transcribing  { background:rgba(255,193,7,.15);   color:#ffc107; }
+    .s-transcribed   { background:rgba(199,156,255,.15); color:#c79cff; }
+    .s-extracted     { background:rgba(107,203,119,.15); color:#6bcb77; }
+    .s-summarized    { background:rgba(107,203,119,.18); color:#7dd87a; }
+    .s-error         { background:rgba(239,83,80,.15);   color:#ef5350; }
+    .s-skipped_short { background:rgba(139,154,171,.1);  color:#636e7a; }
+    .s-read {
+      display:inline-block; font-size:.65rem; padding:.15rem .4rem;
+      border-radius:4px; font-weight:600; margin-left:.35rem;
+      background:rgba(139,154,171,.2); color:#aeb9c6; vertical-align:middle;
+    }
+
+    .dur   { color:var(--muted); }
+    .ep-title { max-width:20rem; }
+    .ep-title a { color:var(--text); text-decoration:none; }
+    .ep-title a:hover { color:var(--accent); text-decoration:underline; }
+    .error-text {
+      color:#ef5350; font-size:.75rem; margin-top:.2rem;
+      max-height:10rem; overflow-y:auto; white-space:pre-wrap; word-break:break-word;
+    }
+    .btn-clear-error {
+      background:rgba(139,154,171,.12); border-color:rgba(139,154,171,.35);
+      color:#aeb9c6; font-size:.72rem; padding:.2rem .5rem;
+      cursor:pointer; border-radius:4px;
+    }
+    .btn-clear-error:hover:not(:disabled) { background:rgba(139,154,171,.2); }
+    .ep-actions { display:flex; flex-wrap:wrap; gap:.35rem; justify-content:flex-end; }
+
+    .auto-refresh { font-size:.72rem; color:var(--muted); text-align:right; margin-bottom:.5rem; }
+    .auto-refresh span { color:var(--text); font-variant-numeric:tabular-nums; }
+
+    .tip {
+      font-size:.72rem; color:var(--muted); line-height:1.45;
+      margin:0 0 1rem 0; max-width:56rem;
+    }
+    .tip code { font-size:.68rem; color:var(--text); }
+
+    .status-note {
+      color: #e6a23c;
+      font-size: .75rem;
+      margin-top: .25rem;
+      line-height: 1.35;
+      max-width: 28rem;
+    }
+    .db-hint { font-size: .65rem; color: var(--muted); font-weight: 400; margin-left: .25rem; }
+  </style>
 </head>
 <body>
   <header class="header">
     <h1>Bilradio</h1>
-    <nav style="display:flex;gap:1.25rem;margin-bottom:.75rem;font-size:.9rem;">
-      <a href="/" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
-      <a href="/episodes" style="color:var(--accent);text-decoration:none;">Episodes status</a>
+    <nav class="nav">
+      <a href="/" class="active">Episodes</a>
+      <a href="/topics/">Topics</a>
     </nav>
-    <p class="lede">Bullet-point summaries from all episodes. Select cars or themes to <strong>exclude</strong> from the overview.</p>
   </header>
 
-  <section class="filters" id="filters">
-    <div class="filter-block">
-      <h2>Cars (exclude)</h2>
-      <div class="chips" id="car-chips"></div>
-    </div>
-    <div class="filter-block">
-      <h2>Themes (exclude)</h2>
-      <div class="chips" id="theme-chips"></div>
-    </div>
-    <p class="hint">Selections are saved in your browser (localStorage) between visits.</p>
-    <div class="read-toolbar">
-      <button type="button" class="read-toolbar-btn" id="clear-read-btn" title="Show all episodes and sections you marked read">
-        Clear all read
-      </button>
-      <span class="hint read-toolbar-hint">Episodes or sections you mark read are hidden here only on this device.</span>
-    </div>
-  </section>
+  
+  <p class="tip">
+    This is a <strong>read-only snapshot</strong> on GitHub Pages. RSS sync, ingest, and error clearing run when you use the local server (<code>bilradio serve</code>).
+  </p>
+  
 
-  <section class="summary">
-    <p id="count-line" class="count-line">Loading…</p>
-  </section>
+  <div class="summary-bar" id="summary-bar"></div>
+  
 
-  <main id="main-bullets"></main>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Duration</th>
+        <th>Downloaded</th>
+        <th>Whisper (disk)</th>
+        <th>Improved</th>
+        <th>Status</th>
+        <th>Bullets</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="ep-tbody"></tbody>
+  </table>
 
   <script>
-    const STORAGE_CARS   = "bilradio_exclude_cars";
-    const STORAGE_THEMES = "bilradio_exclude_themes";
     const STORAGE_READ_EPISODES = "bilradio_read_episodes";
-    const STORAGE_READ_SECTIONS = "bilradio_read_sections";
 
-    function loadSet(key) {
+    function loadReadEpisodes() {
       try {
-        const raw = localStorage.getItem(key);
+        const raw = localStorage.getItem(STORAGE_READ_EPISODES);
         return raw ? new Set(JSON.parse(raw)) : new Set();
-      } catch { return new Set(); }
-    }
-    function saveSet(key, set) {
-      localStorage.setItem(key, JSON.stringify([...set]));
-    }
-
-    let excludeCars   = loadSet(STORAGE_CARS);
-    let excludeThemes = loadSet(STORAGE_THEMES);
-    let readEpisodes  = loadSet(STORAGE_READ_EPISODES);
-    let readSections  = loadSet(STORAGE_READ_SECTIONS);
-
-    document.getElementById("clear-read-btn").addEventListener("click", () => {
-      readEpisodes = new Set();
-      readSections = new Set();
-      saveSet(STORAGE_READ_EPISODES, readEpisodes);
-      saveSet(STORAGE_READ_SECTIONS, readSections);
-      loadBullets();
-    });
-
-    function chip(label, kind, value, active) {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "chip" + (active ? " chip-off" : "");
-      b.textContent = label;
-      b.title = active ? "Click to show bullets with this label again" : "Click to hide bullets with this label";
-      b.addEventListener("click", () => {
-        const set = kind === "car" ? excludeCars : excludeThemes;
-        const sk  = kind === "car" ? STORAGE_CARS : STORAGE_THEMES;
-        if (set.has(value)) set.delete(value); else set.add(value);
-        saveSet(sk, set);
-        renderFacets(window.__lastFacets || { cars: [], themes: [] });
-        loadBullets();
-      });
-      return b;
-    }
-
-    function renderFacets(data) {
-      window.__lastFacets = data;
-      const carEl   = document.getElementById("car-chips");
-      const themeEl = document.getElementById("theme-chips");
-      carEl.innerHTML = "";
-      themeEl.innerHTML = "";
-      for (const c of data.cars)   carEl.appendChild(chip(c,   "car",   c, excludeCars.has(c)));
-      for (const t of data.themes) themeEl.appendChild(chip(t, "theme", t, excludeThemes.has(t)));
-      if (!data.cars.length)   carEl.textContent   = "No car tags yet — run extract on episodes.";
-      if (!data.themes.length) themeEl.textContent = "No theme tags yet.";
-    }
-
-    async function loadFacets() {
-      const r = await fetch("/api/facets.json");
-      renderFacets(await r.json());
-    }
-
-    function qsParams() {
-      const p = new URLSearchParams();
-      for (const c of excludeCars)   p.append("exclude_car",   c);
-      for (const t of excludeThemes) p.append("exclude_theme", t);
-      return p.toString();
-    }
-
-    function sectionGroupKey(b) {
-      return (
-        b.episode_guid +
-        "\0" +
-        String(b.section_order ?? 0) +
-        "\0" +
-        (b.section_title || "").trim()
-      );
-    }
-
-    function aggregateSectionTags(bullets) {
-      const cars = [];
-      const themes = [];
-      const seenC = new Set();
-      const seenT = new Set();
-      for (const b of bullets) {
-        for (const c of b.cars || []) {
-          const x = String(c).trim();
-          if (x && !seenC.has(x.toLowerCase())) {
-            seenC.add(x.toLowerCase());
-            cars.push(x);
-          }
-        }
-        for (const t of b.themes || []) {
-          const x = String(t).trim();
-          if (x && !seenT.has(x.toLowerCase())) {
-            seenT.add(x.toLowerCase());
-            themes.push(x);
-          }
-        }
+      } catch {
+        return new Set();
       }
-      return { cars, themes };
     }
 
-    async function loadBullets() {
-      const main = document.getElementById("main-bullets");
-      const countLine = document.getElementById("count-line");
-      main.innerHTML = "";
-      countLine.textContent = "Loading…";
+    const STATUS_EN = {
+      pending:       "Pending",
+      downloaded:    "Downloaded",
+      transcribing:  "Transcribing",
+      transcribed:   "Transcribed",
+      summarized:    "Summarized",
+      extracted:     "Extracted",
+      error:         "Error",
+      skipped_short: "Skipped (short)",
+    };
+
+    function fmtDur(sec) {
+      if (sec == null) return "–";
+      const h = Math.floor(sec / 3600);
+      const m = Math.floor((sec % 3600) / 60);
+      const s = sec % 60;
+      if (h > 0) return `${h}h ${m}m`;
+      if (m > 0) return `${m}m ${s}s`;
+      return `${s}s`;
+    }
+
+    function fmtDate(iso) {
+      return iso ? iso.slice(0, 10) : "–";
+    }
+
+    function yn(v) {
+      return v ? '<span class="yes">Yes</span>' : '<span class="no">No</span>';
+    }
+
+    function whisperDisk(ep) {
+      const bits = [];
+      if (ep.whisper_json) bits.push("JSON");
+      if (ep.whisper_txt) bits.push("TXT");
+      if (!bits.length) return '<span class="no">—</span>';
+      return bits.map((b) => `<span class="yes">${b}</span>`).join(" ");
+    }
+
+    function statusBadge(s) {
+      const label = STATUS_EN[s] || s;
+      return `<span class="status-badge s-${s}">${escHtml(label)}</span>`;
+    }
+
+    function escHtml(s) {
+      return String(s)
+        .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    }
+
+    function topicsUrlForGuid(guid) {
+      const q = encodeURIComponent(guid);
+      
+      return "/topics/?guid=" + q;
+      
+    }
+
+    async function load() {
       let data;
-      
-      const rb = await fetch("/api/bullets.json");
-      const raw = await rb.json();
-      function normF(s) { return String(s).trim().toLowerCase(); }
-      const exC = new Set([...excludeCars].map(normF));
-      const exT = new Set([...excludeThemes].map(normF));
-      const facetBullets = (raw.bullets || []).filter((b) => {
-        if (exC.size && (b.cars || []).some((c) => exC.has(normF(c)))) return false;
-        if (exT.size && (b.themes || []).some((t) => exT.has(normF(t)))) return false;
-        return true;
-      });
-      data = { bullets: facetBullets, count: facetBullets.length };
-      
-
-      let bullets = (data.bullets || []).filter((b) => !readEpisodes.has(b.episode_guid));
-
-      const groups = [];
-      let cur = null;
-      for (const b of bullets) {
-        const k = sectionGroupKey(b);
-        if (!cur || cur.key !== k) {
-          cur = { key: k, bullets: [] };
-          groups.push(cur);
-        }
-        cur.bullets.push(b);
-      }
-
-      const visibleGroups = groups.filter((g) => !readSections.has(sectionGroupKey(g.bullets[0])));
-      const visibleCount = visibleGroups.reduce((n, g) => n + g.bullets.length, 0);
-      countLine.textContent =
-        visibleCount + " bullet" + (visibleCount === 1 ? "" : "s") + " (after filters)";
-
-      if (!visibleGroups.length) {
-        const empty = document.createElement("p");
-        empty.className = "main-empty";
-        empty.textContent =
-          bullets.length === 0
-            ? "Nothing to show. Try clearing read state or changing the car and theme filters above."
-            : "All remaining sections are marked read. Use Clear all read to show them again.";
-        main.appendChild(empty);
+      try {
+        const r = await fetch("/api/episodes.json");
+        data = await r.json();
+      } catch (e) {
+        console.error("Failed to load episodes:", e);
         return;
       }
 
-      let lastEpisodeGuid = null;
-      for (const g of visibleGroups) {
-        const first = g.bullets[0];
-        const sec = (first.section_title || "").trim();
-        const epGuid = first.episode_guid;
-        const sectionKey = sectionGroupKey(first);
-        const firstSectionOfEpisode = lastEpisodeGuid !== epGuid;
-        lastEpisodeGuid = epGuid;
+      const readEpisodes = loadReadEpisodes();
 
-        if (firstSectionOfEpisode) {
-          const row = document.createElement("div");
-          row.className = "episode-heading-row";
-          const h = document.createElement("h2");
-          h.className = "section-heading episode-heading";
-          const d = (first.pub_date || "").slice(0, 10);
-          h.textContent = d
-            ? d + " - " + first.episode_title
-            : first.episode_title;
-          row.appendChild(h);
-          const epBtn = document.createElement("button");
-          epBtn.type = "button";
-          epBtn.className = "read-action";
-          epBtn.textContent = "Mark episode read";
-          epBtn.title = "Hide this entire episode on this page until you clear read state";
-          epBtn.addEventListener("click", () => {
-            readEpisodes.add(epGuid);
-            saveSet(STORAGE_READ_EPISODES, readEpisodes);
-            loadBullets();
-          });
-          row.appendChild(epBtn);
-          main.appendChild(row);
-        }
+      const bar = document.getElementById("summary-bar");
+      bar.innerHTML = Object.entries(data.counts || {})
+        .map(([s, n]) => `<span class="stat-chip">${STATUS_EN[s] || s}: <strong>${n}</strong></span>`)
+        .join("");
 
-        const summary = document.createElement("div");
-        summary.className =
-          "topic-section-summary" +
-          (firstSectionOfEpisode ? "" : " topic-section-summary-follow");
-        const rangeEl = document.createElement("span");
-        rangeEl.className = "topic-time-range";
-        rangeEl.textContent = first.section_time_range || "[— – —]";
-        summary.appendChild(rangeEl);
-        const secTitle = document.createElement("span");
-        secTitle.className = "topic-section-title-inline";
-        secTitle.textContent = (sec || "Episode").trim();
-        summary.appendChild(secTitle);
-        const agg = aggregateSectionTags(g.bullets);
-        const tagWrap = document.createElement("span");
-        tagWrap.className = "topic-section-tags";
-        for (const c of agg.cars) {
-          const s = document.createElement("span");
-          s.className = "tag car tag-compact";
-          s.textContent = c;
-          tagWrap.appendChild(s);
+      const tbody = document.getElementById("ep-tbody");
+      tbody.innerHTML = "";
+      (data.episodes || []).forEach((ep, idx) => {
+        const tr = document.createElement("tr");
+        const showClear = ep.status === "error";
+        let actions = "";
+        if (showClear) {
+          actions = `<div class="ep-actions"><button type="button" class="btn-clear-error" data-guid="${escHtml(ep.guid)}" onclick="clearEpisodeError(this)">Clear error</button></div>`;
         }
-        for (const t of agg.themes) {
-          const s = document.createElement("span");
-          s.className = "tag theme tag-compact";
-          s.textContent = t;
-          tagWrap.appendChild(s);
+        const disp = ep.display_status || ep.status;
+        let badgeHtml = statusBadge(disp);
+        if (readEpisodes.has(ep.guid)) {
+          badgeHtml += ` <span class="s-read" title="Marked read on Topics (this device)">Read</span>`;
         }
-        summary.appendChild(tagWrap);
-        const secBtn = document.createElement("button");
-        secBtn.type = "button";
-        secBtn.className = "read-action read-action-section";
-        secBtn.textContent = "Mark section read";
-        secBtn.title = "Hide this section until you clear read state";
-        secBtn.addEventListener("click", () => {
-          readSections.add(sectionKey);
-          saveSet(STORAGE_READ_SECTIONS, readSections);
-          loadBullets();
-        });
-        summary.appendChild(secBtn);
-        main.appendChild(summary);
-
-        const sub = document.createElement("ul");
-        sub.className = "topic-bullet-sublist";
-        for (const b of g.bullets) {
-          const li = document.createElement("li");
-          li.className = "topic-bullet-sub" + (b.uncertain ? " uncertain" : "");
-          const row = document.createElement("div");
-          row.className = "topic-bullet-row";
-          if (b.bullet_time_range) {
-            const br = document.createElement("span");
-            br.className = "topic-time-range";
-            br.textContent = b.bullet_time_range;
-            row.appendChild(br);
-          }
-          const tx = document.createElement("span");
-          tx.className = "topic-bullet-text";
-          tx.textContent = b.text;
-          row.appendChild(tx);
-          if (b.uncertain) {
-            const u = document.createElement("span");
-            u.className = "uncertain-badge uncertain-inline";
-            u.textContent = "Uncertain";
-            row.appendChild(u);
-          }
-          li.appendChild(row);
-          sub.appendChild(li);
+        if (ep.status !== disp) {
+          const sqliteLabel =
+            ep.status === "extracted" ? "Extracted (bullets loaded)" : (STATUS_EN[ep.status] || ep.status);
+          badgeHtml += `<span class="db-hint">(SQLite: ${escHtml(sqliteLabel)})</span>`;
         }
-        main.appendChild(sub);
-      }
+        let titleExtra = "";
+        if (ep.status_note) {
+          titleExtra = `<div class="status-note">${escHtml(ep.status_note)}</div>`;
+        } else if (ep.error && disp === "error") {
+          titleExtra = `<div class="error-text">${escHtml(ep.error)}</div>`;
+        }
+        const titleLink = `<a href="${topicsUrlForGuid(ep.guid)}">${escHtml(ep.title || "")}</a>`;
+        tr.innerHTML = `
+          <td class="dur">${idx + 1}</td>
+          <td class="ep-title">${titleLink}${titleExtra}</td>
+          <td class="dur">${fmtDate(ep.pub_date)}</td>
+          <td class="dur">${fmtDur(ep.duration_sec)}</td>
+          <td>${yn(ep.downloaded)}</td>
+          <td>${whisperDisk(ep)}</td>
+          <td>${yn(ep.improved_transcript)}</td>
+          <td>${badgeHtml}</td>
+          <td class="dur">${ep.bullet_count > 0 ? ep.bullet_count : "–"}</td>
+          <td>${actions}</td>
+        `;
+        tbody.appendChild(tr);
+      });
     }
 
-    loadFacets().then(loadBullets);
+    async function clearEpisodeError(btn) {
+      
+      alert("Read-only snapshot: use the local app to clear errors.");
+      return;
+      
+      const guid = btn.getAttribute("data-guid");
+      if (!guid) return;
+      if (!confirm("Clear this error and mark the episode as Downloaded again?")) return;
+      btn.disabled = true;
+      const prev = btn.textContent;
+      btn.textContent = "Clearing…";
+      try {
+        const r = await fetch(`/api/episodes/clear-error/${encodeURIComponent(guid)}`, { method: "POST" });
+        const body = await r.json();
+        if (!r.ok) {
+          alert("Error: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.textContent = prev;
+      btn.disabled = false;
+      await load();
+      resetCountdown();
+    }
+
+    async function syncFeed() {
+      
+      alert("Read-only snapshot: use the local app to sync RSS.");
+      return;
+      
+      const btn = document.getElementById("btn-sync");
+      btn.disabled = true;
+      btn.textContent = "Syncing…";
+      try {
+        const r = await fetch("/api/episodes/sync", { method: "POST" });
+        const body = await r.json();
+        if (r.ok) {
+          await load();
+          resetCountdown();
+        } else {
+          alert("Sync failed: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.disabled = false;
+      btn.textContent = "Sync RSS";
+    }
+
+    async function ingestTranscripts() {
+      
+      alert("Read-only snapshot: use the local app to ingest transcripts.");
+      return;
+      
+      const btn = document.getElementById("btn-ingest");
+      btn.disabled = true;
+      btn.textContent = "Ingesting…";
+      try {
+        const r = await fetch("/api/episodes/ingest-transcripts", { method: "POST" });
+        const body = await r.json();
+        if (r.ok) {
+          alert(`Ingest done: ${body.ingested} updated, ${body.skipped} skipped.`);
+          await load();
+          resetCountdown();
+        } else {
+          alert("Ingest failed: " + (body.detail || r.statusText));
+        }
+      } catch (e) {
+        alert("Network error: " + e);
+      }
+      btn.disabled = false;
+      btn.textContent = "Ingest transcripts";
+    }
+
+    
+
+    load();
   </script>
 </body>
 </html>

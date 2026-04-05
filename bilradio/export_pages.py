@@ -61,10 +61,29 @@ def export_github_pages(
     )
     ctx = {"static_site": True}
     (dest / "index.html").write_text(
-        env.get_template("index.html").render(**ctx), encoding="utf-8"
+        env.get_template("episodes.html").render(**ctx), encoding="utf-8"
+    )
+    topics_dir = dest / "topics"
+    topics_dir.mkdir(parents=True, exist_ok=True)
+    (topics_dir / "index.html").write_text(
+        env.get_template("topics.html").render(**ctx, filter_episode_guid=None),
+        encoding="utf-8",
     )
     (dest / "episodes.html").write_text(
-        env.get_template("episodes.html").render(**ctx), encoding="utf-8"
+        """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content="0;url=/" />
+  <link rel="canonical" href="/" />
+  <title>Moved — Bilradio</title>
+</head>
+<body>
+  <p>This page moved to the <a href="/">home page</a>.</p>
+</body>
+</html>
+""",
+        encoding="utf-8",
     )
 
     for name in ("style.css",):
