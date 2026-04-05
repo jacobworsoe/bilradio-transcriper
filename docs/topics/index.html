@@ -14,11 +14,6 @@
       <a href="/topics/" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
     </nav>
     <p class="lede" id="topics-lede">Bullet-point summaries from episodes you have not marked read on this device.</p>
-    <p class="lede" id="topics-back" style="display:none;margin-top:.5rem;font-size:.88rem;">
-      <a href="/topics/" style="color:var(--accent);">All topics</a>
-      <span style="color:var(--muted);margin:0 .35rem;">·</span>
-      <a href="/" style="color:var(--accent);">Episodes</a>
-    </p>
   </header>
 
   <section class="filters" id="filters">
@@ -350,18 +345,9 @@
     async function init() {
       const epGuid = effectiveEpisodeGuid();
       const lede = document.getElementById("topics-lede");
-      const back = document.getElementById("topics-back");
       if (epGuid) {
         lede.textContent = "Bullet-point summaries for this episode only.";
-        back.style.display = "block";
         document.title = "Bilradio — Topics (episode)";
-      } else {
-        back.style.display = "none";
-      }
-
-      if (epGuid) {
-        await loadBullets();
-        return;
       }
 
       await loadBullets();
