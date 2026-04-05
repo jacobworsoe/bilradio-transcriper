@@ -63,6 +63,11 @@
       border-radius:4px; font-weight:600; margin-left:.35rem;
       background:rgba(139,154,171,.2); color:#aeb9c6; vertical-align:middle;
     }
+    .episodes-mark-read {
+      margin-left:.35rem;
+      vertical-align:middle;
+      white-space:nowrap;
+    }
 
     .dur   { color:var(--muted); }
     .ep-title { max-width:20rem; }
@@ -145,6 +150,19 @@
       } catch {
         return new Set();
       }
+    }
+
+    function saveReadEpisodes(set) {
+      localStorage.setItem(STORAGE_READ_EPISODES, JSON.stringify([...set]));
+    }
+
+    function markEpisodeReadFromBtn(btn) {
+      const guid = btn.getAttribute("data-guid");
+      if (!guid) return;
+      const read = loadReadEpisodes();
+      read.add(guid);
+      saveReadEpisodes(read);
+      load();
     }
 
     const STATUS_EN = {
@@ -232,6 +250,8 @@
         let badgeHtml = statusBadge(disp);
         if (readEpisodes.has(ep.guid)) {
           badgeHtml += ` <span class="s-read" title="Marked read on Topics (this device)">Read</span>`;
+        } else {
+          badgeHtml += ` <button type="button" class="read-action episodes-mark-read" data-guid="${escHtml(ep.guid)}" onclick="markEpisodeReadFromBtn(this)" title="Same as Mark episode read on Topics; stored on this device only">Mark read</button>`;
         }
         if (ep.status !== disp) {
           const sqliteLabel =
