@@ -200,6 +200,7 @@
     async function loadBullets() {
       const main = document.getElementById("main-bullets");
       const countLine = document.getElementById("count-line");
+      const epGuid = effectiveEpisodeGuid();
       main.innerHTML = "";
       countLine.textContent = "Loading…";
       const q = qsParams();
