@@ -97,7 +97,7 @@ def topics_page(
     return templates.TemplateResponse(
         request,
         "topics.html",
-        {"static_site": False, "filter_episode_guid": guid.strip() if guid else None},
+        {"filter_episode_guid": guid.strip() if guid else None},
     )
 
 

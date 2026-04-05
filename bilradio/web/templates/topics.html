@@ -11,11 +11,11 @@
     <h1>Bilradio</h1>
     <nav style="display:flex;gap:1.25rem;margin-bottom:.75rem;font-size:.9rem;flex-wrap:wrap;align-items:center;">
       <a href="/" style="color:var(--accent);text-decoration:none;">Episodes</a>
-      <a href="{% if static_site %}/topics/{% else %}/topics{% endif %}" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
+      <a href="/topics" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
     </nav>
     <p class="lede" id="topics-lede">Bullet-point summaries from all episodes. Select cars or themes to <strong>exclude</strong> from the overview.</p>
     <p class="lede" id="topics-back" style="display:none;margin-top:.5rem;font-size:.88rem;">
-      <a href="{% if static_site %}/topics/{% else %}/topics{% endif %}" style="color:var(--accent);">All topics</a>
+      <a href="/topics" style="color:var(--accent);">All topics</a>
       <span style="color:var(--muted);margin:0 .35rem;">·</span>
       <a href="/" style="color:var(--accent);">Episodes</a>
     </p>
@@ -52,7 +52,6 @@
     const STORAGE_READ_SECTIONS = "bilradio_read_sections";
 
     const SERVER_EPISODE_GUID = {{ filter_episode_guid | tojson }};
-    const IS_STATIC = {{ static_site | tojson }};
 
     function effectiveEpisodeGuid() {
       if (SERVER_EPISODE_GUID) return SERVER_EPISODE_GUID;
@@ -143,7 +142,7 @@
     }
 
     function facetsUrl() {
-      return IS_STATIC ? "/api/facets.json" : "/api/facets";
+      return "/api/facets";
     }
 
     function qsParams() {
@@ -151,7 +150,7 @@
       for (const c of excludeCars)   p.append("exclude_car",   c);
       for (const t of excludeThemes) p.append("exclude_theme", t);
       const eg = effectiveEpisodeGuid();
-      if (eg && !IS_STATIC) p.append("episode_guid", eg);
+      if (eg) p.append("episode_guid", eg);
       return p.toString();
     }
 
@@ -203,27 +202,9 @@
       const countLine = document.getElementById("count-line");
       main.innerHTML = "";
       countLine.textContent = "Loading…";
-      const epGuid = effectiveEpisodeGuid();
-      let data;
-      {% if static_site %}
-      const rb = await fetch("/api/bullets.json");
-      const raw = await rb.json();
-      let pool = raw.bullets || [];
-      if (epGuid) pool = pool.filter((b) => b.episode_guid === epGuid);
-      function normF(s) { return String(s).trim().toLowerCase(); }
-      const exC = new Set([...excludeCars].map(normF));
-      const exT = new Set([...excludeThemes].map(normF));
-      const facetBullets = pool.filter((b) => {
-        if (exC.size && (b.cars || []).some((c) => exC.has(normF(c)))) return false;
-        if (exT.size && (b.themes || []).some((t) => exT.has(normF(t)))) return false;
-        return true;
-      });
-      data = { bullets: facetBullets, count: facetBullets.length };
-      {% else %}
       const q = qsParams();
       const r = await fetch("/api/bullets" + (q ? "?" + q : ""));
-      data = await r.json();
-      {% endif %}
+      const data = await r.json();
 
       let bullets = (data.bullets || []).filter((b) => !readEpisodes.has(b.episode_guid));
 
@@ -380,16 +361,7 @@
         back.style.display = "none";
       }
 
-      if (IS_STATIC && epGuid) {
-        const rb = await fetch("/api/bullets.json");
-        const raw = await rb.json();
-        const scope = (raw.bullets || []).filter((b) => b.episode_guid === epGuid);
-        await loadFacetsForScope(scope, epGuid);
-        await loadBullets();
-        return;
-      }
-
-      if (!IS_STATIC && epGuid) {
+      if (epGuid) {
         const r = await fetch("/api/bullets?episode_guid=" + encodeURIComponent(epGuid));
         const one = await r.json();
         const scope = one.bullets || [];

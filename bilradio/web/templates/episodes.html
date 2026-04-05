@@ -108,7 +108,9 @@
     <h1>Bilradio</h1>
     <nav class="nav">
       <a href="/" class="active">Episodes</a>
-      <a href="{% if static_site %}/topics/{% else %}/topics{% endif %}">Topics</a>
+      {% if not static_site %}
+      <a href="/topics">Topics</a>
+      {% endif %}
     </nav>
   </header>
 
@@ -152,6 +154,7 @@
   </table>
 
   <script>
+    const IS_STATIC = {{ static_site | tojson }};
     const STORAGE_READ_EPISODES = "bilradio_read_episodes";
 
     function loadReadEpisodes() {
@@ -215,13 +218,10 @@
         .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
     }
 
-    function topicsUrlForGuid(guid) {
-      const q = encodeURIComponent(guid);
-      {% if static_site %}
-      return "/topics/?guid=" + q;
-      {% else %}
-      return "/topics?guid=" + q;
-      {% endif %}
+    function episodeTitleHtml(ep) {
+      const t = escHtml(ep.title || "");
+      if (IS_STATIC) return t;
+      return `<a href="/topics?guid=${encodeURIComponent(ep.guid)}">${t}</a>`;
     }
 
     async function load() {
@@ -251,22 +251,25 @@
           actions = `<div class="ep-actions"><button type="button" class="btn-clear-error" data-guid="${escHtml(ep.guid)}" onclick="clearEpisodeError(this)">Clear error</button></div>`;
         }
         const disp = ep.display_status || ep.status;
+        const readTitle = IS_STATIC
+          ? "Stored on this device only"
+          : "Same as Mark episode read on Topics; stored on this device only";
         const badgeHtml =
           statusBadge(disp, ep.status_label) +
           (readEpisodes.has(ep.guid)
-            ? ` <span class="s-read" title="Marked read on Topics (this device)">Read</span>`
-            : ` <button type="button" class="read-action episodes-mark-read" data-guid="${escHtml(ep.guid)}" onclick="markEpisodeReadFromBtn(this)" title="Same as Mark episode read on Topics; stored on this device only">Mark read</button>`);
+            ? ` <span class="s-read" title="${escHtml(readTitle)}">Read</span>`
+            : ` <button type="button" class="read-action episodes-mark-read" data-guid="${escHtml(ep.guid)}" onclick="markEpisodeReadFromBtn(this)" title="${escHtml(readTitle)}">Mark read</button>`);
         let titleExtra = "";
         if (ep.status_note) {
           titleExtra = `<div class="status-note">${escHtml(ep.status_note)}</div>`;
         } else if (ep.error && disp === "error") {
           titleExtra = `<div class="error-text">${escHtml(ep.error)}</div>`;
         }
-        const titleLink = `<a href="${topicsUrlForGuid(ep.guid)}">${escHtml(ep.title || "")}</a>`;
+        const titleCell = episodeTitleHtml(ep);
         const secN = ep.section_count != null ? Number(ep.section_count) : 0;
         tr.innerHTML = `
           <td class="dur">${idx + 1}</td>
-          <td class="ep-title">${titleLink}${titleExtra}</td>
+          <td class="ep-title">${titleCell}${titleExtra}</td>
           <td class="dur">${fmtDate(ep.pub_date)}</td>
           <td class="dur">${fmtDur(ep.duration_sec)}</td>
           <td>${badgeHtml}</td>
