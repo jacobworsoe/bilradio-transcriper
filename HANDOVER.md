@@ -1,6 +1,6 @@
 # Bilradio Transcriber — Handover Document
 
-_Last updated: 2026-04-05 (session: Topics read state, static Pages JS fix, handover refresh). Operator + maintainer notes._
+_Last updated: 2026-04-05 (session: handover sync — Episodes home, Topics UX, read progress, Pages export). Operator + maintainer notes._
 
 ---
 
@@ -14,8 +14,8 @@ A local pipeline that:
 4. Keeps **Whisper output on disk** under `data/transcripts/` (`.json` preferred; `.txt` also supported).
 5. **Improved** structured JSON (shape from **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py`) under `data/transcripts_improved/<stem>.json` — **author with Cursor Auto Agent** (see `.cursor/rules/transcript-storage.mdc`). **Authoring is two steps:** Whisper on disk, then one improved JSON (summaries + structure); **`import-bullets`** loads that file into SQLite — no separate third “bullet authoring” step. Optional **`start_sec` / `end_sec` on each section** only (aligned with Whisper **`segments`**); per-bullet times are not part of the contract. **`CURSOR_INSTRUCTIONS`** also require **omitting sponsor/ad read copy** (e.g. GAVMIL spots) from bullets, and **section/bullet counts follow episode content** (not a fixed template).
 6. Imports sectioned bullets into **SQLite** (`topic_sections` + `topic_bullets`, including optional time columns on sections/bullets for legacy rows) via `import-bullets`.
-7. Serves a **FastAPI web UI:** **`/`** Topics — wide layout (**`body` max-width 85rem**), car/theme **exclude** chips (excluded chips use **red** strikethrough text), facets, **per-section** summary line (**time range** + **section title** + tags on **own line**), **disc list markers** for bullets, **`/api/bullets`** returns **`bullet_time_range` only when** the DB has per-bullet times (otherwise `null` — UI hides the span). **First block of each episode:** one **`h2.episode-heading`** (wrapped with controls in **`episode-heading-row`**) with **`YYYY-MM-DD - [episode title]`** (larger type; vertical spacing from the row — **5.5rem** between episodes **except** the **first**, **0.5rem** top). **No extra `h2` per section** — section names live only in the summary row. **Client-only “read” state (Topics):** **`localStorage`** keys **`bilradio_read_episodes`** (set of `episode_guid`) and **`bilradio_read_sections`** (composite key matching `sectionGroupKey` in **`index.html`**). **Mark episode read** / **Mark section read** hide matching blocks; **Clear all read** resets both sets. Same behavior on **`bilradio serve`** and **GitHub Pages** (no server persistence). **`/episodes`** Episodes status (disk + DB flags, RSS sync, ingest, clear error). **`/queue`** redirects to **`/episodes`**. **`bilradio serve`** uses **auto-reload by default** (watch `bilradio` `*.py` / `*.html`); **`--no-reload`** for a stable process; startup prints **`Web UI from …`** for the resolved package path.
-8. **Public static mirror on GitHub Pages:** **`bilradio export-github-pages`** writes **`docs/`** (HTML, **`docs/api/*.json`**, static CSS, **`CNAME`**, **`.nojekyll`**) from the current **`data/bilradio.sqlite`**. **`.github/workflows/pages.yml`** deploys **`docs/`** on push to **`main`** (and **`workflow_dispatch`**). Live URLs: **https://bilradio.jacobworsoe.dk** (custom domain; **`docs/CNAME`**) and **https://jacobworsoe.github.io/bilradio-transcriper/**. The Pages copy is **read-only** for RSS/ingest/clear-error; full controls stay on **`bilradio serve`**. See **`.cursor/rules/github-pages-deploy.mdc`**. **Static Topics JS:** the exported template must not declare **`const bullets`** and **`let bullets`** in the same `loadBullets()` scope (browser **SyntaxError** → script never runs, **Loading…** forever, no **`/api/*.json`** fetch). The static branch uses a distinct name (e.g. **`facetBullets`**) for the facet-filtered list before the read-state filter.
+7. Serves a **FastAPI web UI:** **`/`** = **Episodes** table (pipeline status, **RSS sync**, **Ingest transcripts**, **Clear error**). **`/topics`** = **Topics** — wide layout (**`body` max-width 85rem**), **per-section** summary line (**time range** + **section title** + car/theme tags on **own line**), **disc list markers** for bullets, **`/api/bullets`** returns **`bullet_time_range` only when** the DB has per-bullet times (otherwise `null` — UI hides the span). **First block of each episode:** one **`h2.episode-heading`** in **`episode-heading-row`** with **`YYYY-MM-DD - [episode title]`**; **5.5rem** between episodes except the first (**0.5rem** top). Section titles appear only in the summary row, not as extra **`h2`s**. **Client-only read state:** **`localStorage`** **`bilradio_read_episodes`** and **`bilradio_read_sections`** (composite **`sectionGroupKey`** = `episode_guid` + `section_order` + `section_title`, same string as in **`topics.html`**). **Mark episode read** / **Mark section read** hide content; **Clear all read** clears both. When **every section** of an episode is marked read, the episode is **auto-added** to **`bilradio_read_episodes`**. **`/api/bullets`** is ordered **`pub_date` ASC** (oldest episodes first on Topics). Single-episode **`/topics?guid=…`**: after nothing is left to show, the client **redirects to `/`**. **Episodes row UX:** status column = one **badge** (`display_status` + server-built **`status_label`**; disk/ingest states folded in — see **`episode_badge_for_row`** in **`web/app.py`**); **Sections** / **Bullets** columns show **unread** counts (from bullets JSON + read sets); **`–`** when no topics or when that unread count is **0**. **Read** pill (full read) is **blue**; **Partly read** uses the former gray read styling; **Mark read** adds the episode to **`bilradio_read_episodes`**. Episodes page loads **`/api/bullets`** once for read progress. **`/queue`** and **`/episodes`** redirect to **`/`**. **`bilradio serve`:** auto-reload by default; **`--no-reload`** if needed; startup prints **`Web UI from …`**.
+8. **Public static mirror on GitHub Pages:** **`bilradio export-github-pages`** writes **`docs/`** — **`index.html`** (Episodes), **`topics/index.html`** (Topics), **`docs/api/bullets.json`**, **`docs/api/episodes.json`** (no **`facets.json`**), **`static/style.css`**, **`CNAME`**, **`.nojekyll`**. **`TestClient`** calls the FastAPI **`/api/bullets`** and **`/api/episodes`** routes against the local DB. **`.github/workflows/pages.yml`** deploys on push to **`main`**. Live: **https://bilradio.jacobworsoe.dk** ( **`docs/CNAME`** ) and **https://jacobworsoe.github.io/bilradio-transcriper/**. Pages is **read-only** for RSS/ingest/clear-error. See **`.cursor/rules/github-pages-deploy.mdc`**. **Static Topics:** **`IS_STATIC`** branch in **`topics.html`** loads **`.json`** APIs and mirrors read/auto-episode-read/redirect behavior. Avoid duplicate **`const`/`let`** bindings for the same identifier in one **`loadBullets()`** scope (causes **SyntaxError** and endless **Loading…**).
 
 ---
 
@@ -45,7 +45,7 @@ Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--s
 
 **Step 2 (improved JSON)** is **not** part of this script. Whisper → disk is step 1 only. **Cursor Auto Agent** runs inside Cursor on `data/cursor_inbox/*_improve_auto_agent.md`; there is no headless “run Agent from Python” hook in-repo. To **batch-fill missing** improved files without the Agent, use **`scripts/improved_json_from_segments.py`** per episode (stem + `--guid` from the prompt or DB), then **`import-bullets`** per guid — output is **interim** (`_bilradio_meta.replace_with_cursor_agent`, generic section titles, `themes: ["bootstrap"]`, `uncertain: true`) until replaced by a real Agent pass.
 
-**Web UI (`bilradio serve`):** open **`/episodes`** for **Sync RSS**, **Ingest transcripts**, and columns: Downloaded / Whisper (JSON+TXT) / Improved / Status / Bullets. **Display status** is normalized for the UI: SQLite **`extracted`** shows as **Summarized** (bullets loaded); if Whisper **JSON exists on disk** but the DB still has **`error`**, the row is shown as **transcribed** with an optional stale-error note instead of a blocking error badge. **`serve`** auto-reloads on code/template changes unless **`--no-reload`**; confirm the printed **`Web UI from …`** path if the site looks stale.
+**Web UI (`bilradio serve`):** open **`/`** for **Sync RSS**, **Ingest transcripts**, **Clear error**, and the Episodes table (**status badge**, **Sections** / **Bullets** = unread counts, read/partly-read pills). **`/topics`** for Topics. **`serve`** auto-reloads on code/template changes unless **`--no-reload`**; confirm **`Web UI from …`** if the UI looks stale.
 
 ---
 
@@ -106,8 +106,9 @@ bilradio/
   extract.py                # CURSOR_INSTRUCTIONS, bullet parse/import shape
   pipeline.py               # sync, download, transcribe, ingest, import, scaffold, …
   whisper_run.py
-  web/app.py                # /api/bullets, /api/episodes, …
-  web/templates/index.html  # Topics client render (episode h2, sections, bullets)
+  web/app.py                # /api/bullets, /api/episodes (no /api/facets)
+  web/templates/episodes.html
+  web/templates/topics.html
   web/static/style.css      # Topics + episodes layout
   export_pages.py           # Static tree → docs/ for GitHub Pages
 docs/                       # Published static site (tracked); from export-github-pages
@@ -174,7 +175,7 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 1. Ensure **`data/transcripts/<stem>.json`** (or `.txt`) exists; run **`ingest-transcripts`** if DB should show **transcribed**.
 2. Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (`prepare-improved-agent` prompts), **`bootstrap-improved-json`**, or **`improved_json_from_segments.py`** when bootstrap collapses to one block (or to bulk-fill many missing files before Agent polish). Optionally run **`apply_whisper_timecodes.py`** for **section**-level times when improved JSON was authored without segment-aligned bounds (often **skipped** immediately after `improved_json_from_segments.py`).
 3. **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`**
-4. Open **`/`** in the web app: **facets**, **section** time range on the summary line (no per-bullet range in the UI unless legacy DB rows still have bullet times), **episode heading** format **`date - title`**, and list **disc** markers for bullets.
+4. Open **`/topics`** in the web app: **section** time range on the summary line (no per-bullet range unless legacy DB rows still have bullet times), **episode heading** **`date - title`**, **disc** markers for bullets.
 
 ---
 
@@ -183,8 +184,8 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 - **Workflow:** `.github/workflows/pages.yml` — **build** (checkout, `configure-pages@v5`, `upload-pages-artifact@v3` from **`docs/`**) then **deploy** (`deploy-pages@v4`, environment **`github-pages`**). Triggers: **push to `main`**, **Run workflow** in Actions.
 - **Refresh published content:** with a populated local DB under **`data/`**, run **`bilradio export-github-pages`** (writes **`docs/`**), then **commit + push** `docs/` (tracked; **`data/`** is not). Optional **`--cname`**, **`--output`**. After **template or static CSS** changes, export updates **`docs/index.html`** and **`docs/static/style.css`** even if API JSON is unchanged.
 - **Repo:** must be **public** (or Enterprise) for free Pages; **Settings → Pages → Source: GitHub Actions**; set **custom domain** in Settings to match **`docs/CNAME`** when using **bilradio.jacobworsoe.dk**.
-- **Implementation:** `bilradio/export_pages.py`, Jinja templates in **`bilradio/web/templates/`** with **`static_site`** (FastAPI passes **`static_site: false`**). Do not upgrade to **`upload-pages-artifact@v4.0.0`** without handling **`.nojekyll`** (v4.0.0 excludes dotfiles from the tarball).
-- **Debugging “Loading…” with no JSON in Network:** usually a **JavaScript parse/runtime error** in inline script (see duplicate **`bullets`** binding note under item **8** above). Check the browser console; re-export **`docs/`** after fixing **`bilradio/web/templates/index.html`**.
+- **Implementation:** `bilradio/export_pages.py`, Jinja templates in **`bilradio/web/templates/`** with **`static_site: true`** only for **`export-github-pages`** output; **`bilradio serve`** renders **`episodes.html`** and **`topics.html`** with **`static_site: false`**. Do not upgrade to **`upload-pages-artifact@v4.0.0`** without handling **`.nojekyll`** (v4.0.0 excludes dotfiles from the tarball).
+- **Debugging “Loading…” with no JSON in Network:** usually a **JavaScript parse/runtime error** in inline script in **`topics.html`** or **`episodes.html`**. Check the browser console; re-export **`docs/`** after fixing templates.
 
 ---
 
@@ -193,8 +194,7 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 Remote: `https://github.com/jacobworsoe/bilradio-transcriper`  
 Branch: `main`  
 
-For current HEAD after pull: `git log -1 --oneline`  
-Recent: **`5b6ef11`** static Topics JS fix; **`ba1388c`** read state; **`57aef4d`** docs API after imports **335–336** and backlog.
+For current HEAD after pull: `git log -1 --oneline`
 
 ---
 
@@ -216,3 +216,4 @@ Recent: **`5b6ef11`** static Topics JS fix; **`ba1388c`** read state; **`57aef4d
 | 2026-04 | Repo-root **`Prompt to create improved JSON.txt`** — short operator prompt for Agent backlog runs (not transcript source) |
 | 2026-04 | **`import-bullets`** + **`export-github-pages`** + push for continued inbox backlog through **`57aef4d`** (episodes **335–336** and remaining prompts cleared at that time per session) |
 | 2026-04-05 | **Topics** read state — **Mark episode read** / **Mark section read** / **Clear all read** (`localStorage`, commit `ba1388c`); **GitHub Pages** stuck **Loading…** — duplicate **`bullets`** in static **`loadBullets()`** (commit `5b6ef11`); handover: Whisper **`.json`** + **segments** vs repo **`.txt`** task stub |
+| 2026-04-05 (later) | **Episodes** home **`/`**: consolidated **status** badge + **`status_label`**, **Sections**/**Bullets** DB columns then **unread** client counts, **Read** (blue) / **Partly read** / **Mark read**, **`loadBullets` `epGuid`** fix; **Topics**: **`pub_date` ASC**, auto **episode read** when all sections read, **no car/theme exclude** (removed **`/api/facets`**), single-episode **redirect to `/`**, removed **All topics · Episodes** subnav; **Pages**: **`/topics/`** + **`bullets.json`/`episodes.json`** only; unread **0** shows **`–`** in Episodes columns |
