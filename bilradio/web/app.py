@@ -27,10 +27,6 @@ app.mount("/static", StaticFiles(directory=str(_BASE / "static")), name="static"
 templates = Jinja2Templates(directory=str(_BASE / "templates"))
 
 
-def _norm(s: str) -> str:
-    return s.strip().lower()
-
-
 def _resolved_section_bounds(group: list[dict]) -> tuple[float | None, float | None]:
     ss = group[0].get("section_start_sec")
     es = group[0].get("section_end_sec")
@@ -104,39 +100,10 @@ def topics_page(
     )
 
 
-@app.get("/api/facets")
-def api_facets() -> dict:
-    with connect(DB_PATH) as conn:
-        rows = conn.execute(
-            """
-            SELECT b.cars, b.themes FROM topic_bullets b
-            JOIN episodes e ON e.guid = b.episode_guid
-            WHERE e.status = 'extracted'
-            """
-        ).fetchall()
-    cars: set[str] = set()
-    themes: set[str] = set()
-    for r in rows:
-        for c in parse_json_list(r["cars"]):
-            if c.strip():
-                cars.add(c.strip())
-        for t in parse_json_list(r["themes"]):
-            if t.strip():
-                themes.add(t.strip())
-    return {
-        "cars": sorted(cars, key=lambda x: x.lower()),
-        "themes": sorted(themes, key=lambda x: x.lower()),
-    }
-
-
 @app.get("/api/bullets")
 def api_bullets(
-    exclude_car: list[str] = Query(default=[]),
-    exclude_theme: list[str] = Query(default=[]),
     episode_guid: str | None = Query(default=None),
 ) -> dict:
-    ex_c = {_norm(x) for x in exclude_car if x and x.strip()}
-    ex_t = {_norm(x) for x in exclude_theme if x and x.strip()}
     eg = episode_guid.strip() if episode_guid and episode_guid.strip() else None
     with connect(DB_PATH) as conn:
         sql = """
@@ -167,10 +134,6 @@ def api_bullets(
     for r in rows:
         cars = parse_json_list(r["cars"])
         themes = parse_json_list(r["themes"])
-        if ex_c and any(_norm(c) in ex_c for c in cars):
-            continue
-        if ex_t and any(_norm(t) in ex_t for t in themes):
-            continue
         out.append(
             {
                 "id": r["id"],

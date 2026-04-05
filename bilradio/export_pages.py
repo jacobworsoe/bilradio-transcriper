@@ -41,13 +41,9 @@ def export_github_pages(
     static_out.mkdir(exist_ok=True)
 
     with TestClient(app) as client:
-        facets = client.get("/api/facets").json()
         bullets = client.get("/api/bullets").json()
         episodes = client.get("/api/episodes").json()
 
-    (api_dir / "facets.json").write_text(
-        json.dumps(facets, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
     (api_dir / "bullets.json").write_text(
         json.dumps(bullets, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
