@@ -205,34 +205,101 @@ def episodes_legacy_redirect() -> RedirectResponse:
     return RedirectResponse(url="/", status_code=301)
 
 
-def _effective_display_status(
+def _whisper_disk_phrase(has_json: bool, has_txt: bool) -> str:
+    if has_json and has_txt:
+        return "Whisper (JSON+TXT)"
+    if has_json:
+        return "Whisper (JSON)"
+    if has_txt:
+        return "Whisper (TXT)"
+    return "Whisper"
+
+
+def _disk_vs_db_note(db_status: str, downloaded: bool) -> str | None:
+    """Yellow status note when on-disk transcripts disagree with SQLite row."""
+    if db_status == "error":
+        return (
+            "A transcript file exists on disk; the database error is stale. "
+            'Click "Ingest transcripts" to update the database, or clear the error if you prefer.'
+        )
+    if db_status == "downloaded" and not downloaded:
+        return (
+            "Transcript on disk but audio path missing or file not found; check download / DB audio_path."
+        )
+    return None
+
+
+def episode_badge_for_row(
     db_status: str,
     *,
     downloaded: bool,
-    transcript_on_disk: bool,
-) -> tuple[str, str | None]:
+    has_whisper_json: bool,
+    has_whisper_txt: bool,
+    has_improved: bool,
+    bullet_count: int,
+) -> tuple[str, str, str | None]:
     """
-    Badge status for the Episodes page. Maps DB ``extracted`` → ``summarized`` (bullets in SQLite).
-    When a Whisper file exists on disk but DB still says ``error`` (or ``downloaded``), show
-    ``transcribed`` and a short note — do not require audio on disk for the error override.
+    Episodes table: one badge text + optional note. Returns
+    (display_status_key, badge_label, status_note).
+
+    ``display_status`` selects CSS class; ``badge_label`` is the full English badge text.
     """
-    if db_status == "extracted":
-        return "summarized", None
-    if db_status == "transcribed":
-        return db_status, None
-    if transcript_on_disk and db_status in ("downloaded", "error"):
+    transcript_on_disk = has_whisper_json or has_whisper_txt
+    wl = _whisper_disk_phrase(has_whisper_json, has_whisper_txt)
+
+    if db_status == "skipped_short":
+        return "skipped_short", "Skipped (short)", None
+
+    if db_status == "extracted" or bullet_count > 0:
+        if downloaded and transcript_on_disk and has_improved:
+            return "summarized", "Summarized", None
+        problems: list[str] = []
+        if not downloaded:
+            problems.append("no audio on disk")
+        if not transcript_on_disk:
+            problems.append("Whisper transcript missing on disk")
+        if not has_improved:
+            problems.append("improved JSON missing on disk")
+        suffix = f" — {'; '.join(problems)}" if problems else ""
+        return "summarized", "Summarized" + suffix, None
+
+    if db_status == "transcribed" and not transcript_on_disk:
+        return (
+            "transcribed",
+            "Transcribed in DB — Whisper transcript missing on disk",
+            None,
+        )
+
+    if db_status == "error" and not transcript_on_disk:
+        return "error", "Error — no Whisper transcript on disk", None
+
+    if transcript_on_disk:
         note = None
-        if db_status == "error":
-            note = (
-                "A transcript file exists on disk; the database error is stale. "
-                "Click “Ingest transcripts” to update the database, or clear the error if you prefer."
+        if db_status in ("downloaded", "error"):
+            note = _disk_vs_db_note(db_status, downloaded)
+        if has_improved and bullet_count == 0:
+            return (
+                "import_pending",
+                f"Import pending — {wl} + improved JSON on disk",
+                note,
             )
-        elif db_status == "downloaded" and not downloaded:
-            note = (
-                "Transcript on disk but audio path missing or file not found; check download / DB audio_path."
-            )
-        return "transcribed", note
-    return db_status, None
+        return (
+            "transcribed",
+            f"Transcribed — {wl}; no improved JSON on disk yet",
+            note,
+        )
+
+    if downloaded:
+        return (
+            "downloaded",
+            "Downloaded — audio on disk, no Whisper transcript yet",
+            None,
+        )
+
+    if db_status == "pending":
+        return "pending", "Pending — no audio on disk", None
+
+    return "pending", "Pending", None
 
 
 @app.get("/api/episodes")
@@ -241,7 +308,8 @@ def api_episodes() -> dict:
         rows = conn.execute(
             """
             SELECT guid, title, pub_date, duration_sec, status, error, audio_path, extract_at,
-                   (SELECT count(*) FROM topic_bullets WHERE episode_guid = e.guid) AS bullet_count
+                   (SELECT count(*) FROM topic_bullets WHERE episode_guid = e.guid) AS bullet_count,
+                   (SELECT count(*) FROM topic_sections WHERE episode_guid = e.guid) AS section_count
             FROM episodes e
             ORDER BY pub_date ASC
             """
@@ -264,8 +332,14 @@ def api_episodes() -> dict:
         has_improved = has_non_empty_json(ij)
 
         st = r["status"]
-        disp, note = _effective_display_status(
-            st, downloaded=downloaded, transcript_on_disk=transcript_on_disk
+        bcount = int(r["bullet_count"] or 0)
+        disp, label, note = episode_badge_for_row(
+            st,
+            downloaded=downloaded,
+            has_whisper_json=has_whisper_json,
+            has_whisper_txt=has_whisper_txt,
+            has_improved=has_improved,
+            bullet_count=bcount,
         )
         counts[disp] = counts.get(disp, 0) + 1
 
@@ -277,14 +351,12 @@ def api_episodes() -> dict:
                 "duration_sec": r["duration_sec"],
                 "status": st,
                 "display_status": disp,
+                "status_label": label,
                 "status_note": note,
                 "error": r["error"],
                 "extract_at": r["extract_at"],
-                "bullet_count": r["bullet_count"],
-                "downloaded": downloaded,
-                "whisper_json": has_whisper_json,
-                "whisper_txt": has_whisper_txt,
-                "improved_transcript": has_improved,
+                "bullet_count": bcount,
+                "section_count": int(r["section_count"] or 0),
             }
         )
 
