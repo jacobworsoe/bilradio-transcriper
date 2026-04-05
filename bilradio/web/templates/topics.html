@@ -229,6 +229,10 @@
       }
 
       if (!visibleGroups.length) {
+        if (epGuid) {
+          window.location.href = "/";
+          return;
+        }
         const empty = document.createElement("p");
         empty.className = "main-empty";
         empty.textContent =
