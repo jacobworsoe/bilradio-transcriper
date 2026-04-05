@@ -58,10 +58,18 @@
     .s-import_pending { background:rgba(100,200,220,.14); color:#7fd4e6; }
     .s-error         { background:rgba(239,83,80,.15);   color:#ef5350; }
     .s-skipped_short { background:rgba(139,154,171,.1);  color:#636e7a; }
-    .s-read {
+    .ep-read-badge {
       display:inline-block; font-size:.65rem; padding:.15rem .4rem;
       border-radius:4px; font-weight:600; margin-left:.35rem;
-      background:rgba(139,154,171,.2); color:#aeb9c6; vertical-align:middle;
+      vertical-align:middle;
+    }
+    .ep-read-full {
+      background:rgba(61,156,245,.18);
+      color:#9dcfff;
+    }
+    .ep-read-partial {
+      background:rgba(139,154,171,.2);
+      color:#aeb9c6;
     }
     .episodes-mark-read {
       margin-left:.35rem;
@@ -140,6 +148,7 @@
   <script>
     const IS_STATIC = true;
     const STORAGE_READ_EPISODES = "bilradio_read_episodes";
+    const STORAGE_READ_SECTIONS = "bilradio_read_sections";
 
     function loadReadEpisodes() {
       try {
@@ -152,6 +161,56 @@
 
     function saveReadEpisodes(set) {
       localStorage.setItem(STORAGE_READ_EPISODES, JSON.stringify([...set]));
+    }
+
+    function loadReadSections() {
+      try {
+        const raw = localStorage.getItem(STORAGE_READ_SECTIONS);
+        return raw ? new Set(JSON.parse(raw)) : new Set();
+      } catch {
+        return new Set();
+      }
+    }
+
+    function sectionGroupKey(b) {
+      return (
+        b.episode_guid +
+        "\0" +
+        String(b.section_order ?? 0) +
+        "\0" +
+        (b.section_title || "").trim()
+      );
+    }
+
+    function sectionKeysByEpisodeGuid(bullets) {
+      const m = new Map();
+      for (const b of bullets) {
+        const g = b.episode_guid;
+        if (!g) continue;
+        if (!m.has(g)) m.set(g, new Set());
+        m.get(g).add(sectionGroupKey(b));
+      }
+      return m;
+    }
+
+    function readProgressHtml(guid, bulletCount, sectionKeys, readEpisodes, readSections, readTitle) {
+      const keys = sectionKeys && sectionKeys.size ? sectionKeys : new Set();
+      const hasTopicSections = bulletCount > 0 && keys.size > 0;
+      const inEpRead = readEpisodes.has(guid);
+      const allSecRead =
+        hasTopicSections && [...keys].every((k) => readSections.has(k));
+      const someSecRead =
+        hasTopicSections && [...keys].some((k) => readSections.has(k));
+      const fullRead = inEpRead || allSecRead;
+      if (fullRead) {
+        return `<span class="ep-read-badge ep-read-full" title="${escHtml(readTitle)}">Read</span>`;
+      }
+      if (someSecRead) {
+        const pt =
+          "Some sections marked read on Topics; full episode not marked read on this device.";
+        return `<span class="ep-read-badge ep-read-partial" title="${escHtml(pt)}">Partly read</span>`;
+      }
+      return `<button type="button" class="read-action episodes-mark-read" data-guid="${escHtml(guid)}" onclick="markEpisodeReadFromBtn(this)" title="${escHtml(readTitle)}">Mark read</button>`;
     }
 
     function markEpisodeReadFromBtn(btn) {
@@ -220,7 +279,20 @@
         return;
       }
 
+      let bulletsList = [];
+      try {
+        const br = await fetch(
+          "/api/bullets.json"
+        );
+        const bj = await br.json();
+        bulletsList = bj.bullets || [];
+      } catch (e) {
+        console.warn("Failed to load bullets for read progress:", e);
+      }
+      const secByGuid = sectionKeysByEpisodeGuid(bulletsList);
+
       const readEpisodes = loadReadEpisodes();
+      const readSections = loadReadSections();
 
       const bar = document.getElementById("summary-bar");
       bar.innerHTML = Object.entries(data.counts || {})
@@ -240,11 +312,19 @@
         const readTitle = IS_STATIC
           ? "Stored on this device only"
           : "Same as Mark episode read on Topics; stored on this device only";
+        const secKeys = secByGuid.get(ep.guid) || new Set();
+        const bCount = ep.bullet_count != null ? Number(ep.bullet_count) : 0;
         const badgeHtml =
           statusBadge(disp, ep.status_label) +
-          (readEpisodes.has(ep.guid)
-            ? ` <span class="s-read" title="${escHtml(readTitle)}">Read</span>`
-            : ` <button type="button" class="read-action episodes-mark-read" data-guid="${escHtml(ep.guid)}" onclick="markEpisodeReadFromBtn(this)" title="${escHtml(readTitle)}">Mark read</button>`);
+          " " +
+          readProgressHtml(
+            ep.guid,
+            bCount,
+            secKeys,
+            readEpisodes,
+            readSections,
+            readTitle
+          );
         let titleExtra = "";
         if (ep.status_note) {
           titleExtra = `<div class="status-note">${escHtml(ep.status_note)}</div>`;
