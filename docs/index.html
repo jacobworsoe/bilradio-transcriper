@@ -156,12 +156,12 @@
       function normF(s) { return String(s).trim().toLowerCase(); }
       const exC = new Set([...excludeCars].map(normF));
       const exT = new Set([...excludeThemes].map(normF));
-      const bullets = (raw.bullets || []).filter((b) => {
+      const facetBullets = (raw.bullets || []).filter((b) => {
         if (exC.size && (b.cars || []).some((c) => exC.has(normF(c)))) return false;
         if (exT.size && (b.themes || []).some((t) => exT.has(normF(t)))) return false;
         return true;
       });
-      data = { bullets, count: bullets.length };
+      data = { bullets: facetBullets, count: facetBullets.length };
       
 
       let bullets = (data.bullets || []).filter((b) => !readEpisodes.has(b.episode_guid));
