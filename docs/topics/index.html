@@ -11,11 +11,11 @@
     <h1>Bilradio</h1>
     <nav style="display:flex;gap:1.25rem;margin-bottom:.75rem;font-size:.9rem;flex-wrap:wrap;align-items:center;">
       <a href="/" style="color:var(--accent);text-decoration:none;">Episodes</a>
-      <a href="{% if static_site %}/topics/{% else %}/topics{% endif %}" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
+      <a href="/topics/" style="color:var(--text);font-weight:600;text-decoration:none;">Topics</a>
     </nav>
     <p class="lede" id="topics-lede">Bullet-point summaries from all episodes. Select cars or themes to <strong>exclude</strong> from the overview.</p>
     <p class="lede" id="topics-back" style="display:none;margin-top:.5rem;font-size:.88rem;">
-      <a href="{% if static_site %}/topics/{% else %}/topics{% endif %}" style="color:var(--accent);">All topics</a>
+      <a href="/topics/" style="color:var(--accent);">All topics</a>
       <span style="color:var(--muted);margin:0 .35rem;">·</span>
       <a href="/" style="color:var(--accent);">Episodes</a>
     </p>
@@ -51,8 +51,8 @@
     const STORAGE_READ_EPISODES = "bilradio_read_episodes";
     const STORAGE_READ_SECTIONS = "bilradio_read_sections";
 
-    const SERVER_EPISODE_GUID = {{ filter_episode_guid | tojson }};
-    const IS_STATIC = {{ static_site | tojson }};
+    const SERVER_EPISODE_GUID = null;
+    const IS_STATIC = true;
 
     function effectiveEpisodeGuid() {
       if (SERVER_EPISODE_GUID) return SERVER_EPISODE_GUID;

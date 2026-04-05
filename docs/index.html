@@ -108,7 +108,7 @@
     <h1>Bilradio</h1>
     <nav class="nav">
       <a href="/" class="active">Episodes</a>
-      
+      <a href="/topics/">Topics</a>
     </nav>
   </header>
 
@@ -204,7 +204,9 @@
 
     function episodeTitleHtml(ep) {
       const t = escHtml(ep.title || "");
-      if (IS_STATIC) return t;
+      if (IS_STATIC) {
+        return `<a href="/topics/?guid=${encodeURIComponent(ep.guid)}">${t}</a>`;
+      }
       return `<a href="/topics?guid=${encodeURIComponent(ep.guid)}">${t}</a>`;
     }
 

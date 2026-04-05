@@ -63,6 +63,14 @@ def export_github_pages(
     (dest / "index.html").write_text(
         env.get_template("episodes.html").render(**ctx), encoding="utf-8"
     )
+    topics_dir = dest / "topics"
+    topics_dir.mkdir(parents=True, exist_ok=True)
+    (topics_dir / "index.html").write_text(
+        env.get_template("topics.html").render(
+            **ctx, filter_episode_guid=None
+        ),
+        encoding="utf-8",
+    )
     (dest / "episodes.html").write_text(
         """<!DOCTYPE html>
 <html lang="en">

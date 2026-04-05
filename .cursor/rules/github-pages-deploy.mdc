@@ -9,7 +9,7 @@ The public site is **static** (no FastAPI on Pages). It is built from **`docs/`*
 
 ## When to refresh `docs/`
 
-After **SQLite topic data** changes (e.g. **`import-bullets`**, or anything that would change **`/`** (episodes home) or API JSON in the local app), or after edits that affect **exported HTML/JSON** (templates with `static_site`, `bilradio/export_pages.py`, `bilradio/web/static/*`), run from repo root:
+After **SQLite topic data** changes (e.g. **`import-bullets`**, or anything that would change **`/`** (episodes home), **`/topics/`**, or API JSON in the local app), or after edits that affect **exported HTML/JSON** (templates with `static_site`, `bilradio/export_pages.py`, `bilradio/web/static/*`), run from repo root:
 
 ```powershell
 .\.venv\Scripts\python.exe -m bilradio.cli export-github-pages
@@ -22,7 +22,7 @@ Then **commit and push** the updated **`docs/`** (including **`docs/api/*.json`*
 ## Live app vs snapshot
 
 - **Local:** **`bilradio serve`** — dynamic API, RSS sync, ingest, clear error on **`/`** (episodes list). **`/episodes`** redirects to **`/`**. Topics: **`/topics`** (optional **`?guid=`** for one episode).
-- **Pages:** **`/`** = episodes list only (read-only snapshot; **`/api/*.json`** still exported for optional reuse). Topics UI lives on **`bilradio serve`** at **`/topics`** only. Custom domain: **https://bilradio.jacobworsoe.dk/** (also **https://jacobworsoe.github.io/bilradio-transcriper/**).
+- **Pages:** **`/`** = episodes (read-only); **`/topics/`** = all topics (client filters + read state); **`/topics/?guid=`** = one episode; loads **`/api/*.json`**. Full pipeline (RSS, ingest) stays on **`bilradio serve`**. Custom domain: **https://bilradio.jacobworsoe.dk/** (also **https://jacobworsoe.github.io/bilradio-transcriper/**).
 
 ## Repo settings
 
