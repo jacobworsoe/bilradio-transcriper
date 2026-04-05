@@ -155,7 +155,7 @@ def api_bullets(
             sql += " AND e.guid = ?"
             params.append(eg)
         sql += """
-            ORDER BY e.pub_date DESC,
+            ORDER BY e.pub_date ASC,
                      COALESCE(s.sort_order, 0),
                      b.id ASC
             """
