@@ -13513,300 +13513,279 @@
       "bullet_time_range": null
     },
     {
-      "id": 1805,
-      "text": "Christian fortæller om vejnavneskifte fra Eskimovej til Silavej, stjålne vejskilt efter medieomtale og frustration over parkeringsbøder og private operatører.",
+      "id": 2033,
+      "text": "Programmet lover blandt andet kraftige Kia Niro-prisnedslag, kinesiske luksus-elbiler med massivt værditab, 12-volts-problemer, Hamburg-tur i stor Volvo med 800 V og lytterspørgsmål.",
       "cars": [],
       "themes": [
-        "hverdag",
-        "politik"
+        "podcast",
+        "nyheder"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Eskimovej, parkering og politik",
+      "section_title": "Agenda og Eskimovej → Silavej",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 73.2,
-      "section_end_sec": 542.12,
-      "section_time_range": "[1:13 – 9:02]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 659.4,
+      "section_time_range": "[0:30 – 10:59]",
       "bullet_time_range": null
     },
     {
-      "id": 1806,
-      "text": "De roser transportminister Thomas Danielsen og DRs omtale af parkeringsselskaber, som tager urimelige gebyrer.",
+      "id": 2034,
+      "text": "Christian fortæller om stjålne vejskilt efter medieomtale; vejen hed Eskimovej og skal fra 2. marts hedde Silavej — med humor om navne og skiltesagen.",
       "cars": [],
       "themes": [
-        "politik",
-        "forbruger"
+        "kultur"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Eskimovej, parkering og politik",
+      "section_title": "Agenda og Eskimovej → Silavej",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 73.2,
-      "section_end_sec": 542.12,
-      "section_time_range": "[1:13 – 9:02]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 659.4,
+      "section_time_range": "[0:30 – 10:59]",
       "bullet_time_range": null
     },
     {
-      "id": 1807,
-      "text": "Clever klager over podcastens ordvalg om Konkurrencestyrelsens besøg; Christian afviser og holder fast i kritik af manglende direkte dialog med mediet.",
+      "id": 2035,
+      "text": "De nævner en trofast lytter (pels-trailer/anekdote) og binder til, at faldrødder også lytter til Bilradio.",
       "cars": [],
       "themes": [
-        "lading",
-        "medier"
+        "podcast"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Eskimovej, parkering og politik",
+      "section_title": "Agenda og Eskimovej → Silavej",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 73.2,
-      "section_end_sec": 542.12,
-      "section_time_range": "[1:13 – 9:02]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 659.4,
+      "section_time_range": "[0:30 – 10:59]",
       "bullet_time_range": null
     },
     {
-      "id": 1808,
-      "text": "Lyttere påpeger, at de billigste annoncerede Renault Mégane E-Tech kun har énfaset AC (ca. 3,6 kW) og ingen DC-hurtiglader — det fremgår ikke tydeligt i annoncer.",
+      "id": 2036,
+      "text": "Mercedes har haft problemer med EQA og EQB (typisk 2021–2024): software-opdatering for brandrisiko gav markant kortere rækkevidde og længere 10–80 %-ladning (ofte op mod omkring en time).",
       "cars": [
-        "Renault Mégane E-Tech"
+        "Mercedes-Benz EQA",
+        "Mercedes-Benz EQB"
       ],
       "themes": [
-        "lading",
-        "forbruger"
+        "elbil",
+        "batteri",
+        "software"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Rettelse: billige Mégane uden DC-ladning",
+      "section_title": "Mercedes EQA/EQB: software, batteriskifte og 12 V",
       "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 542.12,
-      "section_end_sec": 659.44,
-      "section_time_range": "[9:02 – 10:59]",
+      "section_start_sec": 659.4,
+      "section_end_sec": 1150.0,
+      "section_time_range": "[10:59 – 19:10]",
       "bullet_time_range": null
     },
     {
-      "id": 1809,
-      "text": "Jan lover bedre ensartede ladedata på Bilbasen og opfordrer forhandlere til eksplicit at angive AC- og DC-ydelser i annoncetekster.",
-      "cars": [],
-      "themes": [
-        "annoncering",
-        "elbil"
-      ],
-      "uncertain": false,
-      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
-      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
-      "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Rettelse: billige Mégane uden DC-ladning",
-      "section_order": 1,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 542.12,
-      "section_end_sec": 659.44,
-      "section_time_range": "[9:02 – 10:59]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1810,
-      "text": "Efter utilfredsstillende software-opdatering, der begrænsede rækkevidde og forlængede ladetid markant, beslutter Mercedes nu at udskifte batterier i mange tusinde biler globalt.",
+      "id": 2037,
+      "text": "Mercedes beslutter nu udskiftning af højspændingsbatterier i mange biler globalt (omkring 34.000 nævnes); i Danmark kommer der ifølge dem en del biler til helt nyt batteri efter pres fra medier.",
       "cars": [
         "Mercedes-Benz EQA",
         "Mercedes-Benz EQB"
       ],
       "themes": [
         "batteri",
-        "garanti"
-      ],
-      "uncertain": false,
-      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
-      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
-      "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Mercedes EQA/EQB: fra software til batteriskift",
-      "section_order": 2,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 659.44,
-      "section_end_sec": 794.04,
-      "section_time_range": "[10:59 – 13:14]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1811,
-      "text": "Danske ejere får ifølge udsendelsen besked om udskiftning; omfanget og praksis skal følges kritisk af pressen.",
-      "cars": [
-        "Mercedes-Benz EQA",
-        "Mercedes-Benz EQB"
-      ],
-      "themes": [
-        "forbruger",
         "sikkerhed"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Mercedes EQA/EQB: fra software til batteriskift",
-      "section_order": 2,
+      "section_title": "Mercedes EQA/EQB: software, batteriskifte og 12 V",
+      "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 659.44,
-      "section_end_sec": 794.04,
-      "section_time_range": "[10:59 – 13:14]",
+      "section_start_sec": 659.4,
+      "section_end_sec": 1150.0,
+      "section_time_range": "[10:59 – 19:10]",
       "bullet_time_range": null
     },
     {
-      "id": 1812,
-      "text": "Selv med stort højvoltsbatteri kan bilen ikke køre, hvis 12V-systemet fejler; mange producenter bruger små 12V-batterier, der presses hårdt af app, opvarmning og standby.",
+      "id": 2038,
+      "text": "De skelner mellem traktionsbatteri og 12-volts-hjælpebatteri og gennemgår, hvorfor små 12 V-batterier i elbiler kan drille om vinteren og ved værkstedsbesøg — opfordring til at få det tjekket systematisk.",
       "cars": [],
       "themes": [
         "elbil",
-        "vinter"
+        "vinter",
+        "service"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "12V-batteriet i elbiler om vinteren",
-      "section_order": 3,
+      "section_title": "Mercedes EQA/EQB: software, batteriskifte og 12 V",
+      "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 794.04,
-      "section_end_sec": 1199.04,
-      "section_time_range": "[13:14 – 19:59]",
+      "section_start_sec": 659.4,
+      "section_end_sec": 1150.0,
+      "section_time_range": "[10:59 – 19:10]",
       "bullet_time_range": null
     },
     {
-      "id": 1813,
-      "text": "VW-koncernens elbiler og andre mærker nævnes som særligt udsatte; Falk opfordrer til forebyggende tjek om vinteren for at undgå strandinger.",
+      "id": 2039,
+      "text": "Jan presser på for klarhed om hvor mange danske biler og hvordan proces og kommunikation bliver over for kunderne.",
       "cars": [
-        "Volkswagen",
-        "Audi",
-        "Škoda",
-        "Cupra"
+        "Mercedes-Benz EQA",
+        "Mercedes-Benz EQB"
       ],
       "themes": [
-        "service",
-        "vinter"
+        "forbruger"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "12V-batteriet i elbiler om vinteren",
-      "section_order": 3,
+      "section_title": "Mercedes EQA/EQB: software, batteriskifte og 12 V",
+      "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 794.04,
-      "section_end_sec": 1199.04,
-      "section_time_range": "[13:14 – 19:59]",
+      "section_start_sec": 659.4,
+      "section_end_sec": 1150.0,
+      "section_time_range": "[10:59 – 19:10]",
       "bullet_time_range": null
     },
     {
-      "id": 1814,
-      "text": "Værterne anbefaler at få værkstedet til at teste 12V først ved mystiske fejl og nævner billige jump-startere som praktisk nødløsning.",
-      "cars": [],
+      "id": 2040,
+      "text": "Christian har siddet i Volvo EX60 og roser design og siddekomfort; fronten minder om EX30/EX90 men passer bedre til bilen, bagsiden er særligt skarp.",
+      "cars": [
+        "Volvo EX60",
+        "Volvo EX30",
+        "Volvo EX90"
+      ],
       "themes": [
-        "tips",
+        "elbil",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Volvo EX60: første indtryk og marked",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1150.0,
+      "section_end_sec": 1322.3,
+      "section_time_range": "[19:10 – 22:02]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2041,
+      "text": "Stor interesse i Sverige med kø ved forhandlere; over halvdelen af planlagt volumen i Danmark meldes allerede solgt kort efter start.",
+      "cars": [
+        "Volvo EX60"
+      ],
+      "themes": [
+        "marked",
+        "salg"
+      ],
+      "uncertain": true,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Volvo EX60: første indtryk og marked",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1150.0,
+      "section_end_sec": 1322.3,
+      "section_time_range": "[19:10 – 22:02]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2042,
+      "text": "Volvo lover software der viser aktuel ladestatus tydeligere; værterne er skeptiske — det burde være standard, men de anerkender at det halter hos flere mærker.",
+      "cars": [
+        "Volvo EX60"
+      ],
+      "themes": [
+        "lading",
+        "software"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Volvo EX60: første indtryk og marked",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1150.0,
+      "section_end_sec": 1322.3,
+      "section_time_range": "[19:10 – 22:02]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2043,
+      "text": "Kort sammenligning med sædeposition i anden Volvo versus EX60; de lukker Volvo-blokken og går videre til kinesisk ejerskab som bro til næste emne.",
+      "cars": [
+        "Volvo EX60"
+      ],
+      "themes": [
         "elbil"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "12V-batteriet i elbiler om vinteren",
-      "section_order": 3,
+      "section_title": "Volvo EX60: første indtryk og marked",
+      "section_order": 2,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 794.04,
-      "section_end_sec": 1199.04,
-      "section_time_range": "[13:14 – 19:59]",
+      "section_start_sec": 1150.0,
+      "section_end_sec": 1322.3,
+      "section_time_range": "[19:10 – 22:02]",
       "bullet_time_range": null
     },
     {
-      "id": 1815,
-      "text": "Christian roser Falck efter gentagne hurtige udkald til gammel Opel med døtre og håndbremse-problemer.",
+      "id": 2044,
+      "text": "Kort historie: NIOs danske satsning med dyrt showroom og batteriskift-koncept solgte næsten ingenting; importen skiftede til Kristensen-gruppen uden synlig gennembrud.",
       "cars": [
-        "Opel"
-      ],
-      "themes": [
-        "service",
-        "hverdag"
-      ],
-      "uncertain": false,
-      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
-      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
-      "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "12V-batteriet i elbiler om vinteren",
-      "section_order": 3,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 794.04,
-      "section_end_sec": 1199.04,
-      "section_time_range": "[13:14 – 19:59]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1816,
-      "text": "Christian har set EX60 i Aarhus og finder design og siddekomfort stærkere end forventet; software føles mere moden, og kommende visning af ladestatus i app nævnes.",
-      "cars": [
-        "Volvo EX60"
-      ],
-      "themes": [
-        "elbil",
-        "lancering"
-      ],
-      "uncertain": false,
-      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
-      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
-      "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Volvo EX60 på messe og i Sverige",
-      "section_order": 4,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 1199.04,
-      "section_end_sec": 1331.24,
-      "section_time_range": "[19:59 – 22:11]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1817,
-      "text": "Svenske kolleger og forhandlere beskrives som begejstrede med kø og høj efterspørgsel; Danmark oplever også solid interesse og forudbestillinger.",
-      "cars": [
-        "Volvo EX60"
+        "NIO"
       ],
       "themes": [
         "marked",
-        "Sverige"
+        "strategi"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Volvo EX60 på messe og i Sverige",
-      "section_order": 4,
+      "section_title": "NIO i Danmark: værditab og demobiler",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1199.04,
-      "section_end_sec": 1331.24,
-      "section_time_range": "[19:59 – 22:11]",
+      "section_start_sec": 1322.3,
+      "section_end_sec": 1874.2,
+      "section_time_range": "[22:02 – 31:14]",
       "bullet_time_range": null
     },
     {
-      "id": 1818,
-      "text": "Efter fiasko-showroom og få solgte biler sælges lagrede ET5, ET7 og EL7 til mellem halv og tredjedel af oprindelig pris trods lav kilometertal.",
+      "id": 2045,
+      "text": "ET5, ET7 og EL7 sælges nu som brugte/næsten nye til en brøkdel af listepris (eksempler: ET5 ned mod omkring 250.000 kr., ET7 fra omkring 900.000 til omkring 330.000, EL7 til omkring 320.000 kr.).",
       "cars": [
         "NIO ET5",
         "NIO ET7",
@@ -13814,48 +13793,24 @@
       ],
       "themes": [
         "pris",
-        "brugtvogn"
+        "brugtbil"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "NIO: kollaps i listepris og brugtvognsudsalg",
-      "section_order": 5,
+      "section_title": "NIO i Danmark: værditab og demobiler",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1331.24,
-      "section_end_sec": 2047.4,
-      "section_time_range": "[22:11 – 34:07]",
+      "section_start_sec": 1322.3,
+      "section_end_sec": 1874.2,
+      "section_time_range": "[22:02 – 31:14]",
       "bullet_time_range": null
     },
     {
-      "id": 1819,
-      "text": "Eksempler: ET7 fra ca. 900.000 kr. til ca. 330.000 kr.; EL7 fra ca. 816.000 kr. til ca. 320.000 kr. — ekstremt værditab.",
-      "cars": [
-        "NIO ET7",
-        "NIO EL7"
-      ],
-      "themes": [
-        "værditab",
-        "marked"
-      ],
-      "uncertain": false,
-      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
-      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
-      "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "NIO: kollaps i listepris og brugtvognsudsalg",
-      "section_order": 5,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 1331.24,
-      "section_end_sec": 2047.4,
-      "section_time_range": "[22:11 – 34:07]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1820,
-      "text": "Batteriskifte-systemet gør det uklart, hvor mange km et monteret batteri reelt har kørt; til gengæld fremhæves lang fabriks- og batterigaranti som eneste stærke købsargument.",
+      "id": 2046,
+      "text": "De diskuterer batteriers historik via batteriskift-loop og ukendt kilometertal; fabriks- og batterigaranti frem til typisk slutning af 2020’erne/160.000 km nævnes som det primære ‘køb-argument’.",
       "cars": [
         "NIO"
       ],
@@ -13867,68 +13822,182 @@
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "NIO: kollaps i listepris og brugtvognsudsalg",
-      "section_order": 5,
+      "section_title": "NIO i Danmark: værditab og demobiler",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1331.24,
-      "section_end_sec": 2047.4,
-      "section_time_range": "[22:11 – 34:07]",
+      "section_start_sec": 1322.3,
+      "section_end_sec": 1874.2,
+      "section_time_range": "[22:02 – 31:14]",
       "bullet_time_range": null
     },
     {
-      "id": 1821,
-      "text": "De er skeptiske over for at købe nye NIO til høj listepris, når næsten ubrugte biler sælges så billigt, og ser mærket som parkeret strategisk i Danmark.",
+      "id": 2047,
+      "text": "Jan er meget skeptisk over at købe trods lav pris; de ser historien som eksempel på fejlslagen strategi og massive markeds- og værditab for de få ejere.",
       "cars": [
         "NIO"
       ],
       "themes": [
-        "strategi",
         "marked"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "NIO: kollaps i listepris og brugtvognsudsalg",
-      "section_order": 5,
+      "section_title": "NIO i Danmark: værditab og demobiler",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1331.24,
-      "section_end_sec": 2047.4,
-      "section_time_range": "[22:11 – 34:07]",
+      "section_start_sec": 1322.3,
+      "section_end_sec": 1874.2,
+      "section_time_range": "[22:02 – 31:14]",
       "bullet_time_range": null
     },
     {
-      "id": 1822,
-      "text": "Kia importerer ca. 800 nye Niro EV til aggressive priser (access fra ca. 220.000 kr. med ca. 460 km WLTP) for at rydde model før udfasning i Danmark.",
+      "id": 2048,
+      "text": "De undrer sig over, at aggressive udsalg af næsten nye biler underminerer muligheden for at sælge dyre nye NIO-modeller samtidig.",
       "cars": [
-        "Kia Niro EV"
+        "NIO"
       ],
       "themes": [
         "pris",
-        "elbil"
+        "strategi"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Kia Niro-parti, VW-leasing og Polestars fremtid",
-      "section_order": 6,
+      "section_title": "NIO i Danmark: værditab og demobiler",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2047.4,
-      "section_end_sec": 2795.76,
-      "section_time_range": "[34:07 – 46:35]",
+      "section_start_sec": 1322.3,
+      "section_end_sec": 1874.2,
+      "section_time_range": "[22:02 – 31:14]",
       "bullet_time_range": null
     },
     {
-      "id": 1823,
-      "text": "Volkswagen tilbyder privatleasing på ID.-modeller med meget høj årlig kilometergrænse (op til 75.000 km/år i pressemateriale); de advarer om, at fabriks- og batterigaranti hurtigt overskrides ved sådant forbrug.",
+      "id": 2049,
+      "text": "Niro stod i skyggen af Hyundai Kona Electric med lange leveringstider og høj pris ved lancering; facelift beholdt platform og beskeden ladeydelse (omkring 72 kW-klasse), mens konkurrenter overtog markedet.",
+      "cars": [
+        "Kia Niro EV",
+        "Hyundai Kona Electric"
+      ],
+      "themes": [
+        "elbil",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Kia Niro: parti på 800 biler og ca. 220.000 kr.",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1874.2,
+      "section_end_sec": 2181.8,
+      "section_time_range": "[31:14 – 36:21]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2050,
+      "text": "Tidligere prisfald og kampagner; nu er modellen på vej ud af Danmark, men importøren har sikret et parti på 800 biler — levering fra omkring juni, mulig ‘salgsrekord’ hvis alle nås på kort tid.",
+      "cars": [
+        "Kia Niro EV"
+      ],
+      "themes": [
+        "pris",
+        "salg"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Kia Niro: parti på 800 biler og ca. 220.000 kr.",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1874.2,
+      "section_end_sec": 2181.8,
+      "section_time_range": "[31:14 – 36:21]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2051,
+      "text": "Access/basisversion kan fås omkring 220.000 kr. med omkring 460 km WLTP; de mener, at tilbudet er svært at matche i prislejet på rækkevidde.",
+      "cars": [
+        "Kia Niro EV"
+      ],
+      "themes": [
+        "pris",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Kia Niro: parti på 800 biler og ca. 220.000 kr.",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1874.2,
+      "section_end_sec": 2181.8,
+      "section_time_range": "[31:14 – 36:21]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2052,
+      "text": "De undrer sig over, at importøren kan få fabrikskapacitet til biler der officielt er taget af programmet; sagen får omtale også i Tekst-TV.",
+      "cars": [
+        "Kia Niro EV"
+      ],
+      "themes": [
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Kia Niro: parti på 800 biler og ca. 220.000 kr.",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1874.2,
+      "section_end_sec": 2181.8,
+      "section_time_range": "[31:14 – 36:21]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2053,
+      "text": "VW kører kampagne på privatleasing på elbiler (ID.3, 4, 5, 7) med op til omkring 75.000 km/år — et segment få private ifølge dem vælger, men merprisen vs. 10.000 km/år i ID.7 nævnes omkring 2.000 kr./md.",
       "cars": [
         "Volkswagen ID.3",
         "Volkswagen ID.4",
         "Volkswagen ID.5",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "leasing",
+        "pendling"
+      ],
+      "uncertain": true,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Volkswagen: privatleasing med meget høje km",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2181.8,
+      "section_end_sec": 2379.1,
+      "section_time_range": "[36:21 – 39:39]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2054,
+      "text": "De advarer om, at ekstrem høj årlig kørsel hurtigt ælter fabriks- og batterigaranti — ved 75.000 km/år kan garantigrænser rammes på få år.",
+      "cars": [
         "Volkswagen ID.7"
       ],
       "themes": [
@@ -13939,133 +14008,309 @@
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Kia Niro-parti, VW-leasing og Polestars fremtid",
-      "section_order": 6,
+      "section_title": "Volkswagen: privatleasing med meget høje km",
+      "section_order": 5,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2047.4,
-      "section_end_sec": 2795.76,
-      "section_time_range": "[34:07 – 46:35]",
+      "section_start_sec": 2181.8,
+      "section_end_sec": 2379.1,
+      "section_time_range": "[36:21 – 39:39]",
       "bullet_time_range": null
     },
     {
-      "id": 1824,
-      "text": "Polestar annoncerer udvidet modelplan: Polestar 4 som stationcar, ny Polestar 2 i 2027, Polestar 7 SUV bygget i Slovakiet på teknisk slægt med EX60.",
-      "cars": [
-        "Polestar 4",
-        "Polestar 2",
-        "Polestar 7",
-        "Volvo EX60"
-      ],
+      "id": 2055,
+      "text": "Christian ser kampagnen som interessant for pendlere og en udfordring til myten om, at høj km altid gør privatleasing ufornuftigt.",
+      "cars": [],
       "themes": [
-        "strategi",
-        "elbil"
+        "leasing"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Kia Niro-parti, VW-leasing og Polestars fremtid",
-      "section_order": 6,
+      "section_title": "Volkswagen: privatleasing med meget høje km",
+      "section_order": 5,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2047.4,
-      "section_end_sec": 2795.76,
-      "section_time_range": "[34:07 – 46:35]",
+      "section_start_sec": 2181.8,
+      "section_end_sec": 2379.1,
+      "section_time_range": "[36:21 – 39:39]",
       "bullet_time_range": null
     },
     {
-      "id": 1825,
-      "text": "De ser positivt på bredere segmentdækning under ny CEO og ejerstøtte, men anerkender økonomisk pres og risiko for forsinkelser.",
+      "id": 2056,
+      "text": "Ny CEO-strategi: dække langt flere markedssegmenter (mål omkring halvdelen mod i dag omkring 20–25 %); Polestar 2 får ny generation omkring første halvår 2027.",
+      "cars": [
+        "Polestar 2"
+      ],
+      "themes": [
+        "strategi",
+        "lancering"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Polestar: modelplan, Polestar 7 og fabrikker",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2379.1,
+      "section_end_sec": 2791.8,
+      "section_time_range": "[39:39 – 46:31]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2057,
+      "text": "Polestar 4 får stationcar-udgave (wagon/coupe-navngivning); Polestar 7 bliver kompakt SUV på teknisk slægt med Volvo EX60, bygget i Slovakiet på Volvo-fabrik.",
+      "cars": [
+        "Polestar 4",
+        "Polestar 7",
+        "Volvo EX60"
+      ],
+      "themes": [
+        "elbil",
+        "produktion"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Polestar: modelplan, Polestar 7 og fabrikker",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2379.1,
+      "section_end_sec": 2791.8,
+      "section_time_range": "[39:39 – 46:31]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2058,
+      "text": "De diskuterer Polestars aktie og ejernes støtte samt behov for brede segmenter for at bære forretningen; Polestar 2-historikken som dansk succes nævnes.",
       "cars": [
         "Polestar"
       ],
       "themes": [
-        "marked",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Polestar: modelplan, Polestar 7 og fabrikker",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2379.1,
+      "section_end_sec": 2791.8,
+      "section_time_range": "[39:39 – 46:31]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2059,
+      "text": "Kort debat om overlappende modeller mellem Volvo og Polestar og forventning til Polestar 4 wagon som alternativ til Volvo stationcar.",
+      "cars": [
+        "Polestar 4",
+        "Volvo"
+      ],
+      "themes": [
         "strategi"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Kia Niro-parti, VW-leasing og Polestars fremtid",
+      "section_title": "Polestar: modelplan, Polestar 7 og fabrikker",
       "section_order": 6,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2047.4,
-      "section_end_sec": 2795.76,
-      "section_time_range": "[34:07 – 46:35]",
+      "section_start_sec": 2379.1,
+      "section_end_sec": 2791.8,
+      "section_time_range": "[39:39 – 46:31]",
       "bullet_time_range": null
     },
     {
-      "id": 1826,
-      "text": "Christian kører til Hamburg i Volvo ES90 for at se kinesiske showrooms og observerer stort Volvo-event med masseudlevering af ES90 til kunder.",
+      "id": 2060,
+      "text": "Christian kørte til Hamburg i Volvo ES90 for at se kinesiske showrooms; på hotellet var Volvo-event med mange ES90 til udlevering til kunder.",
       "cars": [
         "Volvo ES90"
       ],
       "themes": [
         "rejse",
-        "event"
+        "marked"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Tur til Hamburg i Volvo ES90 og Tesla-ladning",
+      "section_title": "Hamburg i Volvo ES90: leverings-event og Tesla-ladning",
       "section_order": 7,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2795.76,
-      "section_end_sec": 3513.12,
-      "section_time_range": "[46:35 – 58:33]",
+      "section_start_sec": 2791.8,
+      "section_end_sec": 3121.1,
+      "section_time_range": "[46:31 – 52:01]",
       "bullet_time_range": null
     },
     {
-      "id": 1827,
-      "text": "800V-arkitekturen giver ifølge oplevelsen problemer ved opladning på visse Tesla Superchargere, som ikke matcher bilens forventede effekt — Ioniq 5/EV6/Xpeng nævnes som mere problemfrie på samme net.",
+      "id": 2061,
+      "text": "ES90 beskrives som mere nisk end EX60; parallel lancering med forsinkelser omkring EX90 skaber forvirring på modelprogrammet.",
       "cars": [
         "Volvo ES90",
-        "Hyundai Ioniq 5",
-        "Kia EV6"
+        "Volvo EX60",
+        "Volvo EX90"
       ],
       "themes": [
-        "lading",
-        "Tesla"
+        "elbil",
+        "strategi"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Tur til Hamburg i Volvo ES90 og Tesla-ladning",
+      "section_title": "Hamburg i Volvo ES90: leverings-event og Tesla-ladning",
       "section_order": 7,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2795.76,
-      "section_end_sec": 3513.12,
-      "section_time_range": "[46:35 – 58:33]",
+      "section_start_sec": 2791.8,
+      "section_end_sec": 3121.1,
+      "section_time_range": "[46:31 – 52:01]",
       "bullet_time_range": null
     },
     {
-      "id": 1828,
-      "text": "Samtalen understreger, at ladeinfrastruktur og bilens elektronik stadig kan skabe friktion på trods af lang rækkevidde.",
+      "id": 2062,
+      "text": "Ved 800 V-bil på Teslas netværk målte han kun omkring 111 kW peak på opvarmet bil med lav SOC — lavere end forventet (han havde håbet omkring 150 kW).",
       "cars": [
         "Volvo ES90"
       ],
       "themes": [
         "lading",
-        "elbil"
+        "infrastruktur"
       ],
       "uncertain": false,
       "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
       "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
       "pub_date": "2026-02-23T04:00:00+00:00",
-      "section_title": "Tur til Hamburg i Volvo ES90 og Tesla-ladning",
+      "section_title": "Hamburg i Volvo ES90: leverings-event og Tesla-ladning",
       "section_order": 7,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2795.76,
-      "section_end_sec": 3513.12,
-      "section_time_range": "[46:35 – 58:33]",
+      "section_start_sec": 2791.8,
+      "section_end_sec": 3121.1,
+      "section_time_range": "[46:31 – 52:01]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2063,
+      "text": "Kort rant om forventninger til elbil og ladeinfrastruktur; nævner V4-ladere med lange kabler som forbedring på nyere stationer.",
+      "cars": [],
+      "themes": [
+        "lading"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Hamburg i Volvo ES90: leverings-event og Tesla-ladning",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2791.8,
+      "section_end_sec": 3121.1,
+      "section_time_range": "[46:31 – 52:01]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2064,
+      "text": "Frederik Hjort (Vestjylland–København) vil have ca. 250 vinterkm komfortabelt, budget omkring 400.000 kr., ikke klassisk SUV; referencer hatch/stationcar/sedan.",
+      "cars": [
+        "Mazda 3"
+      ],
+      "themes": [
+        "lytter",
+        "rækkevidde"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Lytter: elbil efter Mazda 3 — BMW i4 vs. i5 m.fl.",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3121.1,
+      "section_end_sec": 3513.1,
+      "section_time_range": "[52:01 – 58:33]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2065,
+      "text": "De anbefaler primært brugt BMW i4 med stort batteri frem for i5 til langturens komfort — i5 opleves mindre harmonisk og dyrere; en ny BMW elbil til efteråret (omkring 440.000 kr.) kan presse brugtpriser på i4.",
+      "cars": [
+        "BMW i4",
+        "BMW i5"
+      ],
+      "themes": [
+        "brugtbil",
+        "køreglæde"
+      ],
+      "uncertain": true,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Lytter: elbil efter Mazda 3 — BMW i4 vs. i5 m.fl.",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3121.1,
+      "section_end_sec": 3513.1,
+      "section_time_range": "[52:01 – 58:33]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2066,
+      "text": "Alternativer: meget billig privatleasing på ny Polestar 4, Mercedes C-klasse plug-in med stort batteri som kompromis, samt kort omtale af ID.7 — sidstnævnte affærdiges som dårlig køreglæde for hans profil.",
+      "cars": [
+        "Polestar 4",
+        "Mercedes-Benz C-Klasse",
+        "Volkswagen ID.7"
+      ],
+      "themes": [
+        "leasing",
+        "brugtbil"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Lytter: elbil efter Mazda 3 — BMW i4 vs. i5 m.fl.",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3121.1,
+      "section_end_sec": 3513.1,
+      "section_time_range": "[52:01 – 58:33]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2067,
+      "text": "Afslutning med joke om at montere vejskilt og Silavej/Eskimovej — callback til åbningen.",
+      "cars": [],
+      "themes": [
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "334 Værditab på rekordtid: Nu koster luksus-elbilerne under det halve af nyprisen",
+      "episode_guid": "413a1127-aef0-4cb1-90e0-b3f70098ac7e",
+      "pub_date": "2026-02-23T04:00:00+00:00",
+      "section_title": "Lytter: elbil efter Mazda 3 — BMW i4 vs. i5 m.fl.",
+      "section_order": 8,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3121.1,
+      "section_end_sec": 3513.1,
+      "section_time_range": "[52:01 – 58:33]",
       "bullet_time_range": null
     },
     {
@@ -17005,5 +17250,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 736
+  "count": 747
 }
