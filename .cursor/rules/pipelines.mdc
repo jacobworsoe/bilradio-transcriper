@@ -1,0 +1,53 @@
+---
+description: Ingest pipeline (RSS → Whisper on disk) vs improvement pipeline (cursor_inbox → improved JSON → SQLite → UI / GitHub Pages)
+alwaysApply: true
+---
+
+# Bilradio pipelines
+
+The end-to-end work splits into two named pipelines:
+
+| Pipeline | Scope | Primary outputs |
+|----------|--------|-----------------|
+| **Ingest pipeline** | Steps **1–4** below | RSS + `data/audio/`, Whisper, **`data/transcripts/`** |
+| **Improvement pipeline** | Everything after ingest, including **`cursor_inbox`** prep | **`data/transcripts_improved/`**, SQLite **Topics**, optional **`docs/`** |
+
+---
+
+## Ingest pipeline (steps 1–4)
+
+1. **Fetch RSS** — Bilradio feed (episodes from **2025-11-07** onwards; items under **`BILRADIO_MIN_DURATION_SEC`** default **60** are skipped unless set to **`0`**).
+2. **Download audio** — MP3s under **`data/audio/`**.
+3. **Transcribe** — **OpenAI Whisper** (e.g. **`scripts/batch_whisper_transcribe.py`**, or **`bilradio transcribe`** / **`run-queue`**).
+4. **Keep Whisper on disk** — **`data/transcripts/<audio_stem>.json`** (preferred; **`.txt`** supported). Full payload with **`segments`**; this is the raw capture.
+
+**Typical CLI (batch path):** **`bilradio sync`**, **`bilradio download`**, run **`batch_whisper_transcribe.py`**, then **`bilradio ingest-transcripts`** so episode rows in SQLite move to **transcribed** when matching files exist on disk (see **`bilradio/pipeline.py`**, **`bilradio/whisper_run.py`** for integrated options).
+
+**Not part of ingest:** improved JSON, **`cursor_inbox`**, **`import-bullets`**, static export.
+
+---
+
+## Improvement pipeline (after ingest)
+
+Prerequisite: **ingest pipeline** complete — at least **`data/transcripts/<stem>.json`** (or **`.txt`**) for the episode.
+
+1. **Sync DB with disk transcripts (if not already done):** **`bilradio ingest-transcripts`** so the app shows **transcribed** where files exist.
+2. **Create per-episode Agent prompts under `data/cursor_inbox/`:** **`bilradio prepare-improved-agent`** (optional **`--limit`**, **`--force`**). Writes **`data/cursor_inbox/<guid>_improve_auto_agent.md`** (and related files such as **`{guid}_transcript.txt`**) with output path and **`CURSOR_INSTRUCTIONS`** (same source as **`bilradio/extract.py`**).
+3. **Operator / Agent task (repo root):** follow **`Prompt to create improved JSON.txt`**:
+
+   > Create the improved JSON for the oldest episode that is not yet improved and delete the inbox file for that episode when you are done.
+
+   Use **`data/transcripts/<stem>.json`** (especially **`segments`**) for section **timecodes**, not only flat **`.txt`**. To pick the oldest backlog episode, order by **`episodes.pub_date`** in SQLite and skip GUIDs that already have **`data/transcripts_improved/*_<guid>.json`**.
+4. **Author improved JSON:** **Cursor Auto Agent** applies **`CURSOR_INSTRUCTIONS`** → **`data/transcripts_improved/<stem>.json`**. Optional mechanical fillers: **`bilradio bootstrap-improved-json`**, **`scripts/improved_json_from_segments.py`**, **`scripts/apply_whisper_timecodes.py`** (interim or section times only — see **`.cursor/rules/transcript-storage.mdc`**).
+5. **Load Topics into SQLite:** **`bilradio import-bullets --guid <guid> --file data/transcripts_improved/<stem>.json`**. Re-run after edits to that JSON.
+6. **Local web UI:** **`bilradio serve`** — **`/`** Episodes, **`/topics`** Topics (dynamic API). **`bilradio clear-error`** if an episode row needs reset.
+7. **Public static site (optional):** **`bilradio export-github-pages`** → **`docs/`**, then commit and push tracked **`docs/`** per **`.cursor/rules/github-pages-deploy.mdc`**.
+
+**Policy:** Do **not** use third-party paid LLM APIs for improved JSON unless the project owner explicitly opts in.
+
+---
+
+## Related rules
+
+- **`.cursor/rules/transcript-storage.mdc`** — two authoring artifacts on disk (Whisper vs improved JSON), SQLite import, **do not** list.
+- **`.cursor/rules/github-pages-deploy.mdc`** — when and how to refresh **`docs/`**.

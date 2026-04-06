@@ -1,22 +1,24 @@
 ---
-description: Two-step pipeline — Whisper JSON then CURSOR improved JSON; SQLite loaded from step 2 for the web app
+description: Two authoring artifacts (Whisper vs improved JSON); SQLite loaded from improved JSON; complements pipelines.mdc
 alwaysApply: true
 ---
 
-# Transcript and summaries (two authoring steps)
+# Transcript and summaries (authoring + storage)
 
-**Authoring** has **two steps** only. There is no separate third step to “write bullet summaries”: the JSON from step 2 already **is** the structured summary (sections + topic bullets). **SQLite** is filled from that file so the site can query and render Topics quickly — it is **not** a second master document you maintain by hand.
+**Operational order** of RSS → Whisper → **`cursor_inbox`** → Topics → optional Pages is documented in **`.cursor/rules/pipelines.mdc`** (**ingest pipeline** vs **improvement pipeline**).
 
-## Step 1 — Whisper output (disk)
+**Authoring** has **two steps** on disk only. There is no separate third step to “write bullet summaries”: the JSON from step 2 already **is** the structured summary (sections + topic bullets). **SQLite** is filled from that file so the site can query and render Topics quickly — it is **not** a second master document you maintain by hand.
+
+## Step 1 — Whisper output (disk) — end state of the **ingest pipeline**
 
 - **How:** Use the **Python / Whisper pipeline** (e.g. batch script or `bilradio transcribe`) to produce the raw transcript.
 - **Path:** `data/transcripts/<audio_stem>.json` (preferred) and optionally `.txt` / sidecar formats from the same run.
 - **Content:** Full Whisper payload (`text`, `segments`, etc.). Keep this as the **versionable raw capture**.
 - **SQLite:** Do **not** store the full Whisper JSON body in the database; at most **`transcript_path`** for ingest/pipeline.
 
-## Step 2 — Improved JSON (disk), then import to SQLite
+## Step 2 — Improved JSON (disk), then import to SQLite — **improvement pipeline**
 
-- **How:** **Cursor Auto Agent** reads the Whisper transcript and **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py`: fix obvious Whisper errors using context, organize into **thematic Danish sections**, and write **concise summary bullets** (not a full transcript for reading).
+- **How:** **Cursor Auto Agent** reads the Whisper transcript and **`CURSOR_INSTRUCTIONS`** in `bilradio/extract.py`: fix obvious Whisper errors using context, organize into **thematic Danish sections**, and write **concise summary bullets** (not a full transcript for reading). Follow **`Prompt to create improved JSON.txt`** when batching backlog work (oldest episode first; delete inbox file when done — see **pipelines.mdc**).
 - **Output path:** `data/transcripts_improved/<audio_stem>.json`
 - **Schema:** Must match the **current** `CURSOR_INSTRUCTIONS` in `bilradio/extract.py` (JSON shape: `sections` → `title`, optional **`start_sec` / `end_sec` on each section** aligned with Whisper **`segments`**, `bullets` with `text`, `cars`, `themes`, `uncertain`). Section and bullet counts follow **episode content**, not a fixed template.
 - **Prompt files:** Run **`bilradio prepare-improved-agent`** for per-episode Markdown in `data/cursor_inbox/` with the same instructions as `CURSOR_INSTRUCTIONS`.
@@ -29,8 +31,8 @@ alwaysApply: true
 
 | What | Role | Location | In SQLite as full JSON? |
 |------|------|----------|-------------------------|
-| Raw transcription | Step 1 source | `data/transcripts/*.{json,txt}` | No (path only) |
-| Improved + summaries | Step 2 source of truth | `data/transcripts_improved/*.json` | No (rows imported) |
+| Raw transcription | Ingest pipeline / step 1 source | `data/transcripts/*.{json,txt}` | No (path only) |
+| Improved + summaries | Improvement pipeline / step 2 source of truth | `data/transcripts_improved/*.json` | No (rows imported) |
 | Query index | Serving Topics / APIs | — | `topic_sections`, `topic_bullets` |
 
 ## Do not
