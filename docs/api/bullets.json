@@ -7000,7 +7000,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1556,
+      "id": 2068,
       "text": "Værterne ønsker godt nytår og ser frem til et bilår med endnu flere elbil-nyheder og skarp konkurrence på pris.",
       "cars": [],
       "themes": [
@@ -7021,7 +7021,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1557,
+      "id": 2069,
       "text": "Jan har kørt Volvo EX90 og er blevet mere positiv, men adgang via nøglekort og betjening opleves stadig besværlig sammenlignet med en lav, nem bil.",
       "cars": [
         "Volvo EX90"
@@ -7044,7 +7044,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1558,
+      "id": 2070,
       "text": "Christian roser Jans Audi A6 2.0 TDI mild hybrid: stærkt samspil motor/gearkasse, 204 hk føles rigeligt, lang rækkevidde på tank og rolig komfort på bl.a. tur til Flensborg.",
       "cars": [
         "Audi A6"
@@ -7067,7 +7067,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1559,
+      "id": 2071,
       "text": "De diskuterer, at næsten ingen køber diesel i Danmark, mens bilen stadig sælges i Europa; få danske køb, høj indkøbspris (ca. 700.000 kr. mod billigere A6 e-tron) og forventet dyrere diesel fremadrettet gør segmentet niche.",
       "cars": [
         "Audi A6",
@@ -7092,7 +7092,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1560,
+      "id": 2072,
       "text": "Christian ser, at Wismo-koncernen (Peugeot, Opel, Citroën m.fl.) traditionelt kører aggressive nytårskampagner i januar; Peugeot/Opel gemmes til senere, og fokus rettes mod Citroën på hjemmesiden.",
       "cars": [],
       "themes": [
@@ -7113,7 +7113,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1561,
+      "id": 2073,
       "text": "Den nye basis Citroën ë-C3 med 30 kWh batteri prissættes til 139.990 kr.; kampagnen \"spar 20.000 kr.\" kritiseres, fordi modellen ikke tidligere har været solgt i Danmark på samme måde som den store udgave.",
       "cars": [
         "Citroën ë-C3"
@@ -7137,7 +7137,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1562,
+      "id": 2074,
       "text": "Opgivet rækkevidde omkring 204 km (WLTP) og lille batteri gør bilen i praksis en bybil; de estimerer vinterrækkevidde omkring 150 km blandet og meget kort på motorvej ved 100 km/t.",
       "cars": [
         "Citroën ë-C3"
@@ -7160,7 +7160,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1563,
+      "id": 2075,
       "text": "Den bedre udstyrede ë-C3 med større batteri (VTR Sport) er ifølge udsendelsen nede omkring 159.990 kr. og fremhæves som det fornuftige valg frem for basisversionen.",
       "cars": [
         "Citroën ë-C3"
@@ -7183,7 +7183,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1564,
+      "id": 2076,
       "text": "Næst billigste elbil nævnes BYD Dolphin Surf til omkring 150.000 kr. med kortere rækkevidde; Renault Twingo forventes prissat under 150.000 kr. med statsgaranti til forår og kan ændre billigbil-landskabet.",
       "cars": [
         "BYD Dolphin Surf",
@@ -7207,7 +7207,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1565,
+      "id": 2077,
       "text": "De skelner mellem sedan P7 og hatchback P7+ (ca. fem meter, 800 V som G6/G9); importøren har bekræftet prissætning 9. januar.",
       "cars": [
         "Xpeng P7",
@@ -7231,7 +7231,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1566,
+      "id": 2078,
       "text": "Motorydelse nævnes omkring 240–300 hk; de gætter pris i intervallet ca. 350.000–375.000 kr. som mellemstor elbil-konkurrent til bl.a. VW ID.7-klassen.",
       "cars": [
         "Xpeng P7+"
@@ -7254,7 +7254,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1567,
+      "id": 2079,
       "text": "P7-sedanens danske lancering er usikker; P7+ prioriteres som den mere håndgribelige nyhed.",
       "cars": [
         "Xpeng P7",
@@ -7278,7 +7278,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1568,
+      "id": 2080,
       "text": "Ford sænker priserne på Explorer med 30.000 kr.; basis med 52 kWh (ca. 378 km WLTP) nævnes omkring 250.000 kr. og sammenlignes med Skoda Elroq i samme prisleje.",
       "cars": [
         "Ford Explorer",
@@ -7302,7 +7302,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1569,
+      "id": 2081,
       "text": "Stort batteri (ca. 77 kWh, op til ca. 602 km) og mere udstyr nævnes til ca. 303.000 kr.; billig udgang har stålfælge og mangler bl.a. sædevarme, men en billig komfortpakke til nogle tusinde kroner anbefales.",
       "cars": [
         "Ford Explorer"
@@ -7326,7 +7326,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1570,
+      "id": 2082,
       "text": "Ford Capri er også nedsat 30.000 kr.; de ser positivt på, at Ford endelig har skarpe elbil-tilbud under 300.000 kr.",
       "cars": [
         "Ford Capri",
@@ -7350,7 +7350,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1571,
+      "id": 2083,
       "text": "Brugtmarkedet følger langsomt: eksempel med halvår gammel Explorer med stort batteri til ca. 250.000 kr.; privatleasing med stort batteri nævnes til ca. 136.000 kr. over tre år ved 10.000 km/år med restværdiandel ca. 45 % (højere ved 15.000 km).",
       "cars": [
         "Ford Explorer"
@@ -7373,7 +7373,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1572,
+      "id": 2084,
       "text": "Peugeot e-3008 Allure og tilsvarende Opel Grandland med samme teknik er ifølge udsendelsen nedsat 25.000 kr., så e-3008 kan komme omkring 280.000 kr.",
       "cars": [
         "Peugeot e-3008",
@@ -7397,7 +7397,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1573,
+      "id": 2085,
       "text": "De understreger købers marked i 2026: enormt udbud i prisintervallet 250.000–300.000 kr., modeller der primært afsættes i Danmark, og brugtpriser der må følge efter.",
       "cars": [],
       "themes": [
@@ -7418,7 +7418,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1574,
+      "id": 2086,
       "text": "Jan påpeger, at mange kampagner kræver, at man har kørt bilen for at vurdere dem fair – ellers risikerer man skæv omtale baseret på papiret alene.",
       "cars": [],
       "themes": [
@@ -7439,7 +7439,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1575,
+      "id": 2087,
       "text": "2026 tegner endnu bredere end 2025 med nyheder fra meget billige elbiler op til elektrisk Ferrari; listen er lang men ikke udtømmende.",
       "cars": [],
       "themes": [
@@ -7460,7 +7460,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1576,
+      "id": 2088,
       "text": "Alfa Romeo Giulia/Stelvio på el siges udskudt til mindst 2027; Alpine A390 nævnes som dyr crossover med begrænset interesse i podcasten.",
       "cars": [
         "Alfa Romeo Giulia",
@@ -7485,7 +7485,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1577,
+      "id": 2089,
       "text": "Audi A2 e-tron (rygte-navn) forventes på udviklet MEB-plus med lille Q4-søster til under Q4’s nuværende indstigning – usikkert om Danmark i 2026.",
       "cars": [
         "Audi A2 e-tron",
@@ -7509,7 +7509,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1578,
+      "id": 2090,
       "text": "BMW Neue Klasse iX3 kommer tidligt på året med verdenspremiere på den færdige model senere; billigere baghjulstræksversion forventes til sommer til omkring eller under 400.000 kr.; de diskuterer overlap med i4 og plads i forhold til ren el-platform i3.",
       "cars": [
         "BMW iX3",
@@ -7534,7 +7534,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1579,
+      "id": 2091,
       "text": "Cupra Raval og VW ID. Polo forventes som folke-MEB-biler med stor batteripakke til priser der kan konkurrere med basis Elroq/Explorer; Skoda Epic og ID. Cross nævnes i samme familje.",
       "cars": [
         "Cupra Raval",
@@ -7561,7 +7561,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1580,
+      "id": 2092,
       "text": "Dacia billig elbil i 2026 nævnes som mulig prispresser (sammenlignet med gamle Spring-niveau) pga. CO2-krav; flere nye kinesiske mærker og modeller (fx Deepal S05 via Andersen Motors) kan lande i Danmark.",
       "cars": [
         "Dacia Spring",
@@ -7586,7 +7586,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1581,
+      "id": 2093,
       "text": "Denza Z9 GT vises som luksus-elbil til over en million; usikker importør-situation. DS 8 og et mærke omtalt som \"Xlantix\" affærdiges som næsten irrelevante salgsmæssigt.",
       "cars": [
         "Denza Z9 GT"
@@ -7609,7 +7609,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1582,
+      "id": 2094,
       "text": "Ferrari Electrica får verdenspremiere i oktober 2026; Danmark først 2027, men kan blive \"billigste Ferrari\" med afgifter i millionklassen.",
       "cars": [
         "Ferrari"
@@ -7632,7 +7632,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1583,
+      "id": 2095,
       "text": "Honda Prelude og generel Honda-elbil-udvikling i Europa affærdiges kort; større modeller (5 og 9) sammenlignes med Model Y/Ioniq 5-segment med pris under 300.000 kr. som diskussion.",
       "cars": [
         "Honda"
@@ -7654,7 +7654,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1584,
+      "id": 2096,
       "text": "Hyundai Staria el debut nævnes til biludstilling i Bruxelles som billigere familie-alternativ til Ioniq 9.",
       "cars": [
         "Hyundai Staria",
@@ -7678,7 +7678,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1585,
+      "id": 2097,
       "text": "Jaecoo/Omoda J5 skal prissættes i skyggen af bl.a. prisfald på Ford Explorer. Jaguar stopper fossile F-Pace; fremtidige el-projekter beskrives som uforudsigelige.",
       "cars": [
         "Jaguar F-Pace",
@@ -7702,7 +7702,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1586,
+      "id": 2098,
       "text": "Jeep Compass Electric og Recon på STLA-platform nævnes som potentielt relevante hvis prisen kommer under 300.000 kr.",
       "cars": [
         "Jeep Compass Electric",
@@ -7726,7 +7726,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1587,
+      "id": 2099,
       "text": "Kia EV2 forventes som ca. 30.000 euro-bil (diskussion 200.000–220.000 kr.); Kia EV5 og PV5 nævnes – PV5 får meget opmærksomhed som familiebil, Christian skal teste den.",
       "cars": [
         "Kia EV2",
@@ -7751,7 +7751,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1588,
+      "id": 2100,
       "text": "Leapmotor B10 og kommende mindre B05-variant: mindste udgave gættes til ca. 170.000 kr. og sammenlignes med Renault 4; skepticisme om danskernes interesse kontra etablerede mærker.",
       "cars": [
         "Leapmotor B10",
@@ -7775,7 +7775,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1589,
+      "id": 2101,
       "text": "Lexus RZ får større facelift som Toyota bZ4X; Mazda CX-6e og 6e-software debatteres – mange danske 6e-købere trods hård mediekritik.",
       "cars": [
         "Lexus RZ",
@@ -7801,7 +7801,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1590,
+      "id": 2102,
       "text": "Mercedes: CLA Shooting Brake, syv-sæders GLB EQ med \"fornuftige\" priser, elektrisk GLC og GLA, og senere el C-klasse med klassisk navngivning (fx C 250 EQ) nævnes som store 2026-temaer.",
       "cars": [
         "Mercedes-Benz CLA",
@@ -7827,7 +7827,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1591,
+      "id": 2103,
       "text": "MG: opdateret MG4, mulig billigere \"City\"-linje, MG6 som Model Y-konkurrent, og luksus IM5/IM6 nævnes i 2026-pipeline.",
       "cars": [
         "MG4",
@@ -7851,7 +7851,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1592,
+      "id": 2104,
       "text": "Nissan Leaf og Micra el nærmer sig; pris endnu ikke fast – de forventer pres på at starte lavere end tidlige indikationer (diskussion om ca. 250.000 kr. vs. over 300.000 kr. for stort batteri).",
       "cars": [
         "Nissan Leaf",
@@ -7875,7 +7875,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1593,
+      "id": 2105,
       "text": "Porsche Cayenne el og Cayman el nævnes; Cayenne el ses som unik for mange Porsche-kunder trods høj pris.",
       "cars": [
         "Porsche Cayenne",
@@ -7899,7 +7899,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1594,
+      "id": 2106,
       "text": "Range Rover Electric forsinket fra 2024 til 2026. Renault 5 Turbo nævnes som eftertragtet testbil til sommer; Renault Twingo lancering januar/pris og marts-levering nævnes igen.",
       "cars": [
         "Range Rover Electric",
@@ -7924,7 +7924,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1595,
+      "id": 2107,
       "text": "Skoda Epic fremhæves som en af de største 2026-nyheder: folkelig, høj karosse, forventet stærk dansk appel; de gætter ca. 230.000 kr. for stor batteri-version med ca. 420 km rækkevidde.",
       "cars": [
         "Skoda Epic"
@@ -7948,7 +7948,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1596,
+      "id": 2108,
       "text": "Subaru Solterra facelift; Toyota bZ4X Touring, Urban Cruiser Electric og C-HR Plus nævnes; Urban Cruiser kritiseres for langsom DC-ladning (fx 61 kW peak, lang 10–80 % tid).",
       "cars": [
         "Subaru Solterra",
@@ -7973,7 +7973,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1597,
+      "id": 2109,
       "text": "VW ID.4 får omfattende facelift (nyt karrosseri, kabine, hurtigere DC) og kan omdøbes til ID. Tiguan – risiko for at første leverancer først januar 2027. Audi Q4 facelift nævnes.",
       "cars": [
         "Volkswagen ID.4",
@@ -7998,7 +7998,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1598,
+      "id": 2110,
       "text": "Volvo EX60 verdensdebut 17. jan.; bygget med giga-casting i Torslanda, stor betydning for Volvo; CEO Håkan Samuelsson nævnes. De er skeptiske til påstande om \"nye standarder\" uden kendt endelig specifikation.",
       "cars": [
         "Volvo EX60"
@@ -8021,7 +8021,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1599,
+      "id": 2111,
       "text": "Seres 7 GT (super-SUV) nævnes som sidste punkt på listen over mange 2026-modeller.",
       "cars": [
         "Seres 7 GT"
@@ -8044,7 +8044,7 @@
       "bullet_time_range": null
     },
     {
-      "id": 1600,
+      "id": 2112,
       "text": "Christians top 3 for 2026: BMW Neue Klasse iX3, Volkswagen-gruppens ID. Polo / Cupra Raval / Skoda Epic / ID. Cross-familien, og Mercedes GLB EQ; Renault Twingo nævnes som æres-fourth.",
       "cars": [
         "BMW iX3",
@@ -8067,12 +8067,12 @@
       "start_sec": null,
       "end_sec": null,
       "section_start_sec": 3653.6,
-      "section_end_sec": 4034.0,
-      "section_time_range": "[1:00:53 – 1:07:14]",
+      "section_end_sec": 4039.6,
+      "section_time_range": "[1:00:53 – 1:07:19]",
       "bullet_time_range": null
     },
     {
-      "id": 1601,
+      "id": 2113,
       "text": "Lytter med BMW iX3 M Sport 2023 og restgæld ca. 415.000 kr. vil skifte til ny BMW-teknologi; værterne vurderer, at handelspris realistisk kan være under restgæld (negativ kapital).",
       "cars": [
         "BMW iX3"
@@ -8091,12 +8091,12 @@
       "start_sec": null,
       "end_sec": null,
       "section_start_sec": 3653.6,
-      "section_end_sec": 4034.0,
-      "section_time_range": "[1:00:53 – 1:07:14]",
+      "section_end_sec": 4039.6,
+      "section_time_range": "[1:00:53 – 1:07:19]",
       "bullet_time_range": null
     },
     {
-      "id": 1602,
+      "id": 2114,
       "text": "Købt omkring pristop i 2022/2023 gør situationen særlig hård; kynisk råd er at sælge nu hvis man vil begrænse yderligere tab, da nye billigere iX3-varianter kan presse brugtpriser.",
       "cars": [
         "BMW iX3"
@@ -8114,12 +8114,12 @@
       "start_sec": null,
       "end_sec": null,
       "section_start_sec": 3653.6,
-      "section_end_sec": 4034.0,
-      "section_time_range": "[1:00:53 – 1:07:14]",
+      "section_end_sec": 4039.6,
+      "section_time_range": "[1:00:53 – 1:07:19]",
       "bullet_time_range": null
     },
     {
-      "id": 1603,
+      "id": 2115,
       "text": "Alternativet er at beholde bilen mange år og acceptere, at den ikke bliver mindre attraktiv sammenlignet med ny teknik; følelsesmæssigt kan den gamle iX3 stadig være en fremragende bil.",
       "cars": [
         "BMW iX3"
@@ -8136,13 +8136,13 @@
       "start_sec": null,
       "end_sec": null,
       "section_start_sec": 3653.6,
-      "section_end_sec": 4034.0,
-      "section_time_range": "[1:00:53 – 1:07:14]",
+      "section_end_sec": 4039.6,
+      "section_time_range": "[1:00:53 – 1:07:19]",
       "bullet_time_range": null
     },
     {
-      "id": 1604,
-      "text": "Udsendelsen afsluttes med nytårshilsner til lytterne (sponsor-reklame efterfølger og udelades fra indholdet).",
+      "id": 2116,
+      "text": "Udsendelsen afsluttes med nytårshilsner til lytterne.",
       "cars": [],
       "themes": [
         "outro"
@@ -8156,8 +8156,8 @@
       "start_sec": null,
       "end_sec": null,
       "section_start_sec": 3653.6,
-      "section_end_sec": 4034.0,
-      "section_time_range": "[1:00:53 – 1:07:14]",
+      "section_end_sec": 4039.6,
+      "section_time_range": "[1:00:53 – 1:07:19]",
       "bullet_time_range": null
     },
     {
