@@ -14841,121 +14841,193 @@
       "bullet_time_range": null
     },
     {
-      "id": 1863,
-      "text": "Christian skal brevstemme før presse-tur til Ibiza for at køre nye Renault Twingo; kort snak om valg og sommer-biljournalistik.",
+      "id": 1953,
+      "text": "Ugens temaer: en meget stor japansk elbil i S-klasse-størrelse til omkring 460.000 kr., ny BMW i3 med ekstrem rækkevidde, Alpine på vej til Danmark, og lytterspørgsmål.",
+      "cars": [],
+      "themes": [
+        "nyheder",
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Programintro og valgkamp",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 501.8,
+      "section_time_range": "[0:30 – 8:21]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1954,
+      "text": "Christian skal til Ibiza og teste Renault Twingo og skal brevstemme før afrejse; let snak om biler i valgkampen og om elbilpolitik.",
       "cars": [
         "Renault Twingo"
       ],
       "themes": [
         "podcast",
-        "event"
+        "politik"
       ],
       "uncertain": false,
       "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
       "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
       "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Intro og valg",
+      "section_title": "Programintro og valgkamp",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 54.0,
-      "section_end_sec": 700.0,
-      "section_time_range": "[0:54 – 11:40]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 501.8,
+      "section_time_range": "[0:30 – 8:21]",
       "bullet_time_range": null
     },
     {
-      "id": 1864,
-      "text": "Biler fylder ifølge værterne markant i valgkampen 2026 med modstridende løfter om afgifter og infrastruktur.",
+      "id": 1955,
+      "text": "Mercedes har meldt ud at EQA og EQB skal have nye batterimoduler frem for kun softwarebegrænsning af lading; rygter om kompensation og uklar kommunikation over for kunderne.",
+      "cars": [
+        "Mercedes-Benz EQA",
+        "Mercedes-Benz EQB"
+      ],
+      "themes": [
+        "batteri",
+        "tilbagekaldelse"
+      ],
+      "uncertain": true,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Mercedes EQA og EQB: batteriskift og FDM",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 501.8,
+      "section_end_sec": 734.8,
+      "section_time_range": "[8:21 – 12:14]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1956,
+      "text": "FDM følger sagen og ca. 30.000 berørte biler; breve til ejere om lang ventetid til udskiftning, muligvis ind i 2027.",
       "cars": [],
       "themes": [
-        "politik",
-        "bilpolitik"
+        "forbruger",
+        "sikkerhed"
       ],
-      "uncertain": false,
+      "uncertain": true,
       "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
       "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
       "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Intro og valg",
-      "section_order": 0,
+      "section_title": "Mercedes EQA og EQB: batteriskift og FDM",
+      "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 54.0,
-      "section_end_sec": 700.0,
-      "section_time_range": "[0:54 – 11:40]",
+      "section_start_sec": 501.8,
+      "section_end_sec": 734.8,
+      "section_time_range": "[8:21 – 12:14]",
       "bullet_time_range": null
     },
     {
-      "id": 1865,
-      "text": "Ny stor japansk elbil (S-klasse-lignende format) annonceres til omkring 460.000 kr. og udfordrer europæiske premium-SUV'er på plads pr. krone.",
-      "cars": [],
+      "id": 1957,
+      "text": "En stor Lexus-elbil (omkring 5,14 m) på Toyota/Lexus’ elbilplatforme med 150 kW lading og op til ca. 580 km rækkevidde i basis prissættes til 460.000 kr. — værterne finder prisen markant ift. bilens størrelse og sammenligner med gamle LS-priser.",
+      "cars": [
+        "Lexus"
+      ],
       "themes": [
         "elbil",
+        "pris",
+        "premium"
+      ],
+      "uncertain": false,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Lexus, Audi A2 og prispress i premium",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 734.8,
+      "section_end_sec": 1782.6,
+      "section_time_range": "[12:14 – 29:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1958,
+      "text": "Den kommende Audi A2 omtales som billigere elbil med nyt design og store skærme; Cupra Born og beslægtede kompakte el-SUV'er (MEB-familien) nævnes som konkurrenter omkring 250.000–330.000 kr. med stort batteri og høj rækkevidde i udsagn.",
+      "cars": [
+        "Audi A2",
+        "Cupra Born"
+      ],
+      "themes": [
+        "elbil",
+        "konkurrence"
+      ],
+      "uncertain": true,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Lexus, Audi A2 og prispress i premium",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 734.8,
+      "section_end_sec": 1782.6,
+      "section_time_range": "[12:14 – 29:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1959,
+      "text": "Europa diskuteres: interesse for elbiler trods politisk modvind og rabatordninger til fossilbiler i nabolande.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "EU"
+      ],
+      "uncertain": true,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Lexus, Audi A2 og prispress i premium",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 734.8,
+      "section_end_sec": 1782.6,
+      "section_time_range": "[12:14 – 29:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1960,
+      "text": "Alpine kommer til Danmark; A110 nævnes som reference. Forventede danske priser for mindre og større el-sportsversioner diskuteres mod MG4 Nordic-importerede biler og Renault 5-varianter.",
+      "cars": [
+        "Alpine A110",
+        "Renault 5",
+        "MG4"
+      ],
+      "themes": [
+        "sport",
         "pris"
       ],
       "uncertain": true,
       "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
       "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
       "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Stor japansk elbil til mellemklassepris",
-      "section_order": 1,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 700.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[11:40 – 26:40]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1866,
-      "text": "BMW genbruger i3-navnet til ny elbil på moderne arkitektur rettet mod volumensegment — ikke en direkte arvtager til carbon-citybilen.",
-      "cars": [
-        "BMW i3"
-      ],
-      "themes": [
-        "elbil",
-        "lancering"
-      ],
-      "uncertain": true,
-      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
-      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
-      "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Ny BMW i3",
-      "section_order": 2,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 1600.0,
-      "section_end_sec": 2400.0,
-      "section_time_range": "[26:40 – 40:00]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1867,
-      "text": "Renaults sportsmærke Alpine etableres på det danske marked med fokus på el-drift og performance i kompakte segmenter.",
-      "cars": [
-        "Alpine"
-      ],
-      "themes": [
-        "marked",
-        "sport"
-      ],
-      "uncertain": true,
-      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
-      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
-      "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Alpine til Danmark",
+      "section_title": "Alpine i Danmark og sportsvognspriser",
       "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2400.0,
-      "section_end_sec": 3000.0,
-      "section_time_range": "[40:00 – 50:00]",
+      "section_start_sec": 1782.6,
+      "section_end_sec": 2554.6,
+      "section_time_range": "[29:42 – 42:34]",
       "bullet_time_range": null
     },
     {
-      "id": 1868,
-      "text": "Audi annoncerer aggressive indgangspriser på udvalgte elbiler for at genfinde volumen efter konkurrence fra kinesiske mærker.",
+      "id": 1961,
+      "text": "Tysk pris for topversion med stor kraft og batteri kan ende omkring 600.000 kr. i Danmark; værterne er skeptiske til volumen til den pris.",
       "cars": [
-        "Audi"
+        "Alpine"
       ],
       "themes": [
         "pris",
@@ -14965,57 +15037,175 @@
       "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
       "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
       "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Audi til lav pris og rækkevidde-rekorder",
-      "section_order": 4,
+      "section_title": "Alpine i Danmark og sportsvognspriser",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3000.0,
-      "section_end_sec": 3500.0,
-      "section_time_range": "[50:00 – 58:20]",
+      "section_start_sec": 1782.6,
+      "section_end_sec": 2554.6,
+      "section_time_range": "[29:42 – 42:34]",
       "bullet_time_range": null
     },
     {
-      "id": 1869,
-      "text": "BMW fremhæver WLTP- og vinterrækkevidde-rekorder med nye batteri- og effektivitetsforbedringer.",
+      "id": 1962,
+      "text": "Sammenligning med Polo GTI og andre performance-biler som prisloft for segmentet.",
       "cars": [
-        "BMW"
+        "Volkswagen Polo"
       ],
       "themes": [
+        "sport",
+        "pris"
+      ],
+      "uncertain": true,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Alpine i Danmark og sportsvognspriser",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1782.6,
+      "section_end_sec": 2554.6,
+      "section_time_range": "[29:42 – 42:34]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1963,
+      "text": "Ny BMW i3 (efterfølger til 3-serie-størrelse) lanceres med op til ca. 108 kWh batteri og meget lang rækkevidde — værterne diskuterer om ~900 km realistisk og sammenligner med Mercedes CLA med mindre batteri.",
+      "cars": [
+        "BMW i3",
+        "Mercedes-Benz CLA"
+      ],
+      "themes": [
+        "elbil",
         "rækkevidde",
+        "teknik"
+      ],
+      "uncertain": true,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Ny BMW i3: rækkevidde, teknik og pris",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2554.6,
+      "section_end_sec": 3625.6,
+      "section_time_range": "[42:34 – 1:00:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1964,
+      "text": "Første variant nævnes som xDrive50 med firehjulstræk og høj effekt; platform slægtskab med iX3 berøres.",
+      "cars": [
+        "BMW i3",
+        "BMW iX3"
+      ],
+      "themes": [
         "elbil"
       ],
       "uncertain": true,
       "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
       "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
       "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Audi til lav pris og rækkevidde-rekorder",
+      "section_title": "Ny BMW i3: rækkevidde, teknik og pris",
       "section_order": 4,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3000.0,
-      "section_end_sec": 3500.0,
-      "section_time_range": "[50:00 – 58:20]",
+      "section_start_sec": 2554.6,
+      "section_end_sec": 3625.6,
+      "section_time_range": "[42:34 – 1:00:25]",
       "bullet_time_range": null
     },
     {
-      "id": 1870,
-      "text": "Lytterspørgsmål om valg af firmabil og privat kørsel med elbil kontra hybrid.",
-      "cars": [],
+      "id": 1965,
+      "text": "Prisforventning i Danmark og Tyskland (€-sammenligning): værterne lander omkring 450.000–550.000 kr. afhængigt af udstyr — dyrere end ønsket for masse-success, og over CLA tilsvarende.",
+      "cars": [
+        "BMW i3",
+        "Mercedes-Benz CLA"
+      ],
       "themes": [
-        "rådgivning",
-        "firmabil"
+        "pris"
       ],
       "uncertain": true,
       "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
       "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
       "pub_date": "2026-03-20T12:00:00+00:00",
-      "section_title": "Lytter og afslutning",
+      "section_title": "Ny BMW i3: rækkevidde, teknik og pris",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2554.6,
+      "section_end_sec": 3625.6,
+      "section_time_range": "[42:34 – 1:00:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1966,
+      "text": "Volkswagen ID.7 og ID.4 får nye basisversioner med lavere pris men mindre batteri og lavere ydelse; rækkevidde hop ifølge dem pga. effektiv motor og opdaterede batterier i koncernen.",
+      "cars": [
+        "Volkswagen ID.7",
+        "Volkswagen ID.4",
+        "Skoda"
+      ],
+      "themes": [
+        "pris",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Ny BMW i3: rækkevidde, teknik og pris",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2554.6,
+      "section_end_sec": 3625.6,
+      "section_time_range": "[42:34 – 1:00:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1967,
+      "text": "Thomas Munch-Larvarsen får besvaret sit spørgsmål; Hyundai Ioniq 6 udskydes til næste uge.",
+      "cars": [
+        "Hyundai Ioniq 6"
+      ],
+      "themes": [
+        "lytter",
+        "podcast"
+      ],
+      "uncertain": true,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål og afslutning",
       "section_order": 5,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3500.0,
+      "section_start_sec": 3625.6,
       "section_end_sec": 3919.6,
-      "section_time_range": "[58:20 – 1:05:19]",
+      "section_time_range": "[1:00:25 – 1:05:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1968,
+      "text": "Kort snak om Facebook/SoMe og bilindhold før lukning.",
+      "cars": [],
+      "themes": [
+        "medier"
+      ],
+      "uncertain": false,
+      "episode_title": "BMW sætter rækkevidderekord og Audi med billig elbil",
+      "episode_guid": "218f4141-0688-473c-9027-b41300aec060",
+      "pub_date": "2026-03-20T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål og afslutning",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3625.6,
+      "section_end_sec": 3919.6,
+      "section_time_range": "[1:00:25 – 1:05:19]",
       "bullet_time_range": null
     },
     {
@@ -16115,5 +16305,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 698
+  "count": 706
 }
