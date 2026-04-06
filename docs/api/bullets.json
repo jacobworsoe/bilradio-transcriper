@@ -14069,287 +14069,285 @@
       "bullet_time_range": null
     },
     {
-      "id": 1829,
-      "text": "Kort afvisning af at bruge folketingsvalget som bil-tema; fokus forbliver på trafik og biløkonomi.",
-      "cars": [],
+      "id": 2011,
+      "text": "Programmet lover analyse af salgslister, testgarage med Tesla Model Y (også syvsæder), lytterspørgsmål og VW/Mercedes-nyt; værterne undgår dybdegående folketingsvalg-snak.",
+      "cars": [
+        "Tesla Model Y"
+      ],
       "themes": [
-        "politik",
-        "podcast"
+        "podcast",
+        "politik"
       ],
       "uncertain": false,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Intro og ugebiler",
+      "section_title": "Intro, valg og Tesla Model 3",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 60.0,
-      "section_end_sec": 700.0,
-      "section_time_range": "[1:00 – 11:40]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 521.0,
+      "section_time_range": "[0:30 – 8:41]",
       "bullet_time_range": null
     },
     {
-      "id": 1830,
-      "text": "Jan roser basis Tesla Model 3 som fremragende kørende og mindre \"sparet\" i oplevelsen end basis Model Y.",
+      "id": 2012,
+      "text": "Jan kører basis Tesla Model 3 og er positiv: god køreoplevelse og mindre skarp end Model Y; Bluetooth m.m. nævnes i forhold til tidligere oplevelser.",
       "cars": [
         "Tesla Model 3",
         "Tesla Model Y"
       ],
       "themes": [
-        "elbil",
         "test"
       ],
       "uncertain": false,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Intro og ugebiler",
+      "section_title": "Intro, valg og Tesla Model 3",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 60.0,
-      "section_end_sec": 700.0,
-      "section_time_range": "[1:00 – 11:40]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 521.0,
+      "section_time_range": "[0:30 – 8:41]",
       "bullet_time_range": null
     },
     {
-      "id": 1831,
-      "text": "Christian kører Hongqi SUV i topudgave og kritiserer påtrængende ADAS-biplyde og følelsesløst styretøj, men anerkender let kørsel i byen.",
+      "id": 2013,
+      "text": "Anekdotek om ID.Buzz på lang tur til Chablis med mange ladestop pga. begrænset rækkevidde — værtens kender er glad for bilen men frustreret over rejsetid.",
       "cars": [
-        "Hongqi"
+        "Volkswagen ID.Buzz"
       ],
       "themes": [
         "elbil",
-        "sikkerhed"
+        "rækkevidde"
       ],
       "uncertain": true,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Intro og ugebiler",
-      "section_order": 0,
+      "section_title": "Volkswagen ID.Buzz og privatleasing til ID.4",
+      "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 60.0,
-      "section_end_sec": 700.0,
-      "section_time_range": "[1:00 – 11:40]",
+      "section_start_sec": 521.0,
+      "section_end_sec": 1045.0,
+      "section_time_range": "[8:41 – 17:25]",
       "bullet_time_range": null
     },
     {
-      "id": 1832,
-      "text": "De nævner Anders' YouTube-video fra sag hos Volkswagen-forhandler om ung køber og rettigheder.",
+      "id": 2014,
+      "text": "Privatleasing på Volkswagen ID.4: månedlig ydelse under 45 % af kontantpris omkring 425.000 kr. for basis; Style-versionen lidt dyrere; sammenligning med Tesla- og Polestar-kampagner.",
       "cars": [
-        "Volkswagen"
+        "Volkswagen ID.4"
       ],
       "themes": [
-        "forbruger",
-        "forhandler"
+        "leasing",
+        "pris"
       ],
-      "uncertain": false,
+      "uncertain": true,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Intro og ugebiler",
-      "section_order": 0,
+      "section_title": "Volkswagen ID.Buzz og privatleasing til ID.4",
+      "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 60.0,
-      "section_end_sec": 700.0,
-      "section_time_range": "[1:00 – 11:40]",
+      "section_start_sec": 521.0,
+      "section_end_sec": 1045.0,
+      "section_time_range": "[8:41 – 17:25]",
       "bullet_time_range": null
     },
     {
-      "id": 1833,
-      "text": "ID. Buzz beskrives som uventet stor salgssucces i 2025 med tusindvis af registreringer og stærk placering på elbil-lister.",
+      "id": 2015,
+      "text": "Volkswagen fremhæves som stærk sælger i modsætning til kriseramte mærker; ID.4 forventes at blive meget udbredt på danske veje.",
       "cars": [
-        "Volkswagen ID. Buzz"
+        "Volkswagen ID.4"
       ],
       "themes": [
         "marked",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "Volkswagen ID.Buzz og privatleasing til ID.4",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 521.0,
+      "section_end_sec": 1045.0,
+      "section_time_range": "[8:41 – 17:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2016,
+      "text": "ID.4 overhaler Tesla Model Y på registreringstal; diskussion af hvorfor — pris, leasing, tilfredshed og volumen fra VW.",
+      "cars": [
+        "Volkswagen ID.4",
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "salg",
         "elbil"
       ],
       "uncertain": false,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Volkswagen ID. Buzz og aggressive leasingtilbud",
-      "section_order": 1,
+      "section_title": "ID.4 vs Model Y og mikrobatteri til 160.000 kr.",
+      "section_order": 2,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 700.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[11:40 – 26:40]",
+      "section_start_sec": 1045.0,
+      "section_end_sec": 1397.0,
+      "section_time_range": "[17:25 – 23:17]",
       "bullet_time_range": null
     },
     {
-      "id": 1834,
-      "text": "Nyt privatleasing-tilbud nævnes omkring 3.700 kr./måned for stor udgave med syv sæder og ca. 45.000 kr. i førstegangsydelse.",
+      "id": 2017,
+      "text": "Debat om billigste ID.4 med lille batteri (~52 kWh) til omkring 160.000 kr.: realistisk for pendling, men ikke til lange ferieture i praksis.",
       "cars": [
-        "Volkswagen ID. Buzz"
+        "Volkswagen ID.4"
       ],
       "themes": [
-        "leasing",
-        "familiebil"
+        "pris",
+        "elbil"
       ],
-      "uncertain": false,
+      "uncertain": true,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Volkswagen ID. Buzz og aggressive leasingtilbud",
-      "section_order": 1,
+      "section_title": "ID.4 vs Model Y og mikrobatteri til 160.000 kr.",
+      "section_order": 2,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 700.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[11:40 – 26:40]",
+      "section_start_sec": 1045.0,
+      "section_end_sec": 1397.0,
+      "section_time_range": "[17:25 – 23:17]",
       "bullet_time_range": null
     },
     {
-      "id": 1835,
-      "text": "Ved 10.000 km/år beregnes leasingomkostning til under ca. 42 % af købspris omkring 425.000 kr. — meget lav leasingandel.",
-      "cars": [
-        "Volkswagen ID. Buzz"
-      ],
+      "id": 2018,
+      "text": "Samfundspolitisk diskussion om afgifter, udbud af brugte fossilbiler og om elbilpolitik «tvinger» familier væk fra billige benzinbiler.",
+      "cars": [],
       "themes": [
-        "leasing",
-        "pris"
+        "politik",
+        "afgifter"
       ],
-      "uncertain": false,
+      "uncertain": true,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Volkswagen ID. Buzz og aggressive leasingtilbud",
-      "section_order": 1,
+      "section_title": "ID.4 vs Model Y og mikrobatteri til 160.000 kr.",
+      "section_order": 2,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 700.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[11:40 – 26:40]",
+      "section_start_sec": 1045.0,
+      "section_end_sec": 1397.0,
+      "section_time_range": "[17:25 – 23:17]",
       "bullet_time_range": null
     },
     {
-      "id": 1836,
-      "text": "De diskuterer, at høj årlig kørsel stadig kan gøre Buzz til dyr løsning trods lav månedlig ydelse, og sammenligner med Kia PV5 som praktisk alternativ.",
-      "cars": [
-        "Volkswagen ID. Buzz",
-        "Kia PV5"
-      ],
-      "themes": [
-        "økonomi",
-        "varebil"
-      ],
-      "uncertain": false,
-      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
-      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
-      "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Volkswagen ID. Buzz og aggressive leasingtilbud",
-      "section_order": 1,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 700.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[11:40 – 26:40]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1837,
-      "text": "Genoptagelse af EQA/EQB-sagen: software begrænsede ydelse for at mindske brandrisiko; mange ejere oplevede stærkt forringet ladehastighed og rækkevidde.",
+      "id": 2019,
+      "text": "Mercedes har besluttet at udskifte batterier i fejlramte EQA og EQB også i Danmark — omtalt som positivt nyt efter lang usikkerhed.",
       "cars": [
         "Mercedes-Benz EQA",
         "Mercedes-Benz EQB"
       ],
       "themes": [
         "batteri",
-        "software"
+        "tilbagekaldelse"
       ],
       "uncertain": false,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Mercedes batterisager og software",
-      "section_order": 2,
+      "section_title": "Mercedes EQA og EQB: batteriskift og kundekrise",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1600.0,
-      "section_end_sec": 2500.0,
-      "section_time_range": "[26:40 – 41:40]",
+      "section_start_sec": 1397.0,
+      "section_end_sec": 1756.0,
+      "section_time_range": "[23:17 – 29:16]",
       "bullet_time_range": null
     },
     {
-      "id": 1838,
-      "text": "Mercedes går nu videre med faktiske batteriskift i stort omfang internationalt og i Danmark — opfattes som nødvendig retning efter utilstrækkelig software-løsning.",
+      "id": 2020,
+      "text": "Mange henvendelser fra lyttere og læsere; værterne udtrykker skuffelse over Mercedes’ kommunikation og oplevelsen for ejere, der har anbefalet EQB.",
       "cars": [
-        "Mercedes-Benz EQA",
         "Mercedes-Benz EQB"
       ],
       "themes": [
-        "garanti",
-        "sikkerhed"
+        "forbruger",
+        "service"
       ],
       "uncertain": false,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Mercedes batterisager og software",
-      "section_order": 2,
+      "section_title": "Mercedes EQA og EQB: batteriskift og kundekrise",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1600.0,
-      "section_end_sec": 2500.0,
-      "section_time_range": "[26:40 – 41:40]",
+      "section_start_sec": 1397.0,
+      "section_end_sec": 1756.0,
+      "section_time_range": "[23:17 – 29:16]",
       "bullet_time_range": null
     },
     {
-      "id": 1839,
-      "text": "Test af syvpersoners Tesla Model Y: tredje række og praktisk brug til familier diskuteres i forhold til pris og konkurrenter.",
-      "cars": [
-        "Tesla Model Y"
-      ],
+      "id": 2021,
+      "text": "Kontekst: andre premium-mærker har også haft batterirelaterede sager.",
+      "cars": [],
       "themes": [
-        "familiebil",
-        "test"
+        "batteri",
+        "branche"
       ],
       "uncertain": true,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Tesla Model Y med syv sæder",
+      "section_title": "Mercedes EQA og EQB: batteriskift og kundekrise",
       "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2500.0,
-      "section_end_sec": 3200.0,
-      "section_time_range": "[41:40 – 53:20]",
+      "section_start_sec": 1397.0,
+      "section_end_sec": 1756.0,
+      "section_time_range": "[23:17 – 29:16]",
       "bullet_time_range": null
     },
     {
-      "id": 1840,
-      "text": "Samtalen understreger, at Model Y fortsat dominerer registreringstal og presser konkurrenterne på pris og leasing.",
+      "id": 2022,
+      "text": "Kia EV3 sænkes markant i pris (omkring 250.000 kr. med stort rækkevidde-tilbud); reaktion på konkurrence og markedstryk.",
       "cars": [
-        "Tesla Model Y"
+        "Kia EV3"
       ],
       "themes": [
-        "marked",
+        "pris",
         "elbil"
       ],
-      "uncertain": false,
+      "uncertain": true,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Tesla Model Y med syv sæder",
-      "section_order": 3,
+      "section_title": "Kia EV3-prisfald og Årets Bil",
+      "section_order": 4,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2500.0,
-      "section_end_sec": 3200.0,
-      "section_time_range": "[41:40 – 53:20]",
+      "section_start_sec": 1756.0,
+      "section_end_sec": 2401.0,
+      "section_time_range": "[29:16 – 40:01]",
       "bullet_time_range": null
     },
     {
-      "id": 1841,
-      "text": "De runder aktuelle kampagner og chokpriser på populære elbiler og betydningen for restværdi og forbrugertillid.",
-      "cars": [],
+      "id": 2023,
+      "text": "Skoda Elroq diskuteres som Årets bil i Danmark; uenighed om design kontra køreegenskaber og salgstal.",
+      "cars": [
+        "Skoda Elroq"
+      ],
       "themes": [
         "pris",
         "marked"
@@ -14358,33 +14356,219 @@
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Øvrige pris- og markedstemaer",
+      "section_title": "Kia EV3-prisfald og Årets Bil",
       "section_order": 4,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3200.0,
-      "section_end_sec": 3830.0,
-      "section_time_range": "[53:20 – 1:03:50]",
+      "section_start_sec": 1756.0,
+      "section_end_sec": 2401.0,
+      "section_time_range": "[29:16 – 40:01]",
       "bullet_time_range": null
     },
     {
-      "id": 1842,
-      "text": "Lytterspørgsmål og afslutning med henvisning til kommende ugers bilnyheder.",
-      "cars": [],
+      "id": 2024,
+      "text": "EV3 long range med omkring 600 km WLTP nævnes stadig til omkring 275.000 kr.; sammenligning med dyrere alternativer i klassen.",
+      "cars": [
+        "Kia EV3"
+      ],
       "themes": [
-        "podcast"
+        "pris",
+        "rækkevidde"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "Kia EV3-prisfald og Årets Bil",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1756.0,
+      "section_end_sec": 2401.0,
+      "section_time_range": "[29:16 – 40:01]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2025,
+      "text": "BYD (i Whisper ofte »BUD«) har haft svært ved at sælge i Danmark; R23 nævnes som første model og pris som hovedbarriere.",
+      "cars": [
+        "BYD"
+      ],
+      "themes": [
+        "Kina",
+        "marked"
       ],
       "uncertain": false,
       "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
       "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
       "pub_date": "2026-02-27T12:00:00+00:00",
-      "section_title": "Øvrige pris- og markedstemaer",
-      "section_order": 4,
+      "section_title": "BYD i Danmark: R23 og R23 Evo",
+      "section_order": 5,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3200.0,
+      "section_start_sec": 2401.0,
+      "section_end_sec": 2953.0,
+      "section_time_range": "[40:01 – 49:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2026,
+      "text": "R23 Evo som omfattende facelift der visuelt ligner forgængeren — diskussion om mærkets manglende tydelige genkendelige succesmodeller i brede segmenter.",
+      "cars": [
+        "BYD"
+      ],
+      "themes": [
+        "design",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "BYD i Danmark: R23 og R23 Evo",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2401.0,
+      "section_end_sec": 2953.0,
+      "section_time_range": "[40:01 – 49:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2027,
+      "text": "Sammenligning med kinesiske niche-mærker der har haft større gennemslag end BYD i bred prisklasse.",
+      "cars": [],
+      "themes": [
+        "marked",
+        "Kina"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "BYD i Danmark: R23 og R23 Evo",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2401.0,
+      "section_end_sec": 2953.0,
+      "section_time_range": "[40:01 – 49:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2028,
+      "text": "Lamborghini udsætter/ændrer plan for elbil Lanzador efter svag efterspørgsel; mulig plug-in-hybrid i stedet; store forbrændingsmotorer fremhæves som kundeønske.",
+      "cars": [
+        "Lamborghini"
+      ],
+      "themes": [
+        "elbil",
+        "strategi"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "Lamborghini, Ferrari og elbilstrategi",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2953.0,
+      "section_end_sec": 3640.0,
+      "section_time_range": "[49:13 – 1:00:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2029,
+      "text": "EU-signal om forbrændingsmotorer under særlige betingelser diskuteres i forhold til luksus- og sportsproducenter.",
+      "cars": [],
+      "themes": [
+        "EU",
+        "politik"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "Lamborghini, Ferrari og elbilstrategi",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2953.0,
+      "section_end_sec": 3640.0,
+      "section_time_range": "[49:13 – 1:00:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2030,
+      "text": "Ferraris elbil og aktiekursreaktion; sammenligning med Porsches elbilstrategi og risiko for at gentage fejl.",
+      "cars": [
+        "Ferrari",
+        "Porsche"
+      ],
+      "themes": [
+        "elbil",
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "Lamborghini, Ferrari og elbilstrategi",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2953.0,
+      "section_end_sec": 3640.0,
+      "section_time_range": "[49:13 – 1:00:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2031,
+      "text": "Mikael overvejer BMW 5-serie plug-in hybrid, ny elbil til ~400.000 kr., eller beholde Ford Focus; kører ca. 15.000 km/år.",
+      "cars": [
+        "BMW 5-serie",
+        "Ford Focus"
+      ],
+      "themes": [
+        "lytter",
+        "rådgivning"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål: Mikael og bilvalg",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3640.0,
       "section_end_sec": 3830.0,
-      "section_time_range": "[53:20 – 1:03:50]",
+      "section_time_range": "[1:00:40 – 1:03:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2032,
+      "text": "Jan anbefaler Mercedes C-klasse plug-in hybrid med lang elektrisk rækkevidde; Christian peger på brugt Ford Explorer elbil som alternativ og skifte senere til nye premium-elbiler når priser falder.",
+      "cars": [
+        "Mercedes-Benz C-Klasse",
+        "Ford Explorer"
+      ],
+      "themes": [
+        "lytter",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "335 Chokpris på populær VW og Mercedes-batterikaos",
+      "episode_guid": "3853cf49-1a5c-4958-88a7-b3fe00bb3624",
+      "pub_date": "2026-02-27T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål: Mikael og bilvalg",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3640.0,
+      "section_end_sec": 3830.0,
+      "section_time_range": "[1:00:40 – 1:03:50]",
       "bullet_time_range": null
     },
     {
@@ -16821,5 +17005,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 728
+  "count": 736
 }
