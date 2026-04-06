@@ -14637,32 +14637,430 @@
       "bullet_time_range": null
     },
     {
-      "id": 1854,
-      "text": "Jan kører skiftevis Xpeng G6 og G9 og finder G6 mere \"hverdagsbil\", mens G9 føles mere eksklusiv; Christian bekræfter lignende indtryk.",
+      "id": 1969,
+      "text": "Ugens temaer: faceliftet Volkswagen ID.3 med nyt navn, stor elektrisk Mercedes-familiebil, Tesla mod FDM, Audi e-tron-software, Volvo ES90 i testgarage, og lytterspørgsmål om diesel og bilvalg.",
       "cars": [
-        "Xpeng G6",
-        "Xpeng G9"
+        "Volkswagen ID.3",
+        "Volvo ES90"
       ],
       "themes": [
-        "elbil",
-        "test"
+        "nyheder",
+        "podcast"
       ],
       "uncertain": false,
       "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
       "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
       "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Intro og Xpeng G6/G9",
+      "section_title": "Programintro og Xpeng",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 60.68,
-      "section_end_sec": 800.0,
-      "section_time_range": "[1:00 – 13:20]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 505.8,
+      "section_time_range": "[0:30 – 8:25]",
       "bullet_time_range": null
     },
     {
-      "id": 1855,
-      "text": "Kort jule-humor om valg og Jan Langs fiktive valgprogram før egentlige bilnyheder.",
+      "id": 1970,
+      "text": "Jan har kørt Xpeng G6 og G9 og sammenligner: G6 føles som en almindelig bil, G9 som noget særligt; let snak om t-shirt og fiktivt valgprogram (Trafikpartiet).",
+      "cars": [
+        "Xpeng G6",
+        "Xpeng G9"
+      ],
+      "themes": [
+        "test",
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Programintro og Xpeng",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 505.8,
+      "section_time_range": "[0:30 – 8:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1971,
+      "text": "Faceliftet ID.3 får navnet ID.3 NEO; Volkswagen går mod klassiske modelnavne på elbiler, hvilket skaber diskussion fordi en elektrisk Golf også er annonceret.",
+      "cars": [
+        "Volkswagen ID.3",
+        "Volkswagen Golf"
+      ],
+      "themes": [
+        "elbil",
+        "navngivning"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Volkswagen ID.3 NEO og navngivning",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 505.8,
+      "section_end_sec": 828.3,
+      "section_time_range": "[8:25 – 13:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1972,
+      "text": "»NEO«-navnet knyttes til internt projektnavn fra MEB-udviklingen efter Dieselgate; værterne driller navnevalg (Scirocco, Santana m.m.).",
+      "cars": [
+        "Volkswagen"
+      ],
+      "themes": [
+        "historie",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Volkswagen ID.3 NEO og navngivning",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 505.8,
+      "section_end_sec": 828.3,
+      "section_time_range": "[8:25 – 13:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1973,
+      "text": "Afløseren til Mercedes EQV omtales som den måske fedeste elektriske familiebil på vej; i studiet drilles navnet som »VLE«.",
+      "cars": [
+        "Mercedes-Benz EQV"
+      ],
+      "themes": [
+        "elbil",
+        "familiebil"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Mercedes EQV-afløser og pris",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 828.3,
+      "section_end_sec": 1765.6,
+      "section_time_range": "[13:48 – 29:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1974,
+      "text": "Nuværende EQV ligger omkring 768.000 kr.; næste generation forventes i 80.000 €-klasse og op mod 700.000–800.000 kr. i Danmark — begrænset volumen men interesse på brugtmarked.",
+      "cars": [
+        "Mercedes-Benz EQV"
+      ],
+      "themes": [
+        "pris",
+        "premium"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Mercedes EQV-afløser og pris",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 828.3,
+      "section_end_sec": 1765.6,
+      "section_time_range": "[13:48 – 29:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1975,
+      "text": "Satirisk »valgprogram« om folkeskole, cykelstier, brevstemme og lynlading med humoristiske løfter.",
+      "cars": [],
+      "themes": [
+        "satire",
+        "politik"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Mercedes EQV-afløser og pris",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 828.3,
+      "section_end_sec": 1765.6,
+      "section_time_range": "[13:48 – 29:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1976,
+      "text": "Mange nye Kia EV3 Standard Range med 0 km og få måneders alder dukker op til omkring 218.000 kr.; Jan roser modellen som praktisk og fornuftig til prisen.",
+      "cars": [
+        "Kia EV3"
+      ],
+      "themes": [
+        "pris",
+        "leasing",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Kia EV3 og aggressive listepriser",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1765.6,
+      "section_end_sec": 1896.6,
+      "section_time_range": "[29:25 – 31:36]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1977,
+      "text": "Prisen understreger et marked med hård konkurrence og kampagner på kompakte elbiler — svært at matche tilsvarende nybil til samme beløb.",
+      "cars": [
+        "Kia EV3"
+      ],
+      "themes": [
+        "marked",
+        "pris"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Kia EV3 og aggressive listepriser",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1765.6,
+      "section_end_sec": 1896.6,
+      "section_time_range": "[29:25 – 31:36]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1978,
+      "text": "Tesla har tabt en principiel sag i Ankenævn for biler om slør i baghjulsophæng på Model Y: uafhængig synsmand målte 1,4 mm; Tesla hævdede designmæssig nødvendighed.",
+      "cars": [
+        "Tesla Model Y"
+      ],
+      "themes": [
+        "synsregler",
+        "FDM"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Tesla, FDM og Ankenævn for biler",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1896.6,
+      "section_end_sec": 2549.1,
+      "section_time_range": "[31:36 – 42:29]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1979,
+      "text": "FDM og danske syn har længe kritiseret Tesla for for meget slør; afgørelsen roses som vigtig for forbrugerbeskyttelse mod fabrikant-forklaringer.",
+      "cars": [
+        "Tesla"
+      ],
+      "themes": [
+        "forbruger",
+        "sikkerhed"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Tesla, FDM og Ankenævn for biler",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1896.6,
+      "section_end_sec": 2549.1,
+      "section_time_range": "[31:36 – 42:29]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1980,
+      "text": "Audi har under pres fra fabrik installeret software der »harmoniserer« batteriet på ældre e-tron; ejere oplever markant lavere DC-ladehastighed — opdateringen omtales som beskyttelse af batteriet.",
+      "cars": [
+        "Audi e-tron",
+        "Audi Q8 e-tron"
+      ],
+      "themes": [
+        "software",
+        "batteri",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Audi e-tron: software og ladehastighed",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2549.1,
+      "section_end_sec": 2803.4,
+      "section_time_range": "[42:29 – 46:43]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1981,
+      "text": "Generelt tema: producenter begrænsning af ydelse og lading over tid for levetid; sammenligning med Tesla og Mercedes-cases.",
+      "cars": [],
+      "themes": [
+        "batteri",
+        "forbruger"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Audi e-tron: software og ladehastighed",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2549.1,
+      "section_end_sec": 2803.4,
+      "section_time_range": "[42:29 – 46:43]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1982,
+      "text": "Facebook-grupper for e-tron-ejere reagerer kraftigt på oplevet tab af ladeydelse efter opdatering.",
+      "cars": [
+        "Audi e-tron"
+      ],
+      "themes": [
+        "software",
+        "community"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Audi e-tron: software og ladehastighed",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2549.1,
+      "section_end_sec": 2803.4,
+      "section_time_range": "[42:29 – 46:43]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1983,
+      "text": "Jan beskriver oplevelsen af Volvo ES90; stor elektrisk sedan med begrænset salgsvolumen i Danmark men interesse.",
+      "cars": [
+        "Volvo ES90"
+      ],
+      "themes": [
+        "test",
+        "elbil",
+        "premium"
+      ],
+      "uncertain": false,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Volvo ES90 i testgarage og EX60",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2803.4,
+      "section_end_sec": 3089.8,
+      "section_time_range": "[46:43 – 51:29]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1984,
+      "text": "Volvo EX60: forventet til sommer, stor efterspørgsel hos forhandlere i Norden; testkørsel først i maj; EX30 som reference fra næste uge.",
+      "cars": [
+        "Volvo EX60",
+        "Volvo EX30"
+      ],
+      "themes": [
+        "nyheder",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Volvo ES90 i testgarage og EX60",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2803.4,
+      "section_end_sec": 3089.8,
+      "section_time_range": "[46:43 – 51:29]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1985,
+      "text": "Kim Lassen har Tesla Model S fra 2020 og overvejer skifte efter tre år; tidligere AMG-biler; diskussion af premium-elbil, Volvo-køer til EX60 og alternativer.",
+      "cars": [
+        "Tesla Model S",
+        "Mercedes-AMG",
+        "Volvo EX60"
+      ],
+      "themes": [
+        "lytter",
+        "rådgivning"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål: Kim, Tesla Model S og Mercedes B200",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3089.8,
+      "section_end_sec": 3590.0,
+      "section_time_range": "[51:29 – 59:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1986,
+      "text": "Anden henvendelse: kvinde med Mercedes B200 diesel 2019 skal skille sig af dieselbilen og overvejer brugt elbil / C-klasse; budget ikke klart; korte råd om værditab og brugtmarked.",
+      "cars": [
+        "Mercedes-Benz B200",
+        "Mercedes-Benz C-Klasse"
+      ],
+      "themes": [
+        "lytter",
+        "diesel",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
+      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
+      "pub_date": "2026-03-13T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål: Kim, Tesla Model S og Mercedes B200",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3089.8,
+      "section_end_sec": 3590.0,
+      "section_time_range": "[51:29 – 59:50]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1987,
+      "text": "Afslutning med valgplakater, Trafikpartiet-humor og tak for lytning.",
       "cars": [],
       "themes": [
         "podcast"
@@ -14671,173 +15069,13 @@
       "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
       "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
       "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Intro og Xpeng G6/G9",
-      "section_order": 0,
+      "section_title": "Lytterspørgsmål: Kim, Tesla Model S og Mercedes B200",
+      "section_order": 7,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 60.68,
-      "section_end_sec": 800.0,
-      "section_time_range": "[1:00 – 13:20]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1856,
-      "text": "Kommende ID.3 beskrives som næsten ny bil med navneændring og tydelige design- og teknikopdateringer for at holde liv i kompakt-EL-salget.",
-      "cars": [
-        "Volkswagen ID.3"
-      ],
-      "themes": [
-        "elbil",
-        "facelift"
-      ],
-      "uncertain": true,
-      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
-      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
-      "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Volkswagen ID.3 skifter navn og opdateres",
-      "section_order": 1,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 800.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[13:20 – 26:40]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1857,
-      "text": "Diskussion om, hvordan VW differentierer ID.3 mod Cupra Born og øvrige koncern-søstre.",
-      "cars": [
-        "Volkswagen ID.3",
-        "Cupra Born"
-      ],
-      "themes": [
-        "strategi",
-        "elbil"
-      ],
-      "uncertain": true,
-      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
-      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
-      "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Volkswagen ID.3 skifter navn og opdateres",
-      "section_order": 1,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 800.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[13:20 – 26:40]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1858,
-      "text": "Mercedes' store elektriske familiebil (VLE/V-klasse-lignende koncept) fremhæves som en af de mest spændende kommende praktiske EL'er til børnefamilier.",
-      "cars": [
-        "Mercedes-Benz"
-      ],
-      "themes": [
-        "elbil",
-        "familiebil"
-      ],
-      "uncertain": true,
-      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
-      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
-      "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Mercedes VLE og elektriske familiebiler",
-      "section_order": 2,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 1600.0,
-      "section_end_sec": 2400.0,
-      "section_time_range": "[26:40 – 40:00]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1859,
-      "text": "Konfliktlinje mellem Tesla og FDM om data, sikkerhed og forbrugeroplysninger nævnes i forbifarten.",
-      "cars": [
-        "Tesla"
-      ],
-      "themes": [
-        "forbruger",
-        "organisation"
-      ],
-      "uncertain": true,
-      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
-      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
-      "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Tesla mod FDM og Audi e-tron software",
-      "section_order": 3,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 2400.0,
-      "section_end_sec": 3000.0,
-      "section_time_range": "[40:00 – 50:00]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1860,
-      "text": "Audi e-tron-modeller omtales i forbindelse med softwarefejl og opdateringsproblemer.",
-      "cars": [
-        "Audi e-tron"
-      ],
-      "themes": [
-        "software",
-        "elbil"
-      ],
-      "uncertain": true,
-      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
-      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
-      "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Tesla mod FDM og Audi e-tron software",
-      "section_order": 3,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 2400.0,
-      "section_end_sec": 3000.0,
-      "section_time_range": "[40:00 – 50:00]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1861,
-      "text": "Testgarage med Volvo ES90: komfort, støj, rækkevidde og ladeoplevelse på dansk motorvej.",
-      "cars": [
-        "Volvo ES90"
-      ],
-      "themes": [
-        "test",
-        "elbil"
-      ],
-      "uncertain": true,
-      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
-      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
-      "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Test: Volvo ES90 og leasing/diesel-spørgsmål",
-      "section_order": 4,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 3000.0,
-      "section_end_sec": 3590.04,
-      "section_time_range": "[50:00 – 59:50]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1862,
-      "text": "Lytterspørgsmål: sælge eller beholde gammel dieselbil i en grøn omstilling — de balancerer afgifter, kørsel og restværdi.",
-      "cars": [],
-      "themes": [
-        "diesel",
-        "rådgivning"
-      ],
-      "uncertain": false,
-      "episode_title": "Danskerdarling i leasingkrig – og ny VW-elbil",
-      "episode_guid": "107cc455-2a7d-47ae-bfd5-b40c00baee27",
-      "pub_date": "2026-03-13T12:00:00+00:00",
-      "section_title": "Test: Volvo ES90 og leasing/diesel-spørgsmål",
-      "section_order": 4,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 3000.0,
-      "section_end_sec": 3590.04,
-      "section_time_range": "[50:00 – 59:50]",
+      "section_start_sec": 3089.8,
+      "section_end_sec": 3590.0,
+      "section_time_range": "[51:29 – 59:50]",
       "bullet_time_range": null
     },
     {
@@ -16305,5 +16543,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 706
+  "count": 716
 }
