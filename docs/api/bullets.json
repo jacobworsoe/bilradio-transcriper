@@ -15196,7 +15196,594 @@
       "section_end_sec": 3816.0,
       "section_time_range": "[50:00 – 1:03:36]",
       "bullet_time_range": null
+    },
+    {
+      "id": 1879,
+      "text": "Programmet lover den nye syvpersoners Skoda Peak med tekniske data og priser, plus prisnyt om Kia EV2 og MG4 Urban under 200.000 kr.",
+      "cars": [
+        "Skoda Peak",
+        "Kia EV2",
+        "MG4 Urban"
+      ],
+      "themes": [
+        "elbil",
+        "nyheder"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Ugens temaer og nyheder",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 87.0,
+      "section_time_range": "[0:30 – 1:27]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1880,
+      "text": "Der teases også en stor Audi og en mulig billig Cupra, nostalgisk tilbageblik til Helle Auto oktober 1983, og testgarage med Tesla.",
+      "cars": [
+        "Audi",
+        "Cupra",
+        "Tesla"
+      ],
+      "themes": [
+        "nyheder",
+        "nostalgi"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Ugens temaer og nyheder",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 87.0,
+      "section_time_range": "[0:30 – 1:27]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1881,
+      "text": "Jan Lang fra Bilbasen medvirker sammen med værten om marked og modeller.",
+      "cars": [],
+      "themes": [
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Ugens temaer og nyheder",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 87.0,
+      "section_time_range": "[0:30 – 1:27]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1882,
+      "text": "Værterne diskuterer sæsonens Formel 1, hvor Ferrari kører stærkt og Red Bull sløjt, og at løb i højere grad handler om batteriøkonomi end ren fart.",
+      "cars": [
+        "Ferrari"
+      ],
+      "themes": [
+        "motorsport"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Formel 1: batteristrategi og nye fans",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 88.0,
+      "section_end_sec": 228.0,
+      "section_time_range": "[1:28 – 3:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1883,
+      "text": "Max Verstappen og andre kritiserer den langsommere, taktiske kørsel; Mercedes nævnes som særligt udfordret.",
+      "cars": [],
+      "themes": [
+        "motorsport"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Formel 1: batteristrategi og nye fans",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 88.0,
+      "section_end_sec": 228.0,
+      "section_time_range": "[1:28 – 3:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1884,
+      "text": "Netflix-serien Drive to Survive og lignende trends nævnes som årsag til flere unge kvindelige seere til motorsport og fodbold på stadion.",
+      "cars": [],
+      "themes": [
+        "kultur"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Formel 1: batteristrategi og nye fans",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 88.0,
+      "section_end_sec": 228.0,
+      "section_time_range": "[1:28 – 3:48]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1885,
+      "text": "Værten kører Toyota Urban Cruiser og er kritisk; Jan har Volvo EX40 og roser den mere klassiske betjening og ro i kabinen frem for skærmfokuserede nyere Volvoer.",
+      "cars": [
+        "Toyota Urban Cruiser",
+        "Volvo EX40"
+      ],
+      "themes": [
+        "test",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Testbiler: Urban Cruiser, Volvo EX40 og små elbiler",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 228.7,
+      "section_end_sec": 432.0,
+      "section_time_range": "[3:48 – 7:12]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1886,
+      "text": "De sammenligner oplevelser med Shangang/Deepal-test og minder om, at små elbiler som Suzuki e-Vitara og Toyota-søsterbilen scorer svagt på rækkevidde, plads, komfort og pris.",
+      "cars": [
+        "Suzuki e-Vitara",
+        "Toyota"
+      ],
+      "themes": [
+        "elbil",
+        "test"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Testbiler: Urban Cruiser, Volvo EX40 og små elbiler",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 228.7,
+      "section_end_sec": 432.0,
+      "section_time_range": "[3:48 – 7:12]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1887,
+      "text": "De laver en humoristisk opsummering af bilernes svagheder i forhold til anmeldelser og stjerner.",
+      "cars": [],
+      "themes": [
+        "test"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Testbiler: Urban Cruiser, Volvo EX40 og små elbiler",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 228.7,
+      "section_end_sec": 432.0,
+      "section_time_range": "[3:48 – 7:12]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1888,
+      "text": "Skoda Peak beskrives som den største Skoda til dato – omkring 4,90 m – større end Kodiak og med plads til fem eller syv personer.",
+      "cars": [
+        "Skoda Peak",
+        "Skoda Kodiak"
+      ],
+      "themes": [
+        "elbil",
+        "familiebil"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Skoda Peak: Skodas største bil til familier",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 433.7,
+      "section_end_sec": 1055.0,
+      "section_time_range": "[7:13 – 17:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1889,
+      "text": "Journalister har kørt prototyper i camouflage; programmet gennemgår bl.a. batteristørrelser omkring 87 kWh netto, varianter med firehjulstræk og forventet rækkevidde på topmodeller.",
+      "cars": [
+        "Skoda Peak"
+      ],
+      "themes": [
+        "elbil",
+        "teknik"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Skoda Peak: Skodas største bil til familier",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 433.7,
+      "section_end_sec": 1055.0,
+      "section_time_range": "[7:13 – 17:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1890,
+      "text": "De diskuterer fem- versus syvpersonerskonfiguration og om bagsæder kan skubbes, hvilket påvirker familieegnethed.",
+      "cars": [
+        "Skoda Peak"
+      ],
+      "themes": [
+        "familiebil"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Skoda Peak: Skodas største bil til familier",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 433.7,
+      "section_end_sec": 1055.0,
+      "section_time_range": "[7:13 – 17:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1891,
+      "text": "Verdenspremiere med fuldt design forventes omkring sommerferien; værterne vurderer udseendet ud fra lækkede eller forventede billeder overvejende positivt.",
+      "cars": [
+        "Skoda Peak"
+      ],
+      "themes": [
+        "nyheder"
+      ],
+      "uncertain": true,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Skoda Peak: Skodas største bil til familier",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 433.7,
+      "section_end_sec": 1055.0,
+      "section_time_range": "[7:13 – 17:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1892,
+      "text": "Kia EV2 fremhæves som støjsvag og med familieegnet kabine; femsædersversionen giver dog knap plads, mens firesæders giver fleksibelt bagsæde – et muligt dansk dilemma.",
+      "cars": [
+        "Kia EV2",
+        "Renault 4"
+      ],
+      "themes": [
+        "elbil",
+        "pris"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Kia EV2 og MG4 Urban: prisrygter og konkurrence",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1055.0,
+      "section_end_sec": 1525.0,
+      "section_time_range": "[17:35 – 25:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1893,
+      "text": "Rygter og tidlige indtryk peger på startpriser omkring 180.000–200.000 kr. for enkle varianter og omkring 220.000 kr. for ønsket udstyr, hvilket skal balancere mod Kia EV3 i pris.",
+      "cars": [
+        "Kia EV2",
+        "Kia EV3"
+      ],
+      "themes": [
+        "pris",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Kia EV2 og MG4 Urban: prisrygter og konkurrence",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1055.0,
+      "section_end_sec": 1525.0,
+      "section_time_range": "[17:35 – 25:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1894,
+      "text": "MG4 Urban sammenlignes i størrelse direkte med Kia EV2 som konkurrent i samme prisleje.",
+      "cars": [
+        "MG4 Urban",
+        "Kia EV2"
+      ],
+      "themes": [
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Kia EV2 og MG4 Urban: prisrygter og konkurrence",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1055.0,
+      "section_end_sec": 1525.0,
+      "section_time_range": "[17:35 – 25:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1895,
+      "text": "Nævnes også prisdump fra importørgruppe på MG4 Urban i forhold til listepris.",
+      "cars": [
+        "MG4 Urban"
+      ],
+      "themes": [
+        "pris"
+      ],
+      "uncertain": true,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Kia EV2 og MG4 Urban: prisrygter og konkurrence",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1055.0,
+      "section_end_sec": 1525.0,
+      "section_time_range": "[17:35 – 25:25]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1896,
+      "text": "Deepal S05 og S07 diskuteres som tætte søstre: den større S07 konkurrerer med Tesla Y og Skoda Enyaq til omkring 300.000 kr., hvilket gør mellemklassen S05 svær at placere.",
+      "cars": [
+        "Deepal S05",
+        "Deepal S07",
+        "Tesla Model Y",
+        "Skoda Enyaq"
+      ],
+      "themes": [
+        "elbil",
+        "marked"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Deepal, Xpeng og kinesiske mærker i Danmark",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1525.0,
+      "section_end_sec": 2705.0,
+      "section_time_range": "[25:25 – 45:05]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1897,
+      "text": "Master 6 og platformdeling med Deepal 07 forklares, inkl. forskelle i opdateringer og ladehastighed.",
+      "cars": [
+        "Master 6"
+      ],
+      "themes": [
+        "elbil",
+        "teknik"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Deepal, Xpeng og kinesiske mærker i Danmark",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1525.0,
+      "section_end_sec": 2705.0,
+      "section_time_range": "[25:25 – 45:05]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1898,
+      "text": "Xpeng G6 nævnes som etableret kinesisk alternativ til lignende pris; importøren Andersen Motors og Suzuki-elbilernes svage start berøres.",
+      "cars": [
+        "Xpeng G6",
+        "Suzuki"
+      ],
+      "themes": [
+        "marked",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Deepal, Xpeng og kinesiske mærker i Danmark",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1525.0,
+      "section_end_sec": 2705.0,
+      "section_time_range": "[25:25 – 45:05]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1899,
+      "text": "Værten har gravet i Jyllands-Postens arkiv efter gamle biltillæg og bilannoncer fra 1980'erne og frem.",
+      "cars": [],
+      "themes": [
+        "nostalgi",
+        "medier"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Nostalgi: JP Motors, Helle Auto og bilannoncer",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2705.0,
+      "section_end_sec": 3640.0,
+      "section_time_range": "[45:05 – 1:00:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1900,
+      "text": "De mindes Silkeborg som bilby med store annoncer fra Helle Auto med Jørgen Helle som central skikkelse.",
+      "cars": [],
+      "themes": [
+        "nostalgi",
+        "Danmark"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Nostalgi: JP Motors, Helle Auto og bilannoncer",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2705.0,
+      "section_end_sec": 3640.0,
+      "section_time_range": "[45:05 – 1:00:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1901,
+      "text": "Historien om avisdistribution, bilplakater og barndomsdrømme om biler fra annoncer flettes ind i samtalen.",
+      "cars": [],
+      "themes": [
+        "nostalgi"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Nostalgi: JP Motors, Helle Auto og bilannoncer",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2705.0,
+      "section_end_sec": 3640.0,
+      "section_time_range": "[45:05 – 1:00:40]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1902,
+      "text": "Lytteren Mads spørger om elbil til ca. 500.000 kr., leasing, forventet værditab og alternativer til MEB-platformen; værterne anser 50 % værditab på fem år som for optimistisk.",
+      "cars": [],
+      "themes": [
+        "leasing",
+        "brugtmarked"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Lytterspørgsmål: budget, afskrivning og modelvalg",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3640.0,
+      "section_end_sec": 3841.7,
+      "section_time_range": "[1:00:40 – 1:04:01]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1903,
+      "text": "De peger på brugt Audi A6 e-tron som eksempel på hurtigt prisfald og diskuterer kinesiske modeller som Nio ET7 og store SUV'er samt Volkswagen ID.7 Tourer som stærke kandidater afhængigt af prioriteringer.",
+      "cars": [
+        "Audi A6 e-tron",
+        "Volkswagen ID.7 Tourer",
+        "Skoda Enyaq"
+      ],
+      "themes": [
+        "elbil",
+        "rådgivning"
+      ],
+      "uncertain": true,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Lytterspørgsmål: budget, afskrivning og modelvalg",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3640.0,
+      "section_end_sec": 3841.7,
+      "section_time_range": "[1:00:40 – 1:04:01]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1904,
+      "text": "Tesla afvises af lytteren pga. køresyge; værterne anbefaler at prøvekøre flere af de nævnte alternativer.",
+      "cars": [
+        "Tesla"
+      ],
+      "themes": [
+        "rådgivning"
+      ],
+      "uncertain": false,
+      "episode_title": "Skodas nye kæmpe: Er det årets største familiehit?",
+      "episode_guid": "9842b313-ece6-44e7-87c4-b41f00dd43a1",
+      "pub_date": "2026-04-03T11:00:00+00:00",
+      "section_title": "Lytterspørgsmål: budget, afskrivning og modelvalg",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3640.0,
+      "section_end_sec": 3841.7,
+      "section_time_range": "[1:00:40 – 1:04:01]",
+      "bullet_time_range": null
     }
   ],
-  "count": 658
+  "count": 684
 }
