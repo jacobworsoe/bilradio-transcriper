@@ -15019,182 +15019,512 @@
       "bullet_time_range": null
     },
     {
-      "id": 1871,
-      "text": "Christian har givet interviews om elbilsmangfoldighed til både lokale og internationale medier; de driller hinanden om journalistisk rækkevidde.",
+      "id": 1931,
+      "text": "Efter sponsorblokken skitseres ugens indhold: kinesisk elbil med nye priser, kørereportage med Renault Twingo og Mercedes GLC, konkurrence mod BMW iX3 og Volvo EX60, batteriproblemer i branchen, lytterspørgsmål og testgarage.",
+      "cars": [
+        "Renault Twingo",
+        "Mercedes GLC",
+        "BMW iX3",
+        "Volvo EX60"
+      ],
+      "themes": [
+        "podcast",
+        "nyheder"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Programintro og medieomtale",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 335.6,
+      "section_time_range": "[0:30 – 5:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1932,
+      "text": "Jan Lang har givet interviews til alt fra Lolland-Falsters Folketidende til Bloomberg og Reuters om elbiler, brændstofpriser og danskernes reaktion på oliepriser.",
       "cars": [],
       "themes": [
         "medier",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Programintro og medieomtale",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 335.6,
+      "section_time_range": "[0:30 – 5:35]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1933,
+      "text": "Let snak om optageudstyr, følsomhed om morgenen og biljournalistik som fag for praktikanter.",
+      "cars": [],
+      "themes": [
         "podcast"
       ],
       "uncertain": false,
       "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
       "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
       "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Intro og medieomtale",
+      "section_title": "Programintro og medieomtale",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 52.6,
-      "section_end_sec": 600.0,
-      "section_time_range": "[0:52 – 10:00]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 335.6,
+      "section_time_range": "[0:30 – 5:35]",
       "bullet_time_range": null
     },
     {
-      "id": 1872,
-      "text": "Nye kinesiske elbilers priser og kampagner på det danske marked sætter pres på etablerede mærker.",
-      "cars": [],
-      "themes": [
-        "pris",
-        "Kina"
-      ],
-      "uncertain": true,
-      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
-      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
-      "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Intro og medieomtale",
-      "section_order": 0,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 52.6,
-      "section_end_sec": 600.0,
-      "section_time_range": "[0:52 – 10:00]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1873,
-      "text": "Reportage fra kørsel med nye Renault Twingo: bybil-karakter, rækkevidde og prisposition som billig indgang til elbil.",
+      "id": 1934,
+      "text": "Christian kritiserer Toyotas og Suzukis tvang: bilen blokerer kørsel med åben førerdør ved lav fart — oplevet som unødig og patroniserende frem for reel sikkerhedsregel.",
       "cars": [
-        "Renault Twingo"
+        "Toyota",
+        "Suzuki"
       ],
       "themes": [
-        "test",
-        "bybil"
+        "sikkerhed",
+        "bilpolitik"
       ],
-      "uncertain": true,
+      "uncertain": false,
       "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
       "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
       "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Renault Twingo",
+      "section_title": "Toyota, sikkerhedslogik og brændstofpriser",
       "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 600.0,
-      "section_end_sec": 1400.0,
-      "section_time_range": "[10:00 – 23:20]",
+      "section_start_sec": 335.6,
+      "section_end_sec": 1016.6,
+      "section_time_range": "[5:35 – 16:56]",
       "bullet_time_range": null
     },
     {
-      "id": 1874,
-      "text": "Mercedes GLC EQ testes som luksus-SUV-elbil med fokus på komfort, assistenter og bagagerum.",
-      "cars": [
-        "Mercedes-Benz GLC EQ"
-      ],
+      "id": 1935,
+      "text": "Jan fortæller om Bloomberg- og Reuters-samtaler om stigende diesel- og benzinpriser efter konflikten omkring Iran og hvordan danskere hurtigt reagerer på brændstofspriser.",
+      "cars": [],
       "themes": [
-        "test",
-        "premium"
+        "brændstofpriser",
+        "økonomi"
       ],
-      "uncertain": true,
+      "uncertain": false,
       "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
       "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
       "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Mercedes GLC EQ og BMW iX3-konkurrent",
-      "section_order": 2,
+      "section_title": "Toyota, sikkerhedslogik og brændstofpriser",
+      "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1400.0,
-      "section_end_sec": 2400.0,
-      "section_time_range": "[23:20 – 40:00]",
+      "section_start_sec": 335.6,
+      "section_end_sec": 1016.6,
+      "section_time_range": "[5:35 – 16:56]",
       "bullet_time_range": null
     },
     {
-      "id": 1875,
-      "text": "Sammenligning med BMW iX3 og kommende Volvo EX60 i samme premium-SUV-klasse.",
-      "cars": [
-        "BMW iX3",
-        "Volvo EX60",
-        "Mercedes-Benz GLC EQ"
-      ],
+      "id": 1936,
+      "text": "Danmark fremhæves som et marked hvor mange elbilmodeller og ladeinfrastruktur gør det realistisk at skifte væk fra fossilt når priserne stiger; Sverige nævnes sammenlignende.",
+      "cars": [],
       "themes": [
-        "konkurrence",
+        "elbil",
+        "Danmark"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Toyota, sikkerhedslogik og brændstofpriser",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 335.6,
+      "section_end_sec": 1016.6,
+      "section_time_range": "[5:35 – 16:56]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1937,
+      "text": "Nyhed om kinesiske Changan (i udsendelsen omtalt som »Shangan«) med modelserien der i Danmark markedsføres som Eno: priser lander med aggressiv listepris omkring 265.000 kr. for en fornuftigt udstyret basisversion.",
+      "cars": [],
+      "themes": [
+        "Kina",
+        "pris",
         "elbil"
       ],
       "uncertain": true,
       "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
       "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
       "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Mercedes GLC EQ og BMW iX3-konkurrent",
+      "section_title": "Changan: kinesisk elbil og prisstrategi",
       "section_order": 2,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1400.0,
-      "section_end_sec": 2400.0,
-      "section_time_range": "[23:20 – 40:00]",
+      "section_start_sec": 1016.6,
+      "section_end_sec": 1604.2,
+      "section_time_range": "[16:56 – 26:44]",
       "bullet_time_range": null
     },
     {
-      "id": 1876,
-      "text": "Aktuelle sager om batterirelaterede tilbagekaldelser og softwarebegrænsninger hos flere mærker påvirker forbrugertillid.",
+      "id": 1938,
+      "text": "Værterne kritiserer »Vismo«-strategi: sædevarme og små komfortting låst til dyrere »Max«-trim til 285.000 kr., hvilket de mener underminerer budskabet i et prisfølsomt marked; sammenligning med Mazda 6e m.fl.",
+      "cars": [
+        "Mazda 6e"
+      ],
+      "themes": [
+        "pris",
+        "udstyr"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Changan: kinesisk elbil og prisstrategi",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1016.6,
+      "section_end_sec": 1604.2,
+      "section_time_range": "[16:56 – 26:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1939,
+      "text": "Importen sker via Andersen Motors med etableret forhandlernet; mærket beskrives som mere seriøst end tidligere kinesiske importforsøg i Danmark.",
       "cars": [],
       "themes": [
-        "batteri",
-        "sikkerhed"
+        "import",
+        "marked"
       ],
       "uncertain": true,
       "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
       "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
       "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Batteriproblemer i branchen",
+      "section_title": "Changan: kinesisk elbil og prisstrategi",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1016.6,
+      "section_end_sec": 1604.2,
+      "section_time_range": "[16:56 – 26:44]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1940,
+      "text": "Twingo er omkring 3,88 m lang med justerbart bagsæde som klassiske Twingo; designet hylder første generation fra 1992 og vurderes visuelt vellykket — sammenlignes med Renault 5 men med enklere undervogn.",
+      "cars": [
+        "Renault Twingo",
+        "Renault 5"
+      ],
+      "themes": [
+        "bybil",
+        "design"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Renault Twingo: bybil til lav pris",
       "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 2400.0,
-      "section_end_sec": 3000.0,
-      "section_time_range": "[40:00 – 50:00]",
+      "section_start_sec": 1604.2,
+      "section_end_sec": 2284.8,
+      "section_time_range": "[26:44 – 38:04]",
       "bullet_time_range": null
     },
     {
-      "id": 1877,
-      "text": "Samlet testperspektiv på to meget forskellige biler: billig Renault versus dyr Mercedes og hvad man reelt får for prisforskellen.",
+      "id": 1941,
+      "text": "Køreoplevelsen beskrives som solid og komfortabel men ikke sportslig; den slår ifølge værten billigere kinesiske alternativer som BYD Dolphin Surf, og Citroën ë-C3 nævnes med svag motorisering.",
       "cars": [
-        "Renault",
-        "Mercedes-Benz"
+        "Renault Twingo",
+        "BYD Dolphin",
+        "Citroën ë-C3"
       ],
       "themes": [
         "test",
-        "værdi"
+        "elbil"
       ],
-      "uncertain": true,
+      "uncertain": false,
       "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
       "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
       "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Testgarage og lytter",
-      "section_order": 4,
+      "section_title": "Renault Twingo: bybil til lav pris",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3000.0,
-      "section_end_sec": 3816.0,
-      "section_time_range": "[50:00 – 1:03:36]",
+      "section_start_sec": 1604.2,
+      "section_end_sec": 2284.8,
+      "section_time_range": "[26:44 – 38:04]",
       "bullet_time_range": null
     },
     {
-      "id": 1878,
-      "text": "Lytterspørgsmål om køb af brugt elbil, garanti og ladeadfærd.",
-      "cars": [],
+      "id": 1942,
+      "text": "Udviklingen fra prototype til serieproduktion diskuteres som trial-and-error; bilen forventes til Danmark om sommeren efter international fremvisning.",
+      "cars": [
+        "Renault Twingo"
+      ],
       "themes": [
-        "rådgivning",
-        "brugtvogn"
+        "nyheder"
       ],
       "uncertain": true,
       "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
       "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
       "pub_date": "2026-03-27T12:00:00+00:00",
-      "section_title": "Testgarage og lytter",
+      "section_title": "Renault Twingo: bybil til lav pris",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1604.2,
+      "section_end_sec": 2284.8,
+      "section_time_range": "[26:44 – 38:04]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1943,
+      "text": "Internationale presseevents for Mercedes GLC EQ; Jens Høj har testkørt — bilen positioneres som udfordrer til BMW iX3 og den kommende Volvo EX60.",
+      "cars": [
+        "Mercedes-Benz GLC EQ",
+        "BMW iX3",
+        "Volvo EX60"
+      ],
+      "themes": [
+        "test",
+        "premium",
+        "elbil"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Mercedes GLC EQ og premium-SUV konkurrenter",
       "section_order": 4,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3000.0,
+      "section_start_sec": 2284.8,
+      "section_end_sec": 2713.4,
+      "section_time_range": "[38:04 – 45:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1944,
+      "text": "BMW iX3 fremhæves som meget komfortabel og allround; GLC EQ beskrives som komfortorienteret frem for ren BMW-dynamik — forskellige smag i samme segment.",
+      "cars": [
+        "BMW iX3",
+        "Mercedes-Benz GLC EQ"
+      ],
+      "themes": [
+        "konkurrence",
+        "køreegenskaber"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Mercedes GLC EQ og premium-SUV konkurrenter",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2284.8,
+      "section_end_sec": 2713.4,
+      "section_time_range": "[38:04 – 45:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1945,
+      "text": "Opladning og batteristrategi berøres i forhold til daglig brug og ladeadfærd (80 %-grænse m.m.).",
+      "cars": [],
+      "themes": [
+        "elbil",
+        "lading"
+      ],
+      "uncertain": true,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Mercedes GLC EQ og premium-SUV konkurrenter",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2284.8,
+      "section_end_sec": 2713.4,
+      "section_time_range": "[38:04 – 45:13]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1946,
+      "text": "Volkswagen har fundet defekte battericeller i visse elbiler med risiko for brand; 68 danske værksteder kan udskifte moduler — VW kommunikerer ifølge værten mere åbent end Mercedes gjorde ved tilsvarende DC-ladebegrænsningssager.",
+      "cars": [
+        "Volkswagen",
+        "Mercedes-Benz",
+        "Skoda"
+      ],
+      "themes": [
+        "batteri",
+        "sikkerhed",
+        "tilbagekaldelse"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Batteriproblemer: Volkswagen og branchen",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2713.4,
+      "section_end_sec": 3195.0,
+      "section_time_range": "[45:13 – 53:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1947,
+      "text": "Forskellige batterileverandører og faktisk kapacitet vs. papirspecifikation diskuteres for MEB-familien; Skoda Enyaq m.fl. nævnes i forlængelse af industrinyheder.",
+      "cars": [
+        "Skoda Enyaq",
+        "Volkswagen"
+      ],
+      "themes": [
+        "batteri",
+        "teknik"
+      ],
+      "uncertain": true,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Batteriproblemer: Volkswagen og branchen",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2713.4,
+      "section_end_sec": 3195.0,
+      "section_time_range": "[45:13 – 53:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1948,
+      "text": "DS 8 omtales som stor el-SUV på STLA-platform med op til 97 kWh, lang rækkevidde og luksusdetaljer (nappa, Alcantara, aktiv scanning af vejen); pris omkring 400.000+ kr.",
+      "cars": [
+        "DS 8",
+        "Peugeot 3008"
+      ],
+      "themes": [
+        "elbil",
+        "premium",
+        "Stellantis"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "DS 8 og fransk premium i Danmark",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3195.0,
+      "section_end_sec": 3555.0,
+      "section_time_range": "[53:15 – 59:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1949,
+      "text": "Værterne er skeptiske til salgspotentialet i Danmark for franske luksusbiler — DS’ historik med DS3 og DS7 og manglende synlighed på vejene i dag.",
+      "cars": [
+        "DS"
+      ],
+      "themes": [
+        "marked",
+        "Danmark"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "DS 8 og fransk premium i Danmark",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3195.0,
+      "section_end_sec": 3555.0,
+      "section_time_range": "[53:15 – 59:15]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1950,
+      "text": "Felix købte Kia EV6 i slutningen af 2022 til ca. 480.000 kr. med udstyr; han er bekymret for værditab efter 43.000 km og restgæld omkring 183.000 kr.",
+      "cars": [
+        "Kia EV6"
+      ],
+      "themes": [
+        "værditab",
+        "brugtmarked"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål: Felix og Kia EV6",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3555.0,
       "section_end_sec": 3816.0,
-      "section_time_range": "[50:00 – 1:03:36]",
+      "section_time_range": "[59:15 – 1:03:36]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1951,
+      "text": "Jan vurderer indbytnings- og salgspriser i dag til omkring 200.000–220.000 kr. afhængigt af forhandler; de diskuterer privatleasing af Skoda Enyaq 85 frem for køb af Toyota bZ4X Touring.",
+      "cars": [
+        "Kia EV6",
+        "Skoda Enyaq",
+        "Toyota bZ4X"
+      ],
+      "themes": [
+        "leasing",
+        "rådgivning"
+      ],
+      "uncertain": true,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål: Felix og Kia EV6",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3555.0,
+      "section_end_sec": 3816.0,
+      "section_time_range": "[59:15 – 1:03:36]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1952,
+      "text": "Sammenligning med tidligere Skoda Octavia værdifasthed bruges som kontrast til nutidens elbilafsætning.",
+      "cars": [
+        "Skoda Octavia"
+      ],
+      "themes": [
+        "økonomi"
+      ],
+      "uncertain": false,
+      "episode_title": "Vi tester to af de bedste: Billig Renault og luksus-Mercedes",
+      "episode_guid": "944284db-260d-44e0-86ff-b41a00c25aef",
+      "pub_date": "2026-03-27T12:00:00+00:00",
+      "section_title": "Lytterspørgsmål: Felix og Kia EV6",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3555.0,
+      "section_end_sec": 3816.0,
+      "section_time_range": "[59:15 – 1:03:36]",
       "bullet_time_range": null
     },
     {
@@ -15785,5 +16115,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 684
+  "count": 698
 }
