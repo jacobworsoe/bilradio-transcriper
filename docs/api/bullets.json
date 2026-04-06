@@ -14388,149 +14388,403 @@
       "bullet_time_range": null
     },
     {
-      "id": 1843,
-      "text": "Jan kritiserer MG6 for svag Bluetooth til telefon og forældet navigation trods ellers bred udstyrspakke; tilfældig forbipasserende sammenlignede design med Audi.",
+      "id": 1988,
+      "text": "Ugen byder på opvarmning til flere verdenspremierer: opdateret Cupra Born som forløber for stor ID.3-opdatering, priser på Kia EV5, test af opdateret ID.3, og senere lyttertip om privatleasing.",
+      "cars": [
+        "Cupra Born",
+        "Volkswagen ID.3",
+        "Kia EV5"
+      ],
+      "themes": [
+        "nyheder",
+        "podcast"
+      ],
+      "uncertain": false,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Programintro og MG6",
+      "section_order": 0,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 30.0,
+      "section_end_sec": 432.4,
+      "section_time_range": "[0:30 – 7:12]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1989,
+      "text": "Jan kører MG6 og beskriver svag Bluetooth til telefon som et irritationsmoment; generelt blandet indtryk af bilen.",
       "cars": [
         "MG6"
       ],
       "themes": [
-        "software",
-        "elbil"
-      ],
-      "uncertain": false,
-      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
-      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
-      "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Intro: MG6 og Xpeng G9",
-      "section_order": 0,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 66.4,
-      "section_end_sec": 700.0,
-      "section_time_range": "[1:06 – 11:40]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1844,
-      "text": "Christian forbereder Xpeng G9-rækkeviddestest mod vestkysten efter forsinkede journalistflådebiler pga. assistancesoftware; Jan skal køre samme rute som året før i Audi A6 e-tron.",
-      "cars": [
-        "Xpeng G9",
-        "Audi A6 e-tron"
-      ],
-      "themes": [
         "test",
-        "rækkevidde"
+        "teknologi"
       ],
       "uncertain": false,
       "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
       "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
       "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Intro: MG6 og Xpeng G9",
+      "section_title": "Programintro og MG6",
       "section_order": 0,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 66.4,
-      "section_end_sec": 700.0,
-      "section_time_range": "[1:06 – 11:40]",
+      "section_start_sec": 30.0,
+      "section_end_sec": 432.4,
+      "section_time_range": "[0:30 – 7:12]",
       "bullet_time_range": null
     },
     {
-      "id": 1845,
-      "text": "Tip fra FDM/Karsten Lemke: ved NEVO 500 kW-lader ved Drejebænken Fyn vælg udtag tættest på McDonald's for fuld effekt.",
-      "cars": [],
-      "themes": [
-        "lading",
-        "tips"
-      ],
-      "uncertain": false,
-      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
-      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
-      "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Intro: MG6 og Xpeng G9",
-      "section_order": 0,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 66.4,
-      "section_end_sec": 700.0,
-      "section_time_range": "[1:06 – 11:40]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1846,
-      "text": "Volkswagen præsenterer ny generation Golf (Golf 9) med fokus på forbrænding, plug-in og digital cockpit — central model for mærket frem mod 2030.",
+      "id": 1990,
+      "text": "Stor Danmarkspremiere på BMW iX3 med meget hype; samme klasse som Volvo EX60 og Mercedes GLC EQ — forventning om tæt sammenligning.",
       "cars": [
-        "Volkswagen Golf"
+        "BMW iX3",
+        "Volvo EX60",
+        "Mercedes-Benz GLC EQ"
       ],
       "themes": [
-        "lancering",
-        "forbrænding"
+        "nyheder",
+        "premium"
+      ],
+      "uncertain": false,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Kommende premierer: Cupra Raval, BMW i3 og premium-SUV",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 432.4,
+      "section_end_sec": 702.4,
+      "section_time_range": "[7:12 – 11:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1991,
+      "text": "Cupra Raval (i udsendelsen også omtalt som »Revalda«) har verdenspremiere 13. marts; Jan har set bilen og roser udseendet.",
+      "cars": [
+        "Cupra Raval"
+      ],
+      "themes": [
+        "nyheder"
       ],
       "uncertain": true,
       "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
       "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
       "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Volkswagen Golf 9 og ID.3-opdatering",
+      "section_title": "Kommende premierer: Cupra Raval, BMW i3 og premium-SUV",
       "section_order": 1,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 700.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[11:40 – 26:40]",
+      "section_start_sec": 432.4,
+      "section_end_sec": 702.4,
+      "section_time_range": "[7:12 – 11:42]",
       "bullet_time_range": null
     },
     {
-      "id": 1847,
-      "text": "Større facelift af ID.3 (\"næsten ny\") med design, kabine og software opdateringer diskuteres som svar på konkurrence i kompakt-EL-segmentet.",
+      "id": 1992,
+      "text": "BMW i3 har verdenspremiere 18. marts; rygter om op til ca. 900 km rækkevidde og vintertest i nordlige Sverige; tysk mål om 1000 km-rækkevidde som elbilskifte-driver nævnes.",
       "cars": [
-        "Volkswagen ID.3"
+        "BMW i3"
       ],
       "themes": [
         "elbil",
-        "facelift"
+        "rækkevidde"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Kommende premierer: Cupra Raval, BMW i3 og premium-SUV",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 432.4,
+      "section_end_sec": 702.4,
+      "section_time_range": "[7:12 – 11:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1993,
+      "text": "Mercedes VLE-afløser for V-klassen omtales med 800 V og meget høj ladeeffekt (omkring 400 kW i udsagn).",
+      "cars": [
+        "Mercedes-Benz"
+      ],
+      "themes": [
+        "elbil",
+        "lading"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Kommende premierer: Cupra Raval, BMW i3 og premium-SUV",
+      "section_order": 1,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 432.4,
+      "section_end_sec": 702.4,
+      "section_time_range": "[7:12 – 11:42]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1994,
+      "text": "Volkswagen har over for IG Metall meldt ny Golf i 2028; teaser viser silhuet — elbilen får navnet ID.Golf og bygges i Wolfsburg på SSP-platformen.",
+      "cars": [
+        "Volkswagen Golf",
+        "Volkswagen ID.Golf"
+      ],
+      "themes": [
+        "elbil",
+        "platform"
       ],
       "uncertain": false,
       "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
       "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
       "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Volkswagen Golf 9 og ID.3-opdatering",
-      "section_order": 1,
+      "section_title": "Volkswagen Golf 9 og ID.Golf",
+      "section_order": 2,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 700.0,
-      "section_end_sec": 1600.0,
-      "section_time_range": "[11:40 – 26:40]",
+      "section_start_sec": 702.4,
+      "section_end_sec": 1009.4,
+      "section_time_range": "[11:42 – 16:49]",
       "bullet_time_range": null
     },
     {
-      "id": 1848,
-      "text": "Opdateret Cupra Born annonceres med forbedret rækkevidde, effekt og kabine — forløber for tilsvarende opgraderinger på søsterbil ID.3.",
+      "id": 1995,
+      "text": "Nuværende Golf 8 får facelift der visuelt nærmer sig den kommende elbil; produktion af fossile varianter flyttes bl.a. til Mexico.",
+      "cars": [
+        "Volkswagen Golf"
+      ],
+      "themes": [
+        "nyheder"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Volkswagen Golf 9 og ID.Golf",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 702.4,
+      "section_end_sec": 1009.4,
+      "section_time_range": "[11:42 – 16:49]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1996,
+      "text": "Diskussion af Golf 8’s markedsposition og pris; elbilen beskrives som fremtidens kernemodel for mærket.",
+      "cars": [
+        "Volkswagen Golf"
+      ],
+      "themes": [
+        "marked"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Volkswagen Golf 9 og ID.Golf",
+      "section_order": 2,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 702.4,
+      "section_end_sec": 1009.4,
+      "section_time_range": "[11:42 – 16:49]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1997,
+      "text": "Cupra Born facelift før ID.3; Born fremhæves som ofte det mere attraktive søstermed produktion samme sted som ID.3 — ca. 10.000 Born mod flere ID.3 i Danmark.",
       "cars": [
         "Cupra Born",
         "Volkswagen ID.3"
       ],
       "themes": [
-        "elbil",
+        "marked",
         "facelift"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Cupra Born og Volkswagen ID.3 facelift",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1009.4,
+      "section_end_sec": 1646.4,
+      "section_time_range": "[16:49 – 27:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 1998,
+      "text": "ID.3-opdatering: reelle knapper til rudebetjening, bedre materialer og erstatning af upålidelige touchfelter med fysiske betjeningsflader.",
+      "cars": [
+        "Volkswagen ID.3"
+      ],
+      "themes": [
+        "komfort",
+        "betjening"
       ],
       "uncertain": false,
       "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
       "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
       "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Cupra Born og Cupra Raval",
-      "section_order": 2,
+      "section_title": "Cupra Born og Volkswagen ID.3 facelift",
+      "section_order": 3,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1600.0,
-      "section_end_sec": 2400.0,
-      "section_time_range": "[26:40 – 40:00]",
+      "section_start_sec": 1009.4,
+      "section_end_sec": 1646.4,
+      "section_time_range": "[16:49 – 27:26]",
       "bullet_time_range": null
     },
     {
-      "id": 1849,
-      "text": "Cupra Raval som mindre el-SUV på gruppeplatform får pris- og positioneringsdebat over for ID. Polo-klassen og Skoda Epic.",
+      "id": 1999,
+      "text": "Rækkevidde og ladekurve for ID.3 nævnes som solide; fokus på indvendig kvalitet frem for stor teknisk ændring.",
       "cars": [
-        "Cupra Raval",
-        "Skoda Epic"
+        "Volkswagen ID.3"
+      ],
+      "themes": [
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Cupra Born og Volkswagen ID.3 facelift",
+      "section_order": 3,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1009.4,
+      "section_end_sec": 1646.4,
+      "section_time_range": "[16:49 – 27:26]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2000,
+      "text": "Mange Xpeng biler leveres efter tidligere kampagner (~250.000 kr.); typisk lagersalg der nu når kunder.",
+      "cars": [
+        "Xpeng"
+      ],
+      "themes": [
+        "marked",
+        "leasing"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Marked: Xpeng, top 10-elbiler og leasing",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1646.4,
+      "section_end_sec": 2238.4,
+      "section_time_range": "[27:26 – 37:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2001,
+      "text": "Top 10 nybilssalg i perioden er domineret af elbiler; Citroën ë-C3 nævnes som billig privatleasing-succes.",
+      "cars": [
+        "Citroën ë-C3"
+      ],
+      "themes": [
+        "salg",
+        "elbil"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Marked: Xpeng, top 10-elbiler og leasing",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1646.4,
+      "section_end_sec": 2238.4,
+      "section_time_range": "[27:26 – 37:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2002,
+      "text": "Kort historie om attraktivt BMC Leasing-tilbud på Renault elbil i Horsens der senere forsvandt — illustration af hurtigt marked.",
+      "cars": [
+        "Renault"
+      ],
+      "themes": [
+        "leasing"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Marked: Xpeng, top 10-elbiler og leasing",
+      "section_order": 4,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 1646.4,
+      "section_end_sec": 2238.4,
+      "section_time_range": "[27:26 – 37:18]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2003,
+      "text": "Ca. 20.000 Volvo-ejere i Danmark med Google Automotive får stor OTA-opdatering med funktioner og UI nær nyere EX-modeller; kræver tidligere opdateringer eller værksted.",
+      "cars": [
+        "Volvo"
+      ],
+      "themes": [
+        "software",
+        "OTA"
+      ],
+      "uncertain": false,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Volvo: massiv softwareopdatering",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2238.4,
+      "section_end_sec": 2771.4,
+      "section_time_range": "[37:18 – 46:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2004,
+      "text": "Opdateringen tager lang tid (omkring 90 minutter parkeret) og berører navigation, musik og telefonintegration.",
+      "cars": [
+        "Volvo"
+      ],
+      "themes": [
+        "teknologi"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Volvo: massiv softwareopdatering",
+      "section_order": 5,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2238.4,
+      "section_end_sec": 2771.4,
+      "section_time_range": "[37:18 – 46:11]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2005,
+      "text": "Kia EV5 får danske priser; modellen er udviklet til Kina først, men produceres også i Korea til Europa — anderledes profil end EV6, nævnes som konkurrent til bl.a. VW ID.4.",
+      "cars": [
+        "Kia EV5",
+        "Kia EV6",
+        "Volkswagen ID.4"
       ],
       "themes": [
         "elbil",
@@ -14540,100 +14794,124 @@
       "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
       "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
       "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Cupra Born og Cupra Raval",
-      "section_order": 2,
+      "section_title": "Kia EV5: priser og position",
+      "section_order": 6,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 1600.0,
-      "section_end_sec": 2400.0,
-      "section_time_range": "[26:40 – 40:00]",
+      "section_start_sec": 2771.4,
+      "section_end_sec": 3237.4,
+      "section_time_range": "[46:11 – 53:57]",
       "bullet_time_range": null
     },
     {
-      "id": 1850,
-      "text": "Ny BMW i3 (ikke gamle citycar) omtales som kommende kompakt elbil på ny platform — navnet genbruges til bredere volumenmodel.",
+      "id": 2006,
+      "text": "Kias nummerering (EV2, EV3, EV4, EV5, EV6, EV9) gør linjen tæt; værterne diskuterer differencering mellem modellerne.",
       "cars": [
-        "BMW i3"
+        "Kia"
       ],
       "themes": [
-        "elbil",
-        "lancering"
-      ],
-      "uncertain": true,
-      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
-      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
-      "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "BMW i3 comeback og Kia EV5",
-      "section_order": 3,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 2400.0,
-      "section_end_sec": 3300.0,
-      "section_time_range": "[40:00 – 55:00]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1851,
-      "text": "Kia EV5 priser og udstyrsniveau sammenlignes med øvrige mellemstore familie-EL'er på det danske marked.",
-      "cars": [
-        "Kia EV5"
-      ],
-      "themes": [
-        "pris",
-        "elbil"
-      ],
-      "uncertain": true,
-      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
-      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
-      "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "BMW i3 comeback og Kia EV5",
-      "section_order": 3,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 2400.0,
-      "section_end_sec": 3300.0,
-      "section_time_range": "[40:00 – 55:00]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1852,
-      "text": "Lytterspørgsmål om privatleasing af ny benzinbil frem for elbil i et bestemt kørselsmønster; de gennemgår totaløkonomi og restværdi kort.",
-      "cars": [],
-      "themes": [
-        "leasing",
-        "rådgivning"
-      ],
-      "uncertain": true,
-      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
-      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
-      "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Privatleasing-tip og afslutning",
-      "section_order": 4,
-      "start_sec": null,
-      "end_sec": null,
-      "section_start_sec": 3300.0,
-      "section_end_sec": 4099.4,
-      "section_time_range": "[55:00 – 1:08:19]",
-      "bullet_time_range": null
-    },
-    {
-      "id": 1853,
-      "text": "Udsendelsen afsluttes med opsamling på kommende verdenspremierer og testplaner.",
-      "cars": [],
-      "themes": [
-        "podcast"
+        "marked"
       ],
       "uncertain": false,
       "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
       "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
       "pub_date": "2026-03-06T12:00:00+00:00",
-      "section_title": "Privatleasing-tip og afslutning",
-      "section_order": 4,
+      "section_title": "Kia EV5: priser og position",
+      "section_order": 6,
       "start_sec": null,
       "end_sec": null,
-      "section_start_sec": 3300.0,
+      "section_start_sec": 2771.4,
+      "section_end_sec": 3237.4,
+      "section_time_range": "[46:11 – 53:57]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2007,
+      "text": "Hurtigladekapacitet (8 min 10–80 % i udsagn) bruges som sammenligningspunkt før EV5-dybdegang.",
+      "cars": [
+        "Kia"
+      ],
+      "themes": [
+        "lading"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Kia EV5: priser og position",
+      "section_order": 6,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 2771.4,
+      "section_end_sec": 3237.4,
+      "section_time_range": "[46:11 – 53:57]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2008,
+      "text": "Leap Motor B10 testes; kinesisk mærke med Stellantis-ejerandele, solgt via få forhandlere — Christian frustreret over startprocedurer og oplevet kvalitet ift. pris (fra ~200.000 kr. til bedre udstyret ~430.000 kr.).",
+      "cars": [
+        "Leap Motor B10"
+      ],
+      "themes": [
+        "test",
+        "Kina"
+      ],
+      "uncertain": false,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Testgarage: Leap Motor B10 og lyttere",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3237.4,
       "section_end_sec": 4099.4,
-      "section_time_range": "[55:00 – 1:08:19]",
+      "section_time_range": "[53:57 – 1:08:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2009,
+      "text": "Lytteren Magnus: ung førstegangskøber med budget omkring 60.000 kr.; diskussion af brugt Ford Fiesta vs. gamle mini-SUV kontra værdi; anbefaling af privatleasing-microbil frem for risikabel gammel bil.",
+      "cars": [
+        "Ford Fiesta"
+      ],
+      "themes": [
+        "lytter",
+        "leasing",
+        "brugt"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Testgarage: Leap Motor B10 og lyttere",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3237.4,
+      "section_end_sec": 4099.4,
+      "section_time_range": "[53:57 – 1:08:19]",
+      "bullet_time_range": null
+    },
+    {
+      "id": 2010,
+      "text": "Jan fremhæver BMC Leasing som interessant for billig privatleasing af små biler uden kontant køb.",
+      "cars": [],
+      "themes": [
+        "leasing"
+      ],
+      "uncertain": true,
+      "episode_title": "336 Volkswagen viser Golf 9, og nu kommer Cupra Raval og BMW i3",
+      "episode_guid": "8ef71649-3dff-4a8c-8906-b40500b440ef",
+      "pub_date": "2026-03-06T12:00:00+00:00",
+      "section_title": "Testgarage: Leap Motor B10 og lyttere",
+      "section_order": 7,
+      "start_sec": null,
+      "end_sec": null,
+      "section_start_sec": 3237.4,
+      "section_end_sec": 4099.4,
+      "section_time_range": "[53:57 – 1:08:19]",
       "bullet_time_range": null
     },
     {
@@ -16543,5 +16821,5 @@
       "bullet_time_range": null
     }
   ],
-  "count": 716
+  "count": 728
 }
