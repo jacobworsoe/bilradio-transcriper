@@ -32,18 +32,14 @@ On Windows, point Bilradio at the venv interpreter if needed:
 BILRADIO_WHISPER_PYTHON=C:\path\to\bilradio-transcriper\.venv\Scripts\python.exe
 ```
 
-## Recommended: batch Whisper queue + ingest (two-stage)
+## Recommended: batch Whisper (full ingest pipeline)
 
-Use this when the integrated pipeline or web queue is fragile on long GPU runs. The script **syncs RSS**, **downloads new pending episodes**, then runs the **`whisper` executable** on each `data/audio/*.mp3` (default **medium** + **cuda** + Danish), writing `.txt` files into **`data/transcripts`**. Finally, import those files into SQLite.
+Use this when the integrated pipeline or web queue is fragile on long GPU runs. The script runs the **ingest pipeline** end-to-end: **syncs RSS**, **downloads new pending episodes**, runs the **`whisper` executable** on each `data/audio/*.mp3` (default **medium** + **cuda** + Danish), writes outputs into **`data/transcripts`**, then runs **`ingest-transcripts`** so SQLite rows become **`transcribed`** when matching files exist.
 
 From the repo root:
 
 ```powershell
-# 1) Sync RSS, download new episodes, transcribe all MP3s (skips if matching .txt already exists)
 .\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py
-
-# 2) Promote rows in SQLite to `transcribed` when a matching non-empty .txt exists
-.\.venv\Scripts\python.exe -m bilradio.cli ingest-transcripts
 ```
 
 Useful options:
@@ -52,12 +48,17 @@ Useful options:
 # Skip RSS/download if you only want transcription
 .\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py --skip-sync-download
 
+# Skip SQLite update (only write transcript files on disk)
+.\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py --skip-ingest-transcripts
+
 # Re-run Whisper even when .txt already exists
 .\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py --retry-failed
 
 # CPU instead of GPU
 .\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py --device cpu
 ```
+
+If you used **`--skip-ingest-transcripts`** or need to re-sync disk → DB later: **`bilradio ingest-transcripts`**.
 
 After ingest, continue with **`bilradio prepare-extract`** and the Cursor JSON flow (see below).
 

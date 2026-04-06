@@ -13,7 +13,7 @@ Work is split into two **named pipelines** (full CLI order and **`Prompt to crea
 1. Fetches the Bilradio podcast RSS feed (episodes from **2025-11-07** onwards). By default, items **under 60 seconds** are excluded (`BILRADIO_MIN_DURATION_SEC`, default **60**; set **`0`** to allow promos/clips).
 2. Downloads MP3 audio files under `data/audio/`.
 3. Transcribes with **OpenAI Whisper** (typically CUDA + **medium**) — **recommended:** **`scripts/batch_whisper_transcribe.py`**; integrated **`bilradio transcribe`** / **`run-queue`** remain optional (`bilradio/whisper_run.py`).
-4. Keeps **Whisper output on disk** under `data/transcripts/` (`.json` preferred; `.txt` also supported). Then run **`bilradio ingest-transcripts`** so SQLite marks episodes **transcribed** when matching files exist.
+4. Keeps **Whisper output on disk** under `data/transcripts/` (`.json` preferred; `.txt` also supported). **`batch_whisper_transcribe.py`** then runs **`ingest-transcripts`** so SQLite marks episodes **transcribed** when matching files exist (or run **`bilradio ingest-transcripts`** yourself if you use another transcribe path or **`--skip-ingest-transcripts`**).
 
 ### Improvement pipeline (everything after raw transcripts on disk)
 
@@ -43,14 +43,14 @@ For reliable long GPU runs, use the **batch script** (not the web app for transc
 ```powershell
 cd C:\Git\bilradio-transcriper
 
-# Sync RSS, download pending episodes, run whisper on each data\audio\*.mp3 (all output formats by default)
+# Full ingest pipeline: RSS, download, Whisper per data\audio\*.mp3, then ingest-transcripts → SQLite
 .\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py
 
-# Update SQLite: downloaded|error → transcribed when data\transcripts\<stem>.json (preferred) or .txt exists
-.\.venv\Scripts\python.exe -m bilradio.cli ingest-transcripts
+# Only if you skipped DB ingest or need to re-sync disk → DB later:
+# .\.venv\Scripts\python.exe -m bilradio.cli ingest-transcripts
 ```
 
-Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--skip-sync-download`, `--retry-failed`, `--device cpu`, `--output-format` (omit for Whisper default `all`).
+Batch script options (`python scripts\batch_whisper_transcribe.py --help`): `--skip-sync-download`, `--skip-ingest-transcripts`, `--retry-failed`, `--device cpu`, `--output-format` (omit for Whisper default `all`).
 
 The **improvement pipeline** (improved JSON, **`cursor_inbox`**, **`import-bullets`**) is **not** part of this script. **Cursor Auto Agent** runs inside Cursor on `data/cursor_inbox/*_improve_auto_agent.md`; there is no headless “run Agent from Python” hook in-repo. Follow **`Prompt to create improved JSON.txt`** for backlog order and inbox cleanup. To **batch-fill missing** improved files without the Agent, use **`scripts/improved_json_from_segments.py`** per episode (stem + `--guid` from the prompt or DB), then **`import-bullets`** per guid — output is **interim** (`_bilradio_meta.replace_with_cursor_agent`, generic section titles, `themes: ["bootstrap"]`, `uncertain: true`) until replaced by a real Agent pass.
 
@@ -182,7 +182,7 @@ Logs: `data/logs/bilradio.log`, integrated runs may also write `data/logs/whispe
 
 ## After transcription: improvement pipeline → Topics
 
-1. **Ingest pipeline** done: **`data/transcripts/<stem>.json`** (or `.txt`) exists; run **`ingest-transcripts`** if DB should show **transcribed**.
+1. **Ingest pipeline** done: **`data/transcripts/<stem>.json`** (or `.txt`) exists and SQLite shows **transcribed** ( **`batch_whisper_transcribe.py`** runs **`ingest-transcripts`** for you; otherwise run **`bilradio ingest-transcripts`**).
 2. **`prepare-improved-agent`** (and follow **`Prompt to create improved JSON.txt`** when working the backlog). Generate **`data/transcripts_improved/<stem>.json`** with **Cursor Auto Agent** (inbox prompts), **`bootstrap-improved-json`**, or **`improved_json_from_segments.py`** when bootstrap collapses to one block (or to bulk-fill many missing files before Agent polish). Optionally run **`apply_whisper_timecodes.py`** for **section**-level times when improved JSON was authored without segment-aligned bounds (often **skipped** immediately after `improved_json_from_segments.py`).
 3. **`bilradio import-bullets --guid <guid> --file data\transcripts_improved\<stem>.json`**
 4. Open **`/topics`** in the web app: **section** time range on the summary line (no per-bullet range unless legacy DB rows still have bullet times), **episode heading** **`date - title`**, **disc** markers for bullets.
@@ -228,3 +228,4 @@ For current HEAD after pull: `git log -1 --oneline`
 | 2026-04-05 | **Topics** read state — **Mark episode read** / **Mark section read** / **Clear all read** (`localStorage`, commit `ba1388c`); **GitHub Pages** stuck **Loading…** — duplicate **`bullets`** in static **`loadBullets()`** (commit `5b6ef11`); handover: Whisper **`.json`** + **segments** vs repo **`.txt`** task stub |
 | 2026-04-05 (later) | **Episodes** home **`/`**: consolidated **status** badge + **`status_label`**, **Sections**/**Bullets** DB columns then **unread** client counts, **Read** (blue) / **Partly read** / **Mark read**, **`loadBullets` `epGuid`** fix; **Topics**: **`pub_date` ASC**, auto **episode read** when all sections read, **no car/theme exclude** (removed **`/api/facets`**), single-episode **redirect to `/`**, removed **All topics · Episodes** subnav; **Pages**: **`/topics/`** + **`bullets.json`/`episodes.json`** only; unread **0** shows **`–`** in Episodes columns |
 | 2026-04-06 | **Ingest pipeline** (RSS → Whisper on disk) vs **improvement pipeline** (`prepare-improved-agent`, **`Prompt to create improved JSON.txt`**, improved JSON, **`import-bullets`**, serve, **`export-github-pages`**) documented in **`.cursor/rules/pipelines.mdc`**, **HANDOVER.md**, cross-links in **transcript-storage.mdc** |
+| 2026-04-06 | **`batch_whisper_transcribe.py`** runs **`ingest-transcripts`** at end of ingest ( **`--skip-ingest-transcripts`** to opt out); **README** / **pipelines** / **HANDOVER** aligned |

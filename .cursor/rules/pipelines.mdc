@@ -21,7 +21,7 @@ The end-to-end work splits into two named pipelines:
 3. **Transcribe** — **OpenAI Whisper** (e.g. **`scripts/batch_whisper_transcribe.py`**, or **`bilradio transcribe`** / **`run-queue`**).
 4. **Keep Whisper on disk** — **`data/transcripts/<audio_stem>.json`** (preferred; **`.txt`** supported). Full payload with **`segments`**; this is the raw capture.
 
-**Typical CLI (batch path):** **`bilradio sync`**, **`bilradio download`**, run **`batch_whisper_transcribe.py`**, then **`bilradio ingest-transcripts`** so episode rows in SQLite move to **transcribed** when matching files exist on disk (see **`bilradio/pipeline.py`**, **`bilradio/whisper_run.py`** for integrated options).
+**Typical CLI (batch path):** **`scripts/batch_whisper_transcribe.py`** runs the full ingest pipeline end-to-end (RSS sync, download, Whisper, **`ingest-transcripts`**). Use **`--skip-ingest-transcripts`** only if you want transcript files on disk without updating SQLite. Alternatively: **`bilradio sync`**, **`bilradio download`**, **`bilradio transcribe`** / **`run-queue`**, then **`bilradio ingest-transcripts`** (see **`bilradio/pipeline.py`**, **`bilradio/whisper_run.py`**).
 
 **Not part of ingest:** improved JSON, **`cursor_inbox`**, **`import-bullets`**, static export.
 

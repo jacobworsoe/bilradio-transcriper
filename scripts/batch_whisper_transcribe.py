@@ -1,5 +1,8 @@
 """Batch transcribe all downloaded audio with Whisper CLI.
 
+Runs the full **ingest pipeline** (RSS sync, download, Whisper → ``data/transcripts/``,
+then ``ingest-transcripts`` so SQLite marks episodes **transcribed**).
+
 Usage (from repo root):
   .\.venv\Scripts\python.exe .\scripts\batch_whisper_transcribe.py
 """
@@ -12,12 +15,15 @@ from pathlib import Path
 
 from bilradio.config import DB_PATH
 from bilradio.db import init_db
-from bilradio.pipeline import step_download, sync_episodes_from_rss
+from bilradio.pipeline import step_download, step_ingest_transcripts, sync_episodes_from_rss
 
 
 def _parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Queue all data/audio/*.mp3 through Whisper (one-by-one)."
+        description=(
+            "Full ingest pipeline: RSS sync + download, then Whisper for each data/audio/*.mp3, "
+            "then ingest-transcripts into SQLite."
+        )
     )
     p.add_argument("--model", default="medium", help="Whisper model (default: medium)")
     p.add_argument("--device", default="cuda", help="Whisper device (default: cuda)")
@@ -50,6 +56,11 @@ def _parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip RSS sync + download pass before transcription queue",
     )
+    p.add_argument(
+        "--skip-ingest-transcripts",
+        action="store_true",
+        help="Skip bilradio ingest-transcripts after Whisper (only leave files on disk)",
+    )
     return p.parse_args()
 
 
@@ -60,9 +71,12 @@ def main() -> int:
     transcripts_dir = repo / "data" / "transcripts"
     transcripts_dir.mkdir(parents=True, exist_ok=True)
 
+    # Needed for RSS/download and/or ingest-transcripts into SQLite.
+    if not args.skip_sync_download or not args.skip_ingest_transcripts:
+        init_db(DB_PATH)
+
     if not args.skip_sync_download:
         print("Syncing RSS and downloading any new pending episodes...")
-        init_db(DB_PATH)
         touched = sync_episodes_from_rss()
         print(f"  RSS upserted rows: {touched}")
         step_download()
@@ -70,6 +84,11 @@ def main() -> int:
     files = sorted(audio_dir.glob("*.mp3"))
     if not files:
         print(f"No .mp3 files found in {audio_dir}")
+        if not args.skip_ingest_transcripts:
+            init_db(DB_PATH)
+            print("Ingesting transcripts into SQLite (status → transcribed where files exist)...")
+            ingested, skipped_rows = step_ingest_transcripts(None)
+            print(f"  ingest-transcripts: updated={ingested} skipped={skipped_rows}")
         return 1
 
     done = 0
@@ -113,6 +132,12 @@ def main() -> int:
     print(
         f"Finished. success={done} skipped={skipped} failed={failed} total={len(files)}"
     )
+
+    if not args.skip_ingest_transcripts:
+        print("Ingesting transcripts into SQLite (status → transcribed where files exist)...")
+        ingested, skipped_rows = step_ingest_transcripts(None)
+        print(f"  ingest-transcripts: updated={ingested} skipped={skipped_rows}")
+
     return 0 if failed == 0 else 2
 
 
